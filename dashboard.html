@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Città vive · Atlante visivo delle sei città</title>
+<meta name="description" content="Aria, mobilità, verde e caldo in sei metropoli europee, letti con una sola grammatica visiva: un puntino, un raggio, un arco, una tacca.">
+<link rel="stylesheet" href="assets/stile.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  /* palette, caratteri e componenti: assets/stile.css */
+
+  body { font-family: var(--serif); color: var(--testo); line-height: 1.7; }
+
+  .foglio { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+
+  /* ---------- testata ---------- */
+  .testata { padding: 72px 0 30px; text-align: center; }
+  .testata .occhiello {
+    font-family: var(--mano); font-size: 1rem; color: var(--tenue);
+    letter-spacing: .04em; margin-bottom: 14px;
+  }
+  .testata h1 {
+    font-size: clamp(2rem, 4.6vw, 3.1rem); line-height: 1.12;
+    font-weight: 400; letter-spacing: -.01em; margin-bottom: 18px;
+  }
+  .testata h1 em { font-style: italic; color: #6b6357; }
+  .testata .sommario {
+    max-width: 620px; margin: 0 auto; font-size: 1.03rem; color: #4a453d;
+  }
+
+  /* ---------- sezioni ---------- */
+  .sezione { padding: 26px 0 46px; }
+  .sez-num {
+    font-family: var(--mano); font-size: 1.5rem; color: var(--tenue); line-height: 1;
+  }
+  .sezione h2 {
+    font-size: 1.55rem; font-weight: 400; margin: 4px 0 10px; letter-spacing: -.01em;
+  }
+  .sezione .intro {
+    max-width: 640px; color: #55504a; font-size: .99rem; margin-bottom: 30px;
+  }
+
+  /* ---------- griglia delle schede ---------- */
+  .griglia {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(258px, 1fr));
+    gap: 22px;
+  }
+  .card {                    /* fondo, bordo e raggio da assets/stile.css */
+    padding: 18px 14px 16px;
+    display: flex; flex-direction: column;
+  }
+  .card-legenda { background: var(--carta-3); border-style: dashed; }
+  .card-occhiello {
+    font-family: var(--sans); font-size: .64rem; letter-spacing: .13em;
+    text-transform: uppercase; color: var(--tenue); margin-bottom: 4px;
+  }
+  .card-nome { font-size: 1.32rem; font-weight: 400; line-height: 1.1; margin-bottom: 2px; }
+  .card-titolo { font-family: var(--mano); font-size: .88rem; color: var(--tenue); }
+  .glifo { width: 100%; height: auto; display: block; margin: 6px 0 4px; }
+  .card-chiave {
+    font-size: .87rem; line-height: 1.55; color: #4a453d;
+    border-top: 1px solid var(--riga); padding-top: 10px; margin-top: auto;
+  }
+  .card-verde {
+    font-family: var(--sans); font-size: .72rem; color: var(--tenue);
+    margin-top: 8px; line-height: 1.45;
+  }
+
+  /* ---------- matrice dell'auto ---------- */
+  .riga-auto {
+    display: grid; grid-template-columns: 108px 1fr 52px;
+    align-items: center; gap: 16px;
+    padding: 11px 0; border-bottom: 1px solid var(--riga);
+  }
+  .riga-nome { font-size: 1rem; }
+  .riga-valore { font-family: var(--sans); font-weight: 700; font-size: 1rem; text-align: right; }
+  .matrice { width: 100%; max-width: 300px; height: auto; }
+  .didascalia {
+    font-family: var(--mano); font-size: .92rem; color: var(--tenue); margin-top: 14px;
+  }
+
+  /* ---------- carta d'Europa ---------- */
+  .riquadro-carta { padding: 18px; }
+  .carta-europa { width: 100%; height: auto; display: block; }
+
+  /* ---------- mappe schematiche ---------- */
+  .mappe { display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 30px; }
+  .mappa { padding: 22px; }  /* .scheda per fondo e bordo */
+  .mappa h3 { font-size: 1.1rem; font-weight: 400; margin-bottom: 4px; }
+  .mappa .sotto { font-family: var(--mano); font-size: .88rem; color: var(--tenue); margin-bottom: 14px; }
+  .mappa svg { width: 100%; height: auto; }
+  .mappa .nota {
+    font-family: var(--sans); font-size: .72rem; color: var(--tenue);
+    margin-top: 12px; line-height: 1.5;
+  }
+
+  /* ---------- lacune ---------- */
+  .lacune {
+    background: var(--carta-3); border: 1px dashed var(--riga);
+    border-radius: 3px; padding: 26px 28px;
+  }
+  .lacune h2 { font-size: 1.2rem; font-weight: 400; margin-bottom: 6px; }
+  .lacune p.premessa { font-size: .93rem; color: #55504a; margin-bottom: 14px; }
+  .lacune ul { list-style: none; }
+  .lacune li {
+    font-size: .9rem; color: #55504a; padding: 7px 0 7px 22px;
+    position: relative; line-height: 1.55;
+  }
+  .lacune li::before {
+    content: '—'; position: absolute; left: 0; color: var(--tenue);
+  }
+
+  /* ---------- piede ---------- */
+  footer {
+    padding: 40px 0 60px; text-align: center;
+    font-family: var(--sans); font-size: .76rem; color: var(--tenue); line-height: 1.7;
+  }
+  footer a { color: var(--tenue); }
+  .torna {
+    display: inline-block; margin-bottom: 20px; font-family: var(--mano);
+    font-size: 1rem; color: var(--inchiostro); text-decoration: none;
+    border-bottom: 1px solid var(--riga);
+  }
+
+  @media (max-width: 700px) {
+    .riga-auto { grid-template-columns: 84px 1fr 44px; gap: 10px; }
+    .testata { padding: 48px 0 20px; }
+  }
+</style>
+</head>
+<body class="fondo-carta">
+
+<div class="foglio">
+
+  <!-- ══════════ TESTATA ══════════ -->
+  <header class="testata">
+    <p class="occhiello">Città vive · atlante visivo</p>
+    <h1>Sei città,<br><em>una sola grammatica</em></h1>
+    <hr class="filo filo-corto">
+    <p class="sommario">
+      Gli stessi quattro fronti — l'aria che si respira, lo spazio tolto all'auto,
+      il verde che raffredda, il caldo che uccide — disegnati con segni contabili.
+      Ogni puntino, ogni raggio, ogni tacca vale una quantità dichiarata.
+      Dove il dato manca, il segno resta tratteggiato: l'assenza si vede.
+    </p>
+  </header>
+
+  <hr class="filo">
+
+  <!-- ══════════ 0. LA CARTA ══════════ -->
+  <section class="sezione">
+    <p class="sez-num">zero</p>
+    <h2>Dove sono</h2>
+    <p class="intro">
+      Le sei città sulla stessa carta, con la stessa grammatica dei glifi: il cerchio
+      è la città, i puntini dentro sono i microgrammi di particolato che vi si respirano,
+      l'arco scuro la quota di spostamenti ancora in automobile. Milano è l'unica dell'entroterra
+      continentale, chiusa fra le Alpi e l'Appennino: la geografia non è un dettaglio della sua storia,
+      è la sua storia.
+    </p>
+    <div class="scheda riquadro-carta" id="carta-europa"></div>
+    <p class="didascalia">
+      Confini da Natural Earth, pubblico dominio. Proiezione di Mercatore.
+      Le posizioni sono reali, i cerchi no: hanno tutti lo stesso raggio,
+      a variare è solo quello che contengono.
+    </p>
+  </section>
+
+  <hr class="filo">
+
+  <!-- ══════════ 1. I GLIFI ══════════ -->
+  <section class="sezione">
+    <p class="sez-num">uno</p>
+    <h2>Il ritratto delle sei città</h2>
+    <p class="intro">
+      Ogni città è un cerchio. Dentro, la densità dei puntini è il particolato che
+      respira. Attorno, i raggi sono la rete ciclabile. Sul bordo, l'arco scuro è la
+      quota di spostamenti ancora in automobile. Sotto, le tacche rosse contano i morti
+      di una singola ondata di calore. La prima scheda spiega la grammatica.
+    </p>
+    <div class="griglia" id="griglia-citta"></div>
+  </section>
+
+  <hr class="filo">
+
+  <!-- ══════════ 2. LO SPAZIO DELL'AUTO ══════════ -->
+  <section class="sezione">
+    <p class="sez-num">due</p>
+    <h2>Cento spostamenti</h2>
+    <p class="intro">
+      Cento quadratini per città: quelli pieni sono i viaggi che si fanno ancora in
+      automobile privata. È la stessa quantità dell'arco scuro dei glifi, contata invece
+      che stimata a occhio. Fra Parigi e Milano ballano ventitré viaggi su cento.
+    </p>
+    <div id="griglia-auto"></div>
+    <p class="didascalia">
+      Ordinate dal meno al più. Indagini nazionali con anni e metodi diversi:
+      leggere l'ordine di grandezza, non il decimale.
+    </p>
+  </section>
+
+  <hr class="filo">
+
+  <!-- ══════════ 3. LE MAPPE ══════════ -->
+  <section class="sezione">
+    <p class="sez-num">tre</p>
+    <h2>Due modi di ridisegnare una città</h2>
+    <p class="intro">
+      Londra ha agito sul prezzo e sul perimetro, allargando per gradi la zona in cui
+      inquinare costa. Barcellona ha agito sulla forma dell'isolato. Due strategie
+      opposte, entrambe efficaci: schemi in scala non reale, servono a mostrare il
+      meccanismo.
+    </p>
+
+    <div class="mappe">
+
+      <!-- ULEZ: l'espansione per anelli -->
+      <div class="mappa scheda">
+        <h3>Londra · la zona che si allarga</h3>
+        <p class="sotto">Ultra Low Emission Zone, 2019 → 2023</p>
+        <svg viewBox="0 0 420 300" role="img" aria-label="Schema dell'espansione della ULEZ londinese in tre fasi">
+          <!-- Greater London 2023 -->
+          <path d="M32,148 Q28,86 92,58 Q166,26 246,34 Q340,42 378,96 Q404,142 380,200 Q352,262 264,276 Q170,290 96,258 Q38,228 32,148 Z"
+                fill="#DC241F" fill-opacity=".07" stroke="#DC241F" stroke-width="1.6" stroke-dasharray="7,5"/>
+          <!-- Inner London 2021 -->
+          <path d="M108,150 Q106,110 146,90 Q196,68 246,80 Q300,92 314,134 Q324,176 292,208 Q248,240 190,232 Q130,222 112,184 Q106,168 108,150 Z"
+                fill="#DC241F" fill-opacity=".13" stroke="#DC241F" stroke-width="1.8"/>
+          <!-- Central 2019 -->
+          <path d="M180,152 Q178,132 196,124 Q218,114 240,122 Q258,130 260,150 Q262,172 242,182 Q218,192 198,182 Q182,172 180,152 Z"
+                fill="#DC241F" fill-opacity=".34" stroke="#DC241F" stroke-width="2"/>
+
+          <circle cx="220" cy="152" r="3.4" fill="#2b2b2b"/>
+
+          <line x1="252" y1="132" x2="330" y2="96" stroke="#8d8271" stroke-width=".9"/>
+          <text x="334" y="94" font-family="'Bradley Hand','Chalkboard SE',cursive" font-size="13" fill="#2b2b2b">2019 · centro</text>
+          <text x="334" y="110" font-family="'Helvetica Neue',Arial" font-size="10" fill="#8d8271">NO₂ 55 µg/m³</text>
+
+          <line x1="306" y1="196" x2="352" y2="214" stroke="#8d8271" stroke-width=".9"/>
+          <text x="300" y="236" font-family="'Bradley Hand','Chalkboard SE',cursive" font-size="13" fill="#2b2b2b">2021 · inner</text>
+          <text x="300" y="252" font-family="'Helvetica Neue',Arial" font-size="10" fill="#8d8271">NO₂ 40 µg/m³</text>
+
+          <line x1="60" y1="112" x2="34" y2="78" stroke="#8d8271" stroke-width=".9"/>
+          <text x="14" y="68" font-family="'Bradley Hand','Chalkboard SE',cursive" font-size="13" fill="#2b2b2b">2023 · tutta Londra</text>
+          <text x="14" y="52" font-family="'Helvetica Neue',Arial" font-size="10" fill="#8d8271">NO₂ 34 → 31 µg/m³</text>
+        </svg>
+        <p class="nota">
+          Nel 2016, prima della ULEZ, la zona centrale stava a 68 µg/m³ di NO₂.
+          Nel 2024 è a 31: meno 54%. Fonte: Transport for London, ULEZ One Year Report (2024).
+        </p>
+      </div>
+
+      <!-- SUPERILLES: la forma dell'isolato -->
+      <div class="mappa scheda">
+        <h3>Barcellona · l'isolato che cambia forma</h3>
+        <p class="sotto">Una superilla: nove isolati, un interno restituito</p>
+        <svg viewBox="0 0 420 300" role="img" aria-label="Schema di un superblock: nove isolati con traffico sul perimetro e interno pedonale">
+          <!-- interno liberato -->
+          <rect x="66" y="36" width="228" height="228" fill="#F4B223" fill-opacity=".10"/>
+
+          <!-- i nove isolati dell'Eixample, angoli smussati -->
+          <g fill="#e8e0d0" stroke="#c9bda6" stroke-width="1.2">
+            <path d="M78,48 h52 l10,10 v52 l-10,10 h-52 l-10,-10 v-52 Z"/>
+            <path d="M154,48 h52 l10,10 v52 l-10,10 h-52 l-10,-10 v-52 Z"/>
+            <path d="M230,48 h52 l10,10 v52 l-10,10 h-52 l-10,-10 v-52 Z"/>
+            <path d="M78,124 h52 l10,10 v52 l-10,10 h-52 l-10,-10 v-52 Z"/>
+            <path d="M154,124 h52 l10,10 v52 l-10,10 h-52 l-10,-10 v-52 Z"/>
+            <path d="M230,124 h52 l10,10 v52 l-10,10 h-52 l-10,-10 v-52 Z"/>
+            <path d="M78,200 h52 l10,10 v52 l-10,10 h-52 l-10,-10 v-52 Z"/>
+            <path d="M154,200 h52 l10,10 v52 l-10,10 h-52 l-10,-10 v-52 Z"/>
+            <path d="M230,200 h52 l10,10 v52 l-10,10 h-52 l-10,-10 v-52 Z"/>
+          </g>
+
+          <!-- strade interne restituite: verde, con alberi -->
+          <g stroke="#3f9d4f" stroke-width="3" stroke-linecap="round" opacity=".85">
+            <line x1="150" y1="44" x2="150" y2="266"/>
+            <line x1="226" y1="44" x2="226" y2="266"/>
+            <line x1="70" y1="120" x2="290" y2="120"/>
+            <line x1="70" y1="196" x2="290" y2="196"/>
+          </g>
+          <g fill="#3f9d4f" opacity=".9">
+            <circle cx="150" cy="86" r="4.5"/><circle cx="226" cy="158" r="4.5"/>
+            <circle cx="188" cy="120" r="4.5"/><circle cx="112" cy="196" r="4.5"/>
+            <circle cx="264" cy="196" r="4.5"/><circle cx="150" cy="232" r="4.5"/>
+          </g>
+
+          <!-- perimetro: il traffico resta qui -->
+          <g stroke="#2b2b2b" stroke-width="6" opacity=".8" stroke-linecap="square">
+            <line x1="60" y1="30" x2="300" y2="30"/>
+            <line x1="60" y1="270" x2="300" y2="270"/>
+            <line x1="60" y1="30" x2="60" y2="270"/>
+            <line x1="300" y1="30" x2="300" y2="270"/>
+          </g>
+
+          <line x1="300" y1="30" x2="344" y2="30" stroke="#8d8271" stroke-width=".9"/>
+          <text x="344" y="26" font-family="'Bradley Hand','Chalkboard SE',cursive" font-size="13" fill="#2b2b2b">il traffico</text>
+          <text x="344" y="42" font-family="'Bradley Hand','Chalkboard SE',cursive" font-size="13" fill="#2b2b2b">resta fuori</text>
+
+          <line x1="226" y1="158" x2="344" y2="150" stroke="#8d8271" stroke-width=".9"/>
+          <text x="340" y="142" font-family="'Bradley Hand','Chalkboard SE',cursive" font-size="13" fill="#3f9d4f">dentro:</text>
+          <text x="340" y="158" font-family="'Bradley Hand','Chalkboard SE',cursive" font-size="13" fill="#3f9d4f">alberi,</text>
+          <text x="340" y="174" font-family="'Bradley Hand','Chalkboard SE',cursive" font-size="13" fill="#3f9d4f">panchine,</text>
+          <text x="340" y="190" font-family="'Bradley Hand','Chalkboard SE',cursive" font-size="13" fill="#3f9d4f">10 km/h</text>
+        </svg>
+        <p class="nota">
+          A piena attuazione il modello eviterebbe 667 morti premature l'anno (stima
+          modellistica, non un dato osservato). Fonte: Mueller N. et al. (2020),
+          Environment International.
+        </p>
+      </div>
+
+
+      <!-- PARIGI: la rete che si infittisce -->
+      <div class="mappa scheda">
+        <h3>Parigi · la rete che si infittisce</h3>
+        <p class="sotto">Da 200 a 1.420 km di piste, 2001 → 2024</p>
+        <svg viewBox="0 0 420 250" role="img" aria-label="Tre schemi a confronto della rete ciclabile parigina nel 2001, 2015 e 2024">
+          <!-- 2001 -->
+          <ellipse cx="72" cy="120" rx="58" ry="48" fill="#e7e0d1" stroke="#c3b69d" stroke-width="1"/>
+          <path d="M14,138 Q52,126 82,134 Q112,142 130,128"
+                fill="none" stroke="#9fb8cc" stroke-width="4" stroke-linecap="round" opacity=".75"/>
+          <g stroke="#005BAC" stroke-width="1.5" stroke-linecap="round" opacity=".9" fill="none">
+            <path d="M38,84 H106"/>
+            <path d="M18,120 H126"/>
+            <path d="M28,93 V147"/>
+            <path d="M116,93 V147"/>
+          </g>
+          <text x="72" y="196" text-anchor="middle" font-family="'Bradley Hand','Chalkboard SE',cursive" font-size="15" fill="#005BAC">2001</text>
+          <text x="72" y="214" text-anchor="middle" font-family="'Helvetica Neue',Arial" font-size="11" fill="#6b6357">200 km</text>
+          <!-- 2015 -->
+          <ellipse cx="210" cy="120" rx="58" ry="48" fill="#e7e0d1" stroke="#c3b69d" stroke-width="1"/>
+          <path d="M152,138 Q190,126 220,134 Q250,142 268,128"
+                fill="none" stroke="#9fb8cc" stroke-width="4" stroke-linecap="round" opacity=".75"/>
+          <g stroke="#005BAC" stroke-width="1.5" stroke-linecap="round" opacity=".9" fill="none">
+            <path d="M176,84 H244"/>
+            <path d="M160,102 H260"/>
+            <path d="M156,120 H264"/>
+            <path d="M160,138 H260"/>
+            <path d="M166,93 V147"/>
+            <path d="M195,78 V162"/>
+            <path d="M225,78 V162"/>
+            <path d="M254,93 V147"/>
+          </g>
+          <text x="210" y="196" text-anchor="middle" font-family="'Bradley Hand','Chalkboard SE',cursive" font-size="15" fill="#005BAC">2015</text>
+          <text x="210" y="214" text-anchor="middle" font-family="'Helvetica Neue',Arial" font-size="11" fill="#6b6357">700 km</text>
+          <!-- 2024 -->
+          <ellipse cx="348" cy="120" rx="58" ry="48" fill="#e7e0d1" stroke="#c3b69d" stroke-width="1"/>
+          <path d="M290,138 Q328,126 358,134 Q388,142 406,128"
+                fill="none" stroke="#9fb8cc" stroke-width="4" stroke-linecap="round" opacity=".75"/>
+          <g stroke="#005BAC" stroke-width="1.5" stroke-linecap="round" opacity=".95" fill="none">
+            <path d="M314,84 H382"/>
+            <path d="M302,96 H394"/>
+            <path d="M296,108 H400"/>
+            <path d="M294,120 H402"/>
+            <path d="M296,132 H400"/>
+            <path d="M302,144 H394"/>
+            <path d="M304,93 V147"/>
+            <path d="M319,83 V157"/>
+            <path d="M333,78 V162"/>
+            <path d="M348,76 V164"/>
+            <path d="M363,78 V162"/>
+            <path d="M377,83 V157"/>
+            <path d="M392,93 V147"/>
+            <path d="M310,96 L386,146"/>
+            <path d="M310,146 L386,96"/>
+          </g>
+          <text x="348" y="196" text-anchor="middle" font-family="'Bradley Hand','Chalkboard SE',cursive" font-size="15" fill="#005BAC">2024</text>
+          <text x="348" y="214" text-anchor="middle" font-family="'Helvetica Neue',Arial" font-size="11" fill="#6b6357">1.420 km</text>
+          <text x="210" y="240" text-anchor="middle" font-family="'Helvetica Neue',Arial" font-size="10" fill="#8d8271">schema: la maglia si infittisce dentro lo stesso perimetro, non si allarga</text>
+        </svg>
+        <p class="nota">
+          Nel 2024 la bicicletta pesa per l'11,2% degli spostamenti contro il 4,3%
+          dell'automobile. Fonte: Institut Paris Région; Mairie de Paris, Plan Vélo.
+        </p>
+      </div>
+
+      <!-- MILANO: il perimetro che non basta -->
+      <div class="mappa scheda">
+        <h3>Milano · il perimetro che non basta</h3>
+        <p class="sotto">Area C, Area B e la pianura che resta fuori</p>
+        <svg viewBox="0 0 420 300" role="img" aria-label="Schema di Area C, Area B e dell'area metropolitana milanese">
+          <!-- la pianura padana, fuori da ogni provvedimento -->
+          <rect x="8" y="14" width="404" height="272" fill="#d8cfc0" opacity=".55"/>
+          <!-- confine comunale = Area B -->
+          <path d="M96,150 Q92,86 156,60 Q226,34 292,64 Q346,90 340,152 Q334,216 268,244 Q198,268 140,236 Q100,210 96,150 Z"
+                fill="#f0e6e0" stroke="#E63946" stroke-width="2"/>
+          <!-- cerchia dei Bastioni = Area C -->
+          <path d="M186,150 Q184,124 208,114 Q234,104 254,120 Q268,134 264,154 Q258,178 232,184 Q206,188 192,170 Q186,160 186,150 Z"
+                fill="#E63946" fill-opacity=".3" stroke="#E63946" stroke-width="2"/>
+          <circle cx="224" cy="148" r="3.2" fill="#2b2b2b"/>
+
+          <line x1="262" y1="126" x2="330" y2="92" stroke="#8d8271" stroke-width=".9"/>
+          <text x="334" y="88" font-family="'Bradley Hand','Chalkboard SE',cursive" font-size="13" fill="#E63946">Area C</text>
+          <text x="334" y="103" font-family="'Helvetica Neue',Arial" font-size="9.5" fill="#8d8271">dal 2012, 8,2 km²</text>
+
+          <line x1="322" y1="206" x2="352" y2="222" stroke="#8d8271" stroke-width=".9"/>
+          <text x="330" y="216" font-family="'Bradley Hand','Chalkboard SE',cursive" font-size="13" fill="#E63946">Area B</text>
+          <text x="330" y="231" font-family="'Helvetica Neue',Arial" font-size="9.5" fill="#8d8271">tutto il Comune</text>
+
+          <text x="20" y="42" font-family="'Bradley Hand','Chalkboard SE',cursive" font-size="14" fill="#6b6357">la pianura padana</text>
+          <text x="20" y="60" font-family="'Helvetica Neue',Arial" font-size="10" fill="#8d8271">nessun provvedimento</text>
+          <text x="20" y="74" font-family="'Helvetica Neue',Arial" font-size="10" fill="#8d8271">su questa scala</text>
+        </svg>
+        <p class="nota">
+          Il PM2.5 non si ferma al confine comunale: nel bacino padano il ricambio
+          d'aria è scarso e le sorgenti sono regionali. È il nodo che Area C e Area B,
+          da sole, non possono sciogliere.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="filo">
+
+  <!-- ══════════ 4. LE LACUNE ══════════ -->
+  <section class="sezione">
+    <div class="lacune">
+      <p class="sez-num">quattro</p>
+      <h2>Quello che questi disegni non sanno</h2>
+      <p class="premessa">
+        Un atlante che tace sui propri buchi mente. Questi sono i punti in cui il
+        confronto fra le sei città non regge, e vanno letti prima dei glifi.
+      </p>
+      <ul id="lista-lacune"></ul>
+    </div>
+  </section>
+
+  <footer>
+    <a class="torna" href="index.html">← torna al trattato</a>
+    <p>
+      <strong>Planet Intelligence</strong> · atlante visivo, agosto 2026<br>
+      Dati e fonti in <code>data/citta.js</code> e <code>data/charts.js</code>.
+      Valori 2025 e 2026 provvisori.
+    </p>
+  </footer>
+
+</div>
+
+<script src="data/citta.js"></script>
+<script src="data/mappa-europa.js"></script>
+<script src="assets/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+{
+  "paris": {
+    "file": "paris.jpg",
+    "titolo": "File:Voie Cyclable Rue Rivoli - Paris IV (FR75) - 2021-01-03 - 1.jpg",
+    "autore": "Chabe01",
+    "licenza": "CC BY-SA 4.0",
+    "licenza_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "pagina": "https://commons.wikimedia.org/wiki/File:Voie_Cyclable_Rue_Rivoli_-_Paris_IV_(FR75)_-_2021-01-03_-_1.jpg",
+    "peso_kb": 871
+  },
+  "barcelona": {
+    "file": "barcelona.jpg",
+    "titolo": "File:Superilla del barri de Sant Antoni, Barcelona.jpg",
+    "autore": "Cataleirxs",
+    "licenza": "CC BY-SA 4.0",
+    "licenza_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "pagina": "https://commons.wikimedia.org/wiki/File:Superilla_del_barri_de_Sant_Antoni,_Barcelona.jpg",
+    "peso_kb": 1301
+  },
+  "madrid": {
+    "file": "madrid.jpg",
+    "titolo": "File:Gran Via Madrid December 2023 03.jpg",
+    "autore": "Javier Perez Montes",
+    "licenza": "CC BY-SA 4.0",
+    "licenza_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "pagina": "https://commons.wikimedia.org/wiki/File:Gran_Via_Madrid_December_2023_03.jpg",
+    "peso_kb": 978
+  },
+  "berlin": {
+    "file": "berlin.jpg",
+    "titolo": "File:Fahrradstraße Palisadenstraße Berlin-Friedrichshain.jpg",
+    "autore": "Singlespeedfahrer",
+    "licenza": "CC0",
+    "licenza_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "pagina": "https://commons.wikimedia.org/wiki/File:Fahrradstra%C3%9Fe_Palisadenstra%C3%9Fe_Berlin-Friedrichshain.jpg",
+    "peso_kb": 583
+  },
+  "london": {
+    "file": "london.jpg",
+    "titolo": "File:ULEZ-CCZ-Sign-P1550993 (46947595764).jpg",
+    "autore": "citytransportinfo",
+    "licenza": "CC0",
+    "licenza_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "pagina": "https://commons.wikimedia.org/wiki/File:ULEZ-CCZ-Sign-P1550993_(46947595764).jpg",
+    "peso_kb": 1186
+  },
+  "milan": {
+    "file": "milan.jpg",
+    "titolo": "File:Milan Area C Porta Ticinese gate.JPG",
+    "autore": "Ita140188",
+    "licenza": "CC BY-SA 3.0",
+    "licenza_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "pagina": "https://commons.wikimedia.org/wiki/File:Milan_Area_C_Porta_Ticinese_gate.JPG",
+    "peso_kb": 2303
+  }
+}

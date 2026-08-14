@@ -1,0 +1,122 @@
+/* ============================================================
+   Città vive — sistema grafico condiviso
+   ------------------------------------------------------------
+   Un solo posto per palette, tipografia e componenti comuni.
+   Lo caricano sia il trattato (index.html) sia l'atlante
+   (dashboard.html): se un colore cambia qui, cambia in entrambi.
+
+   Impianto: carta, inchiostro, tratto sottile. I colori delle
+   città restano quelli originali — sono già una convenzione del
+   pezzo — ma appoggiano su fondo carta, non su bianco.
+   ============================================================ */
+
+:root {
+  /* --- le sei città --- */
+  --paris:     #005BAC;
+  --london:    #DC241F;
+  --barcelona: #F4B223;
+  --madrid:    #7A3E9D;
+  --berlin:    #0F8B8D;
+  --milan:     #E63946;
+  --green:     #3f9d4f;
+
+  /* --- carta e inchiostro --- */
+  --carta:      #f2ede3;   /* fondo pagina */
+  --carta-2:    #fbf8f2;   /* schede e riquadri */
+  --carta-3:    #efe9dd;   /* riquadri secondari, legende */
+  --inchiostro: #2b2b2b;
+  --testo:      #3a3630;
+  --tenue:      #8d8271;   /* didascalie, assi, note */
+  --riga:       #ddd3c2;   /* filetti e bordi */
+  --rosso:      #c0392b;   /* il caldo, le morti */
+
+  /* --- fondi scuri (sezione verde, lezioni, copertina) --- */
+  --scuro:      #1f2430;
+  --scuro-verde:#10241b;
+  --su-scuro:       rgba(255,255,255,.78);
+  --su-scuro-tenue: rgba(255,255,255,.55);
+  --riga-scura:     rgba(255,255,255,.16);
+
+  /* --- caratteri --- */
+  --serif: Georgia, 'Times New Roman', serif;
+  --sans:  'Helvetica Neue', Arial, sans-serif;
+  --mano:  'Bradley Hand', 'Chalkboard SE', 'Marker Felt', cursive;
+}
+
+/* ---------- fondo di carta ----------
+   Due trame di puntini sfalsate: dà grana senza immagini esterne. */
+.fondo-carta {
+  background-color: var(--carta);
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(180,165,140,.07) 0 2px, transparent 2px),
+    radial-gradient(circle at 70% 80%, rgba(180,165,140,.05) 0 2px, transparent 2px);
+  background-size: 37px 37px, 53px 53px;
+}
+
+/* ---------- filetti ---------- */
+.filo { border: 0; border-top: 1px solid var(--riga); margin: 44px 0; }
+.filo-corto { width: 60px; margin: 26px auto; }
+
+/* ---------- gerarchia tipografica condivisa ---------- */
+
+/* l'occhiello: sans maiuscoletto spaziato, sopra ogni titolo */
+.occhiello {
+  font-family: var(--sans); font-size: .68rem; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--tenue);
+}
+
+/* la mano: didascalie, annotazioni, numeri di sezione */
+.mano { font-family: var(--mano); color: var(--tenue); }
+
+/* ---------- scheda ----------
+   Vale sia per i riquadri dei grafici del trattato sia per le
+   schede dell'atlante: stesso bordo sottile, stesso fondo, niente
+   ombre lucide. */
+.scheda,
+.chart-wrap,
+.card {
+  background: var(--carta-2);
+  border: 1px solid var(--riga);
+  border-radius: 3px;
+  box-shadow: none;
+}
+
+/* ---------- badge di provenienza del dato ---------- */
+.data-badge {
+  font-family: var(--sans); font-size: .72rem; line-height: 1.5;
+  color: var(--tenue); margin-top: 14px; padding-top: 10px;
+  border-top: 1px dashed var(--riga);
+}
+.badge-tag {
+  display: inline-block; padding: 2px 8px; border-radius: 999px;
+  font-weight: 700; font-size: .64rem; letter-spacing: .07em;
+  text-transform: uppercase; margin-right: 8px;
+}
+.stato-consolidato .badge-tag { background: #e2ecdf; color: #38614a; }
+.stato-provvisorio .badge-tag { background: #f4e8d2; color: #86642b; }
+.stato-stimato     .badge-tag { background: #e6e5ef; color: #4b4a76; }
+.badge-nota { display: block; margin-top: 6px; font-style: italic; opacity: .9; }
+
+/* su fondo scuro il badge si schiarisce */
+.green-section .data-badge,
+.lessons .data-badge {
+  color: var(--su-scuro-tenue); border-top-color: var(--riga-scura);
+}
+.green-section .badge-nota,
+.lessons .badge-nota { opacity: .8; }
+
+/* ---------- passaggio fra le due pagine ---------- */
+.ponte {
+  display: block; text-align: center; margin: 0 auto;
+  padding: 26px 24px; max-width: 720px;
+}
+.ponte a {
+  font-family: var(--mano); font-size: 1.12rem; color: var(--inchiostro);
+  text-decoration: none; border-bottom: 1px solid var(--riga);
+  padding-bottom: 2px;
+}
+.ponte a:hover { border-bottom-color: var(--inchiostro); }
+.ponte p {
+  font-family: var(--sans); font-size: .74rem; color: var(--tenue);
+  margin-top: 10px; line-height: 1.6;
+}
