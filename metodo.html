@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Città vive · Come sono fatti questi numeri</title>
+<meta name="description" content="Nota metodologica: quale aria misuriamo, da dove viene ogni numero, che cosa non è confrontabile e che cosa manca.">
+<link rel="stylesheet" href="assets/stile.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  /* palette, caratteri e componenti: assets/stile.css */
+
+  body { font-family: var(--serif); color: var(--testo); line-height: 1.75; }
+
+  .foglio { max-width: 820px; margin: 0 auto; padding: 0 28px; }
+  .foglio-largo { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+
+  /* ---------- testata ---------- */
+  .testata { padding: 72px 0 26px; }
+  .testata .occhiello { display: block; margin-bottom: 14px; }
+  .testata h1 {
+    font-size: clamp(1.9rem, 4.2vw, 2.9rem); line-height: 1.14;
+    font-weight: 400; letter-spacing: -.01em; margin-bottom: 18px;
+  }
+  .testata .sommario { font-size: 1.06rem; color: #4a453d; max-width: 640px; }
+
+  /* ---------- sezioni ---------- */
+  .sezione { padding: 20px 0 8px; }
+  .sez-num { font-family: var(--mano); font-size: 1.5rem; color: var(--tenue); line-height: 1; }
+  .sezione h2 {
+    font-size: 1.5rem; font-weight: 400; margin: 4px 0 16px; letter-spacing: -.01em;
+  }
+  .sezione h3 {
+    font-family: var(--sans); font-size: .92rem; font-weight: 700;
+    margin: 30px 0 10px; letter-spacing: .01em;
+  }
+  .sezione p { margin-bottom: 16px; }
+  .sezione p a { color: var(--inchiostro); text-decoration: none; border-bottom: 1px solid var(--riga); }
+  .sezione p a:hover { border-bottom-color: var(--inchiostro); }
+
+  /* ---------- riquadro definizione ---------- */
+  .definizioni { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin: 26px 0; }
+  .def { padding: 18px 20px; }        /* fondo e bordo da .scheda */
+  .def .def-nome {
+    font-family: var(--sans); font-size: .7rem; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--tenue); margin-bottom: 8px;
+  }
+  .def p { font-size: .95rem; margin: 0; }
+
+  /* ---------- confronto a barre, senza librerie ---------- */
+  .confronto { margin: 26px 0 10px; padding: 20px 22px 16px; }
+  .confronto .titolo-fig {
+    font-family: var(--sans); font-size: .72rem; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--tenue); margin-bottom: 16px;
+  }
+  .riga-barra { display: grid; grid-template-columns: 190px 1fr; gap: 12px; align-items: center; margin-bottom: 10px; }
+  .riga-barra .etichetta { font-family: var(--sans); font-size: .8rem; color: var(--testo); }
+  .riga-barra .etichetta small { display: block; color: var(--tenue); font-size: .72rem; }
+  .pista { position: relative; height: 26px; background: var(--carta-3); border-radius: 2px; }
+  .barra { height: 100%; border-radius: 2px; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; }
+  .barra span { font-family: var(--sans); font-size: .74rem; color: #fff; font-weight: 700; }
+  .barra.chiara span { color: var(--inchiostro); }
+  .soglia { position: absolute; top: -4px; bottom: -4px; width: 0; border-left: 1px dashed var(--tenue); }
+  .soglia b {
+    position: absolute; top: -17px; left: 3px; font-family: var(--sans);
+    font-size: .6rem; letter-spacing: .06em; color: var(--tenue); font-weight: 600; white-space: nowrap;
+  }
+  .scala-nota { font-family: var(--sans); font-size: .74rem; color: var(--tenue); margin-top: 14px; line-height: 1.6; }
+
+  /* ---------- tabella delle fonti ---------- */
+  .tab-fonti { width: 100%; border-collapse: collapse; font-family: var(--sans); font-size: .8rem; margin: 20px 0 8px; }
+  .tab-fonti th {
+    text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--inchiostro);
+    font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--tenue); font-weight: 600;
+  }
+  .tab-fonti td { padding: 12px; border-bottom: 1px solid var(--riga); vertical-align: top; line-height: 1.55; }
+  .tab-fonti tr:last-child td { border-bottom: 0; }
+  .tab-fonti .col-dato { width: 27%; }
+  .tab-fonti .titolo-serie { color: var(--inchiostro); display: block; margin-bottom: 3px; }
+  .tab-fonti .unita { color: var(--tenue); font-size: .74rem; }
+  .tab-fonti a { color: var(--testo); }
+  .tab-fonti .stazione {
+    display: inline-block; margin-top: 6px; font-size: .68rem; letter-spacing: .06em;
+    text-transform: uppercase; color: var(--tenue);
+    border: 1px solid var(--riga); border-radius: 999px; padding: 1px 8px;
+  }
+  .tab-fonti .stazione.assente { border-style: dashed; opacity: .8; }
+  .tab-scroll { overflow-x: auto; }
+
+  /* ---------- elenco delle lacune ---------- */
+  .lacune { list-style: none; margin: 18px 0 6px; }
+  .lacune li {
+    padding: 12px 0 12px 26px; border-bottom: 1px solid var(--riga);
+    position: relative; font-size: .97rem;
+  }
+  .lacune li:last-child { border-bottom: 0; }
+  .lacune li::before {
+    content: '—'; position: absolute; left: 0; top: 12px; color: var(--tenue);
+  }
+
+  /* ---------- note per indicatore ---------- */
+  .note-glob { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 0 28px; margin: 12px 0; }
+  .note-glob div { padding: 12px 0; border-bottom: 1px solid var(--riga); font-size: .93rem; }
+  .note-glob b {
+    display: block; font-family: var(--sans); font-size: .68rem; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--tenue); font-weight: 600; margin-bottom: 4px;
+  }
+
+  /* ---------- legenda degli stati ---------- */
+  .stati { margin: 18px 0 6px; }
+  .stati .riga-stato { display: grid; grid-template-columns: 130px 1fr; gap: 14px; align-items: start; padding: 11px 0; border-bottom: 1px solid var(--riga); }
+  .stati .riga-stato:last-child { border-bottom: 0; }
+  .stati .badge-tag { margin: 0; }
+  .stati p { font-size: .93rem; margin: 0; }
+
+  footer { border-top: 1px solid var(--riga); margin-top: 20px; padding: 34px 0 60px; text-align: center; }
+  footer p { font-family: var(--sans); font-size: .78rem; color: var(--tenue); line-height: 1.7; }
+  footer code { font-family: var(--sans); background: var(--carta-3); padding: 1px 5px; border-radius: 2px; }
+
+  @media (max-width: 620px) {
+    .riga-barra { grid-template-columns: 1fr; gap: 4px; }
+    .riga-barra .etichetta small { display: inline; margin-left: 6px; }
+  }
+</style>
+</head>
+<body class="fondo-carta">
+
+<div class="foglio">
+
+  <header class="testata">
+    <span class="occhiello">Città vive · nota metodologica</span>
+    <h1>Come sono fatti questi numeri</h1>
+    <p class="sommario">
+      Ogni grafico del trattato e ogni segno dell'atlante nascono da una scelta:
+      quale strumento leggere, in quale punto della città, con quale definizione.
+      Le scelte cambiano i numeri, a volte del doppio. Questa pagina le dichiara tutte.
+    </p>
+  </header>
+
+  <hr class="filo">
+
+  <!-- ═══ 1 · QUALE ARIA ═══ -->
+  <section class="sezione">
+    <span class="sez-num">01</span>
+    <h2>Quale aria stiamo misurando</h2>
+
+    <p>
+      Le centraline europee non sono tutte uguali, e non perché siano fatte diversamente:
+      cambia dove sono messe. La normativa europea — la
+      <a href="https://eur-lex.europa.eu/eli/dir/2008/50/oj?locale=it" target="_blank">direttiva 2008/50/CE</a>,
+      recepita in Italia dal d.lgs. 155/2010 — le classifica secondo la sorgente che ne
+      determina il livello. Due categorie contano per questo lavoro.
+    </p>
+
+    <div class="definizioni">
+      <div class="def scheda">
+        <p class="def-nome">Stazione da traffico</p>
+        <p>Collocata dove il livello di inquinamento è <em>influenzato prevalentemente
+        da emissioni veicolari</em>, lungo strade a traffico medio-alto. Misura l'aria
+        del marciapiede.</p>
+      </div>
+      <div class="def scheda">
+        <p class="def-nome">Stazione di fondo</p>
+        <p>Collocata dove <em>nessuna sorgente specifica domina</em>: registra il
+        contributo integrato di tutte le fonti insieme. Misura il livello di base
+        dell'aria cittadina.</p>
+      </div>
+    </div>
+
+    <p>
+      Nessuna delle due è più vera dell'altra: rispondono a domande diverse. «Quanto è
+      tossica quella strada?» è una stazione da traffico. «Che aria respira mediamente
+      chi vive in questa città?» è una stazione di fondo. Il guaio nasce quando due
+      articoli usano definizioni diverse e i lettori confrontano i numeri come se fossero
+      la stessa cosa.
+    </p>
+
+    <h3>Quanto pesa la scelta</h3>
+    <p>
+      Lo dimostra un grafico che sta già nel trattato, quello di Madrid. Nello stesso
+      anno, nella stessa città, la differenza fra la stazione da traffico peggiore e
+      quella di fondo del parco del Retiro è di più del doppio.
+    </p>
+
+    <figure class="confronto scheda">
+      <figcaption class="titolo-fig">Madrid 2024 · NO₂ medio annuo, µg/m³</figcaption>
+      <div id="fig-madrid"></div>
+      <p class="scala-nota">
+        Nel 2019 lo scarto era ancora più largo: 53 µg/m³ a Plaza Elíptica contro 24 al
+        Retiro. Fonte: Ayuntamiento de Madrid, gli stessi dati del grafico «Madrid: NO₂
+        per stazione di misura» del trattato.
+      </p>
+    </figure>
+
+    <h3>Perché per il NO₂ cambia tutto e per il PM2.5 quasi niente</h3>
+    <p>
+      Il biossido di azoto è un inquinante <em>primario</em>: esce dagli scarichi e si
+      degrada rapidamente allontanandosi dalla strada, tanto che poche decine di metri
+      bastano a dimezzarlo. Il particolato fine è in buona parte <em>secondario</em> —
+      si forma in atmosfera a partire da altri inquinanti — e viaggia col vento per
+      centinaia di chilometri: sulla città è molto più uniforme.
+    </p>
+    <p>
+      Da qui un'asimmetria che è bene dichiarare invece di lasciar intuire. Le serie del
+      NO₂ di questo lavoro vengono da stazioni da traffico, e sono numeri alti perché
+      descrivono il punto peggiore. Il PM2.5 è invece un valore unico per città, e la
+      distinzione conta molto meno. È anche il motivo per cui Milano non migliora
+      allontanandosi dal centro: quel PM2.5 non è il traffico di una via, è la pianura
+      padana intera.
+    </p>
+
+    <h3>Le tre soglie</h3>
+    <p>
+      Il limite di legge europeo per il NO₂ è oggi di 40 µg/m³ di media annua e si applica
+      a tutte le stazioni, comprese quelle da traffico: è lì che si decide se una città è
+      in regola. La
+      <a href="https://eur-lex.europa.eu/legal-content/IT/ALL/?uri=CELEX%3A32024L2881" target="_blank">direttiva (UE) 2024/2881</a>
+      lo dimezza a <strong>20 µg/m³ a partire dal 1° gennaio 2030</strong>, e porta il
+      PM2.5 da 25 a 10. Le linee guida dell'OMS del 2021, che non sono legge ma soglia
+      sanitaria, stanno più in basso ancora: 10 µg/m³ per il NO₂ e 5 per il PM2.5.
+    </p>
+
+    <figure class="confronto scheda">
+      <figcaption class="titolo-fig">NO₂ 2025 delle sei città e le soglie che devono rispettare</figcaption>
+      <div id="fig-soglie"></div>
+      <p class="scala-nota">
+        Valori 2025 provvisori, da stazioni da traffico. La soglia che entra in vigore nel
+        2030 è il vero metro di paragone: misurata così, nessuna delle sei città sta oggi
+        sotto quel limite, e Londra lo tocca esatto. Vale la pena ripetere che sono valori
+        da traffico — sul fondo urbano le stesse città stanno diversi µg/m³ più in basso, e
+        la distanza dall'obiettivo sembra minore. Milano resta senza valore perché non è
+        nella serie comparativa del NO₂: vedi le lacune, più sotto.
+      </p>
+    </figure>
+  </section>
+
+  <hr class="filo">
+
+  <!-- ═══ 2 · I TRE STATI ═══ -->
+  <section class="sezione">
+    <span class="sez-num">02</span>
+    <h2>Quanto è solido un dato</h2>
+    <p>
+      Ogni serie porta con sé un'etichetta che dice quanto ci si può appoggiare sopra.
+      Compare sotto ai grafici del trattato ed è la stessa che regge la tabella qui sotto.
+    </p>
+    <div class="stati">
+      <div class="riga-stato stato-consolidato">
+        <span class="badge-tag">consolidato</span>
+        <p>Dato pubblicato e validato da chi lo produce, non più soggetto a revisione.</p>
+      </div>
+      <div class="riga-stato stato-provvisorio">
+        <span class="badge-tag">provvisorio</span>
+        <p>Dato già disponibile ma non ancora validato: le annualità più recenti
+        cambiano spesso di qualche decimo quando arriva la verifica.</p>
+      </div>
+      <div class="riga-stato stato-stimato">
+        <span class="badge-tag">stimato</span>
+        <p>Non è una misura ma il risultato di un modello — proiezioni, studi di
+        attribuzione, scenari a piena attuazione. Va letto con i suoi intervalli
+        di incertezza, che nei grafici non sempre si vedono.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="filo">
+</div>
+
+<!-- ═══ 3 · LE FONTI (a tutta larghezza) ═══ -->
+<div class="foglio-largo">
+  <section class="sezione">
+    <span class="sez-num">03</span>
+    <h2>Da dove viene ogni numero</h2>
+    <p style="max-width:820px">
+      Un rigo per ciascuno degli undici grafici del trattato. La tabella non è scritta a
+      mano: la genera questa pagina leggendo <code>data/charts.js</code>, lo stesso file
+      da cui i grafici prendono i valori. Se un dato viene aggiornato lì, qui cambia da sé
+      — non può succedere che la metodologia dica una cosa e il grafico ne mostri un'altra.
+    </p>
+    <div class="tab-scroll">
+      <table class="tab-fonti">
+        <thead>
+          <tr>
+            <th class="col-dato">Grafico</th>
+            <th>Fonte</th>
+            <th>Stato</th>
+            <th>Verificato</th>
+          </tr>
+        </thead>
+        <tbody id="corpo-fonti"></tbody>
+      </table>
+    </div>
+    <p class="scala-nota" style="max-width:820px">
+      «Verificato» è la data dell'ultimo controllo manuale sulla fonte, non la data del
+      dato: una serie verificata ad agosto 2026 può fermarsi al 2024, se è lì che si ferma
+      chi la pubblica.
+    </p>
+  </section>
+</div>
+
+<div class="foglio">
+  <hr class="filo">
+
+  <!-- ═══ 4 · COSA NON È CONFRONTABILE ═══ -->
+  <section class="sezione">
+    <span class="sez-num">04</span>
+    <h2>Che cosa non è confrontabile, e che cosa manca</h2>
+    <p>
+      Sei città in sei paesi vuol dire sei uffici di statistica, sei reti di centraline e
+      sei indagini nazionali sulla mobilità, fatte in anni diversi e con metodi diversi.
+      Molti confronti di questo lavoro mostrano un ordine di grandezza e una direzione,
+      non una misura omogenea. Le avvertenze che seguono valgono per tutti i grafici in
+      cui compare l'indicatore.
+    </p>
+    <div class="note-glob" id="note-globali"></div>
+
+    <h3>I buchi, dichiarati</h3>
+    <p>
+      Dove il dato non esiste resta un vuoto: nell'atlante è disegnato come assenza, mai
+      come zero e mai interpolato. Questi sono i vuoti noti.
+    </p>
+    <ul class="lacune" id="elenco-lacune"></ul>
+  </section>
+
+  <hr class="filo">
+
+  <!-- ═══ 5 · AGGIORNAMENTO ═══ -->
+  <section class="sezione">
+    <span class="sez-num">05</span>
+    <h2>Quando questi numeri si aggiornano</h2>
+    <p>
+      Oggi: a mano. Ogni serie porta la data dell'ultima verifica, e finché quella data
+      non cambia il numero è fermo. È una scelta onesta ma fragile, perché un lavoro che
+      resta online invecchia in silenzio.
+    </p>
+    <p>
+      La direzione in cui stiamo andando è un aggiornamento automatico per la parte di
+      dati che le fonti pubbliche espongono in modo interrogabile. Due strade, con
+      caratteristiche diverse: il servizio di
+      <a href="https://www.eea.europa.eu/en/datahub" target="_blank">download della qualità dell'aria dell'Agenzia europea dell'ambiente</a>,
+      che copre tutte le stazioni delle sei città e conserva la classificazione fra
+      traffico e fondo — quindi permette di restare fedeli alla definizione scelta qui;
+      e le statistiche di <a href="https://ec.europa.eu/eurostat" target="_blank">Eurostat</a>,
+      che pubblicano il NO₂ mensile delle capitali europee e i decessi settimanali per
+      provincia, aggiornati con circa un mese di ritardo.
+    </p>
+    <p>
+      Il resto — chilometri di piste ciclabili, quote di spostamenti, superfici verdi,
+      personale della manutenzione — non esiste in nessuna banca dati interrogabile e
+      continuerà ad arrivare da documenti comunali letti uno per uno. Quando l'automazione
+      sarà attiva, questa pagina dirà quali serie sono automatiche e quali no.
+    </p>
+  </section>
+
+  <div class="ponte">
+    <a href="index.html">← Torna al trattato</a>
+    <p>Le sei città raccontate per esteso, con gli undici grafici che questa pagina documenta.</p>
+  </div>
+  <div class="ponte">
+    <a href="dashboard.html">Vai all'atlante visivo →</a>
+    <p>Gli stessi dati riletti con una sola grammatica di segni.</p>
+  </div>
+
+  <footer>
+    <p>
+      <strong>Planet Intelligence</strong> · nota metodologica, agosto 2026<br>
+      Generata da <code>data/charts.js</code> e <code>data/citta.js</code>.
+      Testo del trattato di Luca Carra; questa nota è della redazione.
+    </p>
+  </footer>
+
+</div>
+
+<script src="data/charts.js"></script>
+<script src="data/citta.js"></script>
+<script>
+/* ============================================================
+   metodo.html — la pagina si costruisce dai dati, non li ricopia
+   ------------------------------------------------------------
+   Tre blocchi generati: la tabella delle fonti, le note per
+   indicatore e l'elenco delle lacune. Più due figure a barre
+   disegnate in HTML, senza Chart.js: sono due confronti fermi,
+   non serve una libreria per due dozzine di pixel.
+   ============================================================ */
+(function () {
+  'use strict';
+
+  var D = window.CITTA_VIVE, C = window.CITTA_VIVE_CITTA;
+  if (!D || !C) { console.error('[metodo] dati non caricati'); return; }
+
+  var tavolozza = D.palette;
+  function colore(nome) { return tavolozza[nome] || nome; }
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  }
+
+  /* ---------- figura 1: traffico contro fondo, a Madrid ---------- */
+  (function figuraMadrid() {
+    var g = D.charts.madridAir;
+    if (!g) return;
+    var serie2024 = g.serie[g.serie.length - 1].dati;      // l'ultima serie è il 2024
+    var voci = [
+      { i: 0, tipo: 'stazione da traffico' },
+      { i: 3, tipo: 'stazione di fondo' }
+    ];
+    var max = 40;
+    var html = voci.map(function (v) {
+      var val = serie2024[v.i];
+      return '<div class="riga-barra">' +
+        '<div class="etichetta">' + esc(g.etichette[v.i].replace(' (fondo)', '')) +
+          '<small>' + v.tipo + '</small></div>' +
+        '<div class="pista"><div class="barra" style="width:' + (val / max * 100) + '%;background:' +
+          colore('madrid') + '"><span>' + val + '</span></div></div>' +
+      '</div>';
+    }).join('');
+    document.getElementById('fig-madrid').innerHTML = html;
+  })();
+
+  /* ---------- figura 2: le sei città contro le tre soglie ---------- */
+  (function figuraSoglie() {
+    var max = 45;
+    var soglie = [
+      { v: 40, testo: 'limite UE oggi' },
+      { v: 20, testo: 'limite UE dal 2030' },
+      { v: 10, testo: 'guida OMS' }
+    ];
+    var righe = C.citta.map(function (c) {
+      var val = c.no2_2025;
+      var pista;
+      if (val === null) {
+        pista = '<div class="pista"><div class="barra chiara" style="width:100%;background:repeating-linear-gradient(45deg,var(--carta-3),var(--carta-3) 6px,var(--carta-2) 6px,var(--carta-2) 12px)">' +
+                '<span style="color:var(--tenue);font-weight:400">dato non disponibile</span></div>';
+      } else {
+        pista = '<div class="pista"><div class="barra" style="width:' + (val / max * 100) + '%;background:' +
+                c.colore + '"><span>' + val + '</span></div>';
+      }
+      var linee = soglie.map(function (s) {
+        return '<i class="soglia" style="left:' + (s.v / max * 100) + '%"></i>';
+      }).join('');
+      return '<div class="riga-barra">' +
+        '<div class="etichetta">' + esc(c.nome) + '</div>' +
+        pista + linee + '</div></div>';
+    }).join('');
+
+    /* una riga di sole soglie, in cima, per etichettarle una volta sola */
+    var testa = '<div class="riga-barra"><div class="etichetta"></div><div class="pista" style="background:transparent;height:14px">' +
+      soglie.map(function (s) {
+        return '<i class="soglia" style="left:' + (s.v / max * 100) + '%"><b>' + s.v + ' · ' + s.testo + '</b></i>';
+      }).join('') + '</div></div>';
+
+    document.getElementById('fig-soglie').innerHTML = testa + righe;
+  })();
+
+  /* ---------- tabella delle fonti ---------- */
+  (function tabellaFonti() {
+    var righe = Object.keys(D.charts).map(function (chiave) {
+      var g = D.charts[chiave];
+      var fonte = g.url
+        ? '<a href="' + esc(g.url) + '" target="_blank">' + esc(g.fonte) + '</a>'
+        : esc(g.fonte);
+      var tipo = g.stazione
+        ? '<span class="stazione">' + esc(g.stazione) + '</span>'
+        : '';
+      var nota = g.nota ? '<span class="badge-nota">' + esc(g.nota) + '</span>' : '';
+      return '<tr>' +
+        '<td class="col-dato"><strong class="titolo-serie">' + esc(g.titolo) + '</strong>' +
+          '<span class="unita">' + esc(g.unita || '') + '</span>' + tipo + '</td>' +
+        '<td>' + fonte + nota + '</td>' +
+        '<td class="stato-' + esc(g.stato) + '"><span class="badge-tag">' + esc(g.stato) + '</span></td>' +
+        '<td>' + esc(g.aggiornato || '—') + '</td>' +
+      '</tr>';
+    }).join('');
+    document.getElementById('corpo-fonti').innerHTML = righe;
+  })();
+
+  /* ---------- note per indicatore e lacune ---------- */
+  (function noteELacune() {
+    var etichette = { caldo: 'morti da caldo', no2: 'NO₂', bici: 'piste ciclabili', auto: 'quota auto' };
+    document.getElementById('note-globali').innerHTML =
+      Object.keys(C.note_globali).map(function (k) {
+        return '<div><b>' + esc(etichette[k] || k) + '</b>' + esc(C.note_globali[k]) + '</div>';
+      }).join('');
+
+    document.getElementById('elenco-lacune').innerHTML =
+      C.lacune.map(function (l) { return '<li>' + esc(l) + '</li>'; }).join('');
+  })();
+
+  console.log('[metodo] fonti in tabella: ' + Object.keys(D.charts).length +
+              ', lacune dichiarate: ' + C.lacune.length);
+})();
+</script>
+</body>
+</html>

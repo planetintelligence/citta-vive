@@ -7,6 +7,11 @@
      url          dove verificarlo
      aggiornato   ultima verifica manuale (AAAA-MM)
      stato        "consolidato" | "provvisorio" | "stimato"
+     stazione     per le serie sulla qualità dell'aria: quale tipo di
+                  centralina è stato letto ("traffico", "fondo", "mista").
+                  Cambia i valori anche del doppio, quindi va dichiarato.
+                  ASSENTE = la fonte non lo specifica: non inventarlo,
+                  metodo.html mostra la casella vuota ed è giusto così.
 
    È un file .js (non .json) di proposito: così l'articolo si apre
    con un doppio click, senza server locale. La struttura è
@@ -32,6 +37,7 @@ window.CITTA_VIVE = {
       url: 'https://www.eea.europa.eu/en/datahub',
       aggiornato: '2026-08',
       stato: 'provvisorio',
+      stazione: 'traffico',
       nota: 'Medie annue di stazioni rappresentative da traffico. Il 2020 riflette il calo eccezionale dei lockdown; i valori 2025 sono provvisori.',
       etichette: ['2013','2014','2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025'],
       serie: [
@@ -92,6 +98,8 @@ window.CITTA_VIVE = {
       url: 'https://diario.madrid.es/blog/notas-de-prensa/madrid-cumple-por-tercer-ano-con-la-directiva-europea-y-cierra-2024-con-la-mejor-calidad-del-aire-de-su-historia/',
       aggiornato: '2026-08',
       stato: 'consolidato',
+      stazione: 'mista',
+      nota: 'Le prime tre stazioni sono da traffico, Retiro è di fondo urbano: è il confronto che mostra quanto la scelta della centralina cambi il risultato.',
       etichette: ['Plaza Elíptica','Escuelas Aguirre','Castellana','Retiro (fondo)','Media città'],
       serie: [
         { nome: '2019 (µg/m³)', colore: 'madrid', riempimento: 'rgba(122,62,157,.3)', bordo: true, dati: [53,51,47,24,48] },

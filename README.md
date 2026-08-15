@@ -6,14 +6,21 @@ edizione agosto 2026. Testo e direzione editoriale di **Luca Carra**.
 
 → **[planetintelligence.github.io/citta-vive](https://planetintelligence.github.io/citta-vive/)**
 
-## Le due pagine
+## Le tre pagine
 
 | | |
 |---|---|
 | `index.html` | il trattato: testo, fotografie, 11 grafici |
 | `dashboard.html` | l'atlante visivo: le sei città con una sola grammatica di segni |
+| `metodo.html` | la nota metodologica: quale aria misuriamo, da dove viene ogni numero |
 
-Sono collegate nei due sensi (voce di menu e "ponte" in fondo al trattato).
+Sono collegate fra loro (voce di menu e "ponti" in fondo alle pagine).
+
+`metodo.html` non ricopia niente: costruisce la tabella delle fonti, le note per
+indicatore e l'elenco delle lacune leggendo `data/charts.js` e `data/citta.js`, gli
+stessi file da cui i grafici prendono i valori. Se aggiorni un dato lì, la metodologia
+lo segue da sé — è l'unico modo perché non divergano. Le sue due figure a barre sono
+HTML e CSS, senza Chart.js: due confronti fermi non giustificano una libreria.
 
 Il sito è statico e funziona anche offline, aperto con un doppio click: Chart.js è
 vendorizzato, i dati sono file `.js`, le fotografie stanno nel progetto e non c'è
@@ -28,6 +35,7 @@ python3 -m http.server 8099
 ```
 index.html                  il trattato
 dashboard.html              l'atlante visivo
+metodo.html                 la nota metodologica, generata dai dati
 data/charts.js              dati degli 11 grafici, per grafico
 data/citta.js               gli stessi indicatori, per città
 data/mappa-europa.js        confini d'Europa proiettati (Natural Earth)
