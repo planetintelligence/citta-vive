@@ -38,8 +38,12 @@ jobs:
 
       - name: Committa se qualcosa è cambiato
         run: |
-          if [ -z "$(git status --porcelain data/auto)" ]; then
+          # Si guardano i soli file di dati, non il manifesto: quello porta
+          # l'ora dello scarico e cambierebbe a ogni esecuzione, riempiendo
+          # la storia di commit che non aggiungono un solo numero.
+          if [ -z "$(git status --porcelain data/auto/aria.json data/auto/mortalita.json)" ]; then
             echo "Nessuna novità da Eurostat: niente da committare."
+            git checkout -- data/auto      # si butta anche il manifesto rigenerato
             exit 0
           fi
 

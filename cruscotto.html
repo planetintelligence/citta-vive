@@ -348,10 +348,13 @@
 
   /* =============================================== la fascia in alto */
   function disegnaFascia(man, aria, morti) {
+    /* la data del manifesto è l'ultima volta che i numeri sono CAMBIATI:
+       se Eurostat non pubblica niente di nuovo, la pipeline gira e non
+       committa, quindi questa data resta ferma. È il dato onesto. */
     var giorni = Math.round((Date.now() - new Date(man.generato).getTime()) / 86400000);
     var freschezza = giorni <= 0 ? 'oggi' : giorni === 1 ? 'ieri' : giorni + ' giorni fa';
     document.getElementById('fascia').innerHTML =
-      '<span class="stato-voce"><span class="pulsa"></span>ultimo aggiornamento<b>' + freschezza + '</b></span>' +
+      '<span class="stato-voce"><span class="pulsa"></span>ultima modifica ai dati<b>' + freschezza + '</b></span>' +
       '<span class="stato-voce">aria, ultimo mese<b>' + etichettaMese(aria.ultimo_periodo) + '</b></span>' +
       '<span class="stato-voce">decessi, ultima settimana<b>' + morti.ultimo_periodo.replace('-W', ' · settimana ') + '</b></span>' +
       '<span class="stato-voce">fonte<b>Eurostat</b></span>';
