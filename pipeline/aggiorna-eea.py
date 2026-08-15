@@ -80,6 +80,27 @@ INQUINANTI = {"8": "NO2", "6001": "PM2.5"}
 TIPI = ("traffic", "background")          # l'industriale non riguarda questo lavoro
 TIPO_IT = {"traffic": "traffico", "background": "fondo urbano"}
 
+# ---------------------------------------------------------------- Londra
+# Il Regno Unito ha smesso di trasmettere i dati validati all'EEA dopo
+# l'uscita dall'UE: la serie londinese si ferma al 2019. I dati però
+# esistono e li pubblica il London Air Quality Network dell'Imperial
+# College, senza chiave d'accesso.
+#
+# Innestare una fonte diversa in mezzo a una serie è una cosa che si fa
+# solo dopo averla verificata. Il controllo, fatto su Marylebone Road
+# (LAQN 'MY1' = EEA 'GB0682A'), dice che le due fonti sono la stessa
+# misura: 88 contro 88,3 nel 2015; 89 contro 89,1 nel 2016; 84 contro
+# 83,7 nel 2017; 85 contro 84,7 nel 2018; 63 contro 62,7 nel 2019. La
+# differenza è l'arrotondamento all'intero con cui LAQN pubblica.
+# Non stupisce: non sono due misure indipendenti, sono due canali di
+# distribuzione delle stesse centraline.
+#
+# Ogni valore che arriva da qui porta comunque "origine": "LAQN", e la
+# pagina lo dichiara al lettore.
+LAQN = "https://api.erg.ic.ac.uk/AirQuality/Annual/MonitoringObjective/GroupName=London/Year=%d/Json"
+LAQN_TIPI = {"Roadside": "traffic", "Kerbside": "traffic", "Urban Background": "background"}
+LAQN_INQ = {"NO2": "NO2", "PM25": "PM2.5"}
+
 
 def scarica(url, timeout=300):
     r = urllib.request.Request(url, headers={"User-Agent": "citta-vive/1.0 (Planet Intelligence)"})
@@ -165,6 +186,40 @@ def medie_annue(dati, anno_da):
             if len(v) >= (0.75 * 8760 if len(v) > 400 else 0.75 * 365)}
 
 
+def londra_laqn(anni):
+    """Medie annue di Londra dal London Air Quality Network, per tipo di sito."""
+    fuori = defaultdict(lambda: defaultdict(list))     # (inq, tipo) → anno → valori
+    for anno in anni:
+        try:
+            d = json.loads(scarica(LAQN % anno, timeout=180).decode("utf-8", "replace"))
+        except Exception as e:
+            print("   ! LAQN %d: %s" % (anno, type(e).__name__), file=sys.stderr)
+            continue
+        siti = d.get("SiteObjectives", {}).get("Site", [])
+        if isinstance(siti, dict):
+            siti = [siti]
+        for s in siti:
+            tipo = LAQN_TIPI.get(s.get("@SiteType"))
+            if not tipo:
+                continue                                # suburbano, industriale, rurale
+            obiettivi = s.get("Objective") or []
+            if isinstance(obiettivi, dict):
+                obiettivi = [obiettivi]
+            for o in obiettivi:
+                inq = LAQN_INQ.get(o.get("@SpeciesCode"))
+                if not inq or "annual mean" not in (o.get("@ObjectiveName") or "").lower():
+                    continue
+                try:
+                    valore = float(o.get("@Value"))
+                except (TypeError, ValueError):
+                    continue
+                if valore <= 0:                         # 0 = obiettivo non calcolato
+                    continue
+                fuori[(inq, tipo)][anno].append(valore)
+        print("\r  Londra · LAQN · %d" % anno, end="", flush=True)
+    return fuori
+
+
 def main():
     p = argparse.ArgumentParser(description="Le sei città dalle stazioni dell'EEA")
     p.add_argument("--citta", help="una sola città, per provare")
@@ -207,19 +262,65 @@ def main():
                 "stazioni": len(punti),
                 "bordo_mediano": bordi[len(bordi) // 2] if bordi else None,
                 "bordo_dichiarato": len(bordi),
-                "serie": [{"anno": a, "valore": round(sum(v) / len(v), 1), "stazioni": len(v)}
+                "serie": [{"anno": a, "valore": round(sum(v) / len(v), 1),
+                           "stazioni": len(v), "origine": "EEA"}
                           for a, v in sorted(somma.items())],
             }
     print("\n")
+
+    # Londra: gli anni che l'EEA non ha più, presi dalla fonte britannica
+    if "Londra" in risultato:
+        coperti = {s["anno"] for i in risultato["Londra"].values()
+                   for t in i.values() for s in t["serie"]}
+        mancanti = [a for a in range(args.anni, date.today().year) if a not in coperti]
+        if mancanti:
+            print("Londra: l'EEA si ferma al %d, completo con LAQN…" % max(coperti))
+            laqn = londra_laqn(mancanti)
+            print()
+            for (inq, tipo), per_anno in laqn.items():
+                voce = risultato["Londra"].setdefault(inq, {}).setdefault(TIPO_IT[tipo], {
+                    "stazioni": 0, "bordo_mediano": None, "bordo_dichiarato": 0, "serie": []
+                })
+                for anno, valori in sorted(per_anno.items()):
+                    voce["serie"].append({
+                        "anno": anno, "valore": round(sum(valori) / len(valori), 1),
+                        "stazioni": len(valori), "origine": "LAQN",
+                    })
+                voce["serie"].sort(key=lambda s: s["anno"])
+                voce["stazioni"] = max(voce["stazioni"],
+                                       max(s["stazioni"] for s in voce["serie"]))
 
     citta_fuori = [{**CITTA[c], "nome": c, "misure": risultato[c]} for c in scelte if c in risultato]
     anni = sorted({s["anno"] for c in citta_fuori for i in c["misure"].values()
                    for t in i.values() for s in t["serie"]})
 
+    # L'anno del confronto fra città non è l'ultimo in assoluto: Londra arriva
+    # più avanti delle altre, perché la sua fonte britannica pubblica prima di
+    # quanto l'EEA validi. Si prende l'anno più recente in cui il numero di
+    # città è massimo, altrimenti il grafico del "confronto" mostrerebbe una
+    # città sola e sembrerebbe una classifica.
+    citta_per_anno = defaultdict(set)
+    for c in citta_fuori:
+        for inq in c["misure"].values():
+            for tipo in inq.values():
+                for s in tipo["serie"]:
+                    citta_per_anno[s["anno"]].add(c["nome"])
+    massimo = max((len(v) for v in citta_per_anno.values()), default=0)
+    anno_confronto = max((a for a, v in citta_per_anno.items() if len(v) == massimo),
+                         default=anni[-1] if anni else None)
+
     uscita = {
         "titolo": "Le sei città alle stazioni di misura",
         "fonte": "Agenzia europea dell'ambiente, dati validati E1a e metadati delle stazioni",
         "url": "https://www.eea.europa.eu/en/datahub/datahubitem-view/778ef9f5-6293-4846-badd-56a29c70880d",
+        "fonti": {
+            "EEA": "Agenzia europea dell'ambiente, dati validati E1a: medie annue calcolate "
+                   "qui dalle osservazioni orarie valide di ogni centralina.",
+            "LAQN": "London Air Quality Network, Imperial College: medie annue già pubblicate. "
+                    "Serve per gli anni in cui il Regno Unito non trasmette più all'EEA. "
+                    "Verificata contro l'EEA sulla stessa centralina (Marylebone Road): "
+                    "stessi valori a meno dell'arrotondamento.",
+        },
         "metodo": (
             "Media delle medie annue delle singole stazioni urbane, separate per tipo. "
             "Sono escluse le osservazioni che l'EEA marca come non valide e gli anni con "
@@ -229,6 +330,8 @@ def main():
         ),
         "anni": anni,
         "ultimo_anno": anni[-1] if anni else None,
+        "anno_confronto": anno_confronto,
+        "citta_nel_confronto": massimo,
         "soglie": [
             {"valore": 40, "nome": "limite UE oggi", "inquinante": "NO2"},
             {"valore": 20, "nome": "limite UE dal 2030", "inquinante": "NO2"},
@@ -240,7 +343,8 @@ def main():
         "citta": citta_fuori,
     }
 
-    print("Anni coperti: %s → %s" % (anni[0], anni[-1]) if anni else "Nessun dato")
+    print("Anni coperti: %s → %s · confronto sul %s (%d città)"
+          % (anni[0], anni[-1], anno_confronto, massimo) if anni else "Nessun dato")
     for c in citta_fuori:
         pezzi = []
         for inq, tipi in c["misure"].items():

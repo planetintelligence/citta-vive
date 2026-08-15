@@ -617,7 +617,10 @@
   /* =========================== le sei città, alle centraline */
   function disegnaCitta(d) {
     document.getElementById('sez-citta').hidden = false;
-    var anno = d.ultimo_anno;
+    /* non l'ultimo anno in assoluto: quello in cui il confronto ha più città.
+       Londra arriva più avanti, perché la sua fonte pubblica prima che l'EEA
+       validi — e un "confronto" con una città sola non è un confronto. */
+    var anno = d.anno_confronto || d.ultimo_anno;
     var graficoConfronto = null, graficoSerie = null;
     var TIPI = ['traffico', 'fondo urbano'];
 
@@ -722,19 +725,39 @@
         'sono la stessa città, nello stesso anno. ' +
         (fuori.length
           ? '<strong>' + fuori.map(function (f) { return esc(f.nome); }).join(' e ') +
-            ' non compare' + (fuori.length > 1 ? 'no' : '') + ' qui</strong>: la serie si ferma al ' +
-            fuori.map(function (f) { return f.fino; }).join(' e al ') +
-            ', perché il Regno Unito ha smesso di trasmettere i dati validati all\'EEA dopo ' +
-            'l\'uscita dall\'UE. Affiancare un dato del ' + fuori[0].fino + ' al ' + anno +
-            ' degli altri sarebbe un confronto falso; nel grafico sotto la sua interruzione si vede. '
+            ' non compare' + (fuori.length > 1 ? 'no' : '') + ' qui</strong>: ' +
+            'l\'ultimo dato disponibile è del ' +
+            fuori.map(function (f) { return f.fino; }).join(' e del ') +
+            ' e affiancarlo al ' + anno + ' degli altri sarebbe un confronto falso. '
           : '') +
         'Centraline usate (traffico/fondo): ' + esc(conta) +
         '. Fonte: <a href="' + d.url + '" target="_blank">' + d.fonte + '</a>.';
+      /* dove una serie cambia fonte, il lettore deve saperlo */
+      var cambi = tutte.map(function (c) {
+        var t = (c.misure[inq] || {})['traffico'];
+        if (!t) return null;
+        var origini = {};
+        t.serie.forEach(function (s) { if (s.origine) origini[s.origine] = 1; });
+        var elenco = Object.keys(origini);
+        if (elenco.length < 2) return null;
+        var primo = t.serie.filter(function (s) { return s.origine !== 'EEA'; })[0];
+        return { nome: c.nome, da: primo.anno, fonte: primo.origine };
+      }).filter(Boolean);
+
       document.getElementById('did-serie').innerHTML =
         'Solo le stazioni da traffico, per poter confrontare con la serie del trattato. ' +
-        'La linea di Londra si interrompe dopo il 2019 per la ragione appena detta. ' +
-        'Altrove un anno resta vuoto quando nessuna centralina della città raggiunge il 75% ' +
-        'di copertura oraria, la soglia sotto la quale la direttiva europea non considera ' +
+        (cambi.length
+          ? '<strong>' + cambi.map(function (c) {
+              return esc(c.nome) + ' cambia fonte dal ' + c.da;
+            }).join(', ') + '</strong>: fino all\'anno prima i dati arrivano dall\'EEA, poi dal ' +
+            'London Air Quality Network dell\'Imperial College, perché il Regno Unito non ' +
+            'trasmette più i dati validati all\'Europa dopo l\'uscita dall\'UE. Le due fonti ' +
+            'sono state confrontate sulla stessa centralina — Marylebone Road, l\'unica a ' +
+            'bordo carreggiata del centro — e danno gli stessi valori a meno ' +
+            'dell\'arrotondamento: non sono due misure diverse, sono due canali della stessa. '
+          : '') +
+        'Un anno resta vuoto quando nessuna centralina della città raggiunge il 75% di ' +
+        'copertura oraria, la soglia sotto la quale la direttiva europea non considera ' +
         'valida una media annua.';
     }
 
