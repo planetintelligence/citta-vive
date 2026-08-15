@@ -1,0 +1,1429 @@
+{
+ "titolo": "Le sei città alle stazioni di misura",
+ "fonte": "Agenzia europea dell'ambiente, dati validati E1a e metadati delle stazioni",
+ "url": "https://www.eea.europa.eu/en/datahub/datahubitem-view/778ef9f5-6293-4846-badd-56a29c70880d",
+ "metodo": "Media delle medie annue delle singole stazioni urbane, separate per tipo. Sono escluse le osservazioni che l'EEA marca come non valide e gli anni con meno del 75%% di copertura, la soglia della direttiva europea. I confini delle città sono riquadri dichiarati in pipeline/aggiorna-eea.py, non le geometrie ufficiali dell'Urban Audit.",
+ "anni": [
+  2015,
+  2016,
+  2017,
+  2018,
+  2019,
+  2020,
+  2021,
+  2022,
+  2023,
+  2024
+ ],
+ "ultimo_anno": 2024,
+ "soglie": [
+  {
+   "valore": 40,
+   "nome": "limite UE oggi",
+   "inquinante": "NO2"
+  },
+  {
+   "valore": 20,
+   "nome": "limite UE dal 2030",
+   "inquinante": "NO2"
+  },
+  {
+   "valore": 10,
+   "nome": "guida OMS",
+   "inquinante": "NO2"
+  },
+  {
+   "valore": 25,
+   "nome": "limite UE oggi",
+   "inquinante": "PM2.5"
+  },
+  {
+   "valore": 10,
+   "nome": "limite UE dal 2030",
+   "inquinante": "PM2.5"
+  },
+  {
+   "valore": 5,
+   "nome": "guida OMS",
+   "inquinante": "PM2.5"
+  }
+ ],
+ "citta": [
+  {
+   "id": "paris",
+   "colore": "#005BAC",
+   "paese": "FR",
+   "bbox": [
+    2.2,
+    2.5,
+    48.78,
+    48.92
+   ],
+   "nome": "Parigi",
+   "misure": {
+    "NO2": {
+     "traffico": {
+      "stazioni": 9,
+      "bordo_mediano": 2.0,
+      "bordo_dichiarato": 3,
+      "serie": [
+       {
+        "anno": 2015,
+        "valore": 60.9,
+        "stazioni": 9
+       },
+       {
+        "anno": 2016,
+        "valore": 60.8,
+        "stazioni": 8
+       },
+       {
+        "anno": 2017,
+        "valore": 58.6,
+        "stazioni": 9
+       },
+       {
+        "anno": 2018,
+        "valore": 54.2,
+        "stazioni": 8
+       },
+       {
+        "anno": 2019,
+        "valore": 50.0,
+        "stazioni": 8
+       },
+       {
+        "anno": 2020,
+        "valore": 37.8,
+        "stazioni": 8
+       },
+       {
+        "anno": 2021,
+        "valore": 39.5,
+        "stazioni": 9
+       },
+       {
+        "anno": 2022,
+        "valore": 39.9,
+        "stazioni": 9
+       },
+       {
+        "anno": 2023,
+        "valore": 35.4,
+        "stazioni": 8
+       },
+       {
+        "anno": 2024,
+        "valore": 30.2,
+        "stazioni": 7
+       }
+      ]
+     },
+     "fondo urbano": {
+      "stazioni": 13,
+      "bordo_mediano": null,
+      "bordo_dichiarato": 0,
+      "serie": [
+       {
+        "anno": 2015,
+        "valore": 34.9,
+        "stazioni": 12
+       },
+       {
+        "anno": 2016,
+        "valore": 34.9,
+        "stazioni": 10
+       },
+       {
+        "anno": 2017,
+        "valore": 34.5,
+        "stazioni": 11
+       },
+       {
+        "anno": 2018,
+        "valore": 32.6,
+        "stazioni": 9
+       },
+       {
+        "anno": 2019,
+        "valore": 30.0,
+        "stazioni": 9
+       },
+       {
+        "anno": 2020,
+        "valore": 22.7,
+        "stazioni": 10
+       },
+       {
+        "anno": 2021,
+        "valore": 25.3,
+        "stazioni": 9
+       },
+       {
+        "anno": 2022,
+        "valore": 24.6,
+        "stazioni": 9
+       },
+       {
+        "anno": 2023,
+        "valore": 21.8,
+        "stazioni": 10
+       },
+       {
+        "anno": 2024,
+        "valore": 19.8,
+        "stazioni": 9
+       }
+      ]
+     }
+    },
+    "PM2.5": {
+     "traffico": {
+      "stazioni": 3,
+      "bordo_mediano": null,
+      "bordo_dichiarato": 0,
+      "serie": [
+       {
+        "anno": 2015,
+        "valore": 20.1,
+        "stazioni": 1
+       },
+       {
+        "anno": 2016,
+        "valore": 18.2,
+        "stazioni": 1
+       },
+       {
+        "anno": 2017,
+        "valore": 16.1,
+        "stazioni": 1
+       },
+       {
+        "anno": 2018,
+        "valore": 16.2,
+        "stazioni": 1
+       },
+       {
+        "anno": 2019,
+        "valore": 15.5,
+        "stazioni": 1
+       },
+       {
+        "anno": 2020,
+        "valore": 13.9,
+        "stazioni": 1
+       },
+       {
+        "anno": 2021,
+        "valore": 15.3,
+        "stazioni": 1
+       },
+       {
+        "anno": 2022,
+        "valore": 13.1,
+        "stazioni": 2
+       },
+       {
+        "anno": 2023,
+        "valore": 11.0,
+        "stazioni": 3
+       },
+       {
+        "anno": 2024,
+        "valore": 9.2,
+        "stazioni": 3
+       }
+      ]
+     },
+     "fondo urbano": {
+      "stazioni": 5,
+      "bordo_mediano": null,
+      "bordo_dichiarato": 0,
+      "serie": [
+       {
+        "anno": 2015,
+        "valore": 13.9,
+        "stazioni": 2
+       },
+       {
+        "anno": 2016,
+        "valore": 13.5,
+        "stazioni": 2
+       },
+       {
+        "anno": 2017,
+        "valore": 12.7,
+        "stazioni": 2
+       },
+       {
+        "anno": 2018,
+        "valore": 12.8,
+        "stazioni": 2
+       },
+       {
+        "anno": 2019,
+        "valore": 10.2,
+        "stazioni": 1
+       },
+       {
+        "anno": 2020,
+        "valore": 10.5,
+        "stazioni": 2
+       },
+       {
+        "anno": 2021,
+        "valore": 11.8,
+        "stazioni": 2
+       },
+       {
+        "anno": 2022,
+        "valore": 11.7,
+        "stazioni": 3
+       },
+       {
+        "anno": 2023,
+        "valore": 9.8,
+        "stazioni": 4
+       },
+       {
+        "anno": 2024,
+        "valore": 8.3,
+        "stazioni": 4
+       }
+      ]
+     }
+    }
+   }
+  },
+  {
+   "id": "barcelona",
+   "colore": "#F4B223",
+   "paese": "ES",
+   "bbox": [
+    2.05,
+    2.25,
+    41.32,
+    41.47
+   ],
+   "nome": "Barcellona",
+   "misure": {
+    "NO2": {
+     "traffico": {
+      "stazioni": 3,
+      "bordo_mediano": 9.0,
+      "bordo_dichiarato": 3,
+      "serie": [
+       {
+        "anno": 2015,
+        "valore": 51.0,
+        "stazioni": 3
+       },
+       {
+        "anno": 2016,
+        "valore": 47.1,
+        "stazioni": 3
+       },
+       {
+        "anno": 2017,
+        "valore": 50.4,
+        "stazioni": 3
+       },
+       {
+        "anno": 2018,
+        "valore": 46.8,
+        "stazioni": 3
+       },
+       {
+        "anno": 2019,
+        "valore": 43.3,
+        "stazioni": 3
+       },
+       {
+        "anno": 2020,
+        "valore": 31.3,
+        "stazioni": 3
+       },
+       {
+        "anno": 2021,
+        "valore": 31.6,
+        "stazioni": 3
+       },
+       {
+        "anno": 2022,
+        "valore": 35.5,
+        "stazioni": 3
+       },
+       {
+        "anno": 2023,
+        "valore": 30.3,
+        "stazioni": 3
+       },
+       {
+        "anno": 2024,
+        "valore": 28.3,
+        "stazioni": 3
+       }
+      ]
+     },
+     "fondo urbano": {
+      "stazioni": 8,
+      "bordo_mediano": 14.3,
+      "bordo_dichiarato": 8,
+      "serie": [
+       {
+        "anno": 2015,
+        "valore": 38.4,
+        "stazioni": 8
+       },
+       {
+        "anno": 2016,
+        "valore": 35.1,
+        "stazioni": 8
+       },
+       {
+        "anno": 2017,
+        "valore": 36.6,
+        "stazioni": 8
+       },
+       {
+        "anno": 2018,
+        "valore": 33.6,
+        "stazioni": 8
+       },
+       {
+        "anno": 2019,
+        "valore": 32.1,
+        "stazioni": 8
+       },
+       {
+        "anno": 2020,
+        "valore": 24.2,
+        "stazioni": 8
+       },
+       {
+        "anno": 2021,
+        "valore": 23.0,
+        "stazioni": 8
+       },
+       {
+        "anno": 2022,
+        "valore": 26.4,
+        "stazioni": 8
+       },
+       {
+        "anno": 2023,
+        "valore": 22.8,
+        "stazioni": 8
+       },
+       {
+        "anno": 2024,
+        "valore": 21.5,
+        "stazioni": 8
+       }
+      ]
+     }
+    },
+    "PM2.5": {
+     "traffico": {
+      "stazioni": 5,
+      "bordo_mediano": 7.8,
+      "bordo_dichiarato": 5,
+      "serie": [
+       {
+        "anno": 2015,
+        "valore": 18.2,
+        "stazioni": 3
+       },
+       {
+        "anno": 2016,
+        "valore": 15.1,
+        "stazioni": 3
+       },
+       {
+        "anno": 2017,
+        "valore": 17.0,
+        "stazioni": 3
+       },
+       {
+        "anno": 2018,
+        "valore": 17.1,
+        "stazioni": 3
+       },
+       {
+        "anno": 2019,
+        "valore": 19.4,
+        "stazioni": 3
+       },
+       {
+        "anno": 2020,
+        "valore": 15.2,
+        "stazioni": 3
+       },
+       {
+        "anno": 2021,
+        "valore": 14.8,
+        "stazioni": 3
+       },
+       {
+        "anno": 2022,
+        "valore": 16.7,
+        "stazioni": 4
+       },
+       {
+        "anno": 2023,
+        "valore": 13.8,
+        "stazioni": 4
+       },
+       {
+        "anno": 2024,
+        "valore": 12.2,
+        "stazioni": 3
+       }
+      ]
+     },
+     "fondo urbano": {
+      "stazioni": 5,
+      "bordo_mediano": 18.0,
+      "bordo_dichiarato": 2,
+      "serie": [
+       {
+        "anno": 2015,
+        "valore": 16.1,
+        "stazioni": 3
+       },
+       {
+        "anno": 2016,
+        "valore": 12.9,
+        "stazioni": 3
+       },
+       {
+        "anno": 2017,
+        "valore": 14.4,
+        "stazioni": 3
+       },
+       {
+        "anno": 2018,
+        "valore": 14.5,
+        "stazioni": 3
+       },
+       {
+        "anno": 2019,
+        "valore": 17.1,
+        "stazioni": 3
+       },
+       {
+        "anno": 2020,
+        "valore": 13.3,
+        "stazioni": 3
+       },
+       {
+        "anno": 2021,
+        "valore": 12.6,
+        "stazioni": 3
+       },
+       {
+        "anno": 2022,
+        "valore": 14.1,
+        "stazioni": 5
+       },
+       {
+        "anno": 2023,
+        "valore": 12.6,
+        "stazioni": 5
+       },
+       {
+        "anno": 2024,
+        "valore": 11.1,
+        "stazioni": 4
+       }
+      ]
+     }
+    }
+   }
+  },
+  {
+   "id": "madrid",
+   "colore": "#7A3E9D",
+   "paese": "ES",
+   "bbox": [
+    -3.8,
+    -3.55,
+    40.33,
+    40.52
+   ],
+   "nome": "Madrid",
+   "misure": {
+    "NO2": {
+     "traffico": {
+      "stazioni": 10,
+      "bordo_mediano": 11.0,
+      "bordo_dichiarato": 10,
+      "serie": [
+       {
+        "anno": 2015,
+        "valore": 46.9,
+        "stazioni": 10
+       },
+       {
+        "anno": 2016,
+        "valore": 44.1,
+        "stazioni": 10
+       },
+       {
+        "anno": 2017,
+        "valore": 47.3,
+        "stazioni": 10
+       },
+       {
+        "anno": 2018,
+        "valore": 42.6,
+        "stazioni": 10
+       },
+       {
+        "anno": 2019,
+        "valore": 40.0,
+        "stazioni": 10
+       },
+       {
+        "anno": 2020,
+        "valore": 31.0,
+        "stazioni": 10
+       },
+       {
+        "anno": 2021,
+        "valore": 32.9,
+        "stazioni": 9
+       },
+       {
+        "anno": 2022,
+        "valore": 30.8,
+        "stazioni": 10
+       },
+       {
+        "anno": 2023,
+        "valore": 30.3,
+        "stazioni": 10
+       },
+       {
+        "anno": 2024,
+        "valore": 26.3,
+        "stazioni": 10
+       }
+      ]
+     },
+     "fondo urbano": {
+      "stazioni": 12,
+      "bordo_mediano": 5.5,
+      "bordo_dichiarato": 10,
+      "serie": [
+       {
+        "anno": 2015,
+        "valore": 40.8,
+        "stazioni": 12
+       },
+       {
+        "anno": 2016,
+        "valore": 38.5,
+        "stazioni": 12
+       },
+       {
+        "anno": 2017,
+        "valore": 41.3,
+        "stazioni": 12
+       },
+       {
+        "anno": 2018,
+        "valore": 35.6,
+        "stazioni": 12
+       },
+       {
+        "anno": 2019,
+        "valore": 33.6,
+        "stazioni": 12
+       },
+       {
+        "anno": 2020,
+        "valore": 27.1,
+        "stazioni": 12
+       },
+       {
+        "anno": 2021,
+        "valore": 29.0,
+        "stazioni": 12
+       },
+       {
+        "anno": 2022,
+        "valore": 29.0,
+        "stazioni": 11
+       },
+       {
+        "anno": 2023,
+        "valore": 28.1,
+        "stazioni": 12
+       },
+       {
+        "anno": 2024,
+        "valore": 23.0,
+        "stazioni": 12
+       }
+      ]
+     }
+    },
+    "PM2.5": {
+     "traffico": {
+      "stazioni": 6,
+      "bordo_mediano": 11.0,
+      "bordo_dichiarato": 6,
+      "serie": [
+       {
+        "anno": 2015,
+        "valore": 11.7,
+        "stazioni": 4
+       },
+       {
+        "anno": 2016,
+        "valore": 10.5,
+        "stazioni": 4
+       },
+       {
+        "anno": 2017,
+        "valore": 9.5,
+        "stazioni": 4
+       },
+       {
+        "anno": 2018,
+        "valore": 10.7,
+        "stazioni": 5
+       },
+       {
+        "anno": 2019,
+        "valore": 10.4,
+        "stazioni": 6
+       },
+       {
+        "anno": 2020,
+        "valore": 10.2,
+        "stazioni": 6
+       },
+       {
+        "anno": 2021,
+        "valore": 10.2,
+        "stazioni": 6
+       },
+       {
+        "anno": 2022,
+        "valore": 9.8,
+        "stazioni": 6
+       },
+       {
+        "anno": 2023,
+        "valore": 9.9,
+        "stazioni": 6
+       },
+       {
+        "anno": 2024,
+        "valore": 9.6,
+        "stazioni": 6
+       }
+      ]
+     },
+     "fondo urbano": {
+      "stazioni": 5,
+      "bordo_mediano": 3.0,
+      "bordo_dichiarato": 3,
+      "serie": [
+       {
+        "anno": 2015,
+        "valore": 11.9,
+        "stazioni": 1
+       },
+       {
+        "anno": 2016,
+        "valore": 11.2,
+        "stazioni": 1
+       },
+       {
+        "anno": 2017,
+        "valore": 11.5,
+        "stazioni": 1
+       },
+       {
+        "anno": 2018,
+        "valore": 10.4,
+        "stazioni": 1
+       },
+       {
+        "anno": 2019,
+        "valore": 9.9,
+        "stazioni": 1
+       },
+       {
+        "anno": 2020,
+        "valore": 8.1,
+        "stazioni": 1
+       },
+       {
+        "anno": 2021,
+        "valore": 9.7,
+        "stazioni": 2
+       },
+       {
+        "anno": 2022,
+        "valore": 8.8,
+        "stazioni": 2
+       },
+       {
+        "anno": 2023,
+        "valore": 8.9,
+        "stazioni": 2
+       },
+       {
+        "anno": 2024,
+        "valore": 8.0,
+        "stazioni": 2
+       }
+      ]
+     }
+    }
+   }
+  },
+  {
+   "id": "berlin",
+   "colore": "#0F8B8D",
+   "paese": "DE",
+   "bbox": [
+    13.09,
+    13.76,
+    52.34,
+    52.68
+   ],
+   "nome": "Berlino",
+   "misure": {
+    "NO2": {
+     "traffico": {
+      "stazioni": 53,
+      "bordo_mediano": 1.0,
+      "bordo_dichiarato": 53,
+      "serie": [
+       {
+        "anno": 2015,
+        "valore": 45.5,
+        "stazioni": 8
+       },
+       {
+        "anno": 2016,
+        "valore": 44.3,
+        "stazioni": 8
+       },
+       {
+        "anno": 2017,
+        "valore": 41.8,
+        "stazioni": 8
+       },
+       {
+        "anno": 2018,
+        "valore": 39.4,
+        "stazioni": 8
+       },
+       {
+        "anno": 2019,
+        "valore": 35.2,
+        "stazioni": 8
+       },
+       {
+        "anno": 2020,
+        "valore": 30.1,
+        "stazioni": 9
+       },
+       {
+        "anno": 2021,
+        "valore": 27.7,
+        "stazioni": 8
+       },
+       {
+        "anno": 2022,
+        "valore": 25.5,
+        "stazioni": 9
+       },
+       {
+        "anno": 2023,
+        "valore": 23.8,
+        "stazioni": 10
+       },
+       {
+        "anno": 2024,
+        "valore": 20.9,
+        "stazioni": 9
+       }
+      ]
+     },
+     "fondo urbano": {
+      "stazioni": 5,
+      "bordo_mediano": null,
+      "bordo_dichiarato": 0,
+      "serie": [
+       {
+        "anno": 2015,
+        "valore": 25.6,
+        "stazioni": 5
+       },
+       {
+        "anno": 2016,
+        "valore": 25.7,
+        "stazioni": 5
+       },
+       {
+        "anno": 2017,
+        "valore": 25.3,
+        "stazioni": 5
+       },
+       {
+        "anno": 2018,
+        "valore": 23.9,
+        "stazioni": 5
+       },
+       {
+        "anno": 2019,
+        "valore": 22.0,
+        "stazioni": 5
+       },
+       {
+        "anno": 2020,
+        "valore": 18.9,
+        "stazioni": 5
+       },
+       {
+        "anno": 2021,
+        "valore": 18.2,
+        "stazioni": 5
+       },
+       {
+        "anno": 2022,
+        "valore": 16.2,
+        "stazioni": 5
+       },
+       {
+        "anno": 2023,
+        "valore": 15.2,
+        "stazioni": 5
+       },
+       {
+        "anno": 2024,
+        "valore": 13.8,
+        "stazioni": 5
+       }
+      ]
+     }
+    },
+    "PM2.5": {
+     "traffico": {
+      "stazioni": 13,
+      "bordo_mediano": 1.0,
+      "bordo_dichiarato": 13,
+      "serie": [
+       {
+        "anno": 2015,
+        "valore": 15.8,
+        "stazioni": 3
+       },
+       {
+        "anno": 2016,
+        "valore": 16.4,
+        "stazioni": 3
+       },
+       {
+        "anno": 2017,
+        "valore": 16.4,
+        "stazioni": 3
+       },
+       {
+        "anno": 2018,
+        "valore": 15.6,
+        "stazioni": 3
+       },
+       {
+        "anno": 2019,
+        "valore": 13.1,
+        "stazioni": 4
+       },
+       {
+        "anno": 2020,
+        "valore": 12.3,
+        "stazioni": 9
+       },
+       {
+        "anno": 2021,
+        "valore": 13.3,
+        "stazioni": 9
+       },
+       {
+        "anno": 2022,
+        "valore": 12.7,
+        "stazioni": 9
+       },
+       {
+        "anno": 2023,
+        "valore": 11.4,
+        "stazioni": 10
+       },
+       {
+        "anno": 2024,
+        "valore": 12.0,
+        "stazioni": 9
+       }
+      ]
+     },
+     "fondo urbano": {
+      "stazioni": 6,
+      "bordo_mediano": null,
+      "bordo_dichiarato": 0,
+      "serie": [
+       {
+        "anno": 2015,
+        "valore": 16.1,
+        "stazioni": 3
+       },
+       {
+        "anno": 2016,
+        "valore": 15.9,
+        "stazioni": 3
+       },
+       {
+        "anno": 2017,
+        "valore": 15.0,
+        "stazioni": 3
+       },
+       {
+        "anno": 2018,
+        "valore": 15.6,
+        "stazioni": 3
+       },
+       {
+        "anno": 2019,
+        "valore": 13.1,
+        "stazioni": 3
+       },
+       {
+        "anno": 2020,
+        "valore": 11.6,
+        "stazioni": 6
+       },
+       {
+        "anno": 2021,
+        "valore": 12.4,
+        "stazioni": 6
+       },
+       {
+        "anno": 2022,
+        "valore": 12.1,
+        "stazioni": 6
+       },
+       {
+        "anno": 2023,
+        "valore": 10.3,
+        "stazioni": 6
+       },
+       {
+        "anno": 2024,
+        "valore": 10.8,
+        "stazioni": 6
+       }
+      ]
+     }
+    }
+   }
+  },
+  {
+   "id": "london",
+   "colore": "#DC241F",
+   "paese": "GB",
+   "bbox": [
+    -0.51,
+    0.33,
+    51.28,
+    51.69
+   ],
+   "nome": "Londra",
+   "misure": {
+    "NO2": {
+     "traffico": {
+      "stazioni": 5,
+      "bordo_mediano": 3.0,
+      "bordo_dichiarato": 5,
+      "serie": [
+       {
+        "anno": 2015,
+        "valore": 60.7,
+        "stazioni": 4
+       },
+       {
+        "anno": 2016,
+        "valore": 60.4,
+        "stazioni": 5
+       },
+       {
+        "anno": 2017,
+        "valore": 53.5,
+        "stazioni": 5
+       },
+       {
+        "anno": 2018,
+        "valore": 53.0,
+        "stazioni": 5
+       },
+       {
+        "anno": 2019,
+        "valore": 43.3,
+        "stazioni": 5
+       }
+      ]
+     },
+     "fondo urbano": {
+      "stazioni": 8,
+      "bordo_mediano": null,
+      "bordo_dichiarato": 0,
+      "serie": [
+       {
+        "anno": 2015,
+        "valore": 34.2,
+        "stazioni": 7
+       },
+       {
+        "anno": 2016,
+        "valore": 36.2,
+        "stazioni": 5
+       },
+       {
+        "anno": 2017,
+        "valore": 35.3,
+        "stazioni": 6
+       },
+       {
+        "anno": 2018,
+        "valore": 30.2,
+        "stazioni": 7
+       },
+       {
+        "anno": 2019,
+        "valore": 29.0,
+        "stazioni": 7
+       }
+      ]
+     }
+    },
+    "PM2.5": {
+     "traffico": {
+      "stazioni": 4,
+      "bordo_mediano": 1.0,
+      "bordo_dichiarato": 4,
+      "serie": [
+       {
+        "anno": 2015,
+        "valore": 14.2,
+        "stazioni": 4
+       },
+       {
+        "anno": 2016,
+        "valore": 14.9,
+        "stazioni": 3
+       },
+       {
+        "anno": 2017,
+        "valore": 15.0,
+        "stazioni": 3
+       },
+       {
+        "anno": 2018,
+        "valore": 13.1,
+        "stazioni": 3
+       },
+       {
+        "anno": 2019,
+        "valore": 12.4,
+        "stazioni": 3
+       }
+      ]
+     },
+     "fondo urbano": {
+      "stazioni": 8,
+      "bordo_mediano": null,
+      "bordo_dichiarato": 0,
+      "serie": [
+       {
+        "anno": 2015,
+        "valore": 10.1,
+        "stazioni": 6
+       },
+       {
+        "anno": 2016,
+        "valore": 10.3,
+        "stazioni": 6
+       },
+       {
+        "anno": 2017,
+        "valore": 10.6,
+        "stazioni": 4
+       },
+       {
+        "anno": 2018,
+        "valore": 10.3,
+        "stazioni": 3
+       },
+       {
+        "anno": 2019,
+        "valore": 10.9,
+        "stazioni": 5
+       }
+      ]
+     }
+    }
+   }
+  },
+  {
+   "id": "milan",
+   "colore": "#E63946",
+   "paese": "IT",
+   "bbox": [
+    9.04,
+    9.28,
+    45.39,
+    45.54
+   ],
+   "nome": "Milano",
+   "misure": {
+    "NO2": {
+     "traffico": {
+      "stazioni": 7,
+      "bordo_mediano": 6.0,
+      "bordo_dichiarato": 7,
+      "serie": [
+       {
+        "anno": 2015,
+        "valore": 59.1,
+        "stazioni": 7
+       },
+       {
+        "anno": 2016,
+        "valore": 51.6,
+        "stazioni": 7
+       },
+       {
+        "anno": 2017,
+        "valore": 55.6,
+        "stazioni": 4
+       },
+       {
+        "anno": 2018,
+        "valore": 48.5,
+        "stazioni": 5
+       },
+       {
+        "anno": 2019,
+        "valore": 44.9,
+        "stazioni": 5
+       },
+       {
+        "anno": 2020,
+        "valore": 40.7,
+        "stazioni": 5
+       },
+       {
+        "anno": 2021,
+        "valore": 41.0,
+        "stazioni": 5
+       },
+       {
+        "anno": 2022,
+        "valore": 39.2,
+        "stazioni": 5
+       },
+       {
+        "anno": 2023,
+        "valore": 37.2,
+        "stazioni": 5
+       },
+       {
+        "anno": 2024,
+        "valore": 35.3,
+        "stazioni": 5
+       }
+      ]
+     },
+     "fondo urbano": {
+      "stazioni": 2,
+      "bordo_mediano": null,
+      "bordo_dichiarato": 0,
+      "serie": [
+       {
+        "anno": 2015,
+        "valore": 48.2,
+        "stazioni": 2
+       },
+       {
+        "anno": 2016,
+        "valore": 43.8,
+        "stazioni": 2
+       },
+       {
+        "anno": 2017,
+        "valore": 45.2,
+        "stazioni": 2
+       },
+       {
+        "anno": 2018,
+        "valore": 36.7,
+        "stazioni": 2
+       },
+       {
+        "anno": 2019,
+        "valore": 38.9,
+        "stazioni": 2
+       },
+       {
+        "anno": 2020,
+        "valore": 34.3,
+        "stazioni": 2
+       },
+       {
+        "anno": 2021,
+        "valore": 33.8,
+        "stazioni": 2
+       },
+       {
+        "anno": 2022,
+        "valore": 33.9,
+        "stazioni": 2
+       },
+       {
+        "anno": 2023,
+        "valore": 31.7,
+        "stazioni": 2
+       },
+       {
+        "anno": 2024,
+        "valore": 29.6,
+        "stazioni": 2
+       }
+      ]
+     }
+    },
+    "PM2.5": {
+     "traffico": {
+      "stazioni": 6,
+      "bordo_mediano": 5.0,
+      "bordo_dichiarato": 6,
+      "serie": [
+       {
+        "anno": 2015,
+        "valore": 28.9,
+        "stazioni": 1
+       },
+       {
+        "anno": 2016,
+        "valore": 25.2,
+        "stazioni": 1
+       },
+       {
+        "anno": 2017,
+        "valore": 27.5,
+        "stazioni": 2
+       },
+       {
+        "anno": 2018,
+        "valore": 22.4,
+        "stazioni": 2
+       },
+       {
+        "anno": 2019,
+        "valore": 20.8,
+        "stazioni": 2
+       },
+       {
+        "anno": 2020,
+        "valore": 23.4,
+        "stazioni": 2
+       },
+       {
+        "anno": 2021,
+        "valore": 21.6,
+        "stazioni": 2
+       },
+       {
+        "anno": 2022,
+        "valore": 22.8,
+        "stazioni": 3
+       },
+       {
+        "anno": 2023,
+        "valore": 18.6,
+        "stazioni": 3
+       },
+       {
+        "anno": 2024,
+        "valore": 20.7,
+        "stazioni": 3
+       }
+      ]
+     },
+     "fondo urbano": {
+      "stazioni": 2,
+      "bordo_mediano": null,
+      "bordo_dichiarato": 0,
+      "serie": [
+       {
+        "anno": 2015,
+        "valore": 31.9,
+        "stazioni": 1
+       },
+       {
+        "anno": 2016,
+        "valore": 28.3,
+        "stazioni": 1
+       },
+       {
+        "anno": 2017,
+        "valore": 29.3,
+        "stazioni": 1
+       },
+       {
+        "anno": 2018,
+        "valore": 22.6,
+        "stazioni": 1
+       },
+       {
+        "anno": 2019,
+        "valore": 20.9,
+        "stazioni": 1
+       },
+       {
+        "anno": 2020,
+        "valore": 22.4,
+        "stazioni": 1
+       },
+       {
+        "anno": 2021,
+        "valore": 19.9,
+        "stazioni": 1
+       },
+       {
+        "anno": 2022,
+        "valore": 20.6,
+        "stazioni": 1
+       },
+       {
+        "anno": 2023,
+        "valore": 16.0,
+        "stazioni": 1
+       },
+       {
+        "anno": 2024,
+        "valore": 17.2,
+        "stazioni": 1
+       }
+      ]
+     }
+    }
+   }
+  }
+ ]
+}

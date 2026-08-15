@@ -143,15 +143,22 @@ licenze indicate sopra.
 `cruscotto.html` è l'unica pagina viva. Legge `data/auto/`, che riempie
 `pipeline/aggiorna.py` scaricando da Eurostat due serie e due soltanto:
 
-| serie | flusso | cadenza | ritardo |
+| serie | fonte | cadenza | ritardo |
 |---|---|---|---|
-| NO₂ mensile delle capitali | `ENV_AIR_NO2` | mensile | ~1 mese |
-| decessi settimanali per provincia | `DEMO_R_MWK3_T`, `DEMO_R_MWK2_TS` | settimanale | ~5 settimane |
+| NO₂ mensile delle capitali | Eurostat `ENV_AIR_NO2` | mensile | ~1 mese |
+| decessi settimanali per provincia | Eurostat `DEMO_R_MWK3_T`, `MWK2_TS` | settimanale | ~5 settimane |
+| **le sei città alle centraline** | **EEA, dati validati E1a** | **annuale** | ~9 mesi |
+
+La terza è quella che il progetto inseguiva dall'inizio: le sei città del pezzo, non le
+capitali, con le stazioni **da traffico separate da quelle di fondo urbano**. Sta in una
+pipeline sua, `pipeline/aggiorna-eea.py`, perché i file dell'EEA sono Parquet e serve
+`pyarrow`: `aggiorna.py` gira sulla sola libreria standard e deve restare così.
 
 ```bash
-python3 pipeline/aggiorna.py            # aggiorna data/auto/
-python3 pipeline/aggiorna.py --dry-run  # prova senza scrivere
-python3 pipeline/verifica-eea.py        # la fonte EEA è tornata? (oggi: no)
+python3 pipeline/aggiorna.py               # Eurostat → data/auto/
+python3 pipeline/aggiorna-eea.py           # EEA → le sei città (serve pyarrow)
+python3 pipeline/aggiorna-eea.py --citta Milano   # una sola, per provare
+python3 pipeline/verifica-eea.py           # l'API ufficiale EEA è tornata?
 ```
 
 Lo script usa la sola libreria standard: nessun `pip install`, né in locale né in CI.
@@ -176,20 +183,3 @@ personale della manutenzione non esistono in nessuna banca dati interrogabile �
 in piani comunali, indagini quinquennali e contratti d'appalto. L'Urban Audit di
 Eurostat sembrerebbe la risposta, ma i suoi indicatori ambientali sono fermi al 2013 e
 per Barcellona e Milano sono vuoti.
-
-### La fonte che manca
-
-Il servizio di download dell'**Agenzia europea dell'ambiente** sarebbe la strada giusta:
-copre tutte e sei le città — Londra compresa, che in Eurostat non c'è più dopo la Brexit —
-e distingue le stazioni da traffico da quelle di fondo, cioè la definizione che usa il
-trattato.
-
-Provato il 15 agosto 2026: **non restituisce dati dal 2013 in poi**. I dataset in tempo
-reale, verificato e gap-filled tornano vuoti per ogni paese (FR, ES, DE, GB, IT, AT),
-mentre l'archivio storico 2002-2012 risponde con 700-1000 file a parità di richiesta. Il
-guasto è dell'EEA, non della query — `pipeline/verifica-eea.py` lo verifica e stampa la
-tabella per paese e dataset.
-
-Quando tornerà: quei file sono Parquet, quindi il fetch avrà bisogno di `pyarrow` e va
-tenuto in uno script separato. `aggiorna.py` gira sulla sola libreria standard e deve
-restare così.

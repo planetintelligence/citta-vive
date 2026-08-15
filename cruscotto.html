@@ -98,6 +98,17 @@
   footer p { font-family: var(--sans); font-size: .78rem; color: var(--tenue); line-height: 1.7; }
   footer code { font-family: var(--sans); background: var(--carta-3); padding: 1px 5px; border-radius: 2px; }
 
+  /* ---------- interruttore fra i due inquinanti ---------- */
+  .scelta { display: flex; gap: 8px; margin: 20px 0 4px; }
+  .scelta button {
+    font-family: var(--sans); font-size: .78rem; letter-spacing: .04em;
+    padding: 7px 16px; border: 1px solid var(--riga); border-radius: 999px;
+    background: var(--carta-2); color: var(--tenue); cursor: pointer;
+  }
+  .scelta button[aria-pressed="true"] {
+    background: var(--inchiostro); color: var(--carta); border-color: var(--inchiostro);
+  }
+
   .caricamento { font-family: var(--sans); font-size: .85rem; color: var(--tenue); padding: 40px 0; text-align: center; }
   .errore {
     font-family: var(--sans); font-size: .85rem; color: var(--rosso);
@@ -221,7 +232,43 @@
     <div class="assenti" id="assenti-morti"></div>
   </section>
 
-  <!-- ═══ 3 · IL RESTO ═══ -->
+  <!-- ═══ 3 · LE SEI CITTÀ ═══ -->
+  <section class="sezione" id="sez-citta" hidden>
+    <span class="sez-num">03</span>
+    <h2>Le sei città, alle centraline</h2>
+    <p>
+      Questa è la serie che il progetto inseguiva: <strong>le sei città del pezzo</strong>,
+      non le capitali, e soprattutto le stazioni <strong>da traffico separate da quelle di
+      fondo urbano</strong> — la distinzione che nel trattato si può solo dichiarare e qui
+      si vede. Viene dai dati validati dell'Agenzia europea dell'ambiente, misura per
+      misura: medie annue calcolate dalle osservazioni orarie valide di ogni singola
+      centralina, poi mediate per città e per tipo.
+    </p>
+
+    <div id="scelta-inquinante" class="scelta"></div>
+
+    <figure class="riquadro scheda">
+      <figcaption>
+        <p class="titolo-fig">Traffico contro fondo urbano, ultimo anno disponibile</p>
+        <p class="occhio-fig" id="occhio-citta"></p>
+      </figcaption>
+      <div class="tela"><canvas id="graficoCitta"></canvas></div>
+      <p class="didascalia" id="did-citta"></p>
+    </figure>
+
+    <figure class="riquadro scheda">
+      <figcaption>
+        <p class="titolo-fig">Come sono cambiate</p>
+        <p class="occhio-fig" id="occhio-serie"></p>
+      </figcaption>
+      <div class="tela"><canvas id="graficoSerieCitta"></canvas></div>
+      <p class="didascalia" id="did-serie"></p>
+    </figure>
+
+    <div class="avvertenza" id="avvertenza-bordo"></div>
+  </section>
+
+  <!-- ═══ 4 · IL RESTO ═══ -->
   <section class="sezione stretto" id="sez-resto" hidden>
     <span class="sez-num">03</span>
     <h2>Perché è solo questo, e non tutto il resto</h2>
@@ -326,6 +373,12 @@
   function etichettaMese(p) {          // '2026-06' → 'giu 26'
     var pz = p.split('-');
     return MESI[parseInt(pz[1], 10) - 1] + ' ' + pz[0].slice(2);
+  }
+
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
   }
 
   /* virgola decimale e punto delle migliaia: si scrive per lettori italiani */
@@ -561,6 +614,168 @@
       ' — ed è il motivo per cui il confronto diretto si fa in percentuale.';
   }
 
+  /* =========================== le sei città, alle centraline */
+  function disegnaCitta(d) {
+    document.getElementById('sez-citta').hidden = false;
+    var anno = d.ultimo_anno;
+    var graficoConfronto = null, graficoSerie = null;
+    var TIPI = ['traffico', 'fondo urbano'];
+
+    function valore(c, inq, tipo, quale) {
+      var m = (c.misure[inq] || {})[tipo];
+      if (!m) return null;
+      var punto = m.serie.filter(function (s) { return s.anno === quale; })[0];
+      return punto ? punto.valore : null;
+    }
+
+    function disegna(inq) {
+      var tutte = d.citta.filter(function (c) { return c.misure[inq]; });
+      /* Nel confronto dell'ultimo anno entrano solo le città che quell'anno
+         ce l'hanno davvero. Londra si ferma al 2019 — il Regno Unito ha
+         smesso di trasmettere all'EEA dopo l'uscita dall'UE — e affiancare
+         un suo dato del 2019 al 2024 degli altri sarebbe un confronto falso.
+         Resta nella serie storica, dove la sua interruzione si vede. */
+      var citta = tutte.filter(function (c) {
+        return TIPI.some(function (t) { return valore(c, inq, t, anno) !== null; });
+      });
+      var fuori = tutte.filter(function (c) { return citta.indexOf(c) < 0; })
+        .map(function (c) {
+          var s = (c.misure[inq]['traffico'] || c.misure[inq]['fondo urbano']).serie;
+          return { nome: c.nome, fino: s[s.length - 1].anno };
+        });
+      var soglie = d.soglie.filter(function (s) { return s.inquinante === inq; });
+
+      /* confronto traffico / fondo nell'ultimo anno */
+      if (graficoConfronto) graficoConfronto.destroy();
+      graficoConfronto = new Chart(document.getElementById('graficoCitta'), {
+        type: 'bar',
+        data: {
+          labels: citta.map(function (c) { return c.nome; }),
+          datasets: TIPI.map(function (tipo, i) {
+            return {
+              label: 'stazioni da ' + tipo,
+              backgroundColor: citta.map(function (c) { return c.colore; }),
+              /* il fondo urbano è la stessa tinta, ma scavata: si legge come
+                 "meno" senza introdurre un secondo colore per città */
+              borderColor: citta.map(function (c) { return c.colore; }),
+              borderWidth: i ? 2 : 0,
+              data: citta.map(function (c) { return valore(c, inq, tipo, anno); }),
+            };
+          }).map(function (ds, i) {
+            if (i) { ds.backgroundColor = 'transparent'; }
+            return ds;
+          }).concat(soglie.map(function (s) {
+            return {
+              label: s.nome + ' (' + s.valore + ')', type: 'line',
+              data: citta.map(function () { return s.valore; }),
+              borderColor: s.nome.indexOf('2030') > 0 ? S.rosso : S.tenue,
+              borderWidth: s.nome.indexOf('2030') > 0 ? 1.6 : 1,
+              borderDash: s.nome.indexOf('2030') > 0 ? [7, 4] : [3, 3], pointRadius: 0,
+            };
+          })),
+        },
+        options: {
+          scales: {
+            y: assi({ beginAtZero: true, title: { display: true, text: 'µg/m³ ' + inq + ', media annua ' + anno } }),
+            x: assi(),
+          },
+        },
+      });
+
+      /* la serie nel tempo, sole stazioni da traffico */
+      if (graficoSerie) graficoSerie.destroy();
+      graficoSerie = new Chart(document.getElementById('graficoSerieCitta'), {
+        type: 'line',
+        data: {
+          labels: d.anni,
+          datasets: tutte.map(function (c) {
+            return {
+              label: c.nome, borderColor: c.colore, backgroundColor: c.colore,
+              data: d.anni.map(function (a) { return valore(c, inq, 'traffico', a); }),
+              borderWidth: 1.8, pointRadius: 2, tension: .25, spanGaps: false,
+            };
+          }),
+        },
+        options: {
+          interaction: { mode: 'index', intersect: false },
+          scales: {
+            y: assi({ beginAtZero: true, title: { display: true, text: 'µg/m³ ' + inq + ', stazioni da traffico' } }),
+            x: assi(),
+          },
+        },
+      });
+
+      document.getElementById('occhio-citta').textContent =
+        inq + ' medio annuo ' + anno + ', per tipo di centralina';
+      document.getElementById('occhio-serie').textContent =
+        'Le sei città alle stazioni da traffico, ' + d.anni[0] + '-' + d.anni[d.anni.length - 1];
+
+      /* quante centraline reggono davvero ogni numero */
+      var conta = tutte.map(function (c) {
+        var t = (c.misure[inq] || {})['traffico'];
+        var f = (c.misure[inq] || {})['fondo urbano'];
+        return c.nome + ' ' + ((t && t.stazioni) || 0) + '/' + ((f && f.stazioni) || 0);
+      }).join(', ');
+      document.getElementById('did-citta').innerHTML =
+        'La barra piena è la media delle stazioni da traffico, quella vuota il fondo urbano. ' +
+        'Lo scarto fra le due è la ragione per cui questo lavoro insiste sulla definizione: ' +
+        'sono la stessa città, nello stesso anno. ' +
+        (fuori.length
+          ? '<strong>' + fuori.map(function (f) { return esc(f.nome); }).join(' e ') +
+            ' non compare' + (fuori.length > 1 ? 'no' : '') + ' qui</strong>: la serie si ferma al ' +
+            fuori.map(function (f) { return f.fino; }).join(' e al ') +
+            ', perché il Regno Unito ha smesso di trasmettere i dati validati all\'EEA dopo ' +
+            'l\'uscita dall\'UE. Affiancare un dato del ' + fuori[0].fino + ' al ' + anno +
+            ' degli altri sarebbe un confronto falso; nel grafico sotto la sua interruzione si vede. '
+          : '') +
+        'Centraline usate (traffico/fondo): ' + esc(conta) +
+        '. Fonte: <a href="' + d.url + '" target="_blank">' + d.fonte + '</a>.';
+      document.getElementById('did-serie').innerHTML =
+        'Solo le stazioni da traffico, per poter confrontare con la serie del trattato. ' +
+        'La linea di Londra si interrompe dopo il 2019 per la ragione appena detta. ' +
+        'Altrove un anno resta vuoto quando nessuna centralina della città raggiunge il 75% ' +
+        'di copertura oraria, la soglia sotto la quale la direttiva europea non considera ' +
+        'valida una media annua.';
+    }
+
+    /* interruttore fra i due inquinanti */
+    var scelta = document.getElementById('scelta-inquinante');
+    ['NO2', 'PM2.5'].forEach(function (inq, i) {
+      var b = document.createElement('button');
+      b.textContent = inq === 'NO2' ? 'Biossido di azoto' : 'Particolato fine PM2.5';
+      b.setAttribute('aria-pressed', i === 0 ? 'true' : 'false');
+      b.onclick = function () {
+        [].forEach.call(scelta.children, function (x) { x.setAttribute('aria-pressed', 'false'); });
+        b.setAttribute('aria-pressed', 'true');
+        disegna(inq);
+      };
+      scelta.appendChild(b);
+    });
+    disegna('NO2');
+
+    /* l'avvertenza sulla distanza dal bordo strada, costruita dai dati */
+    var bordi = d.citta.map(function (c) {
+      var t = (c.misure['NO2'] || {})['traffico'];
+      return t && t.bordo_mediano !== null && t.bordo_mediano !== undefined
+        ? { nome: c.nome, m: t.bordo_mediano } : null;
+    }).filter(Boolean).sort(function (a, b) { return a.m - b.m; });
+
+    document.getElementById('avvertenza-bordo').innerHTML =
+      '<strong>Perché il confronto fra città va preso con le molle.</strong> ' +
+      '«Stazione da traffico» è una categoria di legge, ma non dice a che distanza dalla ' +
+      'carreggiata sta lo strumento — e il biossido di azoto cala in fretta allontanandosi ' +
+      'dalla strada. ' +
+      (bordi.length
+        ? 'Le distanze mediane dichiarate: ' +
+          bordi.map(function (b) { return esc(b.nome) + ' ' + num(b.m, 0) + ' m'; }).join(', ') +
+          '. Una città che pianta le centraline a un metro dall\'asfalto misura numeri più ' +
+          'alti di una che le tiene a dieci, a parità di traffico reale. '
+        : '') +
+      'Il confronto solido è quello <em>dentro</em> la stessa città — traffico contro fondo, ' +
+      'e l\'andamento negli anni. Fra città diverse i numeri dicono l\'ordine di grandezza, ' +
+      'non una classifica.';
+  }
+
   /* ========================================================= avvio */
   Promise.all([carica('manifest.json'), carica('aria.json'), carica('mortalita.json')])
     .then(function (r) {
@@ -570,6 +785,11 @@
       document.getElementById('sez-resto').hidden = false;
       console.log('[cruscotto] aria fino a ' + r[1].ultimo_periodo +
                   ', decessi fino a ' + r[2].ultimo_periodo);
+      /* le sei città arrivano da una pipeline separata: se non c'è ancora,
+         la sezione resta nascosta e il resto della pagina funziona lo stesso */
+      return carica('aria-citta.json').then(disegnaCitta).catch(function (e) {
+        console.warn('[cruscotto] sei città non disponibili:', e.message);
+      });
     })
     .catch(function (e) { guasto(e.message); console.error('[cruscotto]', e); });
 })();

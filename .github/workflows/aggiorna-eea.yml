@@ -1,0 +1,84 @@
+# Città vive — le sei città dalle stazioni dell'EEA
+#
+# Pipeline separata da quella di Eurostat, e non per capriccio: qui i file
+# sono Parquet e serve pyarrow, mentre aggiorna.py gira sulla sola libreria
+# standard e deve restare così.
+#
+# Cadenza annuale. I dati validati (E1a) escono una volta l'anno, entro il
+# 30 settembre, per l'anno precedente: interrogare più spesso significa
+# scaricare 200 file per riscrivere gli stessi numeri. Si può lanciare a
+# mano dalla scheda Actions quando serve.
+
+name: Aggiorna le sei città (EEA)
+
+on:
+  schedule:
+    - cron: '23 5 20 10 *'     # il 20 ottobre, dopo la scadenza del 30 settembre
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: aggiorna-eea
+  cancel-in-progress: false
+
+jobs:
+  aggiorna:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45          # 200 file da scaricare, uno per centralina
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Installa pyarrow
+        run: pip install --quiet pyarrow
+
+      - name: Leggi le centraline delle sei città
+        run: python3 pipeline/aggiorna-eea.py
+
+      - name: Committa se qualcosa è cambiato
+        run: |
+          # Come per Eurostat: si guarda il file dei dati, non il manifesto,
+          # che porta l'ora dello scarico e cambierebbe sempre.
+          if [ -z "$(git status --porcelain data/auto/aria-citta.json)" ]; then
+            echo "Nessuna novità dall'EEA: niente da committare."
+            git checkout -- data/auto
+            exit 0
+          fi
+
+          ANNO=$(python3 -c "import json;print(json.load(open('data/auto/aria-citta.json'))['ultimo_anno'])")
+
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/auto
+          git commit -m "Le sei città alle centraline: dati fino al $ANNO" \
+                     -m "Aggiornamento automatico dai dati validati E1a dell'Agenzia europea
+          dell'ambiente. Medie annue per città e per tipo di stazione, calcolate
+          dalle osservazioni orarie valide. Generato da pipeline/aggiorna-eea.py."
+          git push
+
+      - name: Riepilogo
+        if: always()
+        run: |
+          echo "### Le sei città dall'EEA" >> $GITHUB_STEP_SUMMARY
+          if [ -f data/auto/aria-citta.json ]; then
+            python3 - <<'PY' >> $GITHUB_STEP_SUMMARY
+          import json
+          d = json.load(open('data/auto/aria-citta.json'))
+          print(f"Anni coperti: {d['anni'][0]}–{d['anni'][-1]}\n")
+          print("| città | NO₂ traffico | NO₂ fondo | anno |")
+          print("|---|---|---|---|")
+          for c in d['citta']:
+              m = c['misure'].get('NO2', {})
+              t = m.get('traffico', {}).get('serie', [])
+              f = m.get('fondo urbano', {}).get('serie', [])
+              if not t: continue
+              print(f"| {c['nome']} | {t[-1]['valore']} | {f[-1]['valore'] if f else '—'} | {t[-1]['anno']} |")
+          PY
+          else
+            echo "Nessun file prodotto: guarda il passo precedente." >> $GITHUB_STEP_SUMMARY
+          fi

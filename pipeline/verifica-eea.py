@@ -15,6 +15,12 @@ ci sono: le richieste per i dataset 1 (in tempo reale), 2 (verificato) e 5
 (archivio 2002-2012) restituisce centinaia di file con lo stesso identico
 corpo di richiesta. È la prova che il guasto è loro e non nostro.
 
+Verificato anche contro l'esempio di codice della loro documentazione
+ufficiale ("How to use Air Quality Downloads", versione 1.2 del 5 maggio
+2026, pagina 16), copiato carattere per carattere — notazioni al posto
+degli URI degli inquinanti, campo `email` compreso: zero file anche così.
+Quindi non è una questione di formato della richiesta.
+
 Questo script non scarica niente: fa la domanda e stampa la risposta.
 Serve a sapere quando si può scrivere il fetch vero, con i dati veri sotto
 mano invece che a indovinare.

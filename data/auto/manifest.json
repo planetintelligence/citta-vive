@@ -1,5 +1,5 @@
 {
- "generato": "2026-08-15T17:27:46Z",
+ "generato": "2026-08-15T18:00:11Z",
  "generato_giorno": "2026-08-15",
  "serie": [
   {
@@ -25,6 +25,15 @@
    "assenti": [
     "Londra"
    ]
+  },
+  {
+   "file": "aria-citta.json",
+   "titolo": "Le sei città alle stazioni di misura",
+   "fonte": "Agenzia europea dell'ambiente, dati validati E1a e metadati delle stazioni",
+   "url": "https://www.eea.europa.eu/en/datahub/datahubitem-view/778ef9f5-6293-4846-badd-56a29c70880d",
+   "ultimo_periodo": "2024",
+   "fonte_aggiornata": "2026-08-15",
+   "assenti": []
   }
  ]
 }
