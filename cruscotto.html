@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Città vive · Cruscotto dei dati vivi</title>
+<meta name="description" content="Le due serie di Città vive che si aggiornano da sole: il NO₂ mensile delle capitali europee e l'eccesso di mortalità settimanale, da Eurostat.">
+<link rel="stylesheet" href="assets/stile.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  /* palette, caratteri e componenti: assets/stile.css */
+
+  body { font-family: var(--serif); color: var(--testo); line-height: 1.7; }
+  .foglio { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+  .stretto { max-width: 720px; }
+
+  /* ---------- testata ---------- */
+  .testata { padding: 68px 0 22px; }
+  .testata .occhiello { display: block; margin-bottom: 14px; }
+  .testata h1 {
+    font-size: clamp(1.9rem, 4.2vw, 2.9rem); line-height: 1.14;
+    font-weight: 400; letter-spacing: -.01em; margin-bottom: 18px;
+  }
+  .testata .sommario { font-size: 1.05rem; color: #4a453d; max-width: 660px; }
+
+  /* ---------- fascia dello stato ---------- */
+  .stato-fascia {
+    display: flex; flex-wrap: wrap; gap: 10px 34px; align-items: baseline;
+    margin: 26px 0 8px; padding: 16px 20px;
+    background: var(--carta-3); border: 1px solid var(--riga); border-radius: 3px;
+  }
+  .stato-voce { font-family: var(--sans); font-size: .78rem; color: var(--tenue); }
+  .stato-voce b {
+    display: block; color: var(--inchiostro); font-size: .95rem;
+    font-weight: 700; letter-spacing: -.01em; margin-top: 2px;
+  }
+  .pulsa {
+    display: inline-block; width: 7px; height: 7px; border-radius: 50%;
+    background: var(--green); margin-right: 7px; vertical-align: middle;
+  }
+
+  /* ---------- sezioni ---------- */
+  .sezione { padding: 34px 0 10px; }
+  .sez-num { font-family: var(--mano); font-size: 1.5rem; color: var(--tenue); line-height: 1; }
+  .sezione h2 { font-size: 1.5rem; font-weight: 400; margin: 4px 0 14px; letter-spacing: -.01em; }
+  .sezione h3 {
+    font-family: var(--sans); font-size: .88rem; font-weight: 700; margin: 30px 0 10px;
+  }
+  .sezione p { margin-bottom: 15px; max-width: 720px; }
+  .sezione p a { color: var(--inchiostro); text-decoration: none; border-bottom: 1px solid var(--riga); }
+  .sezione p a:hover { border-bottom-color: var(--inchiostro); }
+
+  /* ---------- riquadro grafico ---------- */
+  .riquadro { padding: 22px 24px 18px; margin: 22px 0; }   /* fondo e bordo da .scheda */
+  .riquadro .titolo-fig {
+    font-family: var(--sans); font-size: .72rem; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--tenue); margin-bottom: 4px;
+  }
+  .riquadro .occhio-fig { font-size: 1.02rem; margin-bottom: 16px; }
+  .tela { position: relative; height: 320px; }
+  .tela.bassa { height: 260px; }
+  .didascalia {
+    font-family: var(--sans); font-size: .76rem; color: var(--tenue);
+    line-height: 1.6; margin-top: 14px; padding-top: 12px;
+    border-top: 1px dashed var(--riga);
+  }
+  .didascalia a { color: var(--tenue); }
+
+  /* ---------- schede numeriche ---------- */
+  .numeri {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(168px, 1fr));
+    gap: 14px; margin: 22px 0;
+  }
+  .numero { padding: 16px 18px; }                      /* .scheda */
+  .numero .chi {
+    font-family: var(--sans); font-size: .68rem; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--tenue);
+  }
+  .numero .quanto { font-size: 1.9rem; line-height: 1.15; margin: 6px 0 2px; letter-spacing: -.02em; }
+  .numero .quando { font-family: var(--sans); font-size: .72rem; color: var(--tenue); }
+  .numero.vuoto .quanto { color: var(--tenue); font-size: 1rem; font-style: italic; }
+
+  /* ---------- avvertenza ---------- */
+  .avvertenza {
+    border-left: 3px solid var(--riga); padding: 4px 0 4px 18px; margin: 22px 0;
+    font-size: .97rem; color: #55504a; max-width: 720px;
+  }
+
+  /* ---------- assenti ---------- */
+  .assenti {
+    font-family: var(--sans); font-size: .78rem; color: var(--tenue);
+    background: var(--carta-3); border: 1px dashed var(--riga); border-radius: 3px;
+    padding: 12px 16px; margin: 16px 0; max-width: 720px; line-height: 1.6;
+  }
+
+  footer { border-top: 1px solid var(--riga); margin-top: 26px; padding: 34px 0 60px; text-align: center; }
+  footer p { font-family: var(--sans); font-size: .78rem; color: var(--tenue); line-height: 1.7; }
+  footer code { font-family: var(--sans); background: var(--carta-3); padding: 1px 5px; border-radius: 2px; }
+
+  .caricamento { font-family: var(--sans); font-size: .85rem; color: var(--tenue); padding: 40px 0; text-align: center; }
+  .errore {
+    font-family: var(--sans); font-size: .85rem; color: var(--rosso);
+    border: 1px solid var(--rosso); border-radius: 3px; padding: 16px 18px; margin: 22px 0;
+  }
+
+  @media (max-width: 620px) { .tela { height: 260px; } }
+</style>
+</head>
+<body class="fondo-carta">
+
+<div class="foglio">
+
+  <header class="testata">
+    <span class="occhiello">Città vive · cruscotto</span>
+    <h1>I dati che si aggiornano da soli</h1>
+    <p class="sommario">
+      Il trattato è una fotografia dell'agosto 2026 e resta ferma. Due delle sue serie,
+      però, le fonti pubbliche le ripubblicano di continuo: qui si aggiornano da sole,
+      con un mese o poco più di ritardo sulla realtà. Sono le uniche due che si possono
+      tenere vive senza rileggere un documento a mano — e la pagina dice anche perché
+      tutte le altre non si possono.
+    </p>
+    <div class="stato-fascia" id="fascia">
+      <span class="caricamento">carico i dati…</span>
+    </div>
+  </header>
+
+  <div id="errore"></div>
+
+  <!-- ═══ 1 · ARIA ═══ -->
+  <section class="sezione" id="sez-aria" hidden>
+    <span class="sez-num">01</span>
+    <h2>L'aria delle capitali, mese per mese</h2>
+    <p>
+      Eurostat pubblica la media mensile di biossido di azoto per le capitali europee.
+      È una statistica sperimentale, esce con circa un mese di ritardo e permette di
+      vedere una cosa che le medie annue nascondono: il NO₂ ha un ciclo stagionale
+      marcato, alto d'inverno quando l'aria ristagna e il riscaldamento è acceso, basso
+      d'estate. Confrontare un mese con il mese precedente non dice quasi niente;
+      confrontarlo con lo stesso mese dell'anno prima, sì.
+    </p>
+
+    <div class="numeri" id="numeri-aria"></div>
+
+    <figure class="riquadro scheda">
+      <figcaption>
+        <p class="titolo-fig">Serie mensile</p>
+        <p class="occhio-fig">Biossido di azoto nelle capitali, µg/m³ al mese</p>
+      </figcaption>
+      <div class="tela"><canvas id="graficoMensile"></canvas></div>
+      <p class="didascalia" id="did-mensile"></p>
+    </figure>
+
+    <figure class="riquadro scheda">
+      <figcaption>
+        <p class="titolo-fig">Medie annue e le soglie di legge</p>
+        <p class="occhio-fig">La stessa serie ridotta a un valore per anno, contro i limiti</p>
+      </figcaption>
+      <div class="tela bassa"><canvas id="graficoAnnuale"></canvas></div>
+      <p class="didascalia" id="did-annuale"></p>
+    </figure>
+
+    <div class="avvertenza">
+      <strong>Questi numeri non sono quelli del trattato, ed è normale.</strong>
+      Le serie del pezzo vengono da stazioni collocate lungo strade trafficate; Eurostat
+      qui non dichiara il tipo di stazione e i valori risultano più bassi, perché una
+      media che comprende il fondo urbano sta sempre sotto a una misura fatta a bordo
+      strada. Sono due grandezze diverse e vanno confrontate solo con sé stesse:
+      la <a href="metodo.html">nota metodologica</a> spiega la differenza per esteso.
+    </div>
+
+    <div class="assenti" id="assenti-aria"></div>
+  </section>
+
+  <!-- ═══ 2 · MORTALITÀ ═══ -->
+  <section class="sezione" id="sez-morti" hidden>
+    <span class="sez-num">02</span>
+    <h2>Quante persone muoiono in più dell'atteso</h2>
+    <p>
+      Eurostat pubblica i decessi settimanali per provincia, aggiornati a poche settimane
+      di distanza. Confrontando ogni settimana con la media della stessa settimana negli
+      anni <span id="anni-base">2015-2019</span> si ottiene lo scarto dall'atteso: è la
+      misura che durante le ondate di calore si muove prima di qualunque altra.
+    </p>
+    <p>
+      È anche il modo per non dipendere da uno studio di attribuzione pubblicato una volta
+      sola. Il grafico sulle morti da caldo del trattato copre tre città e una singola
+      ondata del 2025, e non si aggiornerà mai più; questo copre cinque aree, si aggiorna
+      ogni settimana ed è calcolato con lo stesso metodo per tutte.
+    </p>
+
+    <figure class="riquadro scheda">
+      <figcaption>
+        <p class="titolo-fig">Il bilancio di ogni estate</p>
+        <p class="occhio-fig">Decessi in più rispetto all'atteso fra le settimane 24 e 36</p>
+      </figcaption>
+      <div class="tela"><canvas id="graficoEstati"></canvas></div>
+      <p class="didascalia" id="did-estati"></p>
+    </figure>
+
+    <figure class="riquadro scheda">
+      <figcaption>
+        <p class="titolo-fig">Settimana per settimana</p>
+        <p class="occhio-fig">Scarto dall'atteso, in percentuale, dal 2024 a oggi</p>
+      </figcaption>
+      <div class="tela"><canvas id="graficoSettimane"></canvas></div>
+      <p class="didascalia" id="did-settimane"></p>
+    </figure>
+
+    <div class="avvertenza">
+      <strong>Che cosa non dice questo scarto.</strong>
+      È un confronto grezzo: non corregge per l'invecchiamento della popolazione, che da
+      solo alza il numero atteso di anno in anno, né per quanta gente vive in quelle
+      province. E soprattutto non attribuisce nulla a una causa: un'estate sopra la media
+      può essere caldo, può essere un'epidemia respiratoria, può essere l'una e l'altra.
+      Per dire «morti per il caldo» serve uno studio di attribuzione, che è un'altra cosa
+      e richiede altri mesi. Qui si vede il segnale, non la spiegazione.
+    </div>
+
+    <div class="assenti" id="assenti-morti"></div>
+  </section>
+
+  <!-- ═══ 3 · IL RESTO ═══ -->
+  <section class="sezione stretto" id="sez-resto" hidden>
+    <span class="sez-num">03</span>
+    <h2>Perché è solo questo, e non tutto il resto</h2>
+    <p>
+      Il trattato ha undici grafici e qui ne rivivono due. Non è pigrizia: è che gli altri
+      nove poggiano su numeri che nessuno pubblica in una forma interrogabile da un
+      programma.
+    </p>
+    <p>
+      I chilometri di piste ciclabili stanno dentro i piani della mobilità dei singoli
+      comuni, in PDF; le quote di spostamento vengono da indagini nazionali che escono
+      ogni quattro o cinque anni, con metodi diversi da paese a paese; le superfici verdi
+      e il personale della manutenzione si ricavano da bilanci, contratti d'appalto e
+      interrogazioni consiliari. Sono documenti da leggere, non dati da scaricare.
+    </p>
+    <p>
+      Una banca dati che sembrava la risposta esiste ed è l'Urban Audit di Eurostat, che
+      copre le città e non solo le capitali. Ma i suoi indicatori ambientali si fermano al
+      2013, e proprio per Barcellona e Milano le caselle sono vuote: usarlo darebbe una
+      pagina che si aggiorna da sola mostrando numeri di tredici anni fa. Per le sei città
+      con la definizione giusta di stazione servirà il servizio di download dell'Agenzia
+      europea dell'ambiente, che è la prossima cosa da fare.
+    </p>
+  </section>
+
+  <div class="ponte">
+    <a href="index.html">← Torna al trattato</a>
+    <p>Le sei città raccontate per esteso, con gli undici grafici fermi ad agosto 2026.</p>
+  </div>
+  <div class="ponte">
+    <a href="metodo.html">Come sono fatti questi numeri →</a>
+    <p>Quale aria misuriamo, da dove viene ogni serie e che cosa manca.</p>
+  </div>
+
+  <footer>
+    <p>
+      <strong>Planet Intelligence</strong> · cruscotto dei dati vivi<br>
+      Generato da <code>data/auto/</code>, che riempie <code>pipeline/aggiorna.py</code>
+      leggendo Eurostat. Nessun dato di questa pagina è scritto a mano.
+    </p>
+  </footer>
+
+</div>
+
+<script src="assets/vendor/chart.umd.js"></script>
+<script>
+/* ============================================================
+   cruscotto.html — le due serie che si aggiornano da sole
+   ------------------------------------------------------------
+   Legge data/auto/*.json, che è l'unica cosa che tocca la
+   pipeline. Se i file non ci sono ancora, la pagina lo dice
+   invece di restare bianca: è il primo stato in cui si trova
+   chi clona il repo e non ha ancora lanciato lo script.
+   ============================================================ */
+(function () {
+  'use strict';
+
+  var MESI = ['gen','feb','mar','apr','mag','giu','lug','ago','set','ott','nov','dic'];
+
+  function stile() {
+    var s = getComputedStyle(document.documentElement);
+    return {
+      tenue:  s.getPropertyValue('--tenue').trim(),
+      riga:   s.getPropertyValue('--riga').trim(),
+      testo:  s.getPropertyValue('--testo').trim(),
+      rosso:  s.getPropertyValue('--rosso').trim(),
+      sans:   s.getPropertyValue('--sans').trim()
+    };
+  }
+  var S = stile();
+
+  Chart.defaults.font.family = S.sans;
+  Chart.defaults.font.size = 11;
+  Chart.defaults.color = S.tenue;
+  Chart.defaults.plugins.legend.labels.usePointStyle = true;
+  Chart.defaults.plugins.legend.labels.boxWidth = 6;
+  Chart.defaults.maintainAspectRatio = false;
+  Chart.defaults.animation = false;   /* un cruscotto mostra numeri, non li fa entrare in scena */
+  Chart.defaults.plugins.tooltip.callbacks.label = function (c) {
+    var v = c.parsed.y;
+    return c.dataset.label + ': ' + (v === null ? '—' :
+      v.toLocaleString('it-IT', { maximumFractionDigits: 1 }));
+  };
+
+  function assi(opzioni) {
+    var base = {
+      grid: { color: S.riga, drawTicks: false },
+      border: { color: S.riga },
+      ticks: { padding: 8 }
+    };
+    return Object.assign({}, base, opzioni || {});
+  }
+
+  function etichettaMese(p) {          // '2026-06' → 'giu 26'
+    var pz = p.split('-');
+    return MESI[parseInt(pz[1], 10) - 1] + ' ' + pz[0].slice(2);
+  }
+
+  /* virgola decimale e punto delle migliaia: si scrive per lettori italiani */
+  function num(v, decimali) {
+    if (v === null || v === undefined) return '—';
+    return v.toLocaleString('it-IT', {
+      minimumFractionDigits: decimali || 0, maximumFractionDigits: decimali || 0
+    });
+  }
+
+  function carica(nome) {
+    return fetch('data/auto/' + nome, { cache: 'no-cache' }).then(function (r) {
+      if (!r.ok) throw new Error(nome + ': HTTP ' + r.status);
+      return r.json();
+    });
+  }
+
+  function guasto(messaggio) {
+    document.getElementById('fascia').innerHTML =
+      '<span class="stato-voce">stato<b>dati non disponibili</b></span>';
+    document.getElementById('errore').innerHTML =
+      '<div class="errore"><strong>I dati automatici non si caricano.</strong><br>' +
+      messaggio + '<br><br>Se hai appena clonato il progetto, i file non ci sono ancora: ' +
+      'lanciali con <code>python3 pipeline/aggiorna.py</code>. Se invece stai aprendo la ' +
+      'pagina con un doppio click, serve un server locale — <code>python3 -m http.server 8099</code> — ' +
+      'perché il browser non lascia leggere file JSON da <code>file://</code>.</div>';
+  }
+
+  /* =============================================== la fascia in alto */
+  function disegnaFascia(man, aria, morti) {
+    var giorni = Math.round((Date.now() - new Date(man.generato).getTime()) / 86400000);
+    var freschezza = giorni <= 0 ? 'oggi' : giorni === 1 ? 'ieri' : giorni + ' giorni fa';
+    document.getElementById('fascia').innerHTML =
+      '<span class="stato-voce"><span class="pulsa"></span>ultimo aggiornamento<b>' + freschezza + '</b></span>' +
+      '<span class="stato-voce">aria, ultimo mese<b>' + etichettaMese(aria.ultimo_periodo) + '</b></span>' +
+      '<span class="stato-voce">decessi, ultima settimana<b>' + morti.ultimo_periodo.replace('-W', ' · settimana ') + '</b></span>' +
+      '<span class="stato-voce">fonte<b>Eurostat</b></span>';
+  }
+
+  /* ====================================================== aria */
+  function disegnaAria(d) {
+    document.getElementById('sez-aria').hidden = false;
+
+    /* schede: ultimo mese disponibile, con il confronto sullo stesso mese di un anno prima */
+    document.getElementById('numeri-aria').innerHTML = d.citta.map(function (c) {
+      var ultimo = c.mensile[c.mensile.length - 1];
+      var anno = ultimo.periodo.split('-')[0], mese = ultimo.periodo.split('-')[1];
+      var prima = c.mensile.filter(function (m) {
+        return m.periodo === (parseInt(anno, 10) - 1) + '-' + mese;
+      })[0];
+      var delta = prima ? ultimo.valore - prima.valore : null;
+      var segno = delta === null ? 'nessun confronto disponibile' :
+        (delta > 0 ? '▲ ' : delta < 0 ? '▼ ' : '= ') + num(Math.abs(delta), 1) +
+        ' su ' + etichettaMese(prima.periodo);
+      return '<div class="numero scheda">' +
+        '<div class="chi" style="color:' + c.colore + '">' + c.citta + '</div>' +
+        '<div class="quanto">' + num(ultimo.valore, 1) + '</div>' +
+        '<div class="quando">µg/m³ · ' + etichettaMese(ultimo.periodo) + '<br>' + segno + '</div>' +
+      '</div>';
+    }).join('');
+
+    /* serie mensile: gli ultimi tre anni bastano a mostrare la stagionalità */
+    var periodi = d.citta[0].mensile.map(function (m) { return m.periodo; }).slice(-36);
+    new Chart(document.getElementById('graficoMensile'), {
+      type: 'line',
+      data: {
+        labels: periodi.map(etichettaMese),
+        datasets: d.citta.map(function (c) {
+          var per = {};
+          c.mensile.forEach(function (m) { per[m.periodo] = m.valore; });
+          return {
+            label: c.citta, borderColor: c.colore, backgroundColor: c.colore,
+            data: periodi.map(function (p) { return per[p] === undefined ? null : per[p]; }),
+            borderWidth: 1.8, pointRadius: 0, pointHoverRadius: 4, tension: .3, spanGaps: false
+          };
+        })
+      },
+      options: {
+        interaction: { mode: 'index', intersect: false },
+        scales: {
+          y: assi({ beginAtZero: true, title: { display: true, text: 'µg/m³ NO₂' } }),
+          x: assi({ ticks: { maxRotation: 0, autoSkip: true, maxTicksLimit: 12 } })
+        }
+      }
+    });
+    document.getElementById('did-mensile').innerHTML =
+      'Ultimi tre anni. Il ciclo è stagionale: il minimo cade sempre fra giugno e agosto. ' +
+      'Fonte: <a href="' + d.url + '" target="_blank">' + d.fonte + '</a>, aggiornata al ' +
+      (d.fonte_aggiornata || '—') + '.';
+
+    /* medie annue contro le tre soglie */
+    var anni = d.citta[0].annuale.map(function (a) { return a.anno; });
+    var linee = d.soglie.map(function (s) {
+      return {
+        label: s.nome + ' (' + s.valore + ')', data: anni.map(function () { return s.valore; }),
+        borderColor: s.valore === 20 ? S.rosso : S.tenue,
+        borderWidth: s.valore === 20 ? 1.6 : 1,
+        borderDash: s.valore === 20 ? [7, 4] : [3, 3],
+        pointRadius: 0, type: 'line', fill: false
+      };
+    });
+    new Chart(document.getElementById('graficoAnnuale'), {
+      type: 'bar',
+      data: {
+        labels: anni,
+        datasets: d.citta.map(function (c) {
+          return {
+            label: c.citta, backgroundColor: c.colore, borderWidth: 0,
+            data: c.annuale.map(function (a) { return a.media; })
+          };
+        }).concat(linee)
+      },
+      options: {
+        scales: {
+          y: assi({ beginAtZero: true, title: { display: true, text: 'µg/m³ NO₂, media annua' } }),
+          x: assi()
+        }
+      }
+    });
+    var incompleti = d.citta[0].annuale.filter(function (a) { return !a.completo; });
+    document.getElementById('did-annuale').innerHTML =
+      'La soglia da guardare è quella dei 20 µg/m³, che diventa vincolante il 1° gennaio 2030. ' +
+      (incompleti.length
+        ? 'Attenzione al ' + incompleti[0].anno + ': è una media su ' + incompleti[0].mesi +
+          ' mesi e non su dodici, e siccome i mesi mancanti sono quelli invernali — i peggiori — ' +
+          'il valore è più basso di quello che sarà a fine anno. '
+        : '') +
+      'Fonte: <a href="' + d.url + '" target="_blank">' + d.fonte + '</a>.';
+
+    document.getElementById('assenti-aria').innerHTML =
+      '<strong>Chi non c\'è:</strong> ' + d.assenti.join(', ') +
+      '. Questa serie di Eurostat copre le sole capitali, quindi delle sei città del pezzo ne ' +
+      'restano fuori tre, e al loro posto compare Roma, che nel trattato non c\'è. Non è un ' +
+      'errore di configurazione: è il perimetro della fonte.';
+  }
+
+  /* ================================================= mortalità */
+  function disegnaMortalita(d) {
+    document.getElementById('sez-morti').hidden = false;
+    document.getElementById('anni-base').textContent = d.baseline.da + '-' + d.baseline.a;
+
+    /* bilancio estivo: un gruppo di barre per anno */
+    var anni = [];
+    d.aree.forEach(function (a) {
+      a.estati.forEach(function (e) { if (anni.indexOf(e.anno) < 0) anni.push(e.anno); });
+    });
+    anni.sort();
+
+    new Chart(document.getElementById('graficoEstati'), {
+      type: 'bar',
+      data: {
+        labels: anni.map(function (a) {
+          var parziale = d.aree.some(function (ar) {
+            return ar.estati.some(function (e) { return e.anno === a && !e.complete; });
+          });
+          return a + (parziale ? ' *' : '');
+        }),
+        datasets: d.aree.map(function (a) {
+          var per = {};
+          a.estati.forEach(function (e) { per[e.anno] = e.eccesso; });
+          return {
+            label: a.citta, backgroundColor: a.colore, borderWidth: 0,
+            data: anni.map(function (y) { return per[y] === undefined ? null : per[y]; })
+          };
+        })
+      },
+      options: {
+        scales: {
+          y: assi({ title: { display: true, text: 'decessi in più dell\'atteso' } }),
+          x: assi()
+        }
+      }
+    });
+
+    var ultimoAnno = anni[anni.length - 1];
+    var parziali = d.aree.map(function (a) {
+      return a.estati.filter(function (e) { return e.anno === ultimoAnno; })[0];
+    }).filter(Boolean);
+    document.getElementById('did-estati').innerHTML =
+      'Somma dello scarto settimanale fra la settimana ' + d.estate.da_settimana + ' e la ' +
+      d.estate.a_settimana + ', cioè da metà giugno a inizio settembre. ' +
+      (parziali.length
+        ? 'L\'estate ' + ultimoAnno + ' è segnata con l\'asterisco perché è coperta solo per ' +
+          parziali[0].settimane + ' settimane su ' + (d.estate.a_settimana - d.estate.da_settimana + 1) +
+          ': il suo totale crescerà ancora e non va confrontato con gli anni interi. '
+        : '') +
+      'Il 2022 resta l\'anno peggiore quasi ovunque. Fonte: <a href="' + d.url + '" target="_blank">' +
+      d.fonte + '</a>, aggiornata al ' + (d.fonte_aggiornata || '—') + '.';
+
+    /* settimana per settimana, in percentuale: rende confrontabili province di taglia diversa */
+    var settimane = d.aree[0].serie.map(function (s) { return s.periodo; });
+    new Chart(document.getElementById('graficoSettimane'), {
+      type: 'line',
+      data: {
+        labels: settimane.map(function (p) { return p.replace('-W', ' · '); }),
+        datasets: d.aree.map(function (a) {
+          var per = {};
+          a.serie.forEach(function (s) { per[s.periodo] = s.eccesso_pct; });
+          return {
+            label: a.citta, borderColor: a.colore, backgroundColor: a.colore,
+            data: settimane.map(function (p) { return per[p] === undefined ? null : per[p]; }),
+            borderWidth: 1.5, pointRadius: 0, pointHoverRadius: 4, tension: .25, spanGaps: false
+          };
+        }).concat([{
+          label: 'atteso', data: settimane.map(function () { return 0; }),
+          borderColor: S.testo, borderWidth: 1, borderDash: [4, 4], pointRadius: 0, fill: false
+        }])
+      },
+      options: {
+        interaction: { mode: 'index', intersect: false },
+        scales: {
+          y: assi({ title: { display: true, text: '% sopra o sotto l\'atteso' },
+                    ticks: { callback: function (v) { return v > 0 ? '+' + v + '%' : v + '%'; } } }),
+          x: assi({ ticks: { maxRotation: 0, autoSkip: true, maxTicksLimit: 10 } })
+        }
+      }
+    });
+    document.getElementById('did-settimane').innerHTML =
+      'In percentuale invece che in numero assoluto, altrimenti la comunità di Madrid — che ha ' +
+      'molti più abitanti del dipartimento di Parigi — sembrerebbe sempre la più colpita. ' +
+      'La riga tratteggiata sullo zero è la media ' + d.baseline.da + '-' + d.baseline.a + '. ' +
+      'Le ultime settimane sono provvisorie e tendono a salire quando arrivano le registrazioni mancanti.';
+
+    document.getElementById('assenti-morti').innerHTML =
+      '<strong>Chi non c\'è:</strong> ' + d.assenti.join(', ') +
+      '. Il Regno Unito ha smesso di trasmettere a Eurostat dopo l\'uscita dall\'UE e i dati di ' +
+      'Londra si fermano al dicembre 2020. Esistono, ma vanno presi dall\'ONS, che è un\'altra ' +
+      'fonte con un\'altra struttura. Le aree non sono tutte della stessa taglia — ' +
+      d.aree.map(function (a) { return a.citta + ' è ' + a.area; }).join(', ') +
+      ' — ed è il motivo per cui il confronto diretto si fa in percentuale.';
+  }
+
+  /* ========================================================= avvio */
+  Promise.all([carica('manifest.json'), carica('aria.json'), carica('mortalita.json')])
+    .then(function (r) {
+      disegnaFascia(r[0], r[1], r[2]);
+      disegnaAria(r[1]);
+      disegnaMortalita(r[2]);
+      document.getElementById('sez-resto').hidden = false;
+      console.log('[cruscotto] aria fino a ' + r[1].ultimo_periodo +
+                  ', decessi fino a ' + r[2].ultimo_periodo);
+    })
+    .catch(function (e) { guasto(e.message); console.error('[cruscotto]', e); });
+})();
+</script>
+</body>
+</html>

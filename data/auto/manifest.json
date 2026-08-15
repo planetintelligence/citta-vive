@@ -1,0 +1,30 @@
+{
+ "generato": "2026-08-15T17:18:07Z",
+ "generato_giorno": "2026-08-15",
+ "serie": [
+  {
+   "file": "aria.json",
+   "titolo": "Biossido di azoto nelle capitali europee",
+   "fonte": "Eurostat, ENV_AIR_NO2 (statistiche sperimentali)",
+   "url": "https://ec.europa.eu/eurostat/databrowser/product/page/ENV_AIR_NO2",
+   "ultimo_periodo": "2026-06",
+   "fonte_aggiornata": "2026-07-08",
+   "assenti": [
+    "Barcellona",
+    "Milano",
+    "Londra"
+   ]
+  },
+  {
+   "file": "mortalita.json",
+   "titolo": "Decessi settimanali e scarto dall'atteso",
+   "fonte": "Eurostat, DEMO_R_MWK3_T e DEMO_R_MWK2_TS",
+   "url": "https://ec.europa.eu/eurostat/databrowser/product/page/DEMO_R_MWK3_T",
+   "ultimo_periodo": "2026-W28",
+   "fonte_aggiornata": "2026-08-14",
+   "assenti": [
+    "Londra"
+   ]
+  }
+ ]
+}

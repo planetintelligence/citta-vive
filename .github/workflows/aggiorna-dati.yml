@@ -1,0 +1,76 @@
+# Città vive — aggiornamento dei dati del cruscotto
+#
+# Rilancia pipeline/aggiorna.py e committa solo se qualcosa è davvero
+# cambiato. Nessun `pip install`: lo script usa la sola libreria standard,
+# quindi qui non c'è un albero di dipendenze che possa rompersi da solo.
+#
+# Cadenza: il 12 di ogni mese. Eurostat aggiorna il NO₂ mensile intorno
+# all'inizio del mese e i decessi settimanali di continuo; il 12 arriva a
+# cose ferme senza interrogare l'API a vuoto ogni notte. Si può sempre
+# lanciare a mano dalla scheda Actions.
+
+name: Aggiorna i dati del cruscotto
+
+on:
+  schedule:
+    - cron: '17 6 12 * *'     # il 12 di ogni mese, 06:17 UTC
+  workflow_dispatch:           # e ogni volta che serve, a mano
+
+permissions:
+  contents: write
+
+concurrency:
+  group: aggiorna-dati
+  cancel-in-progress: false
+
+jobs:
+  aggiorna:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Scarica le serie da Eurostat
+        run: python3 pipeline/aggiorna.py
+
+      - name: Committa se qualcosa è cambiato
+        run: |
+          if [ -z "$(git status --porcelain data/auto)" ]; then
+            echo "Nessuna novità da Eurostat: niente da committare."
+            exit 0
+          fi
+
+          # il periodo più recente finisce nel messaggio di commit, così la
+          # storia si legge senza aprire i file
+          ARIA=$(python3 -c "import json;print(json.load(open('data/auto/aria.json'))['ultimo_periodo'])")
+          MORTI=$(python3 -c "import json;print(json.load(open('data/auto/mortalita.json'))['ultimo_periodo'])")
+
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/auto
+          git commit -m "Dati del cruscotto: aria a $ARIA, decessi a $MORTI" \
+                     -m "Aggiornamento automatico da Eurostat (ENV_AIR_NO2, DEMO_R_MWK3_T,
+          DEMO_R_MWK2_TS). Generato da pipeline/aggiorna.py, che tocca solo
+          data/auto/ e non sfiora i dati del trattato."
+          git push
+
+      - name: Riepilogo
+        if: always()
+        run: |
+          echo "### Aggiornamento dei dati" >> $GITHUB_STEP_SUMMARY
+          if [ -f data/auto/manifest.json ]; then
+            python3 - <<'PY' >> $GITHUB_STEP_SUMMARY
+          import json
+          m = json.load(open('data/auto/manifest.json'))
+          print(f"Generato il {m['generato']}\n")
+          print("| serie | ultimo periodo | fonte aggiornata |")
+          print("|---|---|---|")
+          for s in m['serie']:
+              print(f"| {s['titolo']} | {s['ultimo_periodo']} | {s['fonte_aggiornata']} |")
+          PY
+          else
+            echo "Il manifesto non è stato generato: guarda il passo precedente." >> $GITHUB_STEP_SUMMARY
+          fi

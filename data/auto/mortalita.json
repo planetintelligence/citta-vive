@@ -1,0 +1,6908 @@
+{
+ "titolo": "Decessi settimanali e scarto dall'atteso",
+ "unita": "decessi per settimana",
+ "fonte": "Eurostat, DEMO_R_MWK3_T e DEMO_R_MWK2_TS",
+ "url": "https://ec.europa.eu/eurostat/databrowser/product/page/DEMO_R_MWK3_T",
+ "metodo": "Atteso = media della stessa settimana ISO negli anni 2015-2019. È un confronto grezzo: non corregge per l'invecchiamento della popolazione né per la sua crescita, e non attribuisce lo scarto a una causa.",
+ "baseline": {
+  "da": 2015,
+  "a": 2019
+ },
+ "dettaglio_da": 2024,
+ "estate": {
+  "da_settimana": 24,
+  "a_settimana": 36
+ },
+ "ultimo_periodo": "2026-W28",
+ "fonte_aggiornata": "2026-08-14",
+ "assenti": [
+  "Londra"
+ ],
+ "aree": [
+  {
+   "flusso": "mwk3",
+   "codice": "ITC4C",
+   "citta": "Milano",
+   "id": "milan",
+   "colore": "#E63946",
+   "area": "città metropolitana",
+   "serie": [
+    {
+     "periodo": "2024-W01",
+     "anno": 2024,
+     "settimana": 1,
+     "morti": 790.0,
+     "atteso": 750.6,
+     "eccesso": 39.4,
+     "eccesso_pct": 5.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W02",
+     "anno": 2024,
+     "settimana": 2,
+     "morti": 720.0,
+     "atteso": 759.4,
+     "eccesso": -39.4,
+     "eccesso_pct": -5.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W03",
+     "anno": 2024,
+     "settimana": 3,
+     "morti": 649.0,
+     "atteso": 730.0,
+     "eccesso": -81.0,
+     "eccesso_pct": -11.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W04",
+     "anno": 2024,
+     "settimana": 4,
+     "morti": 700.0,
+     "atteso": 698.8,
+     "eccesso": 1.2,
+     "eccesso_pct": 0.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W05",
+     "anno": 2024,
+     "settimana": 5,
+     "morti": 649.0,
+     "atteso": 704.2,
+     "eccesso": -55.2,
+     "eccesso_pct": -7.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W06",
+     "anno": 2024,
+     "settimana": 6,
+     "morti": 617.0,
+     "atteso": 701.4,
+     "eccesso": -84.4,
+     "eccesso_pct": -12.0,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W07",
+     "anno": 2024,
+     "settimana": 7,
+     "morti": 598.0,
+     "atteso": 685.4,
+     "eccesso": -87.4,
+     "eccesso_pct": -12.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W08",
+     "anno": 2024,
+     "settimana": 8,
+     "morti": 573.0,
+     "atteso": 664.4,
+     "eccesso": -91.4,
+     "eccesso_pct": -13.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W09",
+     "anno": 2024,
+     "settimana": 9,
+     "morti": 593.0,
+     "atteso": 650.4,
+     "eccesso": -57.4,
+     "eccesso_pct": -8.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W10",
+     "anno": 2024,
+     "settimana": 10,
+     "morti": 594.0,
+     "atteso": 638.0,
+     "eccesso": -44.0,
+     "eccesso_pct": -6.9,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W11",
+     "anno": 2024,
+     "settimana": 11,
+     "morti": 538.0,
+     "atteso": 584.4,
+     "eccesso": -46.4,
+     "eccesso_pct": -7.9,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W12",
+     "anno": 2024,
+     "settimana": 12,
+     "morti": 596.0,
+     "atteso": 599.4,
+     "eccesso": -3.4,
+     "eccesso_pct": -0.6,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W13",
+     "anno": 2024,
+     "settimana": 13,
+     "morti": 538.0,
+     "atteso": 594.2,
+     "eccesso": -56.2,
+     "eccesso_pct": -9.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W14",
+     "anno": 2024,
+     "settimana": 14,
+     "morti": 580.0,
+     "atteso": 598.0,
+     "eccesso": -18.0,
+     "eccesso_pct": -3.0,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W15",
+     "anno": 2024,
+     "settimana": 15,
+     "morti": 571.0,
+     "atteso": 574.6,
+     "eccesso": -3.6,
+     "eccesso_pct": -0.6,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W16",
+     "anno": 2024,
+     "settimana": 16,
+     "morti": 515.0,
+     "atteso": 571.6,
+     "eccesso": -56.6,
+     "eccesso_pct": -9.9,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W17",
+     "anno": 2024,
+     "settimana": 17,
+     "morti": 611.0,
+     "atteso": 568.6,
+     "eccesso": 42.4,
+     "eccesso_pct": 7.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W18",
+     "anno": 2024,
+     "settimana": 18,
+     "morti": 619.0,
+     "atteso": 549.8,
+     "eccesso": 69.2,
+     "eccesso_pct": 12.6,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W19",
+     "anno": 2024,
+     "settimana": 19,
+     "morti": 561.0,
+     "atteso": 551.4,
+     "eccesso": 9.6,
+     "eccesso_pct": 1.7,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W20",
+     "anno": 2024,
+     "settimana": 20,
+     "morti": 620.0,
+     "atteso": 564.0,
+     "eccesso": 56.0,
+     "eccesso_pct": 9.9,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W21",
+     "anno": 2024,
+     "settimana": 21,
+     "morti": 532.0,
+     "atteso": 554.6,
+     "eccesso": -22.6,
+     "eccesso_pct": -4.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W22",
+     "anno": 2024,
+     "settimana": 22,
+     "morti": 551.0,
+     "atteso": 544.6,
+     "eccesso": 6.4,
+     "eccesso_pct": 1.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W23",
+     "anno": 2024,
+     "settimana": 23,
+     "morti": 532.0,
+     "atteso": 564.6,
+     "eccesso": -32.6,
+     "eccesso_pct": -5.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W24",
+     "anno": 2024,
+     "settimana": 24,
+     "morti": 514.0,
+     "atteso": 546.6,
+     "eccesso": -32.6,
+     "eccesso_pct": -6.0,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W25",
+     "anno": 2024,
+     "settimana": 25,
+     "morti": 578.0,
+     "atteso": 560.2,
+     "eccesso": 17.8,
+     "eccesso_pct": 3.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W26",
+     "anno": 2024,
+     "settimana": 26,
+     "morti": 524.0,
+     "atteso": 543.4,
+     "eccesso": -19.4,
+     "eccesso_pct": -3.6,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W27",
+     "anno": 2024,
+     "settimana": 27,
+     "morti": 561.0,
+     "atteso": 571.0,
+     "eccesso": -10.0,
+     "eccesso_pct": -1.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W28",
+     "anno": 2024,
+     "settimana": 28,
+     "morti": 577.0,
+     "atteso": 575.8,
+     "eccesso": 1.2,
+     "eccesso_pct": 0.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W29",
+     "anno": 2024,
+     "settimana": 29,
+     "morti": 591.0,
+     "atteso": 552.6,
+     "eccesso": 38.4,
+     "eccesso_pct": 6.9,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W30",
+     "anno": 2024,
+     "settimana": 30,
+     "morti": 608.0,
+     "atteso": 585.2,
+     "eccesso": 22.8,
+     "eccesso_pct": 3.9,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W31",
+     "anno": 2024,
+     "settimana": 31,
+     "morti": 613.0,
+     "atteso": 591.6,
+     "eccesso": 21.4,
+     "eccesso_pct": 3.6,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W32",
+     "anno": 2024,
+     "settimana": 32,
+     "morti": 634.0,
+     "atteso": 569.6,
+     "eccesso": 64.4,
+     "eccesso_pct": 11.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W33",
+     "anno": 2024,
+     "settimana": 33,
+     "morti": 569.0,
+     "atteso": 544.8,
+     "eccesso": 24.2,
+     "eccesso_pct": 4.4,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W34",
+     "anno": 2024,
+     "settimana": 34,
+     "morti": 554.0,
+     "atteso": 529.8,
+     "eccesso": 24.2,
+     "eccesso_pct": 4.6,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W35",
+     "anno": 2024,
+     "settimana": 35,
+     "morti": 557.0,
+     "atteso": 534.2,
+     "eccesso": 22.8,
+     "eccesso_pct": 4.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W36",
+     "anno": 2024,
+     "settimana": 36,
+     "morti": 575.0,
+     "atteso": 541.8,
+     "eccesso": 33.2,
+     "eccesso_pct": 6.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W37",
+     "anno": 2024,
+     "settimana": 37,
+     "morti": 536.0,
+     "atteso": 548.8,
+     "eccesso": -12.8,
+     "eccesso_pct": -2.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W38",
+     "anno": 2024,
+     "settimana": 38,
+     "morti": 575.0,
+     "atteso": 524.4,
+     "eccesso": 50.6,
+     "eccesso_pct": 9.6,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W39",
+     "anno": 2024,
+     "settimana": 39,
+     "morti": 613.0,
+     "atteso": 577.4,
+     "eccesso": 35.6,
+     "eccesso_pct": 6.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W40",
+     "anno": 2024,
+     "settimana": 40,
+     "morti": 647.0,
+     "atteso": 563.8,
+     "eccesso": 83.2,
+     "eccesso_pct": 14.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W41",
+     "anno": 2024,
+     "settimana": 41,
+     "morti": 708.0,
+     "atteso": 570.2,
+     "eccesso": 137.8,
+     "eccesso_pct": 24.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W42",
+     "anno": 2024,
+     "settimana": 42,
+     "morti": 699.0,
+     "atteso": 599.2,
+     "eccesso": 99.8,
+     "eccesso_pct": 16.7,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W43",
+     "anno": 2024,
+     "settimana": 43,
+     "morti": 630.0,
+     "atteso": 581.0,
+     "eccesso": 49.0,
+     "eccesso_pct": 8.4,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W44",
+     "anno": 2024,
+     "settimana": 44,
+     "morti": 598.0,
+     "atteso": 579.8,
+     "eccesso": 18.2,
+     "eccesso_pct": 3.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W45",
+     "anno": 2024,
+     "settimana": 45,
+     "morti": 603.0,
+     "atteso": 575.2,
+     "eccesso": 27.8,
+     "eccesso_pct": 4.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W46",
+     "anno": 2024,
+     "settimana": 46,
+     "morti": 624.0,
+     "atteso": 582.0,
+     "eccesso": 42.0,
+     "eccesso_pct": 7.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W47",
+     "anno": 2024,
+     "settimana": 47,
+     "morti": 597.0,
+     "atteso": 595.0,
+     "eccesso": 2.0,
+     "eccesso_pct": 0.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W48",
+     "anno": 2024,
+     "settimana": 48,
+     "morti": 646.0,
+     "atteso": 586.4,
+     "eccesso": 59.6,
+     "eccesso_pct": 10.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W49",
+     "anno": 2024,
+     "settimana": 49,
+     "morti": 657.0,
+     "atteso": 595.4,
+     "eccesso": 61.6,
+     "eccesso_pct": 10.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W50",
+     "anno": 2024,
+     "settimana": 50,
+     "morti": 605.0,
+     "atteso": 636.0,
+     "eccesso": -31.0,
+     "eccesso_pct": -4.9,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W51",
+     "anno": 2024,
+     "settimana": 51,
+     "morti": 568.0,
+     "atteso": 636.8,
+     "eccesso": -68.8,
+     "eccesso_pct": -10.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W52",
+     "anno": 2024,
+     "settimana": 52,
+     "morti": 444.0,
+     "atteso": 692.2,
+     "eccesso": -248.2,
+     "eccesso_pct": -35.9,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W01",
+     "anno": 2025,
+     "settimana": 1,
+     "morti": 732.0,
+     "atteso": 750.6,
+     "eccesso": -18.6,
+     "eccesso_pct": -2.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W02",
+     "anno": 2025,
+     "settimana": 2,
+     "morti": 818.0,
+     "atteso": 759.4,
+     "eccesso": 58.6,
+     "eccesso_pct": 7.7,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W03",
+     "anno": 2025,
+     "settimana": 3,
+     "morti": 734.0,
+     "atteso": 730.0,
+     "eccesso": 4.0,
+     "eccesso_pct": 0.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W04",
+     "anno": 2025,
+     "settimana": 4,
+     "morti": 790.0,
+     "atteso": 698.8,
+     "eccesso": 91.2,
+     "eccesso_pct": 13.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W05",
+     "anno": 2025,
+     "settimana": 5,
+     "morti": 717.0,
+     "atteso": 704.2,
+     "eccesso": 12.8,
+     "eccesso_pct": 1.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W06",
+     "anno": 2025,
+     "settimana": 6,
+     "morti": 680.0,
+     "atteso": 701.4,
+     "eccesso": -21.4,
+     "eccesso_pct": -3.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W07",
+     "anno": 2025,
+     "settimana": 7,
+     "morti": 620.0,
+     "atteso": 685.4,
+     "eccesso": -65.4,
+     "eccesso_pct": -9.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W08",
+     "anno": 2025,
+     "settimana": 8,
+     "morti": 609.0,
+     "atteso": 664.4,
+     "eccesso": -55.4,
+     "eccesso_pct": -8.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W09",
+     "anno": 2025,
+     "settimana": 9,
+     "morti": 640.0,
+     "atteso": 650.4,
+     "eccesso": -10.4,
+     "eccesso_pct": -1.6,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W10",
+     "anno": 2025,
+     "settimana": 10,
+     "morti": 629.0,
+     "atteso": 638.0,
+     "eccesso": -9.0,
+     "eccesso_pct": -1.4,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W11",
+     "anno": 2025,
+     "settimana": 11,
+     "morti": 680.0,
+     "atteso": 584.4,
+     "eccesso": 95.6,
+     "eccesso_pct": 16.4,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W12",
+     "anno": 2025,
+     "settimana": 12,
+     "morti": 573.0,
+     "atteso": 599.4,
+     "eccesso": -26.4,
+     "eccesso_pct": -4.4,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W13",
+     "anno": 2025,
+     "settimana": 13,
+     "morti": 592.0,
+     "atteso": 594.2,
+     "eccesso": -2.2,
+     "eccesso_pct": -0.4,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W14",
+     "anno": 2025,
+     "settimana": 14,
+     "morti": 616.0,
+     "atteso": 598.0,
+     "eccesso": 18.0,
+     "eccesso_pct": 3.0,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W15",
+     "anno": 2025,
+     "settimana": 15,
+     "morti": 571.0,
+     "atteso": 574.6,
+     "eccesso": -3.6,
+     "eccesso_pct": -0.6,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W16",
+     "anno": 2025,
+     "settimana": 16,
+     "morti": 580.0,
+     "atteso": 571.6,
+     "eccesso": 8.4,
+     "eccesso_pct": 1.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W17",
+     "anno": 2025,
+     "settimana": 17,
+     "morti": 567.0,
+     "atteso": 568.6,
+     "eccesso": -1.6,
+     "eccesso_pct": -0.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W18",
+     "anno": 2025,
+     "settimana": 18,
+     "morti": 564.0,
+     "atteso": 549.8,
+     "eccesso": 14.2,
+     "eccesso_pct": 2.6,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W19",
+     "anno": 2025,
+     "settimana": 19,
+     "morti": 513.0,
+     "atteso": 551.4,
+     "eccesso": -38.4,
+     "eccesso_pct": -7.0,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W20",
+     "anno": 2025,
+     "settimana": 20,
+     "morti": 583.0,
+     "atteso": 564.0,
+     "eccesso": 19.0,
+     "eccesso_pct": 3.4,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W21",
+     "anno": 2025,
+     "settimana": 21,
+     "morti": 500.0,
+     "atteso": 554.6,
+     "eccesso": -54.6,
+     "eccesso_pct": -9.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W22",
+     "anno": 2025,
+     "settimana": 22,
+     "morti": 622.0,
+     "atteso": 544.6,
+     "eccesso": 77.4,
+     "eccesso_pct": 14.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W23",
+     "anno": 2025,
+     "settimana": 23,
+     "morti": 582.0,
+     "atteso": 564.6,
+     "eccesso": 17.4,
+     "eccesso_pct": 3.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W24",
+     "anno": 2025,
+     "settimana": 24,
+     "morti": 624.0,
+     "atteso": 546.6,
+     "eccesso": 77.4,
+     "eccesso_pct": 14.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W25",
+     "anno": 2025,
+     "settimana": 25,
+     "morti": 522.0,
+     "atteso": 560.2,
+     "eccesso": -38.2,
+     "eccesso_pct": -6.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W26",
+     "anno": 2025,
+     "settimana": 26,
+     "morti": 549.0,
+     "atteso": 543.4,
+     "eccesso": 5.6,
+     "eccesso_pct": 1.0,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W27",
+     "anno": 2025,
+     "settimana": 27,
+     "morti": 644.0,
+     "atteso": 571.0,
+     "eccesso": 73.0,
+     "eccesso_pct": 12.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W28",
+     "anno": 2025,
+     "settimana": 28,
+     "morti": 582.0,
+     "atteso": 575.8,
+     "eccesso": 6.2,
+     "eccesso_pct": 1.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W29",
+     "anno": 2025,
+     "settimana": 29,
+     "morti": 610.0,
+     "atteso": 552.6,
+     "eccesso": 57.4,
+     "eccesso_pct": 10.4,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W30",
+     "anno": 2025,
+     "settimana": 30,
+     "morti": 551.0,
+     "atteso": 585.2,
+     "eccesso": -34.2,
+     "eccesso_pct": -5.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W31",
+     "anno": 2025,
+     "settimana": 31,
+     "morti": 513.0,
+     "atteso": 591.6,
+     "eccesso": -78.6,
+     "eccesso_pct": -13.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W32",
+     "anno": 2025,
+     "settimana": 32,
+     "morti": 583.0,
+     "atteso": 569.6,
+     "eccesso": 13.4,
+     "eccesso_pct": 2.4,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W33",
+     "anno": 2025,
+     "settimana": 33,
+     "morti": 616.0,
+     "atteso": 544.8,
+     "eccesso": 71.2,
+     "eccesso_pct": 13.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W34",
+     "anno": 2025,
+     "settimana": 34,
+     "morti": 573.0,
+     "atteso": 529.8,
+     "eccesso": 43.2,
+     "eccesso_pct": 8.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W35",
+     "anno": 2025,
+     "settimana": 35,
+     "morti": 573.0,
+     "atteso": 534.2,
+     "eccesso": 38.8,
+     "eccesso_pct": 7.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W36",
+     "anno": 2025,
+     "settimana": 36,
+     "morti": 582.0,
+     "atteso": 541.8,
+     "eccesso": 40.2,
+     "eccesso_pct": 7.4,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W37",
+     "anno": 2025,
+     "settimana": 37,
+     "morti": 606.0,
+     "atteso": 548.8,
+     "eccesso": 57.2,
+     "eccesso_pct": 10.4,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W38",
+     "anno": 2025,
+     "settimana": 38,
+     "morti": 547.0,
+     "atteso": 524.4,
+     "eccesso": 22.6,
+     "eccesso_pct": 4.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W39",
+     "anno": 2025,
+     "settimana": 39,
+     "morti": 572.0,
+     "atteso": 577.4,
+     "eccesso": -5.4,
+     "eccesso_pct": -0.9,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W40",
+     "anno": 2025,
+     "settimana": 40,
+     "morti": 601.0,
+     "atteso": 563.8,
+     "eccesso": 37.2,
+     "eccesso_pct": 6.6,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W41",
+     "anno": 2025,
+     "settimana": 41,
+     "morti": 689.0,
+     "atteso": 570.2,
+     "eccesso": 118.8,
+     "eccesso_pct": 20.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W42",
+     "anno": 2025,
+     "settimana": 42,
+     "morti": 597.0,
+     "atteso": 599.2,
+     "eccesso": -2.2,
+     "eccesso_pct": -0.4,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W43",
+     "anno": 2025,
+     "settimana": 43,
+     "morti": 659.0,
+     "atteso": 581.0,
+     "eccesso": 78.0,
+     "eccesso_pct": 13.4,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W44",
+     "anno": 2025,
+     "settimana": 44,
+     "morti": 670.0,
+     "atteso": 579.8,
+     "eccesso": 90.2,
+     "eccesso_pct": 15.6,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W45",
+     "anno": 2025,
+     "settimana": 45,
+     "morti": 653.0,
+     "atteso": 575.2,
+     "eccesso": 77.8,
+     "eccesso_pct": 13.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W46",
+     "anno": 2025,
+     "settimana": 46,
+     "morti": 645.0,
+     "atteso": 582.0,
+     "eccesso": 63.0,
+     "eccesso_pct": 10.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W47",
+     "anno": 2025,
+     "settimana": 47,
+     "morti": 567.0,
+     "atteso": 595.0,
+     "eccesso": -28.0,
+     "eccesso_pct": -4.7,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W48",
+     "anno": 2025,
+     "settimana": 48,
+     "morti": 625.0,
+     "atteso": 586.4,
+     "eccesso": 38.6,
+     "eccesso_pct": 6.6,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W49",
+     "anno": 2025,
+     "settimana": 49,
+     "morti": 702.0,
+     "atteso": 595.4,
+     "eccesso": 106.6,
+     "eccesso_pct": 17.9,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W50",
+     "anno": 2025,
+     "settimana": 50,
+     "morti": 665.0,
+     "atteso": 636.0,
+     "eccesso": 29.0,
+     "eccesso_pct": 4.6,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W51",
+     "anno": 2025,
+     "settimana": 51,
+     "morti": 752.0,
+     "atteso": 636.8,
+     "eccesso": 115.2,
+     "eccesso_pct": 18.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W52",
+     "anno": 2025,
+     "settimana": 52,
+     "morti": 691.0,
+     "atteso": 692.2,
+     "eccesso": -1.2,
+     "eccesso_pct": -0.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W01",
+     "anno": 2026,
+     "settimana": 1,
+     "morti": 759.0,
+     "atteso": 750.6,
+     "eccesso": 8.4,
+     "eccesso_pct": 1.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W02",
+     "anno": 2026,
+     "settimana": 2,
+     "morti": 744.0,
+     "atteso": 759.4,
+     "eccesso": -15.4,
+     "eccesso_pct": -2.0,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W03",
+     "anno": 2026,
+     "settimana": 3,
+     "morti": 792.0,
+     "atteso": 730.0,
+     "eccesso": 62.0,
+     "eccesso_pct": 8.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W04",
+     "anno": 2026,
+     "settimana": 4,
+     "morti": 761.0,
+     "atteso": 698.8,
+     "eccesso": 62.2,
+     "eccesso_pct": 8.9,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W05",
+     "anno": 2026,
+     "settimana": 5,
+     "morti": 662.0,
+     "atteso": 704.2,
+     "eccesso": -42.2,
+     "eccesso_pct": -6.0,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W06",
+     "anno": 2026,
+     "settimana": 6,
+     "morti": 728.0,
+     "atteso": 701.4,
+     "eccesso": 26.6,
+     "eccesso_pct": 3.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W07",
+     "anno": 2026,
+     "settimana": 7,
+     "morti": 627.0,
+     "atteso": 685.4,
+     "eccesso": -58.4,
+     "eccesso_pct": -8.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W08",
+     "anno": 2026,
+     "settimana": 8,
+     "morti": 604.0,
+     "atteso": 664.4,
+     "eccesso": -60.4,
+     "eccesso_pct": -9.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W09",
+     "anno": 2026,
+     "settimana": 9,
+     "morti": 632.0,
+     "atteso": 650.4,
+     "eccesso": -18.4,
+     "eccesso_pct": -2.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W10",
+     "anno": 2026,
+     "settimana": 10,
+     "morti": 600.0,
+     "atteso": 638.0,
+     "eccesso": -38.0,
+     "eccesso_pct": -6.0,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W11",
+     "anno": 2026,
+     "settimana": 11,
+     "morti": 599.0,
+     "atteso": 584.4,
+     "eccesso": 14.6,
+     "eccesso_pct": 2.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W12",
+     "anno": 2026,
+     "settimana": 12,
+     "morti": 560.0,
+     "atteso": 599.4,
+     "eccesso": -39.4,
+     "eccesso_pct": -6.6,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W13",
+     "anno": 2026,
+     "settimana": 13,
+     "morti": 571.0,
+     "atteso": 594.2,
+     "eccesso": -23.2,
+     "eccesso_pct": -3.9,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W14",
+     "anno": 2026,
+     "settimana": 14,
+     "morti": 642.0,
+     "atteso": 598.0,
+     "eccesso": 44.0,
+     "eccesso_pct": 7.4,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W15",
+     "anno": 2026,
+     "settimana": 15,
+     "morti": 654.0,
+     "atteso": 574.6,
+     "eccesso": 79.4,
+     "eccesso_pct": 13.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W16",
+     "anno": 2026,
+     "settimana": 16,
+     "morti": 556.0,
+     "atteso": 571.6,
+     "eccesso": -15.6,
+     "eccesso_pct": -2.7,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W17",
+     "anno": 2026,
+     "settimana": 17,
+     "morti": 562.0,
+     "atteso": 568.6,
+     "eccesso": -6.6,
+     "eccesso_pct": -1.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W18",
+     "anno": 2026,
+     "settimana": 18,
+     "morti": 578.0,
+     "atteso": 549.8,
+     "eccesso": 28.2,
+     "eccesso_pct": 5.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W19",
+     "anno": 2026,
+     "settimana": 19,
+     "morti": 522.0,
+     "atteso": 551.4,
+     "eccesso": -29.4,
+     "eccesso_pct": -5.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W20",
+     "anno": 2026,
+     "settimana": 20,
+     "morti": 574.0,
+     "atteso": 564.0,
+     "eccesso": 10.0,
+     "eccesso_pct": 1.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W21",
+     "anno": 2026,
+     "settimana": 21,
+     "morti": 590.0,
+     "atteso": 554.6,
+     "eccesso": 35.4,
+     "eccesso_pct": 6.4,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W22",
+     "anno": 2026,
+     "settimana": 22,
+     "morti": 643.0,
+     "atteso": 544.6,
+     "eccesso": 98.4,
+     "eccesso_pct": 18.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W23",
+     "anno": 2026,
+     "settimana": 23,
+     "morti": 535.0,
+     "atteso": 564.6,
+     "eccesso": -29.6,
+     "eccesso_pct": -5.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W24",
+     "anno": 2026,
+     "settimana": 24,
+     "morti": 547.0,
+     "atteso": 546.6,
+     "eccesso": 0.4,
+     "eccesso_pct": 0.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W25",
+     "anno": 2026,
+     "settimana": 25,
+     "morti": 555.0,
+     "atteso": 560.2,
+     "eccesso": -5.2,
+     "eccesso_pct": -0.9,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W26",
+     "anno": 2026,
+     "settimana": 26,
+     "morti": 671.0,
+     "atteso": 543.4,
+     "eccesso": 127.6,
+     "eccesso_pct": 23.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W27",
+     "anno": 2026,
+     "settimana": 27,
+     "morti": 616.0,
+     "atteso": 571.0,
+     "eccesso": 45.0,
+     "eccesso_pct": 7.9,
+     "provvisorio": true
+    }
+   ],
+   "estati": [
+    {
+     "anno": 2020,
+     "settimane": 13,
+     "complete": true,
+     "eccesso": 122.4,
+     "eccesso_pct": 1.7
+    },
+    {
+     "anno": 2021,
+     "settimane": 13,
+     "complete": true,
+     "eccesso": 215.4,
+     "eccesso_pct": 3.0
+    },
+    {
+     "anno": 2022,
+     "settimane": 13,
+     "complete": true,
+     "eccesso": 1577.4,
+     "eccesso_pct": 21.8
+    },
+    {
+     "anno": 2023,
+     "settimane": 13,
+     "complete": true,
+     "eccesso": 147.4,
+     "eccesso_pct": 2.0
+    },
+    {
+     "anno": 2024,
+     "settimane": 13,
+     "complete": true,
+     "eccesso": 208.4,
+     "eccesso_pct": 2.9
+    },
+    {
+     "anno": 2025,
+     "settimane": 13,
+     "complete": true,
+     "eccesso": 275.4,
+     "eccesso_pct": 3.8
+    },
+    {
+     "anno": 2026,
+     "settimane": 4,
+     "complete": false,
+     "eccesso": 167.8,
+     "eccesso_pct": 7.6
+    }
+   ],
+   "ultimo": {
+    "periodo": "2026-W27",
+    "anno": 2026,
+    "settimana": 27,
+    "morti": 616.0,
+    "atteso": 571.0,
+    "eccesso": 45.0,
+    "eccesso_pct": 7.9,
+    "provvisorio": true
+   }
+  },
+  {
+   "flusso": "mwk3",
+   "codice": "FR101",
+   "citta": "Parigi",
+   "id": "paris",
+   "colore": "#005BAC",
+   "area": "dipartimento di Parigi",
+   "serie": [
+    {
+     "periodo": "2024-W01",
+     "anno": 2024,
+     "settimana": 1,
+     "morti": 370.0,
+     "atteso": 386.8,
+     "eccesso": -16.8,
+     "eccesso_pct": -4.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W02",
+     "anno": 2024,
+     "settimana": 2,
+     "morti": 359.0,
+     "atteso": 396.0,
+     "eccesso": -37.0,
+     "eccesso_pct": -9.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W03",
+     "anno": 2024,
+     "settimana": 3,
+     "morti": 413.0,
+     "atteso": 383.4,
+     "eccesso": 29.6,
+     "eccesso_pct": 7.7,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W04",
+     "anno": 2024,
+     "settimana": 4,
+     "morti": 389.0,
+     "atteso": 379.6,
+     "eccesso": 9.4,
+     "eccesso_pct": 2.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W05",
+     "anno": 2024,
+     "settimana": 5,
+     "morti": 417.0,
+     "atteso": 373.6,
+     "eccesso": 43.4,
+     "eccesso_pct": 11.6,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W06",
+     "anno": 2024,
+     "settimana": 6,
+     "morti": 366.0,
+     "atteso": 388.6,
+     "eccesso": -22.6,
+     "eccesso_pct": -5.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W07",
+     "anno": 2024,
+     "settimana": 7,
+     "morti": 340.0,
+     "atteso": 368.2,
+     "eccesso": -28.2,
+     "eccesso_pct": -7.7,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W08",
+     "anno": 2024,
+     "settimana": 8,
+     "morti": 336.0,
+     "atteso": 363.4,
+     "eccesso": -27.4,
+     "eccesso_pct": -7.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W09",
+     "anno": 2024,
+     "settimana": 9,
+     "morti": 325.0,
+     "atteso": 364.6,
+     "eccesso": -39.6,
+     "eccesso_pct": -10.9,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W10",
+     "anno": 2024,
+     "settimana": 10,
+     "morti": 351.0,
+     "atteso": 373.6,
+     "eccesso": -22.6,
+     "eccesso_pct": -6.0,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W11",
+     "anno": 2024,
+     "settimana": 11,
+     "morti": 338.0,
+     "atteso": 339.8,
+     "eccesso": -1.8,
+     "eccesso_pct": -0.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W12",
+     "anno": 2024,
+     "settimana": 12,
+     "morti": 329.0,
+     "atteso": 337.8,
+     "eccesso": -8.8,
+     "eccesso_pct": -2.6,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W13",
+     "anno": 2024,
+     "settimana": 13,
+     "morti": 323.0,
+     "atteso": 337.4,
+     "eccesso": -14.4,
+     "eccesso_pct": -4.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W14",
+     "anno": 2024,
+     "settimana": 14,
+     "morti": 353.0,
+     "atteso": 332.8,
+     "eccesso": 20.2,
+     "eccesso_pct": 6.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W15",
+     "anno": 2024,
+     "settimana": 15,
+     "morti": 306.0,
+     "atteso": 322.0,
+     "eccesso": -16.0,
+     "eccesso_pct": -5.0,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W16",
+     "anno": 2024,
+     "settimana": 16,
+     "morti": 291.0,
+     "atteso": 326.4,
+     "eccesso": -35.4,
+     "eccesso_pct": -10.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W17",
+     "anno": 2024,
+     "settimana": 17,
+     "morti": 314.0,
+     "atteso": 317.4,
+     "eccesso": -3.4,
+     "eccesso_pct": -1.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W18",
+     "anno": 2024,
+     "settimana": 18,
+     "morti": 296.0,
+     "atteso": 328.0,
+     "eccesso": -32.0,
+     "eccesso_pct": -9.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W19",
+     "anno": 2024,
+     "settimana": 19,
+     "morti": 289.0,
+     "atteso": 321.8,
+     "eccesso": -32.8,
+     "eccesso_pct": -10.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W20",
+     "anno": 2024,
+     "settimana": 20,
+     "morti": 332.0,
+     "atteso": 310.2,
+     "eccesso": 21.8,
+     "eccesso_pct": 7.0,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W21",
+     "anno": 2024,
+     "settimana": 21,
+     "morti": 330.0,
+     "atteso": 320.0,
+     "eccesso": 10.0,
+     "eccesso_pct": 3.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W22",
+     "anno": 2024,
+     "settimana": 22,
+     "morti": 283.0,
+     "atteso": 321.2,
+     "eccesso": -38.2,
+     "eccesso_pct": -11.9,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W23",
+     "anno": 2024,
+     "settimana": 23,
+     "morti": 343.0,
+     "atteso": 312.2,
+     "eccesso": 30.8,
+     "eccesso_pct": 9.9,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W24",
+     "anno": 2024,
+     "settimana": 24,
+     "morti": 343.0,
+     "atteso": 315.0,
+     "eccesso": 28.0,
+     "eccesso_pct": 8.9,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W25",
+     "anno": 2024,
+     "settimana": 25,
+     "morti": 313.0,
+     "atteso": 320.2,
+     "eccesso": -7.2,
+     "eccesso_pct": -2.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W26",
+     "anno": 2024,
+     "settimana": 26,
+     "morti": 330.0,
+     "atteso": 309.6,
+     "eccesso": 20.4,
+     "eccesso_pct": 6.6,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W27",
+     "anno": 2024,
+     "settimana": 27,
+     "morti": 250.0,
+     "atteso": 326.0,
+     "eccesso": -76.0,
+     "eccesso_pct": -23.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W28",
+     "anno": 2024,
+     "settimana": 28,
+     "morti": 316.0,
+     "atteso": 303.2,
+     "eccesso": 12.8,
+     "eccesso_pct": 4.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W29",
+     "anno": 2024,
+     "settimana": 29,
+     "morti": 346.0,
+     "atteso": 297.8,
+     "eccesso": 48.2,
+     "eccesso_pct": 16.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W30",
+     "anno": 2024,
+     "settimana": 30,
+     "morti": 300.0,
+     "atteso": 296.0,
+     "eccesso": 4.0,
+     "eccesso_pct": 1.4,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W31",
+     "anno": 2024,
+     "settimana": 31,
+     "morti": 281.0,
+     "atteso": 276.8,
+     "eccesso": 4.2,
+     "eccesso_pct": 1.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W32",
+     "anno": 2024,
+     "settimana": 32,
+     "morti": 283.0,
+     "atteso": 289.8,
+     "eccesso": -6.8,
+     "eccesso_pct": -2.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W33",
+     "anno": 2024,
+     "settimana": 33,
+     "morti": 278.0,
+     "atteso": 256.6,
+     "eccesso": 21.4,
+     "eccesso_pct": 8.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W34",
+     "anno": 2024,
+     "settimana": 34,
+     "morti": 280.0,
+     "atteso": 288.2,
+     "eccesso": -8.2,
+     "eccesso_pct": -2.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W35",
+     "anno": 2024,
+     "settimana": 35,
+     "morti": 296.0,
+     "atteso": 291.6,
+     "eccesso": 4.4,
+     "eccesso_pct": 1.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W36",
+     "anno": 2024,
+     "settimana": 36,
+     "morti": 324.0,
+     "atteso": 291.2,
+     "eccesso": 32.8,
+     "eccesso_pct": 11.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W37",
+     "anno": 2024,
+     "settimana": 37,
+     "morti": 292.0,
+     "atteso": 305.6,
+     "eccesso": -13.6,
+     "eccesso_pct": -4.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W38",
+     "anno": 2024,
+     "settimana": 38,
+     "morti": 322.0,
+     "atteso": 321.2,
+     "eccesso": 0.8,
+     "eccesso_pct": 0.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W39",
+     "anno": 2024,
+     "settimana": 39,
+     "morti": 321.0,
+     "atteso": 306.8,
+     "eccesso": 14.2,
+     "eccesso_pct": 4.6,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W40",
+     "anno": 2024,
+     "settimana": 40,
+     "morti": 356.0,
+     "atteso": 334.2,
+     "eccesso": 21.8,
+     "eccesso_pct": 6.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W41",
+     "anno": 2024,
+     "settimana": 41,
+     "morti": 369.0,
+     "atteso": 340.0,
+     "eccesso": 29.0,
+     "eccesso_pct": 8.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W42",
+     "anno": 2024,
+     "settimana": 42,
+     "morti": 327.0,
+     "atteso": 346.2,
+     "eccesso": -19.2,
+     "eccesso_pct": -5.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W43",
+     "anno": 2024,
+     "settimana": 43,
+     "morti": 336.0,
+     "atteso": 318.2,
+     "eccesso": 17.8,
+     "eccesso_pct": 5.6,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W44",
+     "anno": 2024,
+     "settimana": 44,
+     "morti": 334.0,
+     "atteso": 318.6,
+     "eccesso": 15.4,
+     "eccesso_pct": 4.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W45",
+     "anno": 2024,
+     "settimana": 45,
+     "morti": 350.0,
+     "atteso": 339.2,
+     "eccesso": 10.8,
+     "eccesso_pct": 3.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W46",
+     "anno": 2024,
+     "settimana": 46,
+     "morti": 313.0,
+     "atteso": 346.0,
+     "eccesso": -33.0,
+     "eccesso_pct": -9.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W47",
+     "anno": 2024,
+     "settimana": 47,
+     "morti": 372.0,
+     "atteso": 328.6,
+     "eccesso": 43.4,
+     "eccesso_pct": 13.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W48",
+     "anno": 2024,
+     "settimana": 48,
+     "morti": 342.0,
+     "atteso": 348.0,
+     "eccesso": -6.0,
+     "eccesso_pct": -1.7,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W49",
+     "anno": 2024,
+     "settimana": 49,
+     "morti": 336.0,
+     "atteso": 352.0,
+     "eccesso": -16.0,
+     "eccesso_pct": -4.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W50",
+     "anno": 2024,
+     "settimana": 50,
+     "morti": 352.0,
+     "atteso": 363.8,
+     "eccesso": -11.8,
+     "eccesso_pct": -3.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W51",
+     "anno": 2024,
+     "settimana": 51,
+     "morti": 365.0,
+     "atteso": 368.2,
+     "eccesso": -3.2,
+     "eccesso_pct": -0.9,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2024-W52",
+     "anno": 2024,
+     "settimana": 52,
+     "morti": 359.0,
+     "atteso": 360.4,
+     "eccesso": -1.4,
+     "eccesso_pct": -0.4,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W01",
+     "anno": 2025,
+     "settimana": 1,
+     "morti": 402.0,
+     "atteso": 386.8,
+     "eccesso": 15.2,
+     "eccesso_pct": 3.9,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W02",
+     "anno": 2025,
+     "settimana": 2,
+     "morti": 412.0,
+     "atteso": 396.0,
+     "eccesso": 16.0,
+     "eccesso_pct": 4.0,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W03",
+     "anno": 2025,
+     "settimana": 3,
+     "morti": 371.0,
+     "atteso": 383.4,
+     "eccesso": -12.4,
+     "eccesso_pct": -3.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W04",
+     "anno": 2025,
+     "settimana": 4,
+     "morti": 418.0,
+     "atteso": 379.6,
+     "eccesso": 38.4,
+     "eccesso_pct": 10.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W05",
+     "anno": 2025,
+     "settimana": 5,
+     "morti": 391.0,
+     "atteso": 373.6,
+     "eccesso": 17.4,
+     "eccesso_pct": 4.7,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W06",
+     "anno": 2025,
+     "settimana": 6,
+     "morti": 348.0,
+     "atteso": 388.6,
+     "eccesso": -40.6,
+     "eccesso_pct": -10.4,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W07",
+     "anno": 2025,
+     "settimana": 7,
+     "morti": 384.0,
+     "atteso": 368.2,
+     "eccesso": 15.8,
+     "eccesso_pct": 4.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W08",
+     "anno": 2025,
+     "settimana": 8,
+     "morti": 365.0,
+     "atteso": 363.4,
+     "eccesso": 1.6,
+     "eccesso_pct": 0.4,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W09",
+     "anno": 2025,
+     "settimana": 9,
+     "morti": 326.0,
+     "atteso": 364.6,
+     "eccesso": -38.6,
+     "eccesso_pct": -10.6,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W10",
+     "anno": 2025,
+     "settimana": 10,
+     "morti": 372.0,
+     "atteso": 373.6,
+     "eccesso": -1.6,
+     "eccesso_pct": -0.4,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W11",
+     "anno": 2025,
+     "settimana": 11,
+     "morti": 321.0,
+     "atteso": 339.8,
+     "eccesso": -18.8,
+     "eccesso_pct": -5.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W12",
+     "anno": 2025,
+     "settimana": 12,
+     "morti": 333.0,
+     "atteso": 337.8,
+     "eccesso": -4.8,
+     "eccesso_pct": -1.4,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W13",
+     "anno": 2025,
+     "settimana": 13,
+     "morti": 315.0,
+     "atteso": 337.4,
+     "eccesso": -22.4,
+     "eccesso_pct": -6.6,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W14",
+     "anno": 2025,
+     "settimana": 14,
+     "morti": 324.0,
+     "atteso": 332.8,
+     "eccesso": -8.8,
+     "eccesso_pct": -2.6,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W15",
+     "anno": 2025,
+     "settimana": 15,
+     "morti": 340.0,
+     "atteso": 322.0,
+     "eccesso": 18.0,
+     "eccesso_pct": 5.6,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W16",
+     "anno": 2025,
+     "settimana": 16,
+     "morti": 303.0,
+     "atteso": 326.4,
+     "eccesso": -23.4,
+     "eccesso_pct": -7.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W17",
+     "anno": 2025,
+     "settimana": 17,
+     "morti": 341.0,
+     "atteso": 317.4,
+     "eccesso": 23.6,
+     "eccesso_pct": 7.4,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W18",
+     "anno": 2025,
+     "settimana": 18,
+     "morti": 316.0,
+     "atteso": 328.0,
+     "eccesso": -12.0,
+     "eccesso_pct": -3.7,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W19",
+     "anno": 2025,
+     "settimana": 19,
+     "morti": 288.0,
+     "atteso": 321.8,
+     "eccesso": -33.8,
+     "eccesso_pct": -10.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W20",
+     "anno": 2025,
+     "settimana": 20,
+     "morti": 310.0,
+     "atteso": 310.2,
+     "eccesso": -0.2,
+     "eccesso_pct": -0.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W21",
+     "anno": 2025,
+     "settimana": 21,
+     "morti": 313.0,
+     "atteso": 320.0,
+     "eccesso": -7.0,
+     "eccesso_pct": -2.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W22",
+     "anno": 2025,
+     "settimana": 22,
+     "morti": 331.0,
+     "atteso": 321.2,
+     "eccesso": 9.8,
+     "eccesso_pct": 3.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W23",
+     "anno": 2025,
+     "settimana": 23,
+     "morti": 293.0,
+     "atteso": 312.2,
+     "eccesso": -19.2,
+     "eccesso_pct": -6.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W24",
+     "anno": 2025,
+     "settimana": 24,
+     "morti": 306.0,
+     "atteso": 315.0,
+     "eccesso": -9.0,
+     "eccesso_pct": -2.9,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W25",
+     "anno": 2025,
+     "settimana": 25,
+     "morti": 289.0,
+     "atteso": 320.2,
+     "eccesso": -31.2,
+     "eccesso_pct": -9.7,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W26",
+     "anno": 2025,
+     "settimana": 26,
+     "morti": 297.0,
+     "atteso": 309.6,
+     "eccesso": -12.6,
+     "eccesso_pct": -4.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W27",
+     "anno": 2025,
+     "settimana": 27,
+     "morti": 305.0,
+     "atteso": 326.0,
+     "eccesso": -21.0,
+     "eccesso_pct": -6.4,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W28",
+     "anno": 2025,
+     "settimana": 28,
+     "morti": 297.0,
+     "atteso": 303.2,
+     "eccesso": -6.2,
+     "eccesso_pct": -2.0,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W29",
+     "anno": 2025,
+     "settimana": 29,
+     "morti": 280.0,
+     "atteso": 297.8,
+     "eccesso": -17.8,
+     "eccesso_pct": -6.0,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W30",
+     "anno": 2025,
+     "settimana": 30,
+     "morti": 294.0,
+     "atteso": 296.0,
+     "eccesso": -2.0,
+     "eccesso_pct": -0.7,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W31",
+     "anno": 2025,
+     "settimana": 31,
+     "morti": 271.0,
+     "atteso": 276.8,
+     "eccesso": -5.8,
+     "eccesso_pct": -2.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W32",
+     "anno": 2025,
+     "settimana": 32,
+     "morti": 274.0,
+     "atteso": 289.8,
+     "eccesso": -15.8,
+     "eccesso_pct": -5.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W33",
+     "anno": 2025,
+     "settimana": 33,
+     "morti": 267.0,
+     "atteso": 256.6,
+     "eccesso": 10.4,
+     "eccesso_pct": 4.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W34",
+     "anno": 2025,
+     "settimana": 34,
+     "morti": 286.0,
+     "atteso": 288.2,
+     "eccesso": -2.2,
+     "eccesso_pct": -0.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W35",
+     "anno": 2025,
+     "settimana": 35,
+     "morti": 247.0,
+     "atteso": 291.6,
+     "eccesso": -44.6,
+     "eccesso_pct": -15.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W36",
+     "anno": 2025,
+     "settimana": 36,
+     "morti": 277.0,
+     "atteso": 291.2,
+     "eccesso": -14.2,
+     "eccesso_pct": -4.9,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W37",
+     "anno": 2025,
+     "settimana": 37,
+     "morti": 277.0,
+     "atteso": 305.6,
+     "eccesso": -28.6,
+     "eccesso_pct": -9.4,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W38",
+     "anno": 2025,
+     "settimana": 38,
+     "morti": 369.0,
+     "atteso": 321.2,
+     "eccesso": 47.8,
+     "eccesso_pct": 14.9,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W39",
+     "anno": 2025,
+     "settimana": 39,
+     "morti": 299.0,
+     "atteso": 306.8,
+     "eccesso": -7.8,
+     "eccesso_pct": -2.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W40",
+     "anno": 2025,
+     "settimana": 40,
+     "morti": 342.0,
+     "atteso": 334.2,
+     "eccesso": 7.8,
+     "eccesso_pct": 2.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W41",
+     "anno": 2025,
+     "settimana": 41,
+     "morti": 326.0,
+     "atteso": 340.0,
+     "eccesso": -14.0,
+     "eccesso_pct": -4.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W42",
+     "anno": 2025,
+     "settimana": 42,
+     "morti": 305.0,
+     "atteso": 346.2,
+     "eccesso": -41.2,
+     "eccesso_pct": -11.9,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W43",
+     "anno": 2025,
+     "settimana": 43,
+     "morti": 344.0,
+     "atteso": 318.2,
+     "eccesso": 25.8,
+     "eccesso_pct": 8.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W44",
+     "anno": 2025,
+     "settimana": 44,
+     "morti": 369.0,
+     "atteso": 318.6,
+     "eccesso": 50.4,
+     "eccesso_pct": 15.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W45",
+     "anno": 2025,
+     "settimana": 45,
+     "morti": 343.0,
+     "atteso": 339.2,
+     "eccesso": 3.8,
+     "eccesso_pct": 1.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W46",
+     "anno": 2025,
+     "settimana": 46,
+     "morti": 321.0,
+     "atteso": 346.0,
+     "eccesso": -25.0,
+     "eccesso_pct": -7.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W47",
+     "anno": 2025,
+     "settimana": 47,
+     "morti": 327.0,
+     "atteso": 328.6,
+     "eccesso": -1.6,
+     "eccesso_pct": -0.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W48",
+     "anno": 2025,
+     "settimana": 48,
+     "morti": 357.0,
+     "atteso": 348.0,
+     "eccesso": 9.0,
+     "eccesso_pct": 2.6,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W49",
+     "anno": 2025,
+     "settimana": 49,
+     "morti": 376.0,
+     "atteso": 352.0,
+     "eccesso": 24.0,
+     "eccesso_pct": 6.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W50",
+     "anno": 2025,
+     "settimana": 50,
+     "morti": 349.0,
+     "atteso": 363.8,
+     "eccesso": -14.8,
+     "eccesso_pct": -4.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W51",
+     "anno": 2025,
+     "settimana": 51,
+     "morti": 377.0,
+     "atteso": 368.2,
+     "eccesso": 8.8,
+     "eccesso_pct": 2.4,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W52",
+     "anno": 2025,
+     "settimana": 52,
+     "morti": 360.0,
+     "atteso": 360.4,
+     "eccesso": -0.4,
+     "eccesso_pct": -0.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W01",
+     "anno": 2026,
+     "settimana": 1,
+     "morti": 374.0,
+     "atteso": 386.8,
+     "eccesso": -12.8,
+     "eccesso_pct": -3.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W02",
+     "anno": 2026,
+     "settimana": 2,
+     "morti": 430.0,
+     "atteso": 396.0,
+     "eccesso": 34.0,
+     "eccesso_pct": 8.6,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W03",
+     "anno": 2026,
+     "settimana": 3,
+     "morti": 422.0,
+     "atteso": 383.4,
+     "eccesso": 38.6,
+     "eccesso_pct": 10.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W04",
+     "anno": 2026,
+     "settimana": 4,
+     "morti": 355.0,
+     "atteso": 379.6,
+     "eccesso": -24.6,
+     "eccesso_pct": -6.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W05",
+     "anno": 2026,
+     "settimana": 5,
+     "morti": 393.0,
+     "atteso": 373.6,
+     "eccesso": 19.4,
+     "eccesso_pct": 5.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W06",
+     "anno": 2026,
+     "settimana": 6,
+     "morti": 323.0,
+     "atteso": 388.6,
+     "eccesso": -65.6,
+     "eccesso_pct": -16.9,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W07",
+     "anno": 2026,
+     "settimana": 7,
+     "morti": 337.0,
+     "atteso": 368.2,
+     "eccesso": -31.2,
+     "eccesso_pct": -8.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W08",
+     "anno": 2026,
+     "settimana": 8,
+     "morti": 325.0,
+     "atteso": 363.4,
+     "eccesso": -38.4,
+     "eccesso_pct": -10.6,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W09",
+     "anno": 2026,
+     "settimana": 9,
+     "morti": 326.0,
+     "atteso": 364.6,
+     "eccesso": -38.6,
+     "eccesso_pct": -10.6,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W10",
+     "anno": 2026,
+     "settimana": 10,
+     "morti": 295.0,
+     "atteso": 373.6,
+     "eccesso": -78.6,
+     "eccesso_pct": -21.0,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W11",
+     "anno": 2026,
+     "settimana": 11,
+     "morti": 293.0,
+     "atteso": 339.8,
+     "eccesso": -46.8,
+     "eccesso_pct": -13.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W12",
+     "anno": 2026,
+     "settimana": 12,
+     "morti": 358.0,
+     "atteso": 337.8,
+     "eccesso": 20.2,
+     "eccesso_pct": 6.0,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W13",
+     "anno": 2026,
+     "settimana": 13,
+     "morti": 335.0,
+     "atteso": 337.4,
+     "eccesso": -2.4,
+     "eccesso_pct": -0.7,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W14",
+     "anno": 2026,
+     "settimana": 14,
+     "morti": 337.0,
+     "atteso": 332.8,
+     "eccesso": 4.2,
+     "eccesso_pct": 1.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W15",
+     "anno": 2026,
+     "settimana": 15,
+     "morti": 334.0,
+     "atteso": 322.0,
+     "eccesso": 12.0,
+     "eccesso_pct": 3.7,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W16",
+     "anno": 2026,
+     "settimana": 16,
+     "morti": 324.0,
+     "atteso": 326.4,
+     "eccesso": -2.4,
+     "eccesso_pct": -0.7,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W17",
+     "anno": 2026,
+     "settimana": 17,
+     "morti": 304.0,
+     "atteso": 317.4,
+     "eccesso": -13.4,
+     "eccesso_pct": -4.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W18",
+     "anno": 2026,
+     "settimana": 18,
+     "morti": 291.0,
+     "atteso": 328.0,
+     "eccesso": -37.0,
+     "eccesso_pct": -11.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W19",
+     "anno": 2026,
+     "settimana": 19,
+     "morti": 304.0,
+     "atteso": 321.8,
+     "eccesso": -17.8,
+     "eccesso_pct": -5.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W20",
+     "anno": 2026,
+     "settimana": 20,
+     "morti": 325.0,
+     "atteso": 310.2,
+     "eccesso": 14.8,
+     "eccesso_pct": 4.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W21",
+     "anno": 2026,
+     "settimana": 21,
+     "morti": 357.0,
+     "atteso": 320.0,
+     "eccesso": 37.0,
+     "eccesso_pct": 11.6,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W22",
+     "anno": 2026,
+     "settimana": 22,
+     "morti": 370.0,
+     "atteso": 321.2,
+     "eccesso": 48.8,
+     "eccesso_pct": 15.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W23",
+     "anno": 2026,
+     "settimana": 23,
+     "morti": 355.0,
+     "atteso": 312.2,
+     "eccesso": 42.8,
+     "eccesso_pct": 13.7,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W24",
+     "anno": 2026,
+     "settimana": 24,
+     "morti": 294.0,
+     "atteso": 315.0,
+     "eccesso": -21.0,
+     "eccesso_pct": -6.7,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W25",
+     "anno": 2026,
+     "settimana": 25,
+     "morti": 320.0,
+     "atteso": 320.2,
+     "eccesso": -0.2,
+     "eccesso_pct": -0.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W26",
+     "anno": 2026,
+     "settimana": 26,
+     "morti": 754.0,
+     "atteso": 309.6,
+     "eccesso": 444.4,
+     "eccesso_pct": 143.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W27",
+     "anno": 2026,
+     "settimana": 27,
+     "morti": 439.0,
+     "atteso": 326.0,
+     "eccesso": 113.0,
+     "eccesso_pct": 34.7,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W28",
+     "anno": 2026,
+     "settimana": 28,
+     "morti": 305.0,
+     "atteso": 303.2,
+     "eccesso": 1.8,
+     "eccesso_pct": 0.6,
+     "provvisorio": true
+    }
+   ],
+   "estati": [
+    {
+     "anno": 2020,
+     "settimane": 13,
+     "complete": true,
+     "eccesso": -50.0,
+     "eccesso_pct": -1.3
+    },
+    {
+     "anno": 2021,
+     "settimane": 13,
+     "complete": true,
+     "eccesso": 5.0,
+     "eccesso_pct": 0.1
+    },
+    {
+     "anno": 2022,
+     "settimane": 13,
+     "complete": true,
+     "eccesso": 116.0,
+     "eccesso_pct": 3.0
+    },
+    {
+     "anno": 2023,
+     "settimane": 13,
+     "complete": true,
+     "eccesso": -56.0,
+     "eccesso_pct": -1.5
+    },
+    {
+     "anno": 2024,
+     "settimane": 13,
+     "complete": true,
+     "eccesso": 78.0,
+     "eccesso_pct": 2.0
+    },
+    {
+     "anno": 2025,
+     "settimane": 13,
+     "complete": true,
+     "eccesso": -172.0,
+     "eccesso_pct": -4.5
+    },
+    {
+     "anno": 2026,
+     "settimane": 5,
+     "complete": false,
+     "eccesso": 538.0,
+     "eccesso_pct": 34.2
+    }
+   ],
+   "ultimo": {
+    "periodo": "2026-W28",
+    "anno": 2026,
+    "settimana": 28,
+    "morti": 305.0,
+    "atteso": 303.2,
+    "eccesso": 1.8,
+    "eccesso_pct": 0.6,
+    "provvisorio": true
+   }
+  },
+  {
+   "flusso": "mwk3",
+   "codice": "ES511",
+   "citta": "Barcellona",
+   "id": "barcelona",
+   "colore": "#F4B223",
+   "area": "provincia",
+   "serie": [
+    {
+     "periodo": "2024-W01",
+     "anno": 2024,
+     "settimana": 1,
+     "morti": 1379.0,
+     "atteso": 1173.6,
+     "eccesso": 205.4,
+     "eccesso_pct": 17.5,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W02",
+     "anno": 2024,
+     "settimana": 2,
+     "morti": 1351.0,
+     "atteso": 1194.0,
+     "eccesso": 157.0,
+     "eccesso_pct": 13.1,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W03",
+     "anno": 2024,
+     "settimana": 3,
+     "morti": 1293.0,
+     "atteso": 1165.0,
+     "eccesso": 128.0,
+     "eccesso_pct": 11.0,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W04",
+     "anno": 2024,
+     "settimana": 4,
+     "morti": 1122.0,
+     "atteso": 1131.2,
+     "eccesso": -9.2,
+     "eccesso_pct": -0.8,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W05",
+     "anno": 2024,
+     "settimana": 5,
+     "morti": 936.0,
+     "atteso": 1085.8,
+     "eccesso": -149.8,
+     "eccesso_pct": -13.8,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W06",
+     "anno": 2024,
+     "settimana": 6,
+     "morti": 993.0,
+     "atteso": 1095.6,
+     "eccesso": -102.6,
+     "eccesso_pct": -9.4,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W07",
+     "anno": 2024,
+     "settimana": 7,
+     "morti": 976.0,
+     "atteso": 1066.8,
+     "eccesso": -90.8,
+     "eccesso_pct": -8.5,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W08",
+     "anno": 2024,
+     "settimana": 8,
+     "morti": 966.0,
+     "atteso": 1057.6,
+     "eccesso": -91.6,
+     "eccesso_pct": -8.7,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W09",
+     "anno": 2024,
+     "settimana": 9,
+     "morti": 991.0,
+     "atteso": 999.8,
+     "eccesso": -8.8,
+     "eccesso_pct": -0.9,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W10",
+     "anno": 2024,
+     "settimana": 10,
+     "morti": 1001.0,
+     "atteso": 1010.0,
+     "eccesso": -9.0,
+     "eccesso_pct": -0.9,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W11",
+     "anno": 2024,
+     "settimana": 11,
+     "morti": 992.0,
+     "atteso": 964.0,
+     "eccesso": 28.0,
+     "eccesso_pct": 2.9,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W12",
+     "anno": 2024,
+     "settimana": 12,
+     "morti": 980.0,
+     "atteso": 936.8,
+     "eccesso": 43.2,
+     "eccesso_pct": 4.6,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W13",
+     "anno": 2024,
+     "settimana": 13,
+     "morti": 898.0,
+     "atteso": 926.6,
+     "eccesso": -28.6,
+     "eccesso_pct": -3.1,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W14",
+     "anno": 2024,
+     "settimana": 14,
+     "morti": 868.0,
+     "atteso": 905.8,
+     "eccesso": -37.8,
+     "eccesso_pct": -4.2,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W15",
+     "anno": 2024,
+     "settimana": 15,
+     "morti": 935.0,
+     "atteso": 883.0,
+     "eccesso": 52.0,
+     "eccesso_pct": 5.9,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W16",
+     "anno": 2024,
+     "settimana": 16,
+     "morti": 927.0,
+     "atteso": 872.6,
+     "eccesso": 54.4,
+     "eccesso_pct": 6.2,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W17",
+     "anno": 2024,
+     "settimana": 17,
+     "morti": 922.0,
+     "atteso": 862.0,
+     "eccesso": 60.0,
+     "eccesso_pct": 7.0,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W18",
+     "anno": 2024,
+     "settimana": 18,
+     "morti": 874.0,
+     "atteso": 847.8,
+     "eccesso": 26.2,
+     "eccesso_pct": 3.1,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W19",
+     "anno": 2024,
+     "settimana": 19,
+     "morti": 903.0,
+     "atteso": 846.4,
+     "eccesso": 56.6,
+     "eccesso_pct": 6.7,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W20",
+     "anno": 2024,
+     "settimana": 20,
+     "morti": 947.0,
+     "atteso": 833.8,
+     "eccesso": 113.2,
+     "eccesso_pct": 13.6,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W21",
+     "anno": 2024,
+     "settimana": 21,
+     "morti": 852.0,
+     "atteso": 814.8,
+     "eccesso": 37.2,
+     "eccesso_pct": 4.6,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W22",
+     "anno": 2024,
+     "settimana": 22,
+     "morti": 924.0,
+     "atteso": 822.0,
+     "eccesso": 102.0,
+     "eccesso_pct": 12.4,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W23",
+     "anno": 2024,
+     "settimana": 23,
+     "morti": 899.0,
+     "atteso": 844.4,
+     "eccesso": 54.6,
+     "eccesso_pct": 6.5,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W24",
+     "anno": 2024,
+     "settimana": 24,
+     "morti": 844.0,
+     "atteso": 813.4,
+     "eccesso": 30.6,
+     "eccesso_pct": 3.8,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W25",
+     "anno": 2024,
+     "settimana": 25,
+     "morti": 837.0,
+     "atteso": 804.0,
+     "eccesso": 33.0,
+     "eccesso_pct": 4.1,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W26",
+     "anno": 2024,
+     "settimana": 26,
+     "morti": 849.0,
+     "atteso": 825.0,
+     "eccesso": 24.0,
+     "eccesso_pct": 2.9,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W27",
+     "anno": 2024,
+     "settimana": 27,
+     "morti": 869.0,
+     "atteso": 867.2,
+     "eccesso": 1.8,
+     "eccesso_pct": 0.2,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W28",
+     "anno": 2024,
+     "settimana": 28,
+     "morti": 866.0,
+     "atteso": 885.6,
+     "eccesso": -19.6,
+     "eccesso_pct": -2.2,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W29",
+     "anno": 2024,
+     "settimana": 29,
+     "morti": 912.0,
+     "atteso": 807.4,
+     "eccesso": 104.6,
+     "eccesso_pct": 13.0,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W30",
+     "anno": 2024,
+     "settimana": 30,
+     "morti": 884.0,
+     "atteso": 818.0,
+     "eccesso": 66.0,
+     "eccesso_pct": 8.1,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W31",
+     "anno": 2024,
+     "settimana": 31,
+     "morti": 986.0,
+     "atteso": 846.4,
+     "eccesso": 139.6,
+     "eccesso_pct": 16.5,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W32",
+     "anno": 2024,
+     "settimana": 32,
+     "morti": 951.0,
+     "atteso": 866.6,
+     "eccesso": 84.4,
+     "eccesso_pct": 9.7,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W33",
+     "anno": 2024,
+     "settimana": 33,
+     "morti": 872.0,
+     "atteso": 795.2,
+     "eccesso": 76.8,
+     "eccesso_pct": 9.7,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W34",
+     "anno": 2024,
+     "settimana": 34,
+     "morti": 807.0,
+     "atteso": 775.6,
+     "eccesso": 31.4,
+     "eccesso_pct": 4.0,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W35",
+     "anno": 2024,
+     "settimana": 35,
+     "morti": 812.0,
+     "atteso": 781.8,
+     "eccesso": 30.2,
+     "eccesso_pct": 3.9,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W36",
+     "anno": 2024,
+     "settimana": 36,
+     "morti": 757.0,
+     "atteso": 782.8,
+     "eccesso": -25.8,
+     "eccesso_pct": -3.3,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W37",
+     "anno": 2024,
+     "settimana": 37,
+     "morti": 734.0,
+     "atteso": 766.4,
+     "eccesso": -32.4,
+     "eccesso_pct": -4.2,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W38",
+     "anno": 2024,
+     "settimana": 38,
+     "morti": 835.0,
+     "atteso": 803.2,
+     "eccesso": 31.8,
+     "eccesso_pct": 4.0,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W39",
+     "anno": 2024,
+     "settimana": 39,
+     "morti": 860.0,
+     "atteso": 803.6,
+     "eccesso": 56.4,
+     "eccesso_pct": 7.0,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W40",
+     "anno": 2024,
+     "settimana": 40,
+     "morti": 798.0,
+     "atteso": 814.8,
+     "eccesso": -16.8,
+     "eccesso_pct": -2.1,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W41",
+     "anno": 2024,
+     "settimana": 41,
+     "morti": 895.0,
+     "atteso": 829.2,
+     "eccesso": 65.8,
+     "eccesso_pct": 7.9,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W42",
+     "anno": 2024,
+     "settimana": 42,
+     "morti": 813.0,
+     "atteso": 797.6,
+     "eccesso": 15.4,
+     "eccesso_pct": 1.9,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W43",
+     "anno": 2024,
+     "settimana": 43,
+     "morti": 864.0,
+     "atteso": 831.6,
+     "eccesso": 32.4,
+     "eccesso_pct": 3.9,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W44",
+     "anno": 2024,
+     "settimana": 44,
+     "morti": 913.0,
+     "atteso": 866.8,
+     "eccesso": 46.2,
+     "eccesso_pct": 5.3,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W45",
+     "anno": 2024,
+     "settimana": 45,
+     "morti": 859.0,
+     "atteso": 906.4,
+     "eccesso": -47.4,
+     "eccesso_pct": -5.2,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W46",
+     "anno": 2024,
+     "settimana": 46,
+     "morti": 928.0,
+     "atteso": 908.2,
+     "eccesso": 19.8,
+     "eccesso_pct": 2.2,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W47",
+     "anno": 2024,
+     "settimana": 47,
+     "morti": 966.0,
+     "atteso": 929.2,
+     "eccesso": 36.8,
+     "eccesso_pct": 4.0,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W48",
+     "anno": 2024,
+     "settimana": 48,
+     "morti": 933.0,
+     "atteso": 946.2,
+     "eccesso": -13.2,
+     "eccesso_pct": -1.4,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W49",
+     "anno": 2024,
+     "settimana": 49,
+     "morti": 933.0,
+     "atteso": 961.2,
+     "eccesso": -28.2,
+     "eccesso_pct": -2.9,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W50",
+     "anno": 2024,
+     "settimana": 50,
+     "morti": 980.0,
+     "atteso": 995.6,
+     "eccesso": -15.6,
+     "eccesso_pct": -1.6,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W51",
+     "anno": 2024,
+     "settimana": 51,
+     "morti": 1001.0,
+     "atteso": 1019.8,
+     "eccesso": -18.8,
+     "eccesso_pct": -1.8,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W52",
+     "anno": 2024,
+     "settimana": 52,
+     "morti": 1025.0,
+     "atteso": 1036.6,
+     "eccesso": -11.6,
+     "eccesso_pct": -1.1,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W01",
+     "anno": 2025,
+     "settimana": 1,
+     "morti": 1152.0,
+     "atteso": 1173.6,
+     "eccesso": -21.6,
+     "eccesso_pct": -1.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W02",
+     "anno": 2025,
+     "settimana": 2,
+     "morti": 1288.0,
+     "atteso": 1194.0,
+     "eccesso": 94.0,
+     "eccesso_pct": 7.9,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W03",
+     "anno": 2025,
+     "settimana": 3,
+     "morti": 1198.0,
+     "atteso": 1165.0,
+     "eccesso": 33.0,
+     "eccesso_pct": 2.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W04",
+     "anno": 2025,
+     "settimana": 4,
+     "morti": 1222.0,
+     "atteso": 1131.2,
+     "eccesso": 90.8,
+     "eccesso_pct": 8.0,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W05",
+     "anno": 2025,
+     "settimana": 5,
+     "morti": 1195.0,
+     "atteso": 1085.8,
+     "eccesso": 109.2,
+     "eccesso_pct": 10.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W06",
+     "anno": 2025,
+     "settimana": 6,
+     "morti": 1078.0,
+     "atteso": 1095.6,
+     "eccesso": -17.6,
+     "eccesso_pct": -1.6,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W07",
+     "anno": 2025,
+     "settimana": 7,
+     "morti": 1106.0,
+     "atteso": 1066.8,
+     "eccesso": 39.2,
+     "eccesso_pct": 3.7,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W08",
+     "anno": 2025,
+     "settimana": 8,
+     "morti": 1032.0,
+     "atteso": 1057.6,
+     "eccesso": -25.6,
+     "eccesso_pct": -2.4,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W09",
+     "anno": 2025,
+     "settimana": 9,
+     "morti": 1016.0,
+     "atteso": 999.8,
+     "eccesso": 16.2,
+     "eccesso_pct": 1.6,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W10",
+     "anno": 2025,
+     "settimana": 10,
+     "morti": 956.0,
+     "atteso": 1010.0,
+     "eccesso": -54.0,
+     "eccesso_pct": -5.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W11",
+     "anno": 2025,
+     "settimana": 11,
+     "morti": 974.0,
+     "atteso": 964.0,
+     "eccesso": 10.0,
+     "eccesso_pct": 1.0,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W12",
+     "anno": 2025,
+     "settimana": 12,
+     "morti": 1049.0,
+     "atteso": 936.8,
+     "eccesso": 112.2,
+     "eccesso_pct": 12.0,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W13",
+     "anno": 2025,
+     "settimana": 13,
+     "morti": 911.0,
+     "atteso": 926.6,
+     "eccesso": -15.6,
+     "eccesso_pct": -1.7,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W14",
+     "anno": 2025,
+     "settimana": 14,
+     "morti": 971.0,
+     "atteso": 905.8,
+     "eccesso": 65.2,
+     "eccesso_pct": 7.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W15",
+     "anno": 2025,
+     "settimana": 15,
+     "morti": 922.0,
+     "atteso": 883.0,
+     "eccesso": 39.0,
+     "eccesso_pct": 4.4,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W16",
+     "anno": 2025,
+     "settimana": 16,
+     "morti": 857.0,
+     "atteso": 872.6,
+     "eccesso": -15.6,
+     "eccesso_pct": -1.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W17",
+     "anno": 2025,
+     "settimana": 17,
+     "morti": 932.0,
+     "atteso": 862.0,
+     "eccesso": 70.0,
+     "eccesso_pct": 8.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W18",
+     "anno": 2025,
+     "settimana": 18,
+     "morti": 924.0,
+     "atteso": 847.8,
+     "eccesso": 76.2,
+     "eccesso_pct": 9.0,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W19",
+     "anno": 2025,
+     "settimana": 19,
+     "morti": 799.0,
+     "atteso": 846.4,
+     "eccesso": -47.4,
+     "eccesso_pct": -5.6,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W20",
+     "anno": 2025,
+     "settimana": 20,
+     "morti": 924.0,
+     "atteso": 833.8,
+     "eccesso": 90.2,
+     "eccesso_pct": 10.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W21",
+     "anno": 2025,
+     "settimana": 21,
+     "morti": 857.0,
+     "atteso": 814.8,
+     "eccesso": 42.2,
+     "eccesso_pct": 5.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W22",
+     "anno": 2025,
+     "settimana": 22,
+     "morti": 861.0,
+     "atteso": 822.0,
+     "eccesso": 39.0,
+     "eccesso_pct": 4.7,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W23",
+     "anno": 2025,
+     "settimana": 23,
+     "morti": 882.0,
+     "atteso": 844.4,
+     "eccesso": 37.6,
+     "eccesso_pct": 4.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W24",
+     "anno": 2025,
+     "settimana": 24,
+     "morti": 820.0,
+     "atteso": 813.4,
+     "eccesso": 6.6,
+     "eccesso_pct": 0.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W25",
+     "anno": 2025,
+     "settimana": 25,
+     "morti": 876.0,
+     "atteso": 804.0,
+     "eccesso": 72.0,
+     "eccesso_pct": 9.0,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W26",
+     "anno": 2025,
+     "settimana": 26,
+     "morti": 990.0,
+     "atteso": 825.0,
+     "eccesso": 165.0,
+     "eccesso_pct": 20.0,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W27",
+     "anno": 2025,
+     "settimana": 27,
+     "morti": 1071.0,
+     "atteso": 867.2,
+     "eccesso": 203.8,
+     "eccesso_pct": 23.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W28",
+     "anno": 2025,
+     "settimana": 28,
+     "morti": 835.0,
+     "atteso": 885.6,
+     "eccesso": -50.6,
+     "eccesso_pct": -5.7,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W29",
+     "anno": 2025,
+     "settimana": 29,
+     "morti": 903.0,
+     "atteso": 807.4,
+     "eccesso": 95.6,
+     "eccesso_pct": 11.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W30",
+     "anno": 2025,
+     "settimana": 30,
+     "morti": 850.0,
+     "atteso": 818.0,
+     "eccesso": 32.0,
+     "eccesso_pct": 3.9,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W31",
+     "anno": 2025,
+     "settimana": 31,
+     "morti": 814.0,
+     "atteso": 846.4,
+     "eccesso": -32.4,
+     "eccesso_pct": -3.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W32",
+     "anno": 2025,
+     "settimana": 32,
+     "morti": 827.0,
+     "atteso": 866.6,
+     "eccesso": -39.6,
+     "eccesso_pct": -4.6,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W33",
+     "anno": 2025,
+     "settimana": 33,
+     "morti": 945.0,
+     "atteso": 795.2,
+     "eccesso": 149.8,
+     "eccesso_pct": 18.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W34",
+     "anno": 2025,
+     "settimana": 34,
+     "morti": 925.0,
+     "atteso": 775.6,
+     "eccesso": 149.4,
+     "eccesso_pct": 19.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W35",
+     "anno": 2025,
+     "settimana": 35,
+     "morti": 864.0,
+     "atteso": 781.8,
+     "eccesso": 82.2,
+     "eccesso_pct": 10.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W36",
+     "anno": 2025,
+     "settimana": 36,
+     "morti": 834.0,
+     "atteso": 782.8,
+     "eccesso": 51.2,
+     "eccesso_pct": 6.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W37",
+     "anno": 2025,
+     "settimana": 37,
+     "morti": 769.0,
+     "atteso": 766.4,
+     "eccesso": 2.6,
+     "eccesso_pct": 0.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W38",
+     "anno": 2025,
+     "settimana": 38,
+     "morti": 838.0,
+     "atteso": 803.2,
+     "eccesso": 34.8,
+     "eccesso_pct": 4.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W39",
+     "anno": 2025,
+     "settimana": 39,
+     "morti": 814.0,
+     "atteso": 803.6,
+     "eccesso": 10.4,
+     "eccesso_pct": 1.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W40",
+     "anno": 2025,
+     "settimana": 40,
+     "morti": 870.0,
+     "atteso": 814.8,
+     "eccesso": 55.2,
+     "eccesso_pct": 6.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W41",
+     "anno": 2025,
+     "settimana": 41,
+     "morti": 889.0,
+     "atteso": 829.2,
+     "eccesso": 59.8,
+     "eccesso_pct": 7.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W42",
+     "anno": 2025,
+     "settimana": 42,
+     "morti": 885.0,
+     "atteso": 797.6,
+     "eccesso": 87.4,
+     "eccesso_pct": 11.0,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W43",
+     "anno": 2025,
+     "settimana": 43,
+     "morti": 831.0,
+     "atteso": 831.6,
+     "eccesso": -0.6,
+     "eccesso_pct": -0.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W44",
+     "anno": 2025,
+     "settimana": 44,
+     "morti": 866.0,
+     "atteso": 866.8,
+     "eccesso": -0.8,
+     "eccesso_pct": -0.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W45",
+     "anno": 2025,
+     "settimana": 45,
+     "morti": 905.0,
+     "atteso": 906.4,
+     "eccesso": -1.4,
+     "eccesso_pct": -0.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W46",
+     "anno": 2025,
+     "settimana": 46,
+     "morti": 954.0,
+     "atteso": 908.2,
+     "eccesso": 45.8,
+     "eccesso_pct": 5.0,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W47",
+     "anno": 2025,
+     "settimana": 47,
+     "morti": 974.0,
+     "atteso": 929.2,
+     "eccesso": 44.8,
+     "eccesso_pct": 4.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W48",
+     "anno": 2025,
+     "settimana": 48,
+     "morti": 979.0,
+     "atteso": 946.2,
+     "eccesso": 32.8,
+     "eccesso_pct": 3.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W49",
+     "anno": 2025,
+     "settimana": 49,
+     "morti": 1129.0,
+     "atteso": 961.2,
+     "eccesso": 167.8,
+     "eccesso_pct": 17.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W50",
+     "anno": 2025,
+     "settimana": 50,
+     "morti": 1176.0,
+     "atteso": 995.6,
+     "eccesso": 180.4,
+     "eccesso_pct": 18.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W51",
+     "anno": 2025,
+     "settimana": 51,
+     "morti": 1154.0,
+     "atteso": 1019.8,
+     "eccesso": 134.2,
+     "eccesso_pct": 13.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W52",
+     "anno": 2025,
+     "settimana": 52,
+     "morti": 1075.0,
+     "atteso": 1036.6,
+     "eccesso": 38.4,
+     "eccesso_pct": 3.7,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W01",
+     "anno": 2026,
+     "settimana": 1,
+     "morti": 1097.0,
+     "atteso": 1173.6,
+     "eccesso": -76.6,
+     "eccesso_pct": -6.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W02",
+     "anno": 2026,
+     "settimana": 2,
+     "morti": 1097.0,
+     "atteso": 1194.0,
+     "eccesso": -97.0,
+     "eccesso_pct": -8.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W03",
+     "anno": 2026,
+     "settimana": 3,
+     "morti": 1120.0,
+     "atteso": 1165.0,
+     "eccesso": -45.0,
+     "eccesso_pct": -3.9,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W04",
+     "anno": 2026,
+     "settimana": 4,
+     "morti": 1099.0,
+     "atteso": 1131.2,
+     "eccesso": -32.2,
+     "eccesso_pct": -2.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W05",
+     "anno": 2026,
+     "settimana": 5,
+     "morti": 1041.0,
+     "atteso": 1085.8,
+     "eccesso": -44.8,
+     "eccesso_pct": -4.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W06",
+     "anno": 2026,
+     "settimana": 6,
+     "morti": 1043.0,
+     "atteso": 1095.6,
+     "eccesso": -52.6,
+     "eccesso_pct": -4.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W07",
+     "anno": 2026,
+     "settimana": 7,
+     "morti": 997.0,
+     "atteso": 1066.8,
+     "eccesso": -69.8,
+     "eccesso_pct": -6.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W08",
+     "anno": 2026,
+     "settimana": 8,
+     "morti": 957.0,
+     "atteso": 1057.6,
+     "eccesso": -100.6,
+     "eccesso_pct": -9.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W09",
+     "anno": 2026,
+     "settimana": 9,
+     "morti": 974.0,
+     "atteso": 999.8,
+     "eccesso": -25.8,
+     "eccesso_pct": -2.6,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W10",
+     "anno": 2026,
+     "settimana": 10,
+     "morti": 916.0,
+     "atteso": 1010.0,
+     "eccesso": -94.0,
+     "eccesso_pct": -9.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W11",
+     "anno": 2026,
+     "settimana": 11,
+     "morti": 949.0,
+     "atteso": 964.0,
+     "eccesso": -15.0,
+     "eccesso_pct": -1.6,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W12",
+     "anno": 2026,
+     "settimana": 12,
+     "morti": 848.0,
+     "atteso": 936.8,
+     "eccesso": -88.8,
+     "eccesso_pct": -9.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W13",
+     "anno": 2026,
+     "settimana": 13,
+     "morti": 905.0,
+     "atteso": 926.6,
+     "eccesso": -21.6,
+     "eccesso_pct": -2.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W14",
+     "anno": 2026,
+     "settimana": 14,
+     "morti": 917.0,
+     "atteso": 905.8,
+     "eccesso": 11.2,
+     "eccesso_pct": 1.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W15",
+     "anno": 2026,
+     "settimana": 15,
+     "morti": 933.0,
+     "atteso": 883.0,
+     "eccesso": 50.0,
+     "eccesso_pct": 5.7,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W16",
+     "anno": 2026,
+     "settimana": 16,
+     "morti": 907.0,
+     "atteso": 872.6,
+     "eccesso": 34.4,
+     "eccesso_pct": 3.9,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W17",
+     "anno": 2026,
+     "settimana": 17,
+     "morti": 904.0,
+     "atteso": 862.0,
+     "eccesso": 42.0,
+     "eccesso_pct": 4.9,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W18",
+     "anno": 2026,
+     "settimana": 18,
+     "morti": 912.0,
+     "atteso": 847.8,
+     "eccesso": 64.2,
+     "eccesso_pct": 7.6,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W19",
+     "anno": 2026,
+     "settimana": 19,
+     "morti": 891.0,
+     "atteso": 846.4,
+     "eccesso": 44.6,
+     "eccesso_pct": 5.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W20",
+     "anno": 2026,
+     "settimana": 20,
+     "morti": 883.0,
+     "atteso": 833.8,
+     "eccesso": 49.2,
+     "eccesso_pct": 5.9,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W21",
+     "anno": 2026,
+     "settimana": 21,
+     "morti": 919.0,
+     "atteso": 814.8,
+     "eccesso": 104.2,
+     "eccesso_pct": 12.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W22",
+     "anno": 2026,
+     "settimana": 22,
+     "morti": 927.0,
+     "atteso": 822.0,
+     "eccesso": 105.0,
+     "eccesso_pct": 12.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W23",
+     "anno": 2026,
+     "settimana": 23,
+     "morti": 835.0,
+     "atteso": 844.4,
+     "eccesso": -9.4,
+     "eccesso_pct": -1.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W24",
+     "anno": 2026,
+     "settimana": 24,
+     "morti": 795.0,
+     "atteso": 813.4,
+     "eccesso": -18.4,
+     "eccesso_pct": -2.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W25",
+     "anno": 2026,
+     "settimana": 25,
+     "morti": 799.0,
+     "atteso": 804.0,
+     "eccesso": -5.0,
+     "eccesso_pct": -0.6,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W26",
+     "anno": 2026,
+     "settimana": 26,
+     "morti": 852.0,
+     "atteso": 825.0,
+     "eccesso": 27.0,
+     "eccesso_pct": 3.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W27",
+     "anno": 2026,
+     "settimana": 27,
+     "morti": 894.0,
+     "atteso": 867.2,
+     "eccesso": 26.8,
+     "eccesso_pct": 3.1,
+     "provvisorio": true
+    }
+   ],
+   "estati": [
+    {
+     "anno": 2020,
+     "settimane": 13,
+     "complete": true,
+     "eccesso": 210.0,
+     "eccesso_pct": 2.0
+    },
+    {
+     "anno": 2021,
+     "settimane": 13,
+     "complete": true,
+     "eccesso": 1279.0,
+     "eccesso_pct": 12.0
+    },
+    {
+     "anno": 2022,
+     "settimane": 13,
+     "complete": true,
+     "eccesso": 2121.0,
+     "eccesso_pct": 19.9
+    },
+    {
+     "anno": 2023,
+     "settimane": 13,
+     "complete": true,
+     "eccesso": 619.0,
+     "eccesso_pct": 5.8
+    },
+    {
+     "anno": 2024,
+     "settimane": 13,
+     "complete": true,
+     "eccesso": 577.0,
+     "eccesso_pct": 5.4
+    },
+    {
+     "anno": 2025,
+     "settimane": 13,
+     "complete": true,
+     "eccesso": 885.0,
+     "eccesso_pct": 8.3
+    },
+    {
+     "anno": 2026,
+     "settimane": 4,
+     "complete": false,
+     "eccesso": 30.4,
+     "eccesso_pct": 0.9
+    }
+   ],
+   "ultimo": {
+    "periodo": "2026-W27",
+    "anno": 2026,
+    "settimana": 27,
+    "morti": 894.0,
+    "atteso": 867.2,
+    "eccesso": 26.8,
+    "eccesso_pct": 3.1,
+    "provvisorio": true
+   }
+  },
+  {
+   "flusso": "mwk3",
+   "codice": "ES300",
+   "citta": "Madrid",
+   "id": "madrid",
+   "colore": "#7A3E9D",
+   "area": "comunità autonoma",
+   "serie": [
+    {
+     "periodo": "2024-W01",
+     "anno": 2024,
+     "settimana": 1,
+     "morti": 1318.0,
+     "atteso": 1066.2,
+     "eccesso": 251.8,
+     "eccesso_pct": 23.6,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W02",
+     "anno": 2024,
+     "settimana": 2,
+     "morti": 1316.0,
+     "atteso": 1120.4,
+     "eccesso": 195.6,
+     "eccesso_pct": 17.5,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W03",
+     "anno": 2024,
+     "settimana": 3,
+     "morti": 1257.0,
+     "atteso": 1135.4,
+     "eccesso": 121.6,
+     "eccesso_pct": 10.7,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W04",
+     "anno": 2024,
+     "settimana": 4,
+     "morti": 1114.0,
+     "atteso": 1099.4,
+     "eccesso": 14.6,
+     "eccesso_pct": 1.3,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W05",
+     "anno": 2024,
+     "settimana": 5,
+     "morti": 941.0,
+     "atteso": 1098.2,
+     "eccesso": -157.2,
+     "eccesso_pct": -14.3,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W06",
+     "anno": 2024,
+     "settimana": 6,
+     "morti": 973.0,
+     "atteso": 1083.4,
+     "eccesso": -110.4,
+     "eccesso_pct": -10.2,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W07",
+     "anno": 2024,
+     "settimana": 7,
+     "morti": 1045.0,
+     "atteso": 1051.4,
+     "eccesso": -6.4,
+     "eccesso_pct": -0.6,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W08",
+     "anno": 2024,
+     "settimana": 8,
+     "morti": 972.0,
+     "atteso": 1011.8,
+     "eccesso": -39.8,
+     "eccesso_pct": -3.9,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W09",
+     "anno": 2024,
+     "settimana": 9,
+     "morti": 941.0,
+     "atteso": 1000.0,
+     "eccesso": -59.0,
+     "eccesso_pct": -5.9,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W10",
+     "anno": 2024,
+     "settimana": 10,
+     "morti": 987.0,
+     "atteso": 968.2,
+     "eccesso": 18.8,
+     "eccesso_pct": 1.9,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W11",
+     "anno": 2024,
+     "settimana": 11,
+     "morti": 915.0,
+     "atteso": 906.6,
+     "eccesso": 8.4,
+     "eccesso_pct": 0.9,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W12",
+     "anno": 2024,
+     "settimana": 12,
+     "morti": 988.0,
+     "atteso": 888.0,
+     "eccesso": 100.0,
+     "eccesso_pct": 11.3,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W13",
+     "anno": 2024,
+     "settimana": 13,
+     "morti": 886.0,
+     "atteso": 933.0,
+     "eccesso": -47.0,
+     "eccesso_pct": -5.0,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W14",
+     "anno": 2024,
+     "settimana": 14,
+     "morti": 908.0,
+     "atteso": 907.8,
+     "eccesso": 0.2,
+     "eccesso_pct": 0.0,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W15",
+     "anno": 2024,
+     "settimana": 15,
+     "morti": 874.0,
+     "atteso": 890.4,
+     "eccesso": -16.4,
+     "eccesso_pct": -1.8,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W16",
+     "anno": 2024,
+     "settimana": 16,
+     "morti": 922.0,
+     "atteso": 834.6,
+     "eccesso": 87.4,
+     "eccesso_pct": 10.5,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W17",
+     "anno": 2024,
+     "settimana": 17,
+     "morti": 913.0,
+     "atteso": 823.8,
+     "eccesso": 89.2,
+     "eccesso_pct": 10.8,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W18",
+     "anno": 2024,
+     "settimana": 18,
+     "morti": 906.0,
+     "atteso": 833.8,
+     "eccesso": 72.2,
+     "eccesso_pct": 8.7,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W19",
+     "anno": 2024,
+     "settimana": 19,
+     "morti": 957.0,
+     "atteso": 844.0,
+     "eccesso": 113.0,
+     "eccesso_pct": 13.4,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W20",
+     "anno": 2024,
+     "settimana": 20,
+     "morti": 912.0,
+     "atteso": 848.6,
+     "eccesso": 63.4,
+     "eccesso_pct": 7.5,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W21",
+     "anno": 2024,
+     "settimana": 21,
+     "morti": 936.0,
+     "atteso": 804.6,
+     "eccesso": 131.4,
+     "eccesso_pct": 16.3,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W22",
+     "anno": 2024,
+     "settimana": 22,
+     "morti": 898.0,
+     "atteso": 820.4,
+     "eccesso": 77.6,
+     "eccesso_pct": 9.5,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W23",
+     "anno": 2024,
+     "settimana": 23,
+     "morti": 939.0,
+     "atteso": 842.2,
+     "eccesso": 96.8,
+     "eccesso_pct": 11.5,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W24",
+     "anno": 2024,
+     "settimana": 24,
+     "morti": 842.0,
+     "atteso": 834.2,
+     "eccesso": 7.8,
+     "eccesso_pct": 0.9,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W25",
+     "anno": 2024,
+     "settimana": 25,
+     "morti": 872.0,
+     "atteso": 890.8,
+     "eccesso": -18.8,
+     "eccesso_pct": -2.1,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W26",
+     "anno": 2024,
+     "settimana": 26,
+     "morti": 835.0,
+     "atteso": 847.8,
+     "eccesso": -12.8,
+     "eccesso_pct": -1.5,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W27",
+     "anno": 2024,
+     "settimana": 27,
+     "morti": 872.0,
+     "atteso": 900.4,
+     "eccesso": -28.4,
+     "eccesso_pct": -3.2,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W28",
+     "anno": 2024,
+     "settimana": 28,
+     "morti": 871.0,
+     "atteso": 900.6,
+     "eccesso": -29.6,
+     "eccesso_pct": -3.3,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W29",
+     "anno": 2024,
+     "settimana": 29,
+     "morti": 885.0,
+     "atteso": 877.0,
+     "eccesso": 8.0,
+     "eccesso_pct": 0.9,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W30",
+     "anno": 2024,
+     "settimana": 30,
+     "morti": 940.0,
+     "atteso": 856.0,
+     "eccesso": 84.0,
+     "eccesso_pct": 9.8,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W31",
+     "anno": 2024,
+     "settimana": 31,
+     "morti": 953.0,
+     "atteso": 860.4,
+     "eccesso": 92.6,
+     "eccesso_pct": 10.8,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W32",
+     "anno": 2024,
+     "settimana": 32,
+     "morti": 998.0,
+     "atteso": 819.4,
+     "eccesso": 178.6,
+     "eccesso_pct": 21.8,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W33",
+     "anno": 2024,
+     "settimana": 33,
+     "morti": 880.0,
+     "atteso": 779.6,
+     "eccesso": 100.4,
+     "eccesso_pct": 12.9,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W34",
+     "anno": 2024,
+     "settimana": 34,
+     "morti": 844.0,
+     "atteso": 789.6,
+     "eccesso": 54.4,
+     "eccesso_pct": 6.9,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W35",
+     "anno": 2024,
+     "settimana": 35,
+     "morti": 876.0,
+     "atteso": 759.0,
+     "eccesso": 117.0,
+     "eccesso_pct": 15.4,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W36",
+     "anno": 2024,
+     "settimana": 36,
+     "morti": 799.0,
+     "atteso": 763.0,
+     "eccesso": 36.0,
+     "eccesso_pct": 4.7,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W37",
+     "anno": 2024,
+     "settimana": 37,
+     "morti": 815.0,
+     "atteso": 769.0,
+     "eccesso": 46.0,
+     "eccesso_pct": 6.0,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W38",
+     "anno": 2024,
+     "settimana": 38,
+     "morti": 870.0,
+     "atteso": 756.0,
+     "eccesso": 114.0,
+     "eccesso_pct": 15.1,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W39",
+     "anno": 2024,
+     "settimana": 39,
+     "morti": 797.0,
+     "atteso": 789.6,
+     "eccesso": 7.4,
+     "eccesso_pct": 0.9,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W40",
+     "anno": 2024,
+     "settimana": 40,
+     "morti": 866.0,
+     "atteso": 797.6,
+     "eccesso": 68.4,
+     "eccesso_pct": 8.6,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W41",
+     "anno": 2024,
+     "settimana": 41,
+     "morti": 840.0,
+     "atteso": 822.8,
+     "eccesso": 17.2,
+     "eccesso_pct": 2.1,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W42",
+     "anno": 2024,
+     "settimana": 42,
+     "morti": 891.0,
+     "atteso": 825.8,
+     "eccesso": 65.2,
+     "eccesso_pct": 7.9,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W43",
+     "anno": 2024,
+     "settimana": 43,
+     "morti": 902.0,
+     "atteso": 847.8,
+     "eccesso": 54.2,
+     "eccesso_pct": 6.4,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W44",
+     "anno": 2024,
+     "settimana": 44,
+     "morti": 917.0,
+     "atteso": 859.4,
+     "eccesso": 57.6,
+     "eccesso_pct": 6.7,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W45",
+     "anno": 2024,
+     "settimana": 45,
+     "morti": 954.0,
+     "atteso": 825.4,
+     "eccesso": 128.6,
+     "eccesso_pct": 15.6,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W46",
+     "anno": 2024,
+     "settimana": 46,
+     "morti": 933.0,
+     "atteso": 893.6,
+     "eccesso": 39.4,
+     "eccesso_pct": 4.4,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W47",
+     "anno": 2024,
+     "settimana": 47,
+     "morti": 926.0,
+     "atteso": 868.0,
+     "eccesso": 58.0,
+     "eccesso_pct": 6.7,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W48",
+     "anno": 2024,
+     "settimana": 48,
+     "morti": 908.0,
+     "atteso": 885.8,
+     "eccesso": 22.2,
+     "eccesso_pct": 2.5,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W49",
+     "anno": 2024,
+     "settimana": 49,
+     "morti": 990.0,
+     "atteso": 900.4,
+     "eccesso": 89.6,
+     "eccesso_pct": 10.0,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W50",
+     "anno": 2024,
+     "settimana": 50,
+     "morti": 1021.0,
+     "atteso": 945.0,
+     "eccesso": 76.0,
+     "eccesso_pct": 8.0,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W51",
+     "anno": 2024,
+     "settimana": 51,
+     "morti": 1143.0,
+     "atteso": 939.0,
+     "eccesso": 204.0,
+     "eccesso_pct": 21.7,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W52",
+     "anno": 2024,
+     "settimana": 52,
+     "morti": 1074.0,
+     "atteso": 988.4,
+     "eccesso": 85.6,
+     "eccesso_pct": 8.7,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W01",
+     "anno": 2025,
+     "settimana": 1,
+     "morti": 1088.0,
+     "atteso": 1066.2,
+     "eccesso": 21.8,
+     "eccesso_pct": 2.0,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W02",
+     "anno": 2025,
+     "settimana": 2,
+     "morti": 1166.0,
+     "atteso": 1120.4,
+     "eccesso": 45.6,
+     "eccesso_pct": 4.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W03",
+     "anno": 2025,
+     "settimana": 3,
+     "morti": 1194.0,
+     "atteso": 1135.4,
+     "eccesso": 58.6,
+     "eccesso_pct": 5.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W04",
+     "anno": 2025,
+     "settimana": 4,
+     "morti": 1124.0,
+     "atteso": 1099.4,
+     "eccesso": 24.6,
+     "eccesso_pct": 2.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W05",
+     "anno": 2025,
+     "settimana": 5,
+     "morti": 1099.0,
+     "atteso": 1098.2,
+     "eccesso": 0.8,
+     "eccesso_pct": 0.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W06",
+     "anno": 2025,
+     "settimana": 6,
+     "morti": 1062.0,
+     "atteso": 1083.4,
+     "eccesso": -21.4,
+     "eccesso_pct": -2.0,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W07",
+     "anno": 2025,
+     "settimana": 7,
+     "morti": 1005.0,
+     "atteso": 1051.4,
+     "eccesso": -46.4,
+     "eccesso_pct": -4.4,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W08",
+     "anno": 2025,
+     "settimana": 8,
+     "morti": 959.0,
+     "atteso": 1011.8,
+     "eccesso": -52.8,
+     "eccesso_pct": -5.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W09",
+     "anno": 2025,
+     "settimana": 9,
+     "morti": 1011.0,
+     "atteso": 1000.0,
+     "eccesso": 11.0,
+     "eccesso_pct": 1.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W10",
+     "anno": 2025,
+     "settimana": 10,
+     "morti": 958.0,
+     "atteso": 968.2,
+     "eccesso": -10.2,
+     "eccesso_pct": -1.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W11",
+     "anno": 2025,
+     "settimana": 11,
+     "morti": 934.0,
+     "atteso": 906.6,
+     "eccesso": 27.4,
+     "eccesso_pct": 3.0,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W12",
+     "anno": 2025,
+     "settimana": 12,
+     "morti": 920.0,
+     "atteso": 888.0,
+     "eccesso": 32.0,
+     "eccesso_pct": 3.6,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W13",
+     "anno": 2025,
+     "settimana": 13,
+     "morti": 922.0,
+     "atteso": 933.0,
+     "eccesso": -11.0,
+     "eccesso_pct": -1.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W14",
+     "anno": 2025,
+     "settimana": 14,
+     "morti": 950.0,
+     "atteso": 907.8,
+     "eccesso": 42.2,
+     "eccesso_pct": 4.6,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W15",
+     "anno": 2025,
+     "settimana": 15,
+     "morti": 978.0,
+     "atteso": 890.4,
+     "eccesso": 87.6,
+     "eccesso_pct": 9.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W16",
+     "anno": 2025,
+     "settimana": 16,
+     "morti": 866.0,
+     "atteso": 834.6,
+     "eccesso": 31.4,
+     "eccesso_pct": 3.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W17",
+     "anno": 2025,
+     "settimana": 17,
+     "morti": 927.0,
+     "atteso": 823.8,
+     "eccesso": 103.2,
+     "eccesso_pct": 12.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W18",
+     "anno": 2025,
+     "settimana": 18,
+     "morti": 921.0,
+     "atteso": 833.8,
+     "eccesso": 87.2,
+     "eccesso_pct": 10.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W19",
+     "anno": 2025,
+     "settimana": 19,
+     "morti": 875.0,
+     "atteso": 844.0,
+     "eccesso": 31.0,
+     "eccesso_pct": 3.7,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W20",
+     "anno": 2025,
+     "settimana": 20,
+     "morti": 889.0,
+     "atteso": 848.6,
+     "eccesso": 40.4,
+     "eccesso_pct": 4.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W21",
+     "anno": 2025,
+     "settimana": 21,
+     "morti": 882.0,
+     "atteso": 804.6,
+     "eccesso": 77.4,
+     "eccesso_pct": 9.6,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W22",
+     "anno": 2025,
+     "settimana": 22,
+     "morti": 984.0,
+     "atteso": 820.4,
+     "eccesso": 163.6,
+     "eccesso_pct": 19.9,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W23",
+     "anno": 2025,
+     "settimana": 23,
+     "morti": 949.0,
+     "atteso": 842.2,
+     "eccesso": 106.8,
+     "eccesso_pct": 12.7,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W24",
+     "anno": 2025,
+     "settimana": 24,
+     "morti": 892.0,
+     "atteso": 834.2,
+     "eccesso": 57.8,
+     "eccesso_pct": 6.9,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W25",
+     "anno": 2025,
+     "settimana": 25,
+     "morti": 998.0,
+     "atteso": 890.8,
+     "eccesso": 107.2,
+     "eccesso_pct": 12.0,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W26",
+     "anno": 2025,
+     "settimana": 26,
+     "morti": 960.0,
+     "atteso": 847.8,
+     "eccesso": 112.2,
+     "eccesso_pct": 13.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W27",
+     "anno": 2025,
+     "settimana": 27,
+     "morti": 976.0,
+     "atteso": 900.4,
+     "eccesso": 75.6,
+     "eccesso_pct": 8.4,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W28",
+     "anno": 2025,
+     "settimana": 28,
+     "morti": 898.0,
+     "atteso": 900.6,
+     "eccesso": -2.6,
+     "eccesso_pct": -0.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W29",
+     "anno": 2025,
+     "settimana": 29,
+     "morti": 865.0,
+     "atteso": 877.0,
+     "eccesso": -12.0,
+     "eccesso_pct": -1.4,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W30",
+     "anno": 2025,
+     "settimana": 30,
+     "morti": 839.0,
+     "atteso": 856.0,
+     "eccesso": -17.0,
+     "eccesso_pct": -2.0,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W31",
+     "anno": 2025,
+     "settimana": 31,
+     "morti": 811.0,
+     "atteso": 860.4,
+     "eccesso": -49.4,
+     "eccesso_pct": -5.7,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W32",
+     "anno": 2025,
+     "settimana": 32,
+     "morti": 895.0,
+     "atteso": 819.4,
+     "eccesso": 75.6,
+     "eccesso_pct": 9.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W33",
+     "anno": 2025,
+     "settimana": 33,
+     "morti": 1017.0,
+     "atteso": 779.6,
+     "eccesso": 237.4,
+     "eccesso_pct": 30.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W34",
+     "anno": 2025,
+     "settimana": 34,
+     "morti": 970.0,
+     "atteso": 789.6,
+     "eccesso": 180.4,
+     "eccesso_pct": 22.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W35",
+     "anno": 2025,
+     "settimana": 35,
+     "morti": 888.0,
+     "atteso": 759.0,
+     "eccesso": 129.0,
+     "eccesso_pct": 17.0,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W36",
+     "anno": 2025,
+     "settimana": 36,
+     "morti": 819.0,
+     "atteso": 763.0,
+     "eccesso": 56.0,
+     "eccesso_pct": 7.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W37",
+     "anno": 2025,
+     "settimana": 37,
+     "morti": 859.0,
+     "atteso": 769.0,
+     "eccesso": 90.0,
+     "eccesso_pct": 11.7,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W38",
+     "anno": 2025,
+     "settimana": 38,
+     "morti": 859.0,
+     "atteso": 756.0,
+     "eccesso": 103.0,
+     "eccesso_pct": 13.6,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W39",
+     "anno": 2025,
+     "settimana": 39,
+     "morti": 883.0,
+     "atteso": 789.6,
+     "eccesso": 93.4,
+     "eccesso_pct": 11.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W40",
+     "anno": 2025,
+     "settimana": 40,
+     "morti": 879.0,
+     "atteso": 797.6,
+     "eccesso": 81.4,
+     "eccesso_pct": 10.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W41",
+     "anno": 2025,
+     "settimana": 41,
+     "morti": 901.0,
+     "atteso": 822.8,
+     "eccesso": 78.2,
+     "eccesso_pct": 9.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W42",
+     "anno": 2025,
+     "settimana": 42,
+     "morti": 934.0,
+     "atteso": 825.8,
+     "eccesso": 108.2,
+     "eccesso_pct": 13.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W43",
+     "anno": 2025,
+     "settimana": 43,
+     "morti": 907.0,
+     "atteso": 847.8,
+     "eccesso": 59.2,
+     "eccesso_pct": 7.0,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W44",
+     "anno": 2025,
+     "settimana": 44,
+     "morti": 878.0,
+     "atteso": 859.4,
+     "eccesso": 18.6,
+     "eccesso_pct": 2.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W45",
+     "anno": 2025,
+     "settimana": 45,
+     "morti": 969.0,
+     "atteso": 825.4,
+     "eccesso": 143.6,
+     "eccesso_pct": 17.4,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W46",
+     "anno": 2025,
+     "settimana": 46,
+     "morti": 981.0,
+     "atteso": 893.6,
+     "eccesso": 87.4,
+     "eccesso_pct": 9.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W47",
+     "anno": 2025,
+     "settimana": 47,
+     "morti": 962.0,
+     "atteso": 868.0,
+     "eccesso": 94.0,
+     "eccesso_pct": 10.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W48",
+     "anno": 2025,
+     "settimana": 48,
+     "morti": 1093.0,
+     "atteso": 885.8,
+     "eccesso": 207.2,
+     "eccesso_pct": 23.4,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W49",
+     "anno": 2025,
+     "settimana": 49,
+     "morti": 1121.0,
+     "atteso": 900.4,
+     "eccesso": 220.6,
+     "eccesso_pct": 24.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W50",
+     "anno": 2025,
+     "settimana": 50,
+     "morti": 1138.0,
+     "atteso": 945.0,
+     "eccesso": 193.0,
+     "eccesso_pct": 20.4,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W51",
+     "anno": 2025,
+     "settimana": 51,
+     "morti": 1174.0,
+     "atteso": 939.0,
+     "eccesso": 235.0,
+     "eccesso_pct": 25.0,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2025-W52",
+     "anno": 2025,
+     "settimana": 52,
+     "morti": 1106.0,
+     "atteso": 988.4,
+     "eccesso": 117.6,
+     "eccesso_pct": 11.9,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W01",
+     "anno": 2026,
+     "settimana": 1,
+     "morti": 1154.0,
+     "atteso": 1066.2,
+     "eccesso": 87.8,
+     "eccesso_pct": 8.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W02",
+     "anno": 2026,
+     "settimana": 2,
+     "morti": 1121.0,
+     "atteso": 1120.4,
+     "eccesso": 0.6,
+     "eccesso_pct": 0.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W03",
+     "anno": 2026,
+     "settimana": 3,
+     "morti": 1139.0,
+     "atteso": 1135.4,
+     "eccesso": 3.6,
+     "eccesso_pct": 0.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W04",
+     "anno": 2026,
+     "settimana": 4,
+     "morti": 1073.0,
+     "atteso": 1099.4,
+     "eccesso": -26.4,
+     "eccesso_pct": -2.4,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W05",
+     "anno": 2026,
+     "settimana": 5,
+     "morti": 1056.0,
+     "atteso": 1098.2,
+     "eccesso": -42.2,
+     "eccesso_pct": -3.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W06",
+     "anno": 2026,
+     "settimana": 6,
+     "morti": 1049.0,
+     "atteso": 1083.4,
+     "eccesso": -34.4,
+     "eccesso_pct": -3.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W07",
+     "anno": 2026,
+     "settimana": 7,
+     "morti": 1018.0,
+     "atteso": 1051.4,
+     "eccesso": -33.4,
+     "eccesso_pct": -3.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W08",
+     "anno": 2026,
+     "settimana": 8,
+     "morti": 977.0,
+     "atteso": 1011.8,
+     "eccesso": -34.8,
+     "eccesso_pct": -3.4,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W09",
+     "anno": 2026,
+     "settimana": 9,
+     "morti": 1021.0,
+     "atteso": 1000.0,
+     "eccesso": 21.0,
+     "eccesso_pct": 2.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W10",
+     "anno": 2026,
+     "settimana": 10,
+     "morti": 965.0,
+     "atteso": 968.2,
+     "eccesso": -3.2,
+     "eccesso_pct": -0.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W11",
+     "anno": 2026,
+     "settimana": 11,
+     "morti": 967.0,
+     "atteso": 906.6,
+     "eccesso": 60.4,
+     "eccesso_pct": 6.7,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W12",
+     "anno": 2026,
+     "settimana": 12,
+     "morti": 996.0,
+     "atteso": 888.0,
+     "eccesso": 108.0,
+     "eccesso_pct": 12.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W13",
+     "anno": 2026,
+     "settimana": 13,
+     "morti": 922.0,
+     "atteso": 933.0,
+     "eccesso": -11.0,
+     "eccesso_pct": -1.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W14",
+     "anno": 2026,
+     "settimana": 14,
+     "morti": 951.0,
+     "atteso": 907.8,
+     "eccesso": 43.2,
+     "eccesso_pct": 4.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W15",
+     "anno": 2026,
+     "settimana": 15,
+     "morti": 1018.0,
+     "atteso": 890.4,
+     "eccesso": 127.6,
+     "eccesso_pct": 14.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W16",
+     "anno": 2026,
+     "settimana": 16,
+     "morti": 983.0,
+     "atteso": 834.6,
+     "eccesso": 148.4,
+     "eccesso_pct": 17.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W17",
+     "anno": 2026,
+     "settimana": 17,
+     "morti": 953.0,
+     "atteso": 823.8,
+     "eccesso": 129.2,
+     "eccesso_pct": 15.7,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W18",
+     "anno": 2026,
+     "settimana": 18,
+     "morti": 853.0,
+     "atteso": 833.8,
+     "eccesso": 19.2,
+     "eccesso_pct": 2.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W19",
+     "anno": 2026,
+     "settimana": 19,
+     "morti": 872.0,
+     "atteso": 844.0,
+     "eccesso": 28.0,
+     "eccesso_pct": 3.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W20",
+     "anno": 2026,
+     "settimana": 20,
+     "morti": 894.0,
+     "atteso": 848.6,
+     "eccesso": 45.4,
+     "eccesso_pct": 5.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W21",
+     "anno": 2026,
+     "settimana": 21,
+     "morti": 903.0,
+     "atteso": 804.6,
+     "eccesso": 98.4,
+     "eccesso_pct": 12.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W22",
+     "anno": 2026,
+     "settimana": 22,
+     "morti": 1002.0,
+     "atteso": 820.4,
+     "eccesso": 181.6,
+     "eccesso_pct": 22.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W23",
+     "anno": 2026,
+     "settimana": 23,
+     "morti": 856.0,
+     "atteso": 842.2,
+     "eccesso": 13.8,
+     "eccesso_pct": 1.6,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W24",
+     "anno": 2026,
+     "settimana": 24,
+     "morti": 845.0,
+     "atteso": 834.2,
+     "eccesso": 10.8,
+     "eccesso_pct": 1.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W25",
+     "anno": 2026,
+     "settimana": 25,
+     "morti": 863.0,
+     "atteso": 890.8,
+     "eccesso": -27.8,
+     "eccesso_pct": -3.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W26",
+     "anno": 2026,
+     "settimana": 26,
+     "morti": 949.0,
+     "atteso": 847.8,
+     "eccesso": 101.2,
+     "eccesso_pct": 11.9,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W27",
+     "anno": 2026,
+     "settimana": 27,
+     "morti": 932.0,
+     "atteso": 900.4,
+     "eccesso": 31.6,
+     "eccesso_pct": 3.5,
+     "provvisorio": true
+    }
+   ],
+   "estati": [
+    {
+     "anno": 2020,
+     "settimane": 13,
+     "complete": true,
+     "eccesso": 420.2,
+     "eccesso_pct": 3.9
+    },
+    {
+     "anno": 2021,
+     "settimane": 13,
+     "complete": true,
+     "eccesso": 912.2,
+     "eccesso_pct": 8.4
+    },
+    {
+     "anno": 2022,
+     "settimane": 13,
+     "complete": true,
+     "eccesso": 2905.2,
+     "eccesso_pct": 26.7
+    },
+    {
+     "anno": 2023,
+     "settimane": 13,
+     "complete": true,
+     "eccesso": 120.2,
+     "eccesso_pct": 1.1
+    },
+    {
+     "anno": 2024,
+     "settimane": 13,
+     "complete": true,
+     "eccesso": 589.2,
+     "eccesso_pct": 5.4
+    },
+    {
+     "anno": 2025,
+     "settimane": 13,
+     "complete": true,
+     "eccesso": 950.2,
+     "eccesso_pct": 8.7
+    },
+    {
+     "anno": 2026,
+     "settimane": 4,
+     "complete": false,
+     "eccesso": 115.8,
+     "eccesso_pct": 3.3
+    }
+   ],
+   "ultimo": {
+    "periodo": "2026-W27",
+    "anno": 2026,
+    "settimana": 27,
+    "morti": 932.0,
+    "atteso": 900.4,
+    "eccesso": 31.6,
+    "eccesso_pct": 3.5,
+    "provvisorio": true
+   }
+  },
+  {
+   "flusso": "mwk2",
+   "codice": "DE3",
+   "citta": "Berlino",
+   "id": "berlin",
+   "colore": "#0F8B8D",
+   "area": "Land (NUTS 2)",
+   "serie": [
+    {
+     "periodo": "2024-W01",
+     "anno": 2024,
+     "settimana": 1,
+     "morti": 853.0,
+     "atteso": 698.2,
+     "eccesso": 154.8,
+     "eccesso_pct": 22.2,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W02",
+     "anno": 2024,
+     "settimana": 2,
+     "morti": 811.0,
+     "atteso": 726.4,
+     "eccesso": 84.6,
+     "eccesso_pct": 11.6,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W03",
+     "anno": 2024,
+     "settimana": 3,
+     "morti": 849.0,
+     "atteso": 743.2,
+     "eccesso": 105.8,
+     "eccesso_pct": 14.2,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W04",
+     "anno": 2024,
+     "settimana": 4,
+     "morti": 824.0,
+     "atteso": 725.2,
+     "eccesso": 98.8,
+     "eccesso_pct": 13.6,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W05",
+     "anno": 2024,
+     "settimana": 5,
+     "morti": 855.0,
+     "atteso": 754.0,
+     "eccesso": 101.0,
+     "eccesso_pct": 13.4,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W06",
+     "anno": 2024,
+     "settimana": 6,
+     "morti": 837.0,
+     "atteso": 768.2,
+     "eccesso": 68.8,
+     "eccesso_pct": 9.0,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W07",
+     "anno": 2024,
+     "settimana": 7,
+     "morti": 796.0,
+     "atteso": 780.4,
+     "eccesso": 15.6,
+     "eccesso_pct": 2.0,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W08",
+     "anno": 2024,
+     "settimana": 8,
+     "morti": 797.0,
+     "atteso": 810.2,
+     "eccesso": -13.2,
+     "eccesso_pct": -1.6,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W09",
+     "anno": 2024,
+     "settimana": 9,
+     "morti": 770.0,
+     "atteso": 799.4,
+     "eccesso": -29.4,
+     "eccesso_pct": -3.7,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W10",
+     "anno": 2024,
+     "settimana": 10,
+     "morti": 726.0,
+     "atteso": 761.4,
+     "eccesso": -35.4,
+     "eccesso_pct": -4.6,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W11",
+     "anno": 2024,
+     "settimana": 11,
+     "morti": 666.0,
+     "atteso": 753.0,
+     "eccesso": -87.0,
+     "eccesso_pct": -11.6,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W12",
+     "anno": 2024,
+     "settimana": 12,
+     "morti": 676.0,
+     "atteso": 720.8,
+     "eccesso": -44.8,
+     "eccesso_pct": -6.2,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W13",
+     "anno": 2024,
+     "settimana": 13,
+     "morti": 716.0,
+     "atteso": 705.4,
+     "eccesso": 10.6,
+     "eccesso_pct": 1.5,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W14",
+     "anno": 2024,
+     "settimana": 14,
+     "morti": 732.0,
+     "atteso": 692.6,
+     "eccesso": 39.4,
+     "eccesso_pct": 5.7,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W15",
+     "anno": 2024,
+     "settimana": 15,
+     "morti": 661.0,
+     "atteso": 684.0,
+     "eccesso": -23.0,
+     "eccesso_pct": -3.4,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W16",
+     "anno": 2024,
+     "settimana": 16,
+     "morti": 698.0,
+     "atteso": 657.0,
+     "eccesso": 41.0,
+     "eccesso_pct": 6.2,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W17",
+     "anno": 2024,
+     "settimana": 17,
+     "morti": 681.0,
+     "atteso": 637.4,
+     "eccesso": 43.6,
+     "eccesso_pct": 6.8,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W18",
+     "anno": 2024,
+     "settimana": 18,
+     "morti": 749.0,
+     "atteso": 628.8,
+     "eccesso": 120.2,
+     "eccesso_pct": 19.1,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W19",
+     "anno": 2024,
+     "settimana": 19,
+     "morti": 642.0,
+     "atteso": 655.4,
+     "eccesso": -13.4,
+     "eccesso_pct": -2.0,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W20",
+     "anno": 2024,
+     "settimana": 20,
+     "morti": 704.0,
+     "atteso": 631.4,
+     "eccesso": 72.6,
+     "eccesso_pct": 11.5,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W21",
+     "anno": 2024,
+     "settimana": 21,
+     "morti": 644.0,
+     "atteso": 601.6,
+     "eccesso": 42.4,
+     "eccesso_pct": 7.0,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W22",
+     "anno": 2024,
+     "settimana": 22,
+     "morti": 634.0,
+     "atteso": 622.4,
+     "eccesso": 11.6,
+     "eccesso_pct": 1.9,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W23",
+     "anno": 2024,
+     "settimana": 23,
+     "morti": 619.0,
+     "atteso": 613.6,
+     "eccesso": 5.4,
+     "eccesso_pct": 0.9,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W24",
+     "anno": 2024,
+     "settimana": 24,
+     "morti": 645.0,
+     "atteso": 619.0,
+     "eccesso": 26.0,
+     "eccesso_pct": 4.2,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W25",
+     "anno": 2024,
+     "settimana": 25,
+     "morti": 660.0,
+     "atteso": 597.8,
+     "eccesso": 62.2,
+     "eccesso_pct": 10.4,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W26",
+     "anno": 2024,
+     "settimana": 26,
+     "morti": 669.0,
+     "atteso": 602.2,
+     "eccesso": 66.8,
+     "eccesso_pct": 11.1,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W27",
+     "anno": 2024,
+     "settimana": 27,
+     "morti": 614.0,
+     "atteso": 603.8,
+     "eccesso": 10.2,
+     "eccesso_pct": 1.7,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W28",
+     "anno": 2024,
+     "settimana": 28,
+     "morti": 656.0,
+     "atteso": 609.0,
+     "eccesso": 47.0,
+     "eccesso_pct": 7.7,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W29",
+     "anno": 2024,
+     "settimana": 29,
+     "morti": 630.0,
+     "atteso": 600.8,
+     "eccesso": 29.2,
+     "eccesso_pct": 4.9,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W30",
+     "anno": 2024,
+     "settimana": 30,
+     "morti": 622.0,
+     "atteso": 621.6,
+     "eccesso": 0.4,
+     "eccesso_pct": 0.1,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W31",
+     "anno": 2024,
+     "settimana": 31,
+     "morti": 672.0,
+     "atteso": 642.6,
+     "eccesso": 29.4,
+     "eccesso_pct": 4.6,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W32",
+     "anno": 2024,
+     "settimana": 32,
+     "morti": 624.0,
+     "atteso": 629.8,
+     "eccesso": -5.8,
+     "eccesso_pct": -0.9,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W33",
+     "anno": 2024,
+     "settimana": 33,
+     "morti": 652.0,
+     "atteso": 649.4,
+     "eccesso": 2.6,
+     "eccesso_pct": 0.4,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W34",
+     "anno": 2024,
+     "settimana": 34,
+     "morti": 691.0,
+     "atteso": 598.4,
+     "eccesso": 92.6,
+     "eccesso_pct": 15.5,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W35",
+     "anno": 2024,
+     "settimana": 35,
+     "morti": 671.0,
+     "atteso": 634.0,
+     "eccesso": 37.0,
+     "eccesso_pct": 5.8,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W36",
+     "anno": 2024,
+     "settimana": 36,
+     "morti": 723.0,
+     "atteso": 605.6,
+     "eccesso": 117.4,
+     "eccesso_pct": 19.4,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W37",
+     "anno": 2024,
+     "settimana": 37,
+     "morti": 624.0,
+     "atteso": 606.2,
+     "eccesso": 17.8,
+     "eccesso_pct": 2.9,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W38",
+     "anno": 2024,
+     "settimana": 38,
+     "morti": 652.0,
+     "atteso": 624.4,
+     "eccesso": 27.6,
+     "eccesso_pct": 4.4,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W39",
+     "anno": 2024,
+     "settimana": 39,
+     "morti": 718.0,
+     "atteso": 614.8,
+     "eccesso": 103.2,
+     "eccesso_pct": 16.8,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W40",
+     "anno": 2024,
+     "settimana": 40,
+     "morti": 717.0,
+     "atteso": 625.8,
+     "eccesso": 91.2,
+     "eccesso_pct": 14.6,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W41",
+     "anno": 2024,
+     "settimana": 41,
+     "morti": 753.0,
+     "atteso": 639.2,
+     "eccesso": 113.8,
+     "eccesso_pct": 17.8,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W42",
+     "anno": 2024,
+     "settimana": 42,
+     "morti": 763.0,
+     "atteso": 661.0,
+     "eccesso": 102.0,
+     "eccesso_pct": 15.4,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W43",
+     "anno": 2024,
+     "settimana": 43,
+     "morti": 752.0,
+     "atteso": 636.2,
+     "eccesso": 115.8,
+     "eccesso_pct": 18.2,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W44",
+     "anno": 2024,
+     "settimana": 44,
+     "morti": 708.0,
+     "atteso": 653.6,
+     "eccesso": 54.4,
+     "eccesso_pct": 8.3,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W45",
+     "anno": 2024,
+     "settimana": 45,
+     "morti": 731.0,
+     "atteso": 642.0,
+     "eccesso": 89.0,
+     "eccesso_pct": 13.9,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W46",
+     "anno": 2024,
+     "settimana": 46,
+     "morti": 778.0,
+     "atteso": 644.8,
+     "eccesso": 133.2,
+     "eccesso_pct": 20.7,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W47",
+     "anno": 2024,
+     "settimana": 47,
+     "morti": 725.0,
+     "atteso": 652.6,
+     "eccesso": 72.4,
+     "eccesso_pct": 11.1,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W48",
+     "anno": 2024,
+     "settimana": 48,
+     "morti": 759.0,
+     "atteso": 660.6,
+     "eccesso": 98.4,
+     "eccesso_pct": 14.9,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W49",
+     "anno": 2024,
+     "settimana": 49,
+     "morti": 795.0,
+     "atteso": 668.0,
+     "eccesso": 127.0,
+     "eccesso_pct": 19.0,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W50",
+     "anno": 2024,
+     "settimana": 50,
+     "morti": 869.0,
+     "atteso": 664.6,
+     "eccesso": 204.4,
+     "eccesso_pct": 30.8,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W51",
+     "anno": 2024,
+     "settimana": 51,
+     "morti": 836.0,
+     "atteso": 673.0,
+     "eccesso": 163.0,
+     "eccesso_pct": 24.2,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2024-W52",
+     "anno": 2024,
+     "settimana": 52,
+     "morti": 792.0,
+     "atteso": 703.6,
+     "eccesso": 88.4,
+     "eccesso_pct": 12.6,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W01",
+     "anno": 2025,
+     "settimana": 1,
+     "morti": 824.0,
+     "atteso": 698.2,
+     "eccesso": 125.8,
+     "eccesso_pct": 18.0,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W02",
+     "anno": 2025,
+     "settimana": 2,
+     "morti": 857.0,
+     "atteso": 726.4,
+     "eccesso": 130.6,
+     "eccesso_pct": 18.0,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W03",
+     "anno": 2025,
+     "settimana": 3,
+     "morti": 830.0,
+     "atteso": 743.2,
+     "eccesso": 86.8,
+     "eccesso_pct": 11.7,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W04",
+     "anno": 2025,
+     "settimana": 4,
+     "morti": 936.0,
+     "atteso": 725.2,
+     "eccesso": 210.8,
+     "eccesso_pct": 29.1,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W05",
+     "anno": 2025,
+     "settimana": 5,
+     "morti": 869.0,
+     "atteso": 754.0,
+     "eccesso": 115.0,
+     "eccesso_pct": 15.3,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W06",
+     "anno": 2025,
+     "settimana": 6,
+     "morti": 845.0,
+     "atteso": 768.2,
+     "eccesso": 76.8,
+     "eccesso_pct": 10.0,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W07",
+     "anno": 2025,
+     "settimana": 7,
+     "morti": 818.0,
+     "atteso": 780.4,
+     "eccesso": 37.6,
+     "eccesso_pct": 4.8,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W08",
+     "anno": 2025,
+     "settimana": 8,
+     "morti": 821.0,
+     "atteso": 810.2,
+     "eccesso": 10.8,
+     "eccesso_pct": 1.3,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W09",
+     "anno": 2025,
+     "settimana": 9,
+     "morti": 861.0,
+     "atteso": 799.4,
+     "eccesso": 61.6,
+     "eccesso_pct": 7.7,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W10",
+     "anno": 2025,
+     "settimana": 10,
+     "morti": 802.0,
+     "atteso": 761.4,
+     "eccesso": 40.6,
+     "eccesso_pct": 5.3,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W11",
+     "anno": 2025,
+     "settimana": 11,
+     "morti": 815.0,
+     "atteso": 753.0,
+     "eccesso": 62.0,
+     "eccesso_pct": 8.2,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W12",
+     "anno": 2025,
+     "settimana": 12,
+     "morti": 736.0,
+     "atteso": 720.8,
+     "eccesso": 15.2,
+     "eccesso_pct": 2.1,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W13",
+     "anno": 2025,
+     "settimana": 13,
+     "morti": 744.0,
+     "atteso": 705.4,
+     "eccesso": 38.6,
+     "eccesso_pct": 5.5,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W14",
+     "anno": 2025,
+     "settimana": 14,
+     "morti": 740.0,
+     "atteso": 692.6,
+     "eccesso": 47.4,
+     "eccesso_pct": 6.8,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W15",
+     "anno": 2025,
+     "settimana": 15,
+     "morti": 763.0,
+     "atteso": 684.0,
+     "eccesso": 79.0,
+     "eccesso_pct": 11.5,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W16",
+     "anno": 2025,
+     "settimana": 16,
+     "morti": 743.0,
+     "atteso": 657.0,
+     "eccesso": 86.0,
+     "eccesso_pct": 13.1,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W17",
+     "anno": 2025,
+     "settimana": 17,
+     "morti": 662.0,
+     "atteso": 637.4,
+     "eccesso": 24.6,
+     "eccesso_pct": 3.9,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W18",
+     "anno": 2025,
+     "settimana": 18,
+     "morti": 695.0,
+     "atteso": 628.8,
+     "eccesso": 66.2,
+     "eccesso_pct": 10.5,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W19",
+     "anno": 2025,
+     "settimana": 19,
+     "morti": 708.0,
+     "atteso": 655.4,
+     "eccesso": 52.6,
+     "eccesso_pct": 8.0,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W20",
+     "anno": 2025,
+     "settimana": 20,
+     "morti": 694.0,
+     "atteso": 631.4,
+     "eccesso": 62.6,
+     "eccesso_pct": 9.9,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W21",
+     "anno": 2025,
+     "settimana": 21,
+     "morti": 660.0,
+     "atteso": 601.6,
+     "eccesso": 58.4,
+     "eccesso_pct": 9.7,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W22",
+     "anno": 2025,
+     "settimana": 22,
+     "morti": 651.0,
+     "atteso": 622.4,
+     "eccesso": 28.6,
+     "eccesso_pct": 4.6,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W23",
+     "anno": 2025,
+     "settimana": 23,
+     "morti": 675.0,
+     "atteso": 613.6,
+     "eccesso": 61.4,
+     "eccesso_pct": 10.0,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W24",
+     "anno": 2025,
+     "settimana": 24,
+     "morti": 657.0,
+     "atteso": 619.0,
+     "eccesso": 38.0,
+     "eccesso_pct": 6.1,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W25",
+     "anno": 2025,
+     "settimana": 25,
+     "morti": 635.0,
+     "atteso": 597.8,
+     "eccesso": 37.2,
+     "eccesso_pct": 6.2,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W26",
+     "anno": 2025,
+     "settimana": 26,
+     "morti": 676.0,
+     "atteso": 602.2,
+     "eccesso": 73.8,
+     "eccesso_pct": 12.3,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W27",
+     "anno": 2025,
+     "settimana": 27,
+     "morti": 703.0,
+     "atteso": 603.8,
+     "eccesso": 99.2,
+     "eccesso_pct": 16.4,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W28",
+     "anno": 2025,
+     "settimana": 28,
+     "morti": 664.0,
+     "atteso": 609.0,
+     "eccesso": 55.0,
+     "eccesso_pct": 9.0,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W29",
+     "anno": 2025,
+     "settimana": 29,
+     "morti": 621.0,
+     "atteso": 600.8,
+     "eccesso": 20.2,
+     "eccesso_pct": 3.4,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W30",
+     "anno": 2025,
+     "settimana": 30,
+     "morti": 617.0,
+     "atteso": 621.6,
+     "eccesso": -4.6,
+     "eccesso_pct": -0.7,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W31",
+     "anno": 2025,
+     "settimana": 31,
+     "morti": 636.0,
+     "atteso": 642.6,
+     "eccesso": -6.6,
+     "eccesso_pct": -1.0,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W32",
+     "anno": 2025,
+     "settimana": 32,
+     "morti": 648.0,
+     "atteso": 629.8,
+     "eccesso": 18.2,
+     "eccesso_pct": 2.9,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W33",
+     "anno": 2025,
+     "settimana": 33,
+     "morti": 699.0,
+     "atteso": 649.4,
+     "eccesso": 49.6,
+     "eccesso_pct": 7.6,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W34",
+     "anno": 2025,
+     "settimana": 34,
+     "morti": 622.0,
+     "atteso": 598.4,
+     "eccesso": 23.6,
+     "eccesso_pct": 3.9,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W35",
+     "anno": 2025,
+     "settimana": 35,
+     "morti": 655.0,
+     "atteso": 634.0,
+     "eccesso": 21.0,
+     "eccesso_pct": 3.3,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W36",
+     "anno": 2025,
+     "settimana": 36,
+     "morti": 641.0,
+     "atteso": 605.6,
+     "eccesso": 35.4,
+     "eccesso_pct": 5.8,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W37",
+     "anno": 2025,
+     "settimana": 37,
+     "morti": 637.0,
+     "atteso": 606.2,
+     "eccesso": 30.8,
+     "eccesso_pct": 5.1,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W38",
+     "anno": 2025,
+     "settimana": 38,
+     "morti": 675.0,
+     "atteso": 624.4,
+     "eccesso": 50.6,
+     "eccesso_pct": 8.1,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W39",
+     "anno": 2025,
+     "settimana": 39,
+     "morti": 665.0,
+     "atteso": 614.8,
+     "eccesso": 50.2,
+     "eccesso_pct": 8.2,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W40",
+     "anno": 2025,
+     "settimana": 40,
+     "morti": 698.0,
+     "atteso": 625.8,
+     "eccesso": 72.2,
+     "eccesso_pct": 11.5,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W41",
+     "anno": 2025,
+     "settimana": 41,
+     "morti": 724.0,
+     "atteso": 639.2,
+     "eccesso": 84.8,
+     "eccesso_pct": 13.3,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W42",
+     "anno": 2025,
+     "settimana": 42,
+     "morti": 637.0,
+     "atteso": 661.0,
+     "eccesso": -24.0,
+     "eccesso_pct": -3.6,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W43",
+     "anno": 2025,
+     "settimana": 43,
+     "morti": 734.0,
+     "atteso": 636.2,
+     "eccesso": 97.8,
+     "eccesso_pct": 15.4,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W44",
+     "anno": 2025,
+     "settimana": 44,
+     "morti": 679.0,
+     "atteso": 653.6,
+     "eccesso": 25.4,
+     "eccesso_pct": 3.9,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W45",
+     "anno": 2025,
+     "settimana": 45,
+     "morti": 707.0,
+     "atteso": 642.0,
+     "eccesso": 65.0,
+     "eccesso_pct": 10.1,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W46",
+     "anno": 2025,
+     "settimana": 46,
+     "morti": 728.0,
+     "atteso": 644.8,
+     "eccesso": 83.2,
+     "eccesso_pct": 12.9,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W47",
+     "anno": 2025,
+     "settimana": 47,
+     "morti": 704.0,
+     "atteso": 652.6,
+     "eccesso": 51.4,
+     "eccesso_pct": 7.9,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W48",
+     "anno": 2025,
+     "settimana": 48,
+     "morti": 727.0,
+     "atteso": 660.6,
+     "eccesso": 66.4,
+     "eccesso_pct": 10.1,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W49",
+     "anno": 2025,
+     "settimana": 49,
+     "morti": 742.0,
+     "atteso": 668.0,
+     "eccesso": 74.0,
+     "eccesso_pct": 11.1,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W50",
+     "anno": 2025,
+     "settimana": 50,
+     "morti": 755.0,
+     "atteso": 664.6,
+     "eccesso": 90.4,
+     "eccesso_pct": 13.6,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W51",
+     "anno": 2025,
+     "settimana": 51,
+     "morti": 709.0,
+     "atteso": 673.0,
+     "eccesso": 36.0,
+     "eccesso_pct": 5.3,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2025-W52",
+     "anno": 2025,
+     "settimana": 52,
+     "morti": 743.0,
+     "atteso": 703.6,
+     "eccesso": 39.4,
+     "eccesso_pct": 5.6,
+     "provvisorio": false
+    },
+    {
+     "periodo": "2026-W01",
+     "anno": 2026,
+     "settimana": 1,
+     "morti": 793.0,
+     "atteso": 698.2,
+     "eccesso": 94.8,
+     "eccesso_pct": 13.6,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W02",
+     "anno": 2026,
+     "settimana": 2,
+     "morti": 866.0,
+     "atteso": 726.4,
+     "eccesso": 139.6,
+     "eccesso_pct": 19.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W03",
+     "anno": 2026,
+     "settimana": 3,
+     "morti": 908.0,
+     "atteso": 743.2,
+     "eccesso": 164.8,
+     "eccesso_pct": 22.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W04",
+     "anno": 2026,
+     "settimana": 4,
+     "morti": 849.0,
+     "atteso": 725.2,
+     "eccesso": 123.8,
+     "eccesso_pct": 17.1,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W05",
+     "anno": 2026,
+     "settimana": 5,
+     "morti": 832.0,
+     "atteso": 754.0,
+     "eccesso": 78.0,
+     "eccesso_pct": 10.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W06",
+     "anno": 2026,
+     "settimana": 6,
+     "morti": 851.0,
+     "atteso": 768.2,
+     "eccesso": 82.8,
+     "eccesso_pct": 10.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W07",
+     "anno": 2026,
+     "settimana": 7,
+     "morti": 837.0,
+     "atteso": 780.4,
+     "eccesso": 56.6,
+     "eccesso_pct": 7.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W08",
+     "anno": 2026,
+     "settimana": 8,
+     "morti": 778.0,
+     "atteso": 810.2,
+     "eccesso": -32.2,
+     "eccesso_pct": -4.0,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W09",
+     "anno": 2026,
+     "settimana": 9,
+     "morti": 773.0,
+     "atteso": 799.4,
+     "eccesso": -26.4,
+     "eccesso_pct": -3.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W10",
+     "anno": 2026,
+     "settimana": 10,
+     "morti": 796.0,
+     "atteso": 761.4,
+     "eccesso": 34.6,
+     "eccesso_pct": 4.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W11",
+     "anno": 2026,
+     "settimana": 11,
+     "morti": 719.0,
+     "atteso": 753.0,
+     "eccesso": -34.0,
+     "eccesso_pct": -4.5,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W12",
+     "anno": 2026,
+     "settimana": 12,
+     "morti": 726.0,
+     "atteso": 720.8,
+     "eccesso": 5.2,
+     "eccesso_pct": 0.7,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W13",
+     "anno": 2026,
+     "settimana": 13,
+     "morti": 665.0,
+     "atteso": 705.4,
+     "eccesso": -40.4,
+     "eccesso_pct": -5.7,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W14",
+     "anno": 2026,
+     "settimana": 14,
+     "morti": 677.0,
+     "atteso": 692.6,
+     "eccesso": -15.6,
+     "eccesso_pct": -2.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W15",
+     "anno": 2026,
+     "settimana": 15,
+     "morti": 695.0,
+     "atteso": 684.0,
+     "eccesso": 11.0,
+     "eccesso_pct": 1.6,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W16",
+     "anno": 2026,
+     "settimana": 16,
+     "morti": 725.0,
+     "atteso": 657.0,
+     "eccesso": 68.0,
+     "eccesso_pct": 10.4,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W17",
+     "anno": 2026,
+     "settimana": 17,
+     "morti": 639.0,
+     "atteso": 637.4,
+     "eccesso": 1.6,
+     "eccesso_pct": 0.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W18",
+     "anno": 2026,
+     "settimana": 18,
+     "morti": 643.0,
+     "atteso": 628.8,
+     "eccesso": 14.2,
+     "eccesso_pct": 2.3,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W19",
+     "anno": 2026,
+     "settimana": 19,
+     "morti": 696.0,
+     "atteso": 655.4,
+     "eccesso": 40.6,
+     "eccesso_pct": 6.2,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W20",
+     "anno": 2026,
+     "settimana": 20,
+     "morti": 620.0,
+     "atteso": 631.4,
+     "eccesso": -11.4,
+     "eccesso_pct": -1.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W21",
+     "anno": 2026,
+     "settimana": 21,
+     "morti": 654.0,
+     "atteso": 601.6,
+     "eccesso": 52.4,
+     "eccesso_pct": 8.7,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W22",
+     "anno": 2026,
+     "settimana": 22,
+     "morti": 646.0,
+     "atteso": 622.4,
+     "eccesso": 23.6,
+     "eccesso_pct": 3.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W23",
+     "anno": 2026,
+     "settimana": 23,
+     "morti": 578.0,
+     "atteso": 613.6,
+     "eccesso": -35.6,
+     "eccesso_pct": -5.8,
+     "provvisorio": true
+    },
+    {
+     "periodo": "2026-W24",
+     "anno": 2026,
+     "settimana": 24,
+     "morti": 610.0,
+     "atteso": 619.0,
+     "eccesso": -9.0,
+     "eccesso_pct": -1.5,
+     "provvisorio": true
+    }
+   ],
+   "estati": [
+    {
+     "anno": 2020,
+     "settimane": 13,
+     "complete": true,
+     "eccesso": 469.0,
+     "eccesso_pct": 5.9
+    },
+    {
+     "anno": 2021,
+     "settimane": 13,
+     "complete": true,
+     "eccesso": 451.0,
+     "eccesso_pct": 5.6
+    },
+    {
+     "anno": 2022,
+     "settimane": 13,
+     "complete": true,
+     "eccesso": 1393.0,
+     "eccesso_pct": 17.4
+    },
+    {
+     "anno": 2023,
+     "settimane": 13,
+     "complete": true,
+     "eccesso": 562.0,
+     "eccesso_pct": 7.0
+    },
+    {
+     "anno": 2024,
+     "settimane": 13,
+     "complete": true,
+     "eccesso": 515.0,
+     "eccesso_pct": 6.4
+    },
+    {
+     "anno": 2025,
+     "settimane": 13,
+     "complete": true,
+     "eccesso": 460.0,
+     "eccesso_pct": 5.7
+    },
+    {
+     "anno": 2026,
+     "settimane": 1,
+     "complete": false,
+     "eccesso": -9.0,
+     "eccesso_pct": -1.5
+    }
+   ],
+   "ultimo": {
+    "periodo": "2026-W24",
+    "anno": 2026,
+    "settimana": 24,
+    "morti": 610.0,
+    "atteso": 619.0,
+    "eccesso": -9.0,
+    "eccesso_pct": -1.5,
+    "provvisorio": true
+   }
+  }
+ ]
+}

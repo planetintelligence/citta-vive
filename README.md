@@ -6,15 +6,20 @@ edizione agosto 2026. Testo e direzione editoriale di **Luca Carra**.
 
 → **[planetintelligence.github.io/citta-vive](https://planetintelligence.github.io/citta-vive/)**
 
-## Le tre pagine
+## Le quattro pagine
 
 | | |
 |---|---|
 | `index.html` | il trattato: testo, fotografie, 11 grafici |
 | `dashboard.html` | l'atlante visivo: le sei città con una sola grammatica di segni |
 | `metodo.html` | la nota metodologica: quale aria misuriamo, da dove viene ogni numero |
+| `cruscotto.html` | le due serie che si aggiornano da sole, da Eurostat |
 
 Sono collegate fra loro (voce di menu e "ponti" in fondo alle pagine).
+
+Le prime tre sono ferme ad agosto 2026 ed è voluto: il trattato è una fotografia, e i
+suoi numeri sono legati a un testo che li commenta. Il cruscotto è l'unico posto dove i
+dati si muovono.
 
 `metodo.html` non ricopia niente: costruisce la tabella delle fonti, le note per
 indicatore e l'elenco delle lacune leggendo `data/charts.js` e `data/citta.js`, gli
@@ -36,6 +41,10 @@ python3 -m http.server 8099
 index.html                  il trattato
 dashboard.html              l'atlante visivo
 metodo.html                 la nota metodologica, generata dai dati
+cruscotto.html              i dati vivi, generati da data/auto/
+pipeline/aggiorna.py        li scarica da Eurostat (solo libreria standard)
+.github/workflows/          l'Action che lo rilancia il 12 di ogni mese
+data/auto/                  QUELLO CHE SCRIVE LA PIPELINE: non modificare a mano
 data/charts.js              dati degli 11 grafici, per grafico
 data/citta.js               gli stessi indicatori, per città
 data/mappa-europa.js        confini d'Europa proiettati (Natural Earth)
@@ -128,3 +137,41 @@ derivate: se le foto finiscono altrove, il credito va con loro.
 Il testo e la direzione editoriale sono di Luca Carra; la pubblicazione qui è
 concordata con l'autore. Le fotografie restano dei rispettivi autori, con le
 licenze indicate sopra.
+
+## I dati che si aggiornano da soli
+
+`cruscotto.html` è l'unica pagina viva. Legge `data/auto/`, che riempie
+`pipeline/aggiorna.py` scaricando da Eurostat due serie e due soltanto:
+
+| serie | flusso | cadenza | ritardo |
+|---|---|---|---|
+| NO₂ mensile delle capitali | `ENV_AIR_NO2` | mensile | ~1 mese |
+| decessi settimanali per provincia | `DEMO_R_MWK3_T`, `DEMO_R_MWK2_TS` | settimanale | ~5 settimane |
+
+```bash
+python3 pipeline/aggiorna.py            # aggiorna data/auto/
+python3 pipeline/aggiorna.py --dry-run  # prova senza scrivere
+```
+
+Lo script usa la sola libreria standard: nessun `pip install`, né in locale né in CI.
+L'Action lo rilancia il 12 di ogni mese e committa **solo se qualcosa è cambiato**.
+
+Tre vincoli che sembrano dettagli e non lo sono:
+
+- **La pipeline non tocca `data/charts.js`.** Quei numeri sono legati al testo del
+  trattato, che li commenta: riscriverli sotto vorrebbe dire far mentire il testo il
+  giorno in cui Eurostat rivede una serie. I dati automatici stanno in `data/auto/` e
+  li legge solo il cruscotto.
+- **Le serie del cruscotto non sono confrontabili con quelle del trattato.** Il pezzo
+  usa stazioni da traffico, Eurostat qui non dichiara il tipo di stazione e i valori
+  risultano più bassi. Il cruscotto lo dice a chiare lettere, `metodo.html` spiega perché.
+- **Il perimetro della fonte non coincide con quello del pezzo.** Il NO₂ di Eurostat
+  copre le capitali: mancano Barcellona, Milano e Londra, e compare Roma. Sui decessi
+  manca Londra, perché il Regno Unito non trasmette più dal 2021. Le pagine dichiarano
+  le assenze invece di far finta che le sei città ci siano tutte.
+
+Perché solo due serie: piste ciclabili, quote di spostamento, superfici verdi e
+personale della manutenzione non esistono in nessuna banca dati interrogabile — stanno
+in piani comunali, indagini quinquennali e contratti d'appalto. L'Urban Audit di
+Eurostat sembrerebbe la risposta, ma i suoi indicatori ambientali sono fermi al 2013 e
+per Barcellona e Milano sono vuoti.
