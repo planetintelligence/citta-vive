@@ -1026,7 +1026,11 @@
     { serie: 'Londra (centro)', citta: 'Londra',
       perche: 'Il pezzo guarda il centro, dove la ULEZ agisce dal 2019. Il riquadro del ' +
               'cruscotto copre tutta la Greater London, centro e periferia insieme: è la ' +
-              'ragione per cui il centro, dal 2018, scende più in fretta del resto della città.' }
+              'ragione per cui il centro, dal 2018, scende più in fretta del resto della città.' },
+    { serie: 'Milano (media traffico)', citta: 'Milano',
+      perche: 'Milano è entrata nel grafico del pezzo per ultima, nell\'agosto 2026, e i ' +
+              'suoi numeri vengono da qui: sono le stesse medie che questo cruscotto ' +
+              'calcola dalle centraline.' }
   ];
 
   /* i grafici del trattato che un riscontro vivo ce l'hanno, ma non confrontabile */
@@ -1089,19 +1093,48 @@
       var segni = comuni.map(function (a) { return T[a] >= L[a] ? 1 : -1; });
       var svolte = [];
       for (var i = 1; i < segni.length; i++) if (segni[i] !== segni[i - 1]) svolte.push(comuni[i]);
+
+      /* Se in TUTTI gli anni in comune i due numeri coincidono, non stiamo
+         misurando uno scarto: stiamo guardando lo stesso numero due volte,
+         perché il pezzo ha preso quella serie da qui. Uno zero presentato
+         come esito di un confronto sembrerebbe una conferma indipendente,
+         e sarebbe la bugia più grossa di tutta la pagina. Dedotto dai dati e
+         non dichiarato a mano, così il giorno in cui quella serie cambia
+         fonte il pannello ricomincia a misurare per davvero. */
+      var stessoNumero = comuni.every(function (a) { return Math.abs(T[a] - L[a]) < 0.05; });
       return {
         nome: cf.citta, colore: coloreCitta(cf.citta), perche: cf.perche,
         stazioni: m && m.stazioni, anno: ultimo, primo: primo,
         trattato: T[ultimo], vivo: L[ultimo], scarto: T[ultimo] - L[ultimo],
         caloT: (T[ultimo] / T[primo] - 1) * 100,
         caloL: (L[ultimo] / L[primo] - 1) * 100,
-        anniComuni: comuni.length, svolte: svolte, sopraAllaFine: segni[segni.length - 1] > 0
+        anniComuni: comuni.length, svolte: svolte, sopraAllaFine: segni[segni.length - 1] > 0,
+        stessoNumero: stessoNumero
       };
     }).filter(Boolean);
 
-    var maxScarto = Math.max.apply(null, righe.map(function (r) { return Math.abs(r.scarto); }));
+    /* la scala della barra si calcola sui soli scarti veri: uno zero che viene
+       dall'aver preso il numero da qui non è il minimo di una distribuzione */
+    var maxScarto = Math.max.apply(null, righe.filter(function (r) { return !r.stessoNumero; })
+      .map(function (r) { return Math.abs(r.scarto); }).concat([0]));
 
     var schede = righe.map(function (r) {
+      /* stesso numero da tutte e due i lati: niente scarto, niente barra, e
+         una scheda che spiega perché il confronto qui non è un confronto */
+      if (r.stessoNumero) {
+        return '<div class="scarto scheda assente">' +
+          '<div class="chi" style="color:' + r.colore + '">' + esc(r.nome) + '</div>' +
+          '<div class="quanto">stesso numero</div>' +
+          '<div class="quando">niente da misurare</div>' +
+          '<div class="coppia" style="margin-top:12px">trattato <b>' + num(r.trattato, 1) +
+            '</b> · centraline <b>' + num(r.vivo, 1) + '</b> nel ' + r.anno +
+            (r.stazioni ? ' (media di ' + r.stazioni + ')' : '') + '</div>' +
+          '<div class="perche">' + esc(r.perche) + ' I due valori coincidono in tutti i ' +
+            r.anniComuni + ' anni in comune, e non è una verifica riuscita: è lo stesso ' +
+            'numero contato due volte. Il giorno in cui quella serie del pezzo prendesse ' +
+            'un\'altra fonte, questa scheda ricomincerebbe a misurare uno scarto vero.</div>' +
+        '</div>';
+      }
       var largh = maxScarto ? Math.abs(r.scarto) / maxScarto * 50 : 0;
       var lato = r.scarto >= 0 ? 'left:50%' : 'right:50%';
       /* SOGLIA_ORDINE è una scelta nostra, non un criterio di legge: sotto gli
@@ -1138,23 +1171,10 @@
       '</div>';
     });
 
-    /* Milano nel grafico del pezzo non c'è: è una lacuna dichiarata nell'atlante,
-       e adesso che il numero esiste dirlo è più onesto che tacerlo */
-    var mi = vivo('Milano', 'NO2', 'traffico');
-    if (mi && !CONFRONTI_NO2.some(function (c) { return c.citta === 'Milano'; })) {
-      var ultimoMi = mi.serie.filter(function (p) { return p.valore !== null; }).pop();
-      schede.push('<div class="scarto scheda assente">' +
-        '<div class="chi" style="color:' + coloreCitta('Milano') + '">Milano</div>' +
-        '<div class="quanto">non c\'è nel pezzo</div>' +
-        '<div class="quando">nessuno scarto da misurare</div>' +
-        '<div class="coppia" style="margin-top:12px">centraline <b>' + num(ultimoMi.valore, 1) +
-          '</b> µg/m³ nel ' + ultimoMi.anno + ' (media di ' + mi.stazioni + ')</div>' +
-        '<div class="perche">Il grafico comparativo del trattato ha cinque città e Milano ' +
-          'non è fra queste: era una delle lacune che l\'atlante dichiara. Il numero adesso ' +
-          'esiste, ma colmarla vuol dire mettere mano ai dati dentro il pezzo, ed è una ' +
-          'decisione editoriale che questa pagina non prende da sola.</div>' +
-      '</div>');
-    }
+    /* Le città del pezzo che qui non hanno riscontro non ci sono più: dal 16
+       agosto 2026 il grafico del trattato ha tutte e sei. Se un domani ne
+       comparisse una senza controparte viva, la si vedrebbe mancare da questo
+       elenco, ed è il momento di aggiungerla a CONFRONTI_NO2. */
     document.getElementById('scarti-no2').innerHTML = schede.join('');
 
     document.getElementById('did-scarti').innerHTML =

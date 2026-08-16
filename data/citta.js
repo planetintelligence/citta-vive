@@ -71,15 +71,17 @@ window.CITTA_VIVE_CITTA = {
       id: 'milan', nome: 'Milano', paese: '🇮🇹', colore: '#E63946',
       titolo: 'La trappola della pianura',
       no2_2025: null, pm25: 21, auto_pct: 36, bici_km_100k: 24.1, caldo_morti: 499,
-      no2_serie: null,
+      /* la serie c'è dal 2015 al 2024, ma non il 2025: no2_2025 resta null e
+         l'atlante continua a disegnare l'assenza, che qui è vera */
+      no2_serie: [null,null,59.1,51.6,55.6,48.5,44.9,40.7,41.0,39.2,37.2,35.3,null],
       verde: 'ForestaMi, obiettivo 3 milioni di alberi al 2030',
-      chiave: 'Il PM2.5 più alto e la quota d’auto più alta. Il NO₂ non è nella serie comparativa.'
+      chiave: 'Il PM2.5 più alto e la quota d’auto più alta. Il NO₂ da traffico scende da 59 a 35 µg/m³, ma resta il più alto delle sei.'
     }
   ],
 
   /* cosa manca, detto per esteso invece che lasciato intuire */
   lacune: [
-    'Milano non compare nella serie storica comparativa del NO₂ (data/charts.js → no2Chart).',
+    'La serie del NO₂ di Milano copre il 2015-2024 e non il 2013-2014 né il 2025, e a differenza delle altre cinque è una media di sette stazioni da traffico e non una centralina rappresentativa (data/charts.js → no2Chart).',
     'Berlino non compare nel confronto sui km di piste ciclabili per abitante.',
     'Le morti da caldo sono disponibili solo per Milano, Barcellona e Parigi: lo studio di attribuzione copriva quelle città.',
     'Il patrimonio arboreo non è confrontabile: ogni città conta cose diverse (alberi piantati, alberi stradali, obiettivi al 2030).'

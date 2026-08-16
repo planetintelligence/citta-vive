@@ -40,12 +40,12 @@ window.CITTA_VIVE = {
       tipo: 'line',
       titolo: 'Concentrazioni di NO₂ nelle sei città (µg/m³), 2013–2025',
       unita: 'µg/m³ NO₂',
-      fonte: 'EEA Air Quality Database; Airparif, Generalitat de Catalunya, Ayuntamiento de Madrid, berlin.de/luftdaten, Greater London Authority',
+      fonte: 'EEA Air Quality Database; Airparif, Generalitat de Catalunya, Ayuntamiento de Madrid, berlin.de/luftdaten, Greater London Authority. Milano: EEA, dati validati E1a, medie annue calcolate dalle osservazioni orarie delle 7 stazioni da traffico del comune',
       url: 'https://www.eea.europa.eu/en/datahub',
       aggiornato: '2026-08',
       stato: 'provvisorio',
       stazione: 'traffico',
-      nota: 'Medie annue di stazioni rappresentative da traffico. Il 2020 riflette il calo eccezionale dei lockdown; i valori 2025 sono provvisori.',
+      nota: 'Medie annue di stazioni rappresentative da traffico. Il 2020 riflette il calo eccezionale dei lockdown; i valori 2025 sono provvisori. Milano è entrata dopo le altre e con un metodo suo: le altre cinque seguono una centralina rappresentativa, Milano è la media delle sette stazioni da traffico del comune, calcolata dai dati validati dell’Agenzia europea dell’ambiente. Per questo la sua serie comincia nel 2015 e si ferma al 2024 invece di coprire tutto il periodo: prima e dopo la fonte non arriva. È un livello confrontabile con gli altri, non una misura fatta allo stesso modo.',
       riscontro: { dove: 'cruscotto.html#sez-scostamento',
                    testo: 'Di questa serie esiste un riscontro alle centraline, aggiornato: sul cruscotto lo scostamento è misurato città per città' },
       etichette: ['2013','2014','2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025'],
@@ -54,7 +54,13 @@ window.CITTA_VIVE = {
         { nome: 'Barcellona (Eixample)',   colore: 'barcelona', dati: [60,58,56,54,52,50,47,38,42,38,35,33,29] },
         { nome: 'Madrid (Plaza Elíptica)', colore: 'madrid',    dati: [58,57,56,55,56,54,53,40,44,37,33,31,29] },
         { nome: 'Berlino (traffico)',      colore: 'berlin',    dati: [50,49,49,48,47,45,42,36,33,30,28,26,25] },
-        { nome: 'Londra (centro)',         colore: 'london',    dati: [72,68,64,60,54,48,41,33,29,25,22,21,20] }
+        { nome: 'Londra (centro)',         colore: 'london',    dati: [72,68,64,60,54,48,41,33,29,25,22,21,20] },
+        /* Milano: media delle 7 stazioni da traffico del comune, non una centralina
+           sola come le altre cinque — lo dice il nome della serie e lo spiega la
+           nota. I null ai due capi sono buchi veri (la fonte non copre 2013-2014
+           né il 2025) e restano buchi: il grafico non tira la riga sopra. */
+        { nome: 'Milano (media traffico)', colore: 'milan',
+          dati: [null,null,59.1,51.6,55.6,48.5,44.9,40.7,41.0,39.2,37.2,35.3,null] }
       ],
       soglie: [
         { nome: 'Limite UE (40 µg/m³)',        valore: 40, colore: '#999', tratteggio: [6,4], spessore: 1.5 },
