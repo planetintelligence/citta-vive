@@ -10,19 +10,26 @@ edizione agosto 2026. Testo e direzione editoriale di **Luca Carra**.
 
 | | |
 |---|---|
-| `index.html` | il trattato: testo, fotografie, 11 grafici |
+| `index.html` | il reportage: testo, fotografie, 11 grafici |
 | `dashboard.html` | l'atlante visivo: le sei città con una sola grammatica di segni |
 | `metodo.html` | la nota metodologica: quale aria misuriamo, da dove viene ogni numero |
-| `cruscotto.html` | le serie che si aggiornano da sole, e quanto si scostano dal trattato |
+| `cruscotto.html` | le serie che si aggiornano da sole, e quanto si scostano dal reportage |
 
-Sono collegate fra loro (voce di menu e "ponti" in fondo alle pagine).
+Tutte e quattro portano in cima la **stessa fascia di testata**: il marchio a sinistra
+(che rimanda alla home dell'hub) e le quattro destinazioni a destra, con la corrente
+marcata. Il markup è ripetuto nei quattro file — non c'è un passo di build, e le pagine
+devono restare apribili col doppio click — ma gli stili stanno una volta sola in
+`assets/stile.css`. Nel reportage la barra dei capitoli si appoggia sotto la fascia e si
+aggancia al token `--h-fascia`. Su schermo stretto la fascia scorre via e resta attaccata
+solo quella dei capitoli. In fondo a ogni pagina restano i "ponti", che sono un rimando
+ragionato e non un menu.
 
-Le prime tre sono ferme ad agosto 2026 ed è voluto: il trattato è una fotografia, e i
+Le prime tre sono ferme ad agosto 2026 ed è voluto: il reportage è una fotografia, e i
 suoi numeri sono legati a un testo che li commenta. Il cruscotto è l'unico posto dove i
 dati si muovono — e la sua sezione 04 misura **di quanto** i numeri fermi si siano
 scostati da quelli vivi, dove le due grandezze sono confrontabili davvero (stesso
 inquinante, stesso tipo di centralina). Dove non lo sono, le elenca e dice perché.
-Il trattato porta il rimando inverso: sotto i grafici sull'aria, una riga che manda al
+Il reportage porta il rimando inverso: sotto i grafici sull'aria, una riga che manda al
 riscontro. Un link, mai un numero.
 
 `metodo.html` non ricopia niente: costruisce la tabella delle fonti, le note per
@@ -42,7 +49,7 @@ python3 -m http.server 8099
 ## Struttura
 
 ```
-index.html                  il trattato
+index.html                  il reportage
 dashboard.html              l'atlante visivo
 metodo.html                 la nota metodologica, generata dai dati
 cruscotto.html              i dati vivi, generati da data/auto/
@@ -54,7 +61,7 @@ data/citta.js               gli stessi indicatori, per città
 data/mappa-europa.js        confini d'Europa proiettati (Natural Earth)
 data/crediti-immagini.json  autore, licenza e pagina Commons di ogni foto
 assets/stile.css            IL SISTEMA GRAFICO: palette, caratteri, componenti
-assets/charts.js            motore dei grafici del trattato
+assets/charts.js            motore dei grafici del reportage
 assets/dashboard.js         motore dei glifi dell'atlante
 assets/img/                 sei fotografie da Wikimedia Commons
 assets/vendor/              Chart.js 4.5.1
@@ -177,10 +184,10 @@ L'Action lo rilancia il 12 di ogni mese e committa **solo se qualcosa è cambiat
 Tre vincoli che sembrano dettagli e non lo sono:
 
 - **La pipeline non tocca `data/charts.js`.** Quei numeri sono legati al testo del
-  trattato, che li commenta: riscriverli sotto vorrebbe dire far mentire il testo il
+  reportage, che li commenta: riscriverli sotto vorrebbe dire far mentire il testo il
   giorno in cui Eurostat rivede una serie. I dati automatici stanno in `data/auto/` e
   li legge solo il cruscotto.
-- **Le serie di Eurostat non sono confrontabili con quelle del trattato.** Il pezzo
+- **Le serie di Eurostat non sono confrontabili con quelle del reportage.** Il pezzo
   usa stazioni da traffico, Eurostat qui non dichiara il tipo di stazione e i valori
   risultano più bassi. Il cruscotto lo dice a chiare lettere, `metodo.html` spiega perché.
   Quelle dell'EEA invece **lo sono**, perché separano traffico e fondo urbano: è su quelle
