@@ -185,6 +185,18 @@
       nota.textContent = cfg.nota;
       p.appendChild(nota);
     }
+
+    /* il rimando al riscontro vivo, dove esiste. Porta un link e non un
+       numero: questa pagina è una fotografia dell'agosto 2026 e il testo
+       la commenta frase per frase, quindi qui dentro niente si muove.
+       Di quanto si sia mosso lo dice il cruscotto, che è l'altra pagina. */
+    if (cfg.riscontro) {
+      var r = document.createElement('a');
+      r.className = 'badge-riscontro';
+      r.href = cfg.riscontro.dove;
+      r.textContent = cfg.riscontro.testo + ' →';
+      p.appendChild(r);
+    }
     wrap.appendChild(p);
   }
 

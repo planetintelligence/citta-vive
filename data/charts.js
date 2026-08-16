@@ -12,6 +12,13 @@
                   Cambia i valori anche del doppio, quindi va dichiarato.
                   ASSENTE = la fonte non lo specifica: non inventarlo,
                   metodo.html mostra la casella vuota ed è giusto così.
+     riscontro    facoltativo: dice al lettore che di questa serie esiste
+                  un riscontro alle centraline, aggiornato, sul cruscotto.
+                  Porta SOLO il rimando, mai un numero — se qui entrasse un
+                  valore che si muove, il testo di Luca lo commenterebbe
+                  frase per frase senza più corrispondergli. Vale anche
+                  quando il riscontro c'è ma NON è confrontabile: dirlo è
+                  metà del punto.
 
    È un file .js (non .json) di proposito: così l'articolo si apre
    con un doppio click, senza server locale. La struttura è
@@ -39,6 +46,8 @@ window.CITTA_VIVE = {
       stato: 'provvisorio',
       stazione: 'traffico',
       nota: 'Medie annue di stazioni rappresentative da traffico. Il 2020 riflette il calo eccezionale dei lockdown; i valori 2025 sono provvisori.',
+      riscontro: { dove: 'cruscotto.html#sez-scostamento',
+                   testo: 'Di questa serie esiste un riscontro alle centraline, aggiornato: sul cruscotto lo scostamento è misurato città per città' },
       etichette: ['2013','2014','2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025'],
       serie: [
         { nome: 'Parigi',                  colore: 'paris',     dati: [44,42,41,40,38,37,36,29,33,32,31,30,29] },
@@ -100,6 +109,8 @@ window.CITTA_VIVE = {
       stato: 'consolidato',
       stazione: 'mista',
       nota: 'Le prime tre stazioni sono da traffico, Retiro è di fondo urbano: è il confronto che mostra quanto la scelta della centralina cambi il risultato.',
+      riscontro: { dove: 'cruscotto.html#sez-scostamento',
+                   testo: 'Perché questa serie non si può confrontare con i dati vivi, e che cosa si confronta al suo posto' },
       etichette: ['Plaza Elíptica','Escuelas Aguirre','Castellana','Retiro (fondo)','Media città'],
       serie: [
         { nome: '2019 (µg/m³)', colore: 'madrid', riempimento: 'rgba(122,62,157,.3)', bordo: true, dati: [53,51,47,24,48] },
@@ -117,6 +128,8 @@ window.CITTA_VIVE = {
       url: 'https://content.tfl.gov.uk/london-wide-ulez-one-year-report.pdf',
       aggiornato: '2026-08',
       stato: 'consolidato',
+      riscontro: { dove: 'cruscotto.html#sez-scostamento',
+                   testo: 'Perché questa serie non si può confrontare con i dati vivi, e che cosa si confronta al suo posto' },
       etichette: ['2016','2017','2018','2019 (ULEZ)','2020','2021 (Inner)','2022','2023 (Greater)','2024'],
       serie: [
         { nome: 'NO₂ zona ULEZ centrale (µg/m³)', colore: 'london', riempi: true, spessore: 3, punto: 5,
@@ -136,6 +149,8 @@ window.CITTA_VIVE = {
       url: 'https://www.arpalombardia.it/temi-ambientali/aria/',
       aggiornato: '2026-08',
       stato: 'provvisorio',
+      riscontro: { dove: 'cruscotto.html#sez-scostamento',
+                   testo: 'Di questa serie esiste un riscontro alle centraline, aggiornato: sul cruscotto è affiancata al traffico e al fondo urbano' },
       etichette: ['Milano','Barcellona','Parigi','Berlino','Londra','Madrid'],
       serie: [
         { nome: 'PM2.5 medio annuo (µg/m³)',

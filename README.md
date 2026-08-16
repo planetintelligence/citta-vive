@@ -13,13 +13,17 @@ edizione agosto 2026. Testo e direzione editoriale di **Luca Carra**.
 | `index.html` | il trattato: testo, fotografie, 11 grafici |
 | `dashboard.html` | l'atlante visivo: le sei città con una sola grammatica di segni |
 | `metodo.html` | la nota metodologica: quale aria misuriamo, da dove viene ogni numero |
-| `cruscotto.html` | le due serie che si aggiornano da sole, da Eurostat |
+| `cruscotto.html` | le serie che si aggiornano da sole, e quanto si scostano dal trattato |
 
 Sono collegate fra loro (voce di menu e "ponti" in fondo alle pagine).
 
 Le prime tre sono ferme ad agosto 2026 ed è voluto: il trattato è una fotografia, e i
 suoi numeri sono legati a un testo che li commenta. Il cruscotto è l'unico posto dove i
-dati si muovono.
+dati si muovono — e la sua sezione 04 misura **di quanto** i numeri fermi si siano
+scostati da quelli vivi, dove le due grandezze sono confrontabili davvero (stesso
+inquinante, stesso tipo di centralina). Dove non lo sono, le elenca e dice perché.
+Il trattato porta il rimando inverso: sotto i grafici sull'aria, una riga che manda al
+riscontro. Un link, mai un numero.
 
 `metodo.html` non ricopia niente: costruisce la tabella delle fonti, le note per
 indicatore e l'elenco delle lacune leggendo `data/charts.js` e `data/citta.js`, gli
@@ -149,6 +153,12 @@ licenze indicate sopra.
 | decessi settimanali per provincia | Eurostat `DEMO_R_MWK3_T`, `MWK2_TS` | settimanale | ~5 settimane |
 | **le sei città alle centraline** | **EEA, dati validati E1a** | **annuale** | ~9 mesi |
 
+I decessi settimanali arrivano interi, dal 2020 (gli anni 2015-2019 fanno da
+riferimento e non si confrontano con sé stessi). Il cruscotto ne mostra per difetto
+solo gli ultimi tre anni, con un interruttore per vedere tutto: la prima ondata Covid
+tocca +483% e sull'asse schiaccia le estati recenti. **Il taglio sta nella vista, non
+nel dato.** In rete il file intero pesa 28 KB gzip: il problema non era il peso.
+
 La terza è quella che il progetto inseguiva dall'inizio: le sei città del pezzo, non le
 capitali, con le stazioni **da traffico separate da quelle di fondo urbano**. Sta in una
 pipeline sua, `pipeline/aggiorna-eea.py`, perché i file dell'EEA sono Parquet e serve
@@ -170,9 +180,16 @@ Tre vincoli che sembrano dettagli e non lo sono:
   trattato, che li commenta: riscriverli sotto vorrebbe dire far mentire il testo il
   giorno in cui Eurostat rivede una serie. I dati automatici stanno in `data/auto/` e
   li legge solo il cruscotto.
-- **Le serie del cruscotto non sono confrontabili con quelle del trattato.** Il pezzo
+- **Le serie di Eurostat non sono confrontabili con quelle del trattato.** Il pezzo
   usa stazioni da traffico, Eurostat qui non dichiara il tipo di stazione e i valori
   risultano più bassi. Il cruscotto lo dice a chiare lettere, `metodo.html` spiega perché.
+  Quelle dell'EEA invece **lo sono**, perché separano traffico e fondo urbano: è su quelle
+  che la sezione 04 misura lo scostamento, e solo su quelle.
+- **Il rimando dentro `index.html` non porta numeri.** Passa dal campo `riscontro` in
+  `data/charts.js` ed è un link. Ci finisse un valore letto da `data/auto/`, il testo
+  commenterebbe frase per frase un numero che nel frattempo si è mosso — e chi apre il
+  file offline col doppio click non lo vedrebbe affatto, perché da `file://` il `fetch`
+  non parte.
 - **Il perimetro della fonte non coincide con quello del pezzo.** Il NO₂ di Eurostat
   copre le capitali: mancano Barcellona, Milano e Londra, e compare Roma. Sui decessi
   manca Londra, perché il Regno Unito non trasmette più dal 2021. Le pagine dichiarano

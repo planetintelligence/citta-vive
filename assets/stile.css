@@ -97,6 +97,15 @@
 .stato-stimato     .badge-tag { background: #e6e5ef; color: #4b4a76; }
 .badge-nota { display: block; margin-top: 6px; font-style: italic; opacity: .9; }
 
+/* rimando al riscontro vivo: un link, mai un numero. Il numero che si
+   muove sta sul cruscotto, perché qui il testo commenta quello fermo. */
+.badge-riscontro {
+  display: block; margin-top: 7px; color: var(--tenue);
+  text-decoration: underline; text-decoration-color: var(--riga);
+  text-underline-offset: 3px;
+}
+.badge-riscontro:hover { color: var(--inchiostro); text-decoration-color: var(--inchiostro); }
+
 /* su fondo scuro il badge si schiarisce */
 .green-section .data-badge,
 .lessons .data-badge {
@@ -104,6 +113,12 @@
 }
 .green-section .badge-nota,
 .lessons .badge-nota { opacity: .8; }
+.green-section .badge-riscontro,
+.lessons .badge-riscontro {
+  color: var(--su-scuro-tenue); text-decoration-color: var(--riga-scura);
+}
+.green-section .badge-riscontro:hover,
+.lessons .badge-riscontro:hover { color: #fff; text-decoration-color: #fff; }
 
 /* ---------- passaggio fra le due pagine ---------- */
 .ponte {

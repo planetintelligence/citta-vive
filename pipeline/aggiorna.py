@@ -64,9 +64,20 @@ AREE = [
 
 BASE_DA, BASE_A = 2015, 2019   # anni di riferimento per l'atteso
 ESTATE = (24, 36)              # settimane ISO indicativamente estive
-DETTAGLIO_DA = 2024            # sotto questa soglia si tiene solo il bilancio estivo:
-                               # la serie settimanale intera pesava 330 KB e nessuno
-                               # va a guardare la settimana 7 del 2021.
+DETTAGLIO_DA = BASE_A + 1      # cioè: nessun taglio, tutta la serie che esiste.
+                               # C'era una soglia al 2024, motivata così: "la serie
+                               # settimanale intera pesa 330 KB e nessuno va a guardare
+                               # la settimana 7 del 2021". Sbagliata due volte. I 330 KB
+                               # sono il file su disco: in rete è JSON con le chiavi tutte
+                               # uguali, e gzip lo porta da 10 a 16 KB — sei chilobyte, su
+                               # una pagina che carica Chart.js a 68. E il "nessuno" era
+                               # una supposizione: il primo lettore vero è andato a
+                               # cercare proprio gli anni tagliati.
+                               # Il 2020 però non si può mostrare per difetto: la prima
+                               # ondata Covid arriva a +483% a Madrid e schiaccia tutto il
+                               # resto sull'asse. Quella è una scelta di presentazione e
+                               # la fa il cruscotto, con un interruttore. Qui si scrive
+                               # tutto: un file di dati non decide cosa si guarda.
 
 
 def scarica(percorso):
@@ -272,17 +283,33 @@ def main():
     morti = raccogli_mortalita()
     print("  %d aree, ultima settimana %s" % (len(morti["aree"]), morti["ultimo_periodo"]))
 
+    mie = [
+        {"file": "aria.json", "titolo": aria["titolo"], "fonte": aria["fonte"],
+         "url": aria["url"], "ultimo_periodo": aria["ultimo_periodo"],
+         "fonte_aggiornata": aria["fonte_aggiornata"], "assenti": aria["assenti"]},
+        {"file": "mortalita.json", "titolo": morti["titolo"], "fonte": morti["fonte"],
+         "url": morti["url"], "ultimo_periodo": morti["ultimo_periodo"],
+         "fonte_aggiornata": morti["fonte_aggiornata"], "assenti": morti["assenti"]},
+    ]
+
+    # Il manifesto è di data/auto/, non di questo script: dentro ci sono anche le
+    # serie che scrive aggiorna-eea.py, che gira una volta l'anno mentre questo
+    # gira ogni mese. Ricostruirlo da zero significava cancellarle undici volte
+    # su dodici, in silenzio. Si tengono le voci altrui e si riscrivono le proprie.
+    altrui = []
+    percorso_manifesto = USCITA / "manifest.json"
+    if percorso_manifesto.exists():
+        precedente = json.loads(percorso_manifesto.read_text(encoding="utf-8"))
+        nostri = {s["file"] for s in mie}
+        altrui = [s for s in precedente.get("serie", []) if s.get("file") not in nostri]
+        if altrui:
+            print("  nel manifesto restano %d serie di altre pipeline: %s"
+                  % (len(altrui), ", ".join(s["file"] for s in altrui)))
+
     manifesto = {
         "generato": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "generato_giorno": date.today().isoformat(),
-        "serie": [
-            {"file": "aria.json", "titolo": aria["titolo"], "fonte": aria["fonte"],
-             "url": aria["url"], "ultimo_periodo": aria["ultimo_periodo"],
-             "fonte_aggiornata": aria["fonte_aggiornata"], "assenti": aria["assenti"]},
-            {"file": "mortalita.json", "titolo": morti["titolo"], "fonte": morti["fonte"],
-             "url": morti["url"], "ultimo_periodo": morti["ultimo_periodo"],
-             "fonte_aggiornata": morti["fonte_aggiornata"], "assenti": morti["assenti"]},
-        ],
+        "serie": mie + altrui,
     }
 
     print()

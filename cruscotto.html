@@ -23,6 +23,8 @@
     font-weight: 400; letter-spacing: -.01em; margin-bottom: 18px;
   }
   .testata .sommario { font-size: 1.05rem; color: #4a453d; max-width: 660px; }
+  .testata .sommario a { color: var(--inchiostro); text-decoration: none; border-bottom: 1px solid var(--riga); }
+  .testata .sommario a:hover { border-bottom-color: var(--inchiostro); }
 
   /* ---------- fascia dello stato ---------- */
   .stato-fascia {
@@ -109,6 +111,68 @@
     background: var(--inchiostro); color: var(--carta); border-color: var(--inchiostro);
   }
 
+  /* ---------- scostamento dal trattato ---------- */
+  .scarti {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(272px, 1fr));
+    gap: 14px; margin: 22px 0;
+  }
+  .scarto { padding: 16px 18px; }                      /* .scheda */
+  .scarto .chi {
+    font-family: var(--sans); font-size: .68rem; letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  .scarto .quanto { font-size: 1.9rem; line-height: 1.15; margin: 6px 0 2px; letter-spacing: -.02em; }
+  .scarto .quando { font-family: var(--sans); font-size: .72rem; color: var(--tenue); }
+  .scarto.assente .quanto { color: var(--tenue); font-size: 1.05rem; font-style: italic; }
+
+  /* la barra centrata sullo zero: a destra il pezzo sta sopra, a sinistra sotto */
+  .pista-zero {
+    position: relative; height: 8px; background: var(--carta-3);
+    border-radius: 2px; margin: 12px 0 10px;
+  }
+  .pista-zero::after {
+    content: ''; position: absolute; left: 50%; top: -3px; bottom: -3px;
+    border-left: 1px solid var(--tenue);
+  }
+  .pista-zero i { position: absolute; top: 0; bottom: 0; border-radius: 2px; }
+
+  .scarto .coppia {
+    font-family: var(--sans); font-size: .76rem; color: var(--testo); line-height: 1.6;
+  }
+  .scarto .coppia b { font-weight: 700; }
+  .scarto .perche {
+    font-family: var(--sans); font-size: .72rem; color: var(--tenue); line-height: 1.55;
+    border-top: 1px dashed var(--riga); margin-top: 11px; padding-top: 9px;
+  }
+
+  .tab-scarto {
+    width: 100%; border-collapse: collapse; font-family: var(--sans);
+    font-size: .8rem; margin: 20px 0 8px;
+  }
+  .tab-scarto th {
+    text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--inchiostro);
+    font-size: .68rem; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--tenue); font-weight: 600;
+  }
+  .tab-scarto td { padding: 11px 12px; border-bottom: 1px solid var(--riga); line-height: 1.5; }
+  .tab-scarto tr:last-child td { border-bottom: 0; }
+  .tab-scarto .num { text-align: right; font-variant-numeric: tabular-nums; }
+  .tab-scarto .somiglia {
+    font-size: .68rem; letter-spacing: .06em; text-transform: uppercase;
+    border: 1px solid var(--riga); border-radius: 999px; padding: 1px 8px;
+    white-space: nowrap;
+  }
+  .tab-scroll { overflow-x: auto; }
+
+  .nonconfr { list-style: none; margin: 18px 0 6px; max-width: 720px; }
+  .nonconfr li {
+    padding: 12px 0 12px 26px; border-bottom: 1px solid var(--riga);
+    position: relative; font-size: .95rem;
+  }
+  .nonconfr li:last-child { border-bottom: 0; }
+  .nonconfr li::before { content: '—'; position: absolute; left: 0; top: 12px; color: var(--tenue); }
+  .nonconfr b { font-weight: 700; }
+
   .caricamento { font-family: var(--sans); font-size: .85rem; color: var(--tenue); padding: 40px 0; text-align: center; }
   .errore {
     font-family: var(--sans); font-size: .85rem; color: var(--rosso);
@@ -126,11 +190,12 @@
     <span class="occhiello">Città vive · cruscotto</span>
     <h1>I dati che si aggiornano da soli</h1>
     <p class="sommario">
-      Il trattato è una fotografia dell'agosto 2026 e resta ferma. Due delle sue serie,
+      Il trattato è una fotografia dell'agosto 2026 e resta ferma. Tre delle sue serie,
       però, le fonti pubbliche le ripubblicano di continuo: qui si aggiornano da sole,
-      con un mese o poco più di ritardo sulla realtà. Sono le uniche due che si possono
-      tenere vive senza rileggere un documento a mano — e la pagina dice anche perché
-      tutte le altre non si possono.
+      con un mese o poco più di ritardo sulla realtà. Sono le uniche tre che si possono
+      tenere vive senza rileggere un documento a mano — la pagina dice anche perché tutte
+      le altre non si possono, e <a href="#sez-scostamento">di quanto i numeri fermi del
+      pezzo si discostano</a> da quelli che si muovono.
     </p>
     <div class="stato-fascia" id="fascia">
       <span class="caricamento">carico i dati…</span>
@@ -213,8 +278,9 @@
     <figure class="riquadro scheda">
       <figcaption>
         <p class="titolo-fig">Settimana per settimana</p>
-        <p class="occhio-fig">Scarto dall'atteso, in percentuale, dal 2024 a oggi</p>
+        <p class="occhio-fig" id="occhio-settimane"></p>
       </figcaption>
+      <div id="scelta-finestra" class="scelta"></div>
       <div class="tela"><canvas id="graficoSettimane"></canvas></div>
       <p class="didascalia" id="did-settimane"></p>
     </figure>
@@ -268,9 +334,50 @@
     <div class="avvertenza" id="avvertenza-bordo"></div>
   </section>
 
-  <!-- ═══ 4 · IL RESTO ═══ -->
+  <!-- ═══ 4 · SCOSTAMENTO DAL TRATTATO ═══ -->
+  <section class="sezione" id="sez-scostamento" hidden>
+    <span class="sez-num">04</span>
+    <h2>Quanto si scosta dal trattato</h2>
+    <p>
+      Il pezzo è fermo ad agosto 2026 e i suoi numeri sono commentati dal testo frase per
+      frase: per questo non li riscriviamo sotto quando la fonte cambia. Ma tenerli fermi
+      senza dire di quanto si discostano da quello che le centraline misurano oggi
+      significa chiedere fiducia al lettore. Qui lo scarto è misurato, città per città,
+      dove le due grandezze sono davvero la stessa: <strong>stesso inquinante e stesso tipo
+      di centralina</strong>. Dove non lo sono, sotto c'è l'elenco e il motivo.
+    </p>
+    <p>
+      Un avvertimento su come si legge. Uno scarto ampio non vuol dire che il pezzo sbagli:
+      quasi sempre vuol dire che guarda una centralina rappresentativa mentre il cruscotto
+      media tutte quelle da traffico della città. Il controllo che conta non è il livello,
+      è la <strong>direzione</strong> — se il calo raccontato dal trattato è dello stesso
+      ordine di quello che si vede alle centraline, il racconto regge anche quando i due
+      numeri non coincidono. Ogni scheda dice l'una cosa e l'altra.
+    </p>
+
+    <h3>NO₂ da traffico: stessa definizione, perimetri diversi</h3>
+    <div class="scarti" id="scarti-no2"></div>
+    <p class="didascalia" id="did-scarti" style="border-top:0;padding-top:0;max-width:720px"></p>
+
+    <h3>PM2.5: qui il tipo di centralina il pezzo non lo dichiara</h3>
+    <p>
+      La serie del PM2.5 del trattato non dice da che stazioni viene, e
+      <a href="metodo.html">la nota metodologica</a> lascia la casella vuota apposta —
+      riempirla a intuito sarebbe inventare un metadato altrui. Il confronto con le
+      centraline non la riempie, ma dice a quale delle due grandezze ogni numero somiglia
+      di più. Se somigliasse sempre alla stessa, saremmo davanti a un indizio; come si
+      vede, non è così.
+    </p>
+    <div class="tab-scroll"><table class="tab-scarto" id="tab-pm"></table></div>
+    <p class="didascalia" id="did-pm" style="border-top:0;padding-top:0;max-width:720px"></p>
+
+    <h3>Dove il confronto non si fa, e perché</h3>
+    <ul class="nonconfr" id="nonconfr"></ul>
+  </section>
+
+  <!-- ═══ 5 · IL RESTO ═══ -->
   <section class="sezione stretto" id="sez-resto" hidden>
-    <span class="sez-num">03</span>
+    <span class="sez-num">05</span>
     <h2>Perché è solo questo, e non tutto il resto</h2>
     <p>
       Il trattato ha undici grafici e qui ne rivivono tre — l'aria delle capitali, i decessi
@@ -291,14 +398,15 @@
       pagina che si aggiorna da sola mostrando numeri di tredici anni fa.
     </p>
     <p>
-      La strada giusta sarebbe il servizio di download dell'Agenzia europea dell'ambiente,
-      che copre tutte e sei le città — Londra compresa, che in Eurostat non c'è più — e
-      distingue le stazioni da traffico da quelle di fondo, cioè proprio la definizione che
-      usa il trattato. Provato il 15 agosto 2026: il servizio risponde, ma i dati dal 2013
-      in poi non ci sono. Le richieste tornano vuote per ogni paese, mentre l'archivio
-      storico 2002-2012 restituisce centinaia di file con la stessa identica domanda. È un
-      guasto loro, e finché dura non c'è modo di aggirarlo. Quando la fonte tornerà, queste
-      pagine potranno mostrare le sei città con i numeri giusti.
+      Sull'aria, invece, la strada c'era e la sezione 03 la percorre — ma non è quella
+      documentata, e vale la pena dirlo. Il servizio di <em>download</em> dell'Agenzia
+      europea dell'ambiente, che sarebbe l'interfaccia ufficiale, dal 15 agosto 2026 non
+      restituisce più niente dal 2013 in poi: le richieste tornano vuote per ogni paese,
+      mentre l'archivio storico 2002-2012 risponde con centinaia di file alla stessa
+      identica domanda. È un guasto loro. I dati però sono raggiungibili per un'altra via —
+      i metadati delle centraline in un file pubblico, le misure orarie in un file per
+      centralina — ed è quella che questa pagina usa. Funziona, ma è una porta di servizio:
+      se un giorno smette, la spiegazione è questa.
     </p>
   </section>
 
@@ -322,6 +430,9 @@
 </div>
 
 <script src="assets/vendor/chart.umd.js"></script>
+<!-- i numeri del trattato, per misurarne lo scostamento: è lo stesso file che
+     legge index.html, quindi le due pagine non possono raccontarsi cose diverse -->
+<script src="data/charts.js"></script>
 <script>
 /* ============================================================
    cruscotto.html — le due serie che si aggiornano da sole
@@ -571,39 +682,131 @@
       'Il 2022 resta l\'anno peggiore quasi ovunque. Fonte: <a href="' + d.url + '" target="_blank">' +
       d.fonte + '</a>, aggiornata al ' + (d.fonte_aggiornata || '—') + '.';
 
-    /* settimana per settimana, in percentuale: rende confrontabili province di taglia diversa */
-    var settimane = d.aree[0].serie.map(function (s) { return s.periodo; });
-    new Chart(document.getElementById('graficoSettimane'), {
-      type: 'line',
-      data: {
-        labels: settimane.map(function (p) { return p.replace('-W', ' · '); }),
-        datasets: d.aree.map(function (a) {
-          var per = {};
-          a.serie.forEach(function (s) { per[s.periodo] = s.eccesso_pct; });
-          return {
-            label: a.citta, borderColor: a.colore, backgroundColor: a.colore,
-            data: settimane.map(function (p) { return per[p] === undefined ? null : per[p]; }),
-            borderWidth: 1.5, pointRadius: 0, pointHoverRadius: 4, tension: .25, spanGaps: false
-          };
-        }).concat([{
-          label: 'atteso', data: settimane.map(function () { return 0; }),
-          borderColor: S.testo, borderWidth: 1, borderDash: [4, 4], pointRadius: 0, fill: false
-        }])
-      },
-      options: {
-        interaction: { mode: 'index', intersect: false },
-        scales: {
-          y: assi({ title: { display: true, text: '% sopra o sotto l\'atteso' },
-                    ticks: { callback: function (v) { return v > 0 ? '+' + v + '%' : v + '%'; } } }),
-          x: assi({ ticks: { maxRotation: 0, autoSkip: true, maxTicksLimit: 10 } })
+    /* Settimana per settimana, in percentuale: rende confrontabili province di
+       taglia diversa. Il file porta tutta la serie che esiste, ma non si può
+       mostrarla tutta per difetto: la prima ondata Covid arriva a
+       +483% a Madrid e schiaccia sull'asse tutto quello che è venuto dopo, cioè
+       proprio il segnale delle ondate di calore che questa sezione racconta.
+       Quindi due finestre e un interruttore, invece di un taglio deciso da noi:
+       chi cerca gli anni del Covid li trova, chi guarda le estati recenti li
+       vede. Il tutto costa 28 KB in rete, gzip — un terzo di Chart.js. */
+    var settimaneTutte = d.aree[0].serie.map(function (s) { return s.periodo; });
+    var primoAnno = parseInt(settimaneTutte[0].split('-')[0], 10);
+    var ultimoAnnoSerie = parseInt(settimaneTutte[settimaneTutte.length - 1].split('-')[0], 10);
+    var DA_RECENTE = Math.max(primoAnno, ultimoAnnoSerie - 2);
+    var DUE_FINESTRE = DA_RECENTE > primoAnno;
+    var graficoSettimane = null;
+
+    function disegnaSettimane(daAnno) {
+      var settimane = settimaneTutte.filter(function (p) {
+        return parseInt(p.split('-')[0], 10) >= daAnno;
+      });
+      if (graficoSettimane) graficoSettimane.destroy();
+      graficoSettimane = new Chart(document.getElementById('graficoSettimane'), {
+        type: 'line',
+        data: {
+          labels: settimane.map(function (p) { return p.replace('-W', ' · '); }),
+          datasets: d.aree.map(function (a) {
+            var per = {};
+            a.serie.forEach(function (s) { per[s.periodo] = s.eccesso_pct; });
+            return {
+              label: a.citta, borderColor: a.colore, backgroundColor: a.colore,
+              data: settimane.map(function (p) { return per[p] === undefined ? null : per[p]; }),
+              borderWidth: 1.5, pointRadius: 0, pointHoverRadius: 4, tension: .25, spanGaps: false
+            };
+          }).concat([{
+            label: 'atteso', data: settimane.map(function () { return 0; }),
+            borderColor: S.testo, borderWidth: 1, borderDash: [4, 4], pointRadius: 0, fill: false
+          }])
+        },
+        options: {
+          interaction: { mode: 'index', intersect: false },
+          scales: {
+            y: assi({ title: { display: true, text: '% sopra o sotto l\'atteso' },
+                      ticks: { callback: function (v) { return v > 0 ? '+' + v + '%' : v + '%'; } } }),
+            x: assi({ ticks: { maxRotation: 0, autoSkip: true, maxTicksLimit: 10 } })
+          }
         }
-      }
+      });
+
+      document.getElementById('occhio-settimane').textContent =
+        'Scarto dall\'atteso, in percentuale, dal ' + daAnno + ' a oggi';
+
+      /* Il picco della finestra mostrata, cercato nei dati. Si guarda anche se è
+         una settimana isolata: un massimo che sta in piedi da solo, con le
+         settimane accanto tranquille, ha due spiegazioni possibili — un evento
+         breve e violento, oppure un lotto di registrazioni arretrate finite
+         tutte in una casella. Questa pagina non può distinguerle, e allora lo
+         dice invece di lasciar credere alla prima. */
+      var picco = null;
+      d.aree.forEach(function (a) {
+        a.serie.forEach(function (s, i) {
+          if (s.anno >= daAnno && s.eccesso_pct !== null &&
+              (!picco || s.eccesso_pct > picco.v)) {
+            var vicine = [a.serie[i - 1], a.serie[i + 1]].filter(Boolean)
+              .map(function (x) { return x.eccesso_pct; })
+              .filter(function (x) { return x !== null; });
+            picco = { v: s.eccesso_pct, citta: a.citta, quando: s.periodo,
+                      provvisorio: s.provvisorio,
+                      isolata: vicine.length > 0 && Math.max.apply(null, vicine) < s.eccesso_pct / 2 };
+          }
+        });
+      });
+
+      document.getElementById('did-settimane').innerHTML =
+        'In percentuale invece che in numero assoluto, altrimenti la comunità di Madrid — che ha ' +
+        'molti più abitanti del dipartimento di Parigi — sembrerebbe sempre la più colpita. ' +
+        'La riga tratteggiata sullo zero è la media ' + d.baseline.da + '-' + d.baseline.a + '. ' +
+        'Le ultime settimane sono provvisorie e tendono a salire quando arrivano le ' +
+        'registrazioni mancanti. ' +
+        (picco
+          ? 'Il punto più alto di questa vista è ' + picco.citta + ' nella settimana ' +
+            picco.quando.split('-W')[1].replace(/^0/, '') + ' del ' + picco.quando.split('-')[0] +
+            ', a ' + num(picco.v, 0) + '% sopra l\'atteso' +
+            (picco.provvisorio ? ', su un dato ancora provvisorio' : '') + '. ' +
+            (picco.isolata
+              ? '<strong>È una settimana isolata</strong> — quelle accanto stanno molto più in ' +
+                'basso — e una punta così può essere un evento breve e violento oppure un lotto ' +
+                'di registrazioni arretrate finite tutte in una casella. Da qui non si distingue: ' +
+                'lo dirà la settimana che arriva, o la revisione della fonte. '
+              : '')
+          : '') +
+        /* la spiegazione vale solo se la serie comincia davvero dove finisce la
+           baseline: dirlo di un anno qualsiasi sarebbe una ragione inventata */
+        (primoAnno === d.baseline.a + 1
+          ? 'La serie comincia nel ' + primoAnno + ': gli anni ' + d.baseline.da + '-' +
+            d.baseline.a + ' non ci sono perché sono quelli che fanno da riferimento, e non ' +
+            'si confrontano con sé stessi. '
+          : 'La serie comincia nel ' + primoAnno + '. ') +
+        (DUE_FINESTRE
+          ? '<strong>Perché due finestre.</strong> La prima ondata di Covid, nella primavera ' +
+            'del 2020, sta su un altro ordine di grandezza: lasciandola nella vista ' +
+            'predefinita l\'asse si allunga fino a cinque volte l\'atteso e le estati recenti ' +
+            '— il segnale di cui parla questa sezione — diventano una striscia piatta attorno ' +
+            'allo zero. Il taglio è nella vista, non nel dato: gli anni del Covid sono a un ' +
+            'clic, non spariti.'
+          : '');
+    }
+
+    var sceltaFinestra = document.getElementById('scelta-finestra');
+    /* due bottoni che mostrano la stessa cosa sono peggio di nessun bottone:
+       succede finché un repo ha ancora la serie tagliata al 2024, cioè fino
+       al primo giro della sua Action. Allora l'interruttore non compare. */
+    (DA_RECENTE <= primoAnno ? [{ da: primoAnno, testo: '' }] :
+    [{ da: DA_RECENTE, testo: 'Ultimi tre anni' },
+     { da: primoAnno,  testo: 'Tutta la serie, dal ' + primoAnno + ' (col Covid)' }
+    ]).filter(function (f) { return f.testo; }).forEach(function (f, i) {
+      var b = document.createElement('button');
+      b.textContent = f.testo;
+      b.setAttribute('aria-pressed', i === 0 ? 'true' : 'false');
+      b.onclick = function () {
+        [].forEach.call(sceltaFinestra.children, function (x) { x.setAttribute('aria-pressed', 'false'); });
+        b.setAttribute('aria-pressed', 'true');
+        disegnaSettimane(f.da);
+      };
+      sceltaFinestra.appendChild(b);
     });
-    document.getElementById('did-settimane').innerHTML =
-      'In percentuale invece che in numero assoluto, altrimenti la comunità di Madrid — che ha ' +
-      'molti più abitanti del dipartimento di Parigi — sembrerebbe sempre la più colpita. ' +
-      'La riga tratteggiata sullo zero è la media ' + d.baseline.da + '-' + d.baseline.a + '. ' +
-      'Le ultime settimane sono provvisorie e tendono a salire quando arrivano le registrazioni mancanti.';
+    disegnaSettimane(DA_RECENTE);
 
     document.getElementById('assenti-morti').innerHTML =
       '<strong>Chi non c\'è:</strong> ' + d.assenti.join(', ') +
@@ -799,6 +1002,235 @@
       'non una classifica.';
   }
 
+  /* ============================ lo scostamento dal trattato */
+
+  /* Le coppie confrontabili sono dichiarate qui a mano, e solo quelle: dire
+     che una serie del pezzo guarda la stessa grandezza di una serie viva è un
+     giudizio editoriale, non una cosa che si deduce dai file. I NUMERI invece
+     non stanno qui — si leggono da data/charts.js e da data/auto/, cioè dalle
+     due fonti che il pannello confronta. Se uno dei due lati cambia, lo scarto
+     cambia da solo; se qualcuno aggiunge una città al pezzo, va aggiunta qui. */
+  var CONFRONTI_NO2 = [
+    { serie: 'Parigi', citta: 'Parigi',
+      perche: 'Il pezzo scrive «Parigi» senza dire da quale centralina. Qui è la media di ' +
+              'tutte le stazioni da traffico dentro il riquadro del comune.' },
+    { serie: 'Barcellona (Eixample)', citta: 'Barcellona',
+      perche: 'Il pezzo segue la sola Eixample, la centralina più esposta della città. ' +
+              'Qui è la media delle stazioni da traffico, comprese le meno trafficate.' },
+    { serie: 'Madrid (Plaza Elíptica)', citta: 'Madrid',
+      perche: 'Il pezzo segue la sola Plaza Elíptica, storicamente la peggiore di Madrid. ' +
+              'Qui è la media delle stazioni da traffico.' },
+    { serie: 'Berlino (traffico)', citta: 'Berlino',
+      perche: 'Il pezzo dà una «Berlino da traffico» non attribuita a una centralina ' +
+              'precisa. Qui è la media di tutte quelle da traffico.' },
+    { serie: 'Londra (centro)', citta: 'Londra',
+      perche: 'Il pezzo guarda il centro, dove la ULEZ agisce dal 2019. Il riquadro del ' +
+              'cruscotto copre tutta la Greater London, centro e periferia insieme: è la ' +
+              'ragione per cui il centro, dal 2018, scende più in fretta del resto della città.' }
+  ];
+
+  /* i grafici del trattato che un riscontro vivo ce l'hanno, ma non confrontabile */
+  var NON_CONFRONTABILI = [
+    { chart: 'madridAir',
+      perche: 'Mostra quattro centraline singole di Madrid, una per una. Il cruscotto ha ' +
+              'solo le medie per tipo di stazione: mettere una centralina accanto a una ' +
+              'media non misura uno scostamento, misura la differenza fra due oggetti.' },
+    { chart: 'ulezChart',
+      perche: '«Zona ULEZ centrale» è un perimetro amministrativo deciso da Transport for ' +
+              'London, non un tipo di centralina. Il riquadro del cruscotto copre tutta la ' +
+              'Greater London, quindi le due serie misurano due Londre diverse.' }
+  ];
+
+  var SOGLIA_ORDINE = 8;   /* punti percentuali: vedi il commento nelle schede */
+
+  function disegnaScostamento(d) {
+    var CV = window.CITTA_VIVE;
+    if (!CV || !CV.charts) {
+      console.warn('[cruscotto] data/charts.js non caricato: niente scostamento');
+      return;
+    }
+    var CH = CV.charts;
+
+    function vivo(nomeCitta, inq, tipo) {
+      var c = d.citta.filter(function (x) { return x.nome === nomeCitta; })[0];
+      return c ? (c.misure[inq] || {})[tipo] || null : null;
+    }
+    function coloreCitta(nomeCitta) {
+      var c = d.citta.filter(function (x) { return x.nome === nomeCitta; })[0];
+      return c ? c.colore : S.testo;
+    }
+    /* il pezzo tiene gli anni nelle etichette, il cruscotto in un campo suo:
+       questa funzione è l'unico punto in cui le due forme si toccano */
+    function dalTrattato(chart, nomeSerie) {
+      var s = chart.serie.filter(function (x) { return x.nome === nomeSerie; })[0];
+      if (!s) return {};
+      var per = {};
+      chart.etichette.forEach(function (e, i) {
+        if (s.dati[i] !== null && s.dati[i] !== undefined) per[parseInt(e, 10)] = s.dati[i];
+      });
+      return per;
+    }
+    function daiVivi(m) {
+      var per = {};
+      if (m) m.serie.forEach(function (p) { if (p.valore !== null) per[p.anno] = p.valore; });
+      return per;
+    }
+
+    /* --------- NO₂ da traffico --------- */
+    var righe = CONFRONTI_NO2.map(function (cf) {
+      var m = vivo(cf.citta, 'NO2', 'traffico');
+      var T = dalTrattato(CH.no2Chart, cf.serie), L = daiVivi(m);
+      var comuni = Object.keys(T).map(Number).filter(function (a) { return L[a] !== undefined; }).sort();
+      if (!comuni.length) return null;
+      var ultimo = comuni[comuni.length - 1], primo = comuni[0];
+      /* il segno dello scarto: se non cambia mai, le due serie stanno una
+         sopra l'altra per tutto il periodo e la differenza è di livello.
+         Se cambia, e soprattutto quante volte, la differenza è d'altro. */
+      var segni = comuni.map(function (a) { return T[a] >= L[a] ? 1 : -1; });
+      var svolte = [];
+      for (var i = 1; i < segni.length; i++) if (segni[i] !== segni[i - 1]) svolte.push(comuni[i]);
+      return {
+        nome: cf.citta, colore: coloreCitta(cf.citta), perche: cf.perche,
+        stazioni: m && m.stazioni, anno: ultimo, primo: primo,
+        trattato: T[ultimo], vivo: L[ultimo], scarto: T[ultimo] - L[ultimo],
+        caloT: (T[ultimo] / T[primo] - 1) * 100,
+        caloL: (L[ultimo] / L[primo] - 1) * 100,
+        anniComuni: comuni.length, svolte: svolte, sopraAllaFine: segni[segni.length - 1] > 0
+      };
+    }).filter(Boolean);
+
+    var maxScarto = Math.max.apply(null, righe.map(function (r) { return Math.abs(r.scarto); }));
+
+    var schede = righe.map(function (r) {
+      var largh = maxScarto ? Math.abs(r.scarto) / maxScarto * 50 : 0;
+      var lato = r.scarto >= 0 ? 'left:50%' : 'right:50%';
+      /* SOGLIA_ORDINE è una scelta nostra, non un criterio di legge: sotto gli
+         8 punti percentuali diciamo che i due cali raccontano la stessa cosa.
+         È dichiarata nella didascalia, perché una soglia taciuta è una soglia
+         che nessuno può contestare. */
+      var direzione = Math.abs(r.caloT - r.caloL) <= SOGLIA_ORDINE
+        ? 'La discesa raccontata dal pezzo e quella misurata dalle centraline sono dello ' +
+          'stesso ordine: il racconto regge anche se i livelli non coincidono.'
+        : 'Le due discese non sono dello stesso ordine, e questo conta più dello scarto ' +
+          'sul singolo anno: le due serie non descrivono lo stesso oggetto per tutto il periodo.';
+      var segno = !r.svolte.length
+        ? 'Il segno dello scarto non cambia in nessuno dei ' + r.anniComuni + ' anni in comune: ' +
+          'una serie sta sopra l\'altra per tutto il periodo.'
+        : r.svolte.length === 1
+          ? 'Lo scarto cambia segno nel ' + r.svolte[0] + '.'
+          : 'Lo scarto cambia segno ' + r.svolte.length + ' volte fra il ' + r.svolte[0] +
+            ' e il ' + r.svolte[r.svolte.length - 1] + ', e da lì il pezzo resta ' +
+            (r.sopraAllaFine ? 'sopra' : 'sotto') + '.';
+      /* i cali sono numeri negativi: si dice che sono cali, non si stampa un meno */
+      function andamento(v) {
+        return (v <= 0 ? 'in calo del ' : 'in aumento del ') + num(Math.abs(v), 0) + '%';
+      }
+      return '<div class="scarto scheda">' +
+        '<div class="chi" style="color:' + r.colore + '">' + esc(r.nome) + '</div>' +
+        '<div class="quanto">' + (r.scarto >= 0 ? '+' : '−') + num(Math.abs(r.scarto), 1) + '</div>' +
+        '<div class="quando">µg/m³ di differenza nel ' + r.anno + '</div>' +
+        '<div class="pista-zero"><i style="' + lato + ';width:' + largh + '%;background:' + r.colore + '"></i></div>' +
+        '<div class="coppia">trattato <b>' + num(r.trattato, 1) + '</b> · centraline <b>' +
+          num(r.vivo, 1) + '</b>' + (r.stazioni ? ' (media di ' + r.stazioni + ')' : '') + '<br>' +
+          'dal ' + r.primo + ' al ' + r.anno + ': ' + andamento(r.caloT) + ' nel pezzo, ' +
+          andamento(r.caloL) + ' alle centraline</div>' +
+        '<div class="perche">' + esc(r.perche) + ' ' + direzione + ' ' + segno + '</div>' +
+      '</div>';
+    });
+
+    /* Milano nel grafico del pezzo non c'è: è una lacuna dichiarata nell'atlante,
+       e adesso che il numero esiste dirlo è più onesto che tacerlo */
+    var mi = vivo('Milano', 'NO2', 'traffico');
+    if (mi && !CONFRONTI_NO2.some(function (c) { return c.citta === 'Milano'; })) {
+      var ultimoMi = mi.serie.filter(function (p) { return p.valore !== null; }).pop();
+      schede.push('<div class="scarto scheda assente">' +
+        '<div class="chi" style="color:' + coloreCitta('Milano') + '">Milano</div>' +
+        '<div class="quanto">non c\'è nel pezzo</div>' +
+        '<div class="quando">nessuno scarto da misurare</div>' +
+        '<div class="coppia" style="margin-top:12px">centraline <b>' + num(ultimoMi.valore, 1) +
+          '</b> µg/m³ nel ' + ultimoMi.anno + ' (media di ' + mi.stazioni + ')</div>' +
+        '<div class="perche">Il grafico comparativo del trattato ha cinque città e Milano ' +
+          'non è fra queste: era una delle lacune che l\'atlante dichiara. Il numero adesso ' +
+          'esiste, ma colmarla vuol dire mettere mano ai dati dentro il pezzo, ed è una ' +
+          'decisione editoriale che questa pagina non prende da sola.</div>' +
+      '</div>');
+    }
+    document.getElementById('scarti-no2').innerHTML = schede.join('');
+
+    document.getElementById('did-scarti').innerHTML =
+      'La barra è centrata sullo zero: verso destra il pezzo sta sopra le centraline, verso ' +
+      'sinistra sotto. Le variazioni sono calcolate sugli anni che le due serie hanno in ' +
+      'comune — il pezzo parte dal 2013, le centraline dal ' + d.anni[0] + '. ' +
+      '«Dello stesso ordine» vuol dire che i due cali differiscono di meno di ' +
+      SOGLIA_ORDINE + ' punti percentuali: è una soglia scelta da noi, non un criterio di ' +
+      'legge, e la dichiariamo perché una soglia taciuta non la può contestare nessuno. ' +
+      'A sinistra: <a href="index.html">' + esc(CH.no2Chart.titolo) + '</a>, ' +
+      esc(CH.no2Chart.fonte.split(';')[0]) + '. A destra: <a href="' + d.url +
+      '" target="_blank">' + esc(d.fonte) + '</a>.';
+
+    /* --------- PM2.5, dove il tipo di stazione non è dichiarato --------- */
+    var pm = CH.milanAirChart;
+    var ANNO_PM = 2024;   /* l'anno lo dichiara la didascalia del grafico nel pezzo */
+    var serPM = pm.serie[0];
+    var rPM = pm.etichette.map(function (nome, i) {
+      var t = daiVivi(vivo(nome, 'PM2.5', 'traffico'))[ANNO_PM];
+      var f = daiVivi(vivo(nome, 'PM2.5', 'fondo urbano'))[ANNO_PM];
+      if (t === undefined || f === undefined) return null;
+      var v = serPM.dati[i];
+      return { nome: nome, colore: coloreCitta(nome), v: v, t: t, f: f,
+               somiglia: Math.abs(v - t) <= Math.abs(v - f) ? 'traffico' : 'fondo urbano' };
+    }).filter(Boolean);
+
+    document.getElementById('tab-pm').innerHTML =
+      '<thead><tr><th>Città</th><th class="num">Trattato</th><th class="num">Traffico</th>' +
+      '<th class="num">Fondo urbano</th><th>Somiglia a</th></tr></thead><tbody>' +
+      rPM.map(function (r) {
+        return '<tr><td><strong style="color:' + r.colore + '">' + esc(r.nome) + '</strong></td>' +
+          '<td class="num">' + num(r.v, 1) + '</td>' +
+          '<td class="num">' + num(r.t, 1) + '</td>' +
+          '<td class="num">' + num(r.f, 1) + '</td>' +
+          '<td><span class="somiglia">' + r.somiglia + '</span></td></tr>';
+      }).join('') + '</tbody>';
+
+    var quanteTraffico = rPM.filter(function (r) { return r.somiglia === 'traffico'; }).length;
+    document.getElementById('did-pm').innerHTML =
+      'Medie annue ' + ANNO_PM + ' in µg/m³. Il valore del pezzo somiglia di più al traffico ' +
+      'in ' + quanteTraffico + ' città su ' + rPM.length + ' — non in tutte, ed è la ragione ' +
+      'per cui la casella del tipo di stazione resta vuota nella nota metodologica invece di ' +
+      'essere riempita con la risposta che va bene quasi sempre. ' +
+      'A sinistra: <a href="index.html">' + esc(pm.titolo) + '</a>. A destra: <a href="' +
+      d.url + '" target="_blank">' + esc(d.fonte) + '</a>.';
+
+    /* --------- dove il confronto non si fa --------- */
+    var voci = NON_CONFRONTABILI.filter(function (n) { return CH[n.chart]; }).map(function (n) {
+      return '<li><b>' + esc(CH[n.chart].titolo) + '</b> — ' + esc(n.perche) + '</li>';
+    });
+    voci.unshift('<li><b>Il NO₂ mensile delle capitali, la sezione 01 di questa pagina</b> — ' +
+      'Eurostat lì non dichiara il tipo di centralina e il suo perimetro sono le capitali, ' +
+      'non le sei città. Sono due grandezze diverse e vanno confrontate solo con sé stesse: ' +
+      'è la stessa ragione per cui quella sezione porta già la sua avvertenza.</li>');
+    /* due grafici del pezzo hanno un riscontro misurato — il NO₂ e il PM2.5 —
+       e si contano i grafici, non le città che ci stanno dentro */
+    var restanti = Object.keys(CH).length - 2 - NON_CONFRONTABILI.length;
+    voci.push('<li><b>Gli altri ' + restanti + ' grafici del trattato</b> — piste ciclabili, ' +
+      'quote di spostamento, raffrescamento degli alberi, morti da caldo, traffico ' +
+      'indicizzato: nessuna fonte li ripubblica in una forma che un programma possa ' +
+      'interrogare, quindi non esiste un termine di paragone vivo da cui scostarsi. ' +
+      'Il perché per esteso è nella sezione qui sotto.</li>');
+    document.getElementById('nonconfr').innerHTML = voci.join('');
+
+    document.getElementById('sez-scostamento').hidden = false;
+
+    /* chi arriva dal trattato porta l'ancora nell'indirizzo, ma quando il
+       browser la legge questa sezione è ancora nascosta e lui non ha dove
+       andare: lo si porta qui a mano, adesso che c'è qualcosa da vedere */
+    if (location.hash === '#sez-scostamento') {
+      document.getElementById('sez-scostamento').scrollIntoView();
+    }
+    console.log('[cruscotto] scostamento: ' + righe.length + ' città sul NO₂, ' +
+                rPM.length + ' sul PM2.5');
+  }
+
   /* ========================================================= avvio */
   Promise.all([carica('manifest.json'), carica('aria.json'), carica('mortalita.json')])
     .then(function (r) {
@@ -810,7 +1242,12 @@
                   ', decessi fino a ' + r[2].ultimo_periodo);
       /* le sei città arrivano da una pipeline separata: se non c'è ancora,
          la sezione resta nascosta e il resto della pagina funziona lo stesso */
-      return carica('aria-citta.json').then(disegnaCitta).catch(function (e) {
+      return carica('aria-citta.json').then(function (c) {
+        disegnaCitta(c);
+        /* lo scostamento poggia sulle sei città: se quelle non ci sono,
+           non c'è niente da cui scostarsi e la sezione resta nascosta */
+        disegnaScostamento(c);
+      }).catch(function (e) {
         console.warn('[cruscotto] sei città non disponibili:', e.message);
       });
     })
