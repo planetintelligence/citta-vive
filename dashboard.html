@@ -17,10 +17,9 @@
 
   /* ---------- testata ---------- */
   .testata { padding: 72px 0 30px; text-align: center; }
-  .testata .occhiello {
-    font-family: var(--mano); font-size: 1rem; color: var(--tenue);
-    letter-spacing: .04em; margin-bottom: 14px;
-  }
+  /* l'occhiello e' il componente comune di assets/stile.css, uguale sulle
+     quattro pagine: qui si regola solo lo spazio sotto */
+  .testata .occhiello { display: block; margin-bottom: 14px; }
   .testata h1 {
     font-size: clamp(2rem, 4.6vw, 3.1rem); line-height: 1.12;
     font-weight: 400; letter-spacing: -.01em; margin-bottom: 18px;
@@ -131,6 +130,20 @@
 </style>
 </head>
 <body class="fondo-carta">
+
+<!-- la stessa fascia su tutte e quattro le pagine; stili in assets/stile.css -->
+<nav class="fascia-testata" aria-label="Le pagine di questo lavoro">
+  <div class="fascia-inner">
+    <a class="fascia-marchio" href="https://planetintelligence.github.io/">Planet Intelligence</a>
+    <div class="fascia-pagine">
+      <a href="index.html">Reportage</a>
+      <a href="dashboard.html" aria-current="page">Atlante</a>
+      <a href="cruscotto.html">Cruscotto</a>
+      <a href="metodo.html">Metodo</a>
+    </div>
+  </div>
+</nav>
+
 
 <div class="foglio">
 
@@ -428,7 +441,7 @@
   </section>
 
   <footer>
-    <a class="torna" href="index.html">← torna al trattato</a>
+    <a class="torna" href="index.html">← torna al reportage</a>
     <a class="torna" href="cruscotto.html" style="margin-left:22px">cruscotto dei dati vivi →</a>
     <a class="torna" href="metodo.html" style="margin-left:22px">come sono fatti questi numeri →</a>
     <p>

@@ -9,7 +9,7 @@
   <meta property="og:locale" content="it_IT">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Città vive · Un trattato sulla sostenibilità urbana in sei metropoli europee</title>
+  <title>Città vive · Un reportage sulla sostenibilità urbana in sei metropoli europee</title>
   <script src="assets/vendor/chart.umd.js"></script>
   <link rel="stylesheet" href="assets/stile.css">
   <style>
@@ -62,8 +62,12 @@
     .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
     .container-wide { max-width: 1060px; margin: 0 auto; padding: 0 24px; }
 
-    /* Nav TOC */
-    .toc { background: var(--carta-2); border-bottom: 2px solid var(--riga); position: sticky; top: 0; z-index: 100; }
+    /* Nav TOC — i capitoli del pezzo. Si incolla SOTTO la fascia della
+       testata, che è alta 41px: le due barre restano visibili insieme
+       senza sovrapporsi. Su telefono la fascia scorre via (vedi la media
+       query in assets/stile.css) e questa torna a incollarsi in cima. */
+    .toc { background: var(--carta-2); border-bottom: 2px solid var(--riga); position: sticky; top: var(--h-fascia); z-index: 100; }
+    @media (max-width: 620px) { .toc { top: 0; } }
     .toc-inner { max-width: 1120px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; overflow-x: auto; }
     .toc a { display: block; padding: 14px 14px; font-family: var(--sans); font-size: .76rem; font-weight: 600; letter-spacing: .03em; text-transform: uppercase; text-decoration: none; color: var(--muted); white-space: nowrap; border-bottom: 3px solid transparent; margin-bottom: -3px; transition: color .2s, border-color .2s; }
     .toc a:hover { color: var(--text); }
@@ -247,6 +251,20 @@
 </head>
 <body>
 
+<!-- la stessa fascia su tutte e quattro le pagine; stili in assets/stile.css -->
+<nav class="fascia-testata" aria-label="Le pagine di questo lavoro">
+  <div class="fascia-inner">
+    <a class="fascia-marchio" href="https://planetintelligence.github.io/">Planet Intelligence</a>
+    <div class="fascia-pagine">
+      <a href="index.html" aria-current="page">Reportage</a>
+      <a href="dashboard.html">Atlante</a>
+      <a href="cruscotto.html">Cruscotto</a>
+      <a href="metodo.html">Metodo</a>
+    </div>
+  </div>
+</nav>
+
+
 <!-- HERO -->
 <header class="hero">
   <div class="hero-inner">
@@ -277,9 +295,8 @@
     <a href="#verde" class="green">Verde e caldo</a>
     <a href="#lessons">Lezioni</a>
     <a href="#conclusion">Conclusioni</a>
-    <a href="dashboard.html" style="color:var(--inchiostro)">Atlante visivo →</a>
-    <a href="cruscotto.html" style="color:var(--inchiostro)">Cruscotto →</a>
-    <a href="metodo.html" style="color:var(--inchiostro)">Metodo →</a>
+    <!-- le altre tre pagine stanno nella fascia in cima, che c'è su tutte:
+         qui restano i soli capitoli del pezzo, che sono un'altra cosa -->
   </div>
 </nav>
 

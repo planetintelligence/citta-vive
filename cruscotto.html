@@ -16,7 +16,7 @@
   .stretto { max-width: 720px; }
 
   /* ---------- testata ---------- */
-  .testata { padding: 68px 0 22px; }
+  .testata { padding: 72px 0 26px; }
   .testata .occhiello { display: block; margin-bottom: 14px; }
   .testata h1 {
     font-size: clamp(1.9rem, 4.2vw, 2.9rem); line-height: 1.14;
@@ -111,7 +111,7 @@
     background: var(--inchiostro); color: var(--carta); border-color: var(--inchiostro);
   }
 
-  /* ---------- scostamento dal trattato ---------- */
+  /* ---------- scostamento dal reportage ---------- */
   .scarti {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(272px, 1fr));
     gap: 14px; margin: 22px 0;
@@ -184,13 +184,28 @@
 </head>
 <body class="fondo-carta">
 
+<!-- la stessa fascia su tutte e quattro le pagine; stili in assets/stile.css -->
+<nav class="fascia-testata" aria-label="Le pagine di questo lavoro">
+  <div class="fascia-inner">
+    <a class="fascia-marchio" href="https://planetintelligence.github.io/">Planet Intelligence</a>
+    <div class="fascia-pagine">
+      <a href="index.html">Reportage</a>
+      <a href="dashboard.html">Atlante</a>
+      <a href="cruscotto.html" aria-current="page">Cruscotto</a>
+      <a href="metodo.html">Metodo</a>
+    </div>
+  </div>
+</nav>
+
+
 <div class="foglio">
 
   <header class="testata">
     <span class="occhiello">Città vive · cruscotto</span>
     <h1>I dati che si aggiornano da soli</h1>
+    <hr class="filo filo-corto a-sinistra">
     <p class="sommario">
-      Il trattato è una fotografia dell'agosto 2026 e resta ferma. Tre delle sue serie,
+      Il reportage è una fotografia dell'agosto 2026 e resta ferma. Tre delle sue serie,
       però, le fonti pubbliche le ripubblicano di continuo: qui si aggiornano da sole,
       con un mese o poco più di ritardo sulla realtà. Sono le uniche tre che si possono
       tenere vive senza rileggere un documento a mano — la pagina dice anche perché tutte
@@ -238,7 +253,7 @@
     </figure>
 
     <div class="avvertenza">
-      <strong>Questi numeri non sono quelli del trattato, ed è normale.</strong>
+      <strong>Questi numeri non sono quelli del reportage, ed è normale.</strong>
       Le serie del pezzo vengono da stazioni collocate lungo strade trafficate; Eurostat
       qui non dichiara il tipo di stazione e i valori risultano più bassi, perché una
       media che comprende il fondo urbano sta sempre sotto a una misura fatta a bordo
@@ -261,7 +276,7 @@
     </p>
     <p>
       È anche il modo per non dipendere da uno studio di attribuzione pubblicato una volta
-      sola. Il grafico sulle morti da caldo del trattato copre tre città e una singola
+      sola. Il grafico sulle morti da caldo del reportage copre tre città e una singola
       ondata del 2025, e non si aggiornerà mai più; questo copre cinque aree, si aggiorna
       ogni settimana ed è calcolato con lo stesso metodo per tutte.
     </p>
@@ -305,7 +320,7 @@
     <p>
       Questa è la serie che il progetto inseguiva: <strong>le sei città del pezzo</strong>,
       non le capitali, e soprattutto le stazioni <strong>da traffico separate da quelle di
-      fondo urbano</strong> — la distinzione che nel trattato si può solo dichiarare e qui
+      fondo urbano</strong> — la distinzione che nel reportage si può solo dichiarare e qui
       si vede. Viene dai dati validati dell'Agenzia europea dell'ambiente, misura per
       misura: medie annue calcolate dalle osservazioni orarie valide di ogni singola
       centralina, poi mediate per città e per tipo.
@@ -334,10 +349,10 @@
     <div class="avvertenza" id="avvertenza-bordo"></div>
   </section>
 
-  <!-- ═══ 4 · SCOSTAMENTO DAL TRATTATO ═══ -->
+  <!-- ═══ 4 · SCOSTAMENTO DAL REPORTAGE ═══ -->
   <section class="sezione" id="sez-scostamento" hidden>
     <span class="sez-num">04</span>
-    <h2>Quanto si scosta dal trattato</h2>
+    <h2>Quanto si scosta dal reportage</h2>
     <p>
       Il pezzo è fermo ad agosto 2026 e i suoi numeri sono commentati dal testo frase per
       frase: per questo non li riscriviamo sotto quando la fonte cambia. Ma tenerli fermi
@@ -350,7 +365,7 @@
       Un avvertimento su come si legge. Uno scarto ampio non vuol dire che il pezzo sbagli:
       quasi sempre vuol dire che guarda una centralina rappresentativa mentre il cruscotto
       media tutte quelle da traffico della città. Il controllo che conta non è il livello,
-      è la <strong>direzione</strong> — se il calo raccontato dal trattato è dello stesso
+      è la <strong>direzione</strong> — se il calo raccontato dal reportage è dello stesso
       ordine di quello che si vede alle centraline, il racconto regge anche quando i due
       numeri non coincidono. Ogni scheda dice l'una cosa e l'altra.
     </p>
@@ -361,7 +376,7 @@
 
     <h3>PM2.5: qui il tipo di centralina il pezzo non lo dichiara</h3>
     <p>
-      La serie del PM2.5 del trattato non dice da che stazioni viene, e
+      La serie del PM2.5 del reportage non dice da che stazioni viene, e
       <a href="metodo.html">la nota metodologica</a> lascia la casella vuota apposta —
       riempirla a intuito sarebbe inventare un metadato altrui. Il confronto con le
       centraline non la riempie, ma dice a quale delle due grandezze ogni numero somiglia
@@ -380,7 +395,7 @@
     <span class="sez-num">05</span>
     <h2>Perché è solo questo, e non tutto il resto</h2>
     <p>
-      Il trattato ha undici grafici e qui ne rivivono tre — l'aria delle capitali, i decessi
+      Il reportage ha undici grafici e qui ne rivivono tre — l'aria delle capitali, i decessi
       settimanali, le sei città alle centraline. Gli altri otto no, e non è pigrizia: è che
       poggiano su numeri che nessuno pubblica in una forma interrogabile da un programma.
     </p>
@@ -411,8 +426,12 @@
   </section>
 
   <div class="ponte">
-    <a href="index.html">← Torna al trattato</a>
+    <a href="index.html">← Torna al reportage</a>
     <p>Le sei città raccontate per esteso, con gli undici grafici fermi ad agosto 2026.</p>
+  </div>
+  <div class="ponte">
+    <a href="dashboard.html">Vai all'atlante visivo →</a>
+    <p>Le sei città a confronto con una sola grammatica di segni, e i buchi dichiarati.</p>
   </div>
   <div class="ponte">
     <a href="metodo.html">Come sono fatti questi numeri →</a>
@@ -430,7 +449,7 @@
 </div>
 
 <script src="assets/vendor/chart.umd.js"></script>
-<!-- i numeri del trattato, per misurarne lo scostamento: è lo stesso file che
+<!-- i numeri del reportage, per misurarne lo scostamento: è lo stesso file che
      legge index.html, quindi le due pagine non possono raccontarsi cose diverse -->
 <script src="data/charts.js"></script>
 <script>
@@ -625,7 +644,7 @@
     document.getElementById('assenti-aria').innerHTML =
       '<strong>Chi non c\'è:</strong> ' + d.assenti.join(', ') +
       '. Questa serie di Eurostat copre le sole capitali, quindi delle sei città del pezzo ne ' +
-      'restano fuori tre, e al loro posto compare Roma, che nel trattato non c\'è. Non è un ' +
+      'restano fuori tre, e al loro posto compare Roma, che nel reportage non c\'è. Non è un ' +
       'errore di configurazione: è il perimetro della fonte.';
   }
 
@@ -948,7 +967,7 @@
       }).filter(Boolean);
 
       document.getElementById('did-serie').innerHTML =
-        'Solo le stazioni da traffico, per poter confrontare con la serie del trattato. ' +
+        'Solo le stazioni da traffico, per poter confrontare con la serie del reportage. ' +
         (cambi.length
           ? '<strong>' + cambi.map(function (c) {
               return esc(c.nome) + ' cambia fonte dal ' + c.da;
@@ -1002,7 +1021,7 @@
       'non una classifica.';
   }
 
-  /* ============================ lo scostamento dal trattato */
+  /* ============================ lo scostamento dal reportage */
 
   /* Le coppie confrontabili sono dichiarate qui a mano, e solo quelle: dire
      che una serie del pezzo guarda la stessa grandezza di una serie viva è un
@@ -1033,7 +1052,7 @@
               'calcola dalle centraline.' }
   ];
 
-  /* i grafici del trattato che un riscontro vivo ce l'hanno, ma non confrontabile */
+  /* i grafici del reportage che un riscontro vivo ce l'hanno, ma non confrontabile */
   var NON_CONFRONTABILI = [
     { chart: 'madridAir',
       perche: 'Mostra quattro centraline singole di Madrid, una per una. Il cruscotto ha ' +
@@ -1065,7 +1084,7 @@
     }
     /* il pezzo tiene gli anni nelle etichette, il cruscotto in un campo suo:
        questa funzione è l'unico punto in cui le due forme si toccano */
-    function dalTrattato(chart, nomeSerie) {
+    function dalReportage(chart, nomeSerie) {
       var s = chart.serie.filter(function (x) { return x.nome === nomeSerie; })[0];
       if (!s) return {};
       var per = {};
@@ -1083,7 +1102,7 @@
     /* --------- NO₂ da traffico --------- */
     var righe = CONFRONTI_NO2.map(function (cf) {
       var m = vivo(cf.citta, 'NO2', 'traffico');
-      var T = dalTrattato(CH.no2Chart, cf.serie), L = daiVivi(m);
+      var T = dalReportage(CH.no2Chart, cf.serie), L = daiVivi(m);
       var comuni = Object.keys(T).map(Number).filter(function (a) { return L[a] !== undefined; }).sort();
       if (!comuni.length) return null;
       var ultimo = comuni[comuni.length - 1], primo = comuni[0];
@@ -1105,7 +1124,7 @@
       return {
         nome: cf.citta, colore: coloreCitta(cf.citta), perche: cf.perche,
         stazioni: m && m.stazioni, anno: ultimo, primo: primo,
-        trattato: T[ultimo], vivo: L[ultimo], scarto: T[ultimo] - L[ultimo],
+        reportage: T[ultimo], vivo: L[ultimo], scarto: T[ultimo] - L[ultimo],
         caloT: (T[ultimo] / T[primo] - 1) * 100,
         caloL: (L[ultimo] / L[primo] - 1) * 100,
         anniComuni: comuni.length, svolte: svolte, sopraAllaFine: segni[segni.length - 1] > 0,
@@ -1126,7 +1145,7 @@
           '<div class="chi" style="color:' + r.colore + '">' + esc(r.nome) + '</div>' +
           '<div class="quanto">stesso numero</div>' +
           '<div class="quando">niente da misurare</div>' +
-          '<div class="coppia" style="margin-top:12px">trattato <b>' + num(r.trattato, 1) +
+          '<div class="coppia" style="margin-top:12px">reportage <b>' + num(r.reportage, 1) +
             '</b> · centraline <b>' + num(r.vivo, 1) + '</b> nel ' + r.anno +
             (r.stazioni ? ' (media di ' + r.stazioni + ')' : '') + '</div>' +
           '<div class="perche">' + esc(r.perche) + ' I due valori coincidono in tutti i ' +
@@ -1163,7 +1182,7 @@
         '<div class="quanto">' + (r.scarto >= 0 ? '+' : '−') + num(Math.abs(r.scarto), 1) + '</div>' +
         '<div class="quando">µg/m³ di differenza nel ' + r.anno + '</div>' +
         '<div class="pista-zero"><i style="' + lato + ';width:' + largh + '%;background:' + r.colore + '"></i></div>' +
-        '<div class="coppia">trattato <b>' + num(r.trattato, 1) + '</b> · centraline <b>' +
+        '<div class="coppia">reportage <b>' + num(r.reportage, 1) + '</b> · centraline <b>' +
           num(r.vivo, 1) + '</b>' + (r.stazioni ? ' (media di ' + r.stazioni + ')' : '') + '<br>' +
           'dal ' + r.primo + ' al ' + r.anno + ': ' + andamento(r.caloT) + ' nel pezzo, ' +
           andamento(r.caloL) + ' alle centraline</div>' +
@@ -1172,7 +1191,7 @@
     });
 
     /* Le città del pezzo che qui non hanno riscontro non ci sono più: dal 16
-       agosto 2026 il grafico del trattato ha tutte e sei. Se un domani ne
+       agosto 2026 il grafico del reportage ha tutte e sei. Se un domani ne
        comparisse una senza controparte viva, la si vedrebbe mancare da questo
        elenco, ed è il momento di aggiungerla a CONFRONTI_NO2. */
     document.getElementById('scarti-no2').innerHTML = schede.join('');
@@ -1202,7 +1221,7 @@
     }).filter(Boolean);
 
     document.getElementById('tab-pm').innerHTML =
-      '<thead><tr><th>Città</th><th class="num">Trattato</th><th class="num">Traffico</th>' +
+      '<thead><tr><th>Città</th><th class="num">Reportage</th><th class="num">Traffico</th>' +
       '<th class="num">Fondo urbano</th><th>Somiglia a</th></tr></thead><tbody>' +
       rPM.map(function (r) {
         return '<tr><td><strong style="color:' + r.colore + '">' + esc(r.nome) + '</strong></td>' +
@@ -1232,7 +1251,7 @@
     /* due grafici del pezzo hanno un riscontro misurato — il NO₂ e il PM2.5 —
        e si contano i grafici, non le città che ci stanno dentro */
     var restanti = Object.keys(CH).length - 2 - NON_CONFRONTABILI.length;
-    voci.push('<li><b>Gli altri ' + restanti + ' grafici del trattato</b> — piste ciclabili, ' +
+    voci.push('<li><b>Gli altri ' + restanti + ' grafici del reportage</b> — piste ciclabili, ' +
       'quote di spostamento, raffrescamento degli alberi, morti da caldo, traffico ' +
       'indicizzato: nessuna fonte li ripubblica in una forma che un programma possa ' +
       'interrogare, quindi non esiste un termine di paragone vivo da cui scostarsi. ' +
@@ -1241,7 +1260,7 @@
 
     document.getElementById('sez-scostamento').hidden = false;
 
-    /* chi arriva dal trattato porta l'ancora nell'indirizzo, ma quando il
+    /* chi arriva dal reportage porta l'ancora nell'indirizzo, ma quando il
        browser la legge questa sezione è ancora nascosta e lui non ha dove
        andare: lo si porta qui a mano, adesso che c'è qualcosa da vedere */
     if (location.hash === '#sez-scostamento') {

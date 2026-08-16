@@ -126,13 +126,28 @@
 </head>
 <body class="fondo-carta">
 
+<!-- la stessa fascia su tutte e quattro le pagine; stili in assets/stile.css -->
+<nav class="fascia-testata" aria-label="Le pagine di questo lavoro">
+  <div class="fascia-inner">
+    <a class="fascia-marchio" href="https://planetintelligence.github.io/">Planet Intelligence</a>
+    <div class="fascia-pagine">
+      <a href="index.html">Reportage</a>
+      <a href="dashboard.html">Atlante</a>
+      <a href="cruscotto.html">Cruscotto</a>
+      <a href="metodo.html" aria-current="page">Metodo</a>
+    </div>
+  </div>
+</nav>
+
+
 <div class="foglio">
 
   <header class="testata">
     <span class="occhiello">Città vive · nota metodologica</span>
     <h1>Come sono fatti questi numeri</h1>
+    <hr class="filo filo-corto a-sinistra">
     <p class="sommario">
-      Ogni grafico del trattato e ogni segno dell'atlante nascono da una scelta:
+      Ogni grafico del reportage e ogni segno dell'atlante nascono da una scelta:
       quale strumento leggere, in quale punto della città, con quale definizione.
       Le scelte cambiano i numeri, a volte del doppio. Questa pagina le dichiara tutte.
     </p>
@@ -178,7 +193,7 @@
 
     <h3>Quanto pesa la scelta</h3>
     <p>
-      Lo dimostra un grafico che sta già nel trattato, quello di Madrid. Nello stesso
+      Lo dimostra un grafico che sta già nel reportage, quello di Madrid. Nello stesso
       anno, nella stessa città, la differenza fra la stazione da traffico peggiore e
       quella di fondo del parco del Retiro è di più del doppio.
     </p>
@@ -189,7 +204,7 @@
       <p class="scala-nota">
         Nel 2019 lo scarto era ancora più largo: 53 µg/m³ a Plaza Elíptica contro 24 al
         Retiro. Fonte: Ayuntamiento de Madrid, gli stessi dati del grafico «Madrid: NO₂
-        per stazione di misura» del trattato.
+        per stazione di misura» del reportage.
       </p>
     </figure>
 
@@ -230,7 +245,7 @@
         sotto quel limite, e Londra lo tocca esatto. Vale la pena ripetere che sono valori
         da traffico — sul fondo urbano le stesse città stanno diversi µg/m³ più in basso, e
         la distanza dall'obiettivo sembra minore. Milano resta senza valore qui perché la
-        sua serie si ferma al 2024: c'è nel grafico storico del trattato, dove scende da 59
+        sua serie si ferma al 2024: c'è nel grafico storico del reportage, dove scende da 59
         a 35 µg/m³, ma il 2025 la fonte non l'ha ancora validato. Vedi le lacune, più sotto.
       </p>
     </figure>
@@ -244,7 +259,7 @@
     <h2>Quanto è solido un dato</h2>
     <p>
       Ogni serie porta con sé un'etichetta che dice quanto ci si può appoggiare sopra.
-      Compare sotto ai grafici del trattato ed è la stessa che regge la tabella qui sotto.
+      Compare sotto ai grafici del reportage ed è la stessa che regge la tabella qui sotto.
     </p>
     <div class="stati">
       <div class="riga-stato stato-consolidato">
@@ -274,7 +289,7 @@
     <span class="sez-num">03</span>
     <h2>Da dove viene ogni numero</h2>
     <p style="max-width:820px">
-      Un rigo per ciascuno degli undici grafici del trattato. La tabella non è scritta a
+      Un rigo per ciascuno degli undici grafici del reportage. La tabella non è scritta a
       mano: la genera questa pagina leggendo <code>data/charts.js</code>, lo stesso file
       da cui i grafici prendono i valori. Se un dato viene aggiornato lì, qui cambia da sé
       — non può succedere che la metodologia dica una cosa e il grafico ne mostri un'altra.
@@ -297,7 +312,7 @@
       dato: una serie verificata ad agosto 2026 può fermarsi al 2024, se è lì che si ferma
       chi la pubblica. Di due di queste undici serie — il NO₂ e il PM2.5 — esiste oggi un
       riscontro alle centraline che si aggiorna da solo, e
-      <a href="cruscotto.html#sez-scostamento">quanto i numeri fermi del trattato se ne
+      <a href="cruscotto.html#sez-scostamento">quanto i numeri fermi del reportage se ne
       discostano è misurato sul cruscotto</a>, città per città. Anche le caselle vuote
       della colonna «stazione» sono lì: il confronto non le riempie, ma dice a quale
       grandezza ciascun numero somiglia di più.
@@ -356,13 +371,13 @@
       Il resto — chilometri di piste ciclabili, quote di spostamenti, superfici verdi,
       personale della manutenzione — non esiste in nessuna banca dati interrogabile e
       continua ad arrivare da documenti comunali letti uno per uno. Sono le otto serie su
-      undici che restano ferme, e resteranno ferme: è la ragione per cui il trattato è una
+      undici che restano ferme, e resteranno ferme: è la ragione per cui il reportage è una
       fotografia e il cruscotto una pagina separata.
     </p>
   </section>
 
   <div class="ponte">
-    <a href="index.html">← Torna al trattato</a>
+    <a href="index.html">← Torna al reportage</a>
     <p>Le sei città raccontate per esteso, con gli undici grafici che questa pagina documenta.</p>
   </div>
   <div class="ponte">
@@ -371,14 +386,14 @@
   </div>
   <div class="ponte">
     <a href="cruscotto.html">Vai al cruscotto dei dati vivi →</a>
-    <p>Le due serie che si aggiornano da sole, con la data dell'ultimo scarico in cima.</p>
+    <p>Le tre serie che si aggiornano da sole, e di quanto i numeri fermi del pezzo se ne discostano.</p>
   </div>
 
   <footer>
     <p>
       <strong>Planet Intelligence</strong> · nota metodologica, agosto 2026<br>
       Generata da <code>data/charts.js</code> e <code>data/citta.js</code>.
-      Testo del trattato di Luca Carra; questa nota è della redazione.
+      Testo del reportage di Luca Carra; questa nota è della redazione.
     </p>
   </footer>
 

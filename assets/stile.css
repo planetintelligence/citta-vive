@@ -37,6 +37,11 @@
   --su-scuro-tenue: rgba(255,255,255,.55);
   --riga-scura:     rgba(255,255,255,.16);
 
+  /* --- misure --- */
+  /* altezza della fascia della testata: la barra dei capitoli del trattato
+     ci si appoggia sopra, così le due misure non divergono da un file all'altro */
+  --h-fascia: 44px;
+
   /* --- caratteri --- */
   --serif: Georgia, 'Times New Roman', serif;
   --sans:  'Helvetica Neue', Arial, sans-serif;
@@ -56,6 +61,8 @@
 /* ---------- filetti ---------- */
 .filo { border: 0; border-top: 1px solid var(--riga); margin: 44px 0; }
 .filo-corto { width: 60px; margin: 26px auto; }
+/* nelle testate allineate a sinistra il filetto parte dal bordo, non dal centro */
+.filo-corto.a-sinistra { margin-left: 0; }
 
 /* ---------- gerarchia tipografica condivisa ---------- */
 
@@ -79,6 +86,52 @@
   border: 1px solid var(--riga);
   border-radius: 3px;
   box-shadow: none;
+}
+
+/* ---------- fascia della testata ----------
+   La stessa riga su tutte e quattro le pagine: a sinistra la testata,
+   a destra le quattro destinazioni. Sta qui e non in ognuna delle
+   pagine perche' e' l'unica cosa che devono avere identica; il markup
+   e' ripetuto nei quattro file, che il progetto non ha un passo di
+   build ed e' giusto che resti apribile con un doppio click. */
+.fascia-testata {
+  background: var(--carta-3);
+  border-bottom: 1px solid var(--riga);
+  position: sticky; top: 0; z-index: 120;
+}
+.fascia-inner {
+  max-width: 1120px; margin: 0 auto; padding: 0 24px;
+  display: flex; align-items: center; justify-content: space-between; gap: 18px;
+}
+.fascia-marchio {
+  font-family: var(--sans); font-size: .72rem; font-weight: 700;
+  letter-spacing: .16em; text-transform: uppercase;
+  color: var(--inchiostro); text-decoration: none;
+  padding: 11px 0; white-space: nowrap;
+}
+.fascia-marchio:hover { opacity: .7; }
+.fascia-pagine { display: flex; align-items: center; overflow-x: auto; }
+.fascia-pagine a {
+  font-family: var(--sans); font-size: .72rem; font-weight: 600;
+  letter-spacing: .06em; color: var(--tenue); text-decoration: none;
+  padding: 11px 12px; white-space: nowrap;
+  border-bottom: 2px solid transparent; margin-bottom: -1px;
+}
+.fascia-pagine a:hover { color: var(--inchiostro); }
+/* la pagina in cui ci si trova non e' un link a se stessa: e' un segnaposto */
+.fascia-pagine a[aria-current="page"] {
+  color: var(--inchiostro); border-bottom-color: var(--inchiostro); cursor: default;
+}
+.fascia-pagine a:last-child { padding-right: 0; }
+
+@media (max-width: 620px) {
+  /* su telefono due barre appiccicate mangiano mezzo schermo: la fascia
+     scorre via e resta attaccata in alto solo quella dei capitoli */
+  .fascia-testata { position: static; }
+  .fascia-inner { padding: 0 16px; flex-direction: column; align-items: flex-start; gap: 0; }
+  .fascia-marchio { padding-bottom: 4px; }
+  .fascia-pagine { width: 100%; padding-bottom: 2px; }
+  .fascia-pagine a:first-child { padding-left: 0; }
 }
 
 /* ---------- badge di provenienza del dato ---------- */
