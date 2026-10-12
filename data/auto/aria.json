@@ -4,8 +4,8 @@
  "fonte": "Eurostat, ENV_AIR_NO2 (statistiche sperimentali)",
  "url": "https://ec.europa.eu/eurostat/databrowser/product/page/ENV_AIR_NO2",
  "stazione": null,
- "ultimo_periodo": "2026-06",
- "fonte_aggiornata": "2026-07-08",
+ "ultimo_periodo": "2026-08",
+ "fonte_aggiornata": "2026-09-16",
  "soglie": [
   {
    "valore": 40,
@@ -374,7 +374,7 @@
     },
     {
      "periodo": "2025-02",
-     "valore": 30.4
+     "valore": 30.5
     },
     {
      "periodo": "2025-03",
@@ -390,7 +390,7 @@
     },
     {
      "periodo": "2025-06",
-     "valore": 18.1
+     "valore": 18.2
     },
     {
      "periodo": "2025-07",
@@ -402,7 +402,7 @@
     },
     {
      "periodo": "2025-09",
-     "valore": 19.6
+     "valore": 19.7
     },
     {
      "periodo": "2025-10",
@@ -414,7 +414,7 @@
     },
     {
      "periodo": "2025-12",
-     "valore": 26.8
+     "valore": 26.6
     },
     {
      "periodo": "2026-01",
@@ -438,7 +438,15 @@
     },
     {
      "periodo": "2026-06",
-     "valore": 14.5
+     "valore": 14.7
+    },
+    {
+     "periodo": "2026-07",
+     "valore": 15.6
+    },
+    {
+     "periodo": "2026-08",
+     "valore": 17.0
     }
    ],
    "annuale": [
@@ -492,13 +500,13 @@
     },
     {
      "anno": "2026",
-     "media": 22.7,
-     "mesi": 6,
+     "media": 21.1,
+     "mesi": 8,
      "completo": false
     }
    ],
-   "ultimo": "2026-06",
-   "ultimo_valore": 14.5
+   "ultimo": "2026-08",
+   "ultimo_valore": 17.0
   },
   {
    "codice": "ES_CAP",
@@ -895,16 +903,32 @@
      "valore": 23.1
     },
     {
+     "periodo": "2026-02",
+     "valore": 22.3
+    },
+    {
+     "periodo": "2026-03",
+     "valore": 19.1
+    },
+    {
      "periodo": "2026-04",
-     "valore": 14.6
+     "valore": 17.3
     },
     {
      "periodo": "2026-05",
-     "valore": 15.4
+     "valore": 15.6
     },
     {
      "periodo": "2026-06",
-     "valore": 13.5
+     "valore": 12.8
+    },
+    {
+     "periodo": "2026-07",
+     "valore": 16.9
+    },
+    {
+     "periodo": "2026-08",
+     "valore": 13.9
     }
    ],
    "annuale": [
@@ -958,13 +982,13 @@
     },
     {
      "anno": "2026",
-     "media": 16.6,
-     "mesi": 4,
+     "media": 17.6,
+     "mesi": 8,
      "completo": false
     }
    ],
-   "ultimo": "2026-06",
-   "ultimo_valore": 13.5
+   "ultimo": "2026-08",
+   "ultimo_valore": 13.9
   },
   {
    "codice": "DE_CAP",
@@ -1379,6 +1403,10 @@
     {
      "periodo": "2026-06",
      "valore": 13.6
+    },
+    {
+     "periodo": "2026-07",
+     "valore": 11.9
     }
    ],
    "annuale": [
@@ -1432,13 +1460,13 @@
     },
     {
      "anno": "2026",
-     "media": 19.3,
-     "mesi": 6,
+     "media": 18.3,
+     "mesi": 7,
      "completo": false
     }
    ],
-   "ultimo": "2026-06",
-   "ultimo_valore": 13.6
+   "ultimo": "2026-07",
+   "ultimo_valore": 11.9
   },
   {
    "codice": "IT_CAP",
@@ -1853,6 +1881,14 @@
     {
      "periodo": "2026-06",
      "valore": 19.2
+    },
+    {
+     "periodo": "2026-07",
+     "valore": 19.6
+    },
+    {
+     "periodo": "2026-08",
+     "valore": 17.6
     }
    ],
    "annuale": [
@@ -1906,13 +1942,13 @@
     },
     {
      "anno": "2026",
-     "media": 25.5,
-     "mesi": 6,
+     "media": 23.8,
+     "mesi": 8,
      "completo": false
     }
    ],
-   "ultimo": "2026-06",
-   "ultimo_valore": 19.2
+   "ultimo": "2026-08",
+   "ultimo_valore": 17.6
   }
  ]
 }
