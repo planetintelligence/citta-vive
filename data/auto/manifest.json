@@ -1,5 +1,5 @@
 {
- "generato": "2026-10-12T15:38:47Z",
+ "generato": "2026-10-20T10:11:26Z",
  "generato_giorno": "2026-10-12",
  "serie": [
   {
@@ -32,7 +32,7 @@
    "fonte": "Agenzia europea dell'ambiente, dati validati E1a e metadati delle stazioni",
    "url": "https://www.eea.europa.eu/en/datahub/datahubitem-view/778ef9f5-6293-4846-badd-56a29c70880d",
    "ultimo_periodo": "2025",
-   "fonte_aggiornata": "2026-08-15",
+   "fonte_aggiornata": "2026-10-20",
    "assenti": []
   }
  ]

@@ -21,7 +21,7 @@
   2025
  ],
  "ultimo_anno": 2025,
- "anno_confronto": 2024,
+ "anno_confronto": 2025,
  "citta_nel_confronto": 6,
  "soglie": [
   {
@@ -133,6 +133,12 @@
         "valore": 30.2,
         "stazioni": 7,
         "origine": "EEA"
+       },
+       {
+        "anno": 2025,
+        "valore": 29.6,
+        "stazioni": 8,
+        "origine": "EEA"
        }
       ]
      },
@@ -199,6 +205,12 @@
         "anno": 2024,
         "valore": 19.8,
         "stazioni": 9,
+        "origine": "EEA"
+       },
+       {
+        "anno": 2025,
+        "valore": 20.1,
+        "stazioni": 10,
         "origine": "EEA"
        }
       ]
@@ -269,6 +281,12 @@
         "valore": 9.2,
         "stazioni": 3,
         "origine": "EEA"
+       },
+       {
+        "anno": 2025,
+        "valore": 10.8,
+        "stazioni": 3,
+        "origine": "EEA"
        }
       ]
      },
@@ -334,6 +352,12 @@
        {
         "anno": 2024,
         "valore": 8.3,
+        "stazioni": 4,
+        "origine": "EEA"
+       },
+       {
+        "anno": 2025,
+        "valore": 10.8,
         "stazioni": 4,
         "origine": "EEA"
        }
@@ -419,6 +443,12 @@
         "valore": 28.3,
         "stazioni": 3,
         "origine": "EEA"
+       },
+       {
+        "anno": 2025,
+        "valore": 26.4,
+        "stazioni": 3,
+        "origine": "EEA"
        }
       ]
      },
@@ -484,6 +514,12 @@
        {
         "anno": 2024,
         "valore": 21.5,
+        "stazioni": 8,
+        "origine": "EEA"
+       },
+       {
+        "anno": 2025,
+        "valore": 20.4,
         "stazioni": 8,
         "origine": "EEA"
        }
@@ -555,6 +591,12 @@
         "valore": 12.2,
         "stazioni": 3,
         "origine": "EEA"
+       },
+       {
+        "anno": 2025,
+        "valore": 12.1,
+        "stazioni": 2,
+        "origine": "EEA"
        }
       ]
      },
@@ -621,6 +663,12 @@
         "anno": 2024,
         "valore": 11.1,
         "stazioni": 4,
+        "origine": "EEA"
+       },
+       {
+        "anno": 2025,
+        "valore": 10.7,
+        "stazioni": 3,
         "origine": "EEA"
        }
       ]
@@ -705,6 +753,12 @@
         "valore": 26.3,
         "stazioni": 10,
         "origine": "EEA"
+       },
+       {
+        "anno": 2025,
+        "valore": 24.9,
+        "stazioni": 10,
+        "origine": "EEA"
        }
       ]
      },
@@ -771,6 +825,12 @@
         "anno": 2024,
         "valore": 23.0,
         "stazioni": 12,
+        "origine": "EEA"
+       },
+       {
+        "anno": 2025,
+        "valore": 23.0,
+        "stazioni": 11,
         "origine": "EEA"
        }
       ]
@@ -841,6 +901,12 @@
         "valore": 9.6,
         "stazioni": 6,
         "origine": "EEA"
+       },
+       {
+        "anno": 2025,
+        "valore": 9.7,
+        "stazioni": 6,
+        "origine": "EEA"
        }
       ]
      },
@@ -906,6 +972,12 @@
        {
         "anno": 2024,
         "valore": 8.0,
+        "stazioni": 2,
+        "origine": "EEA"
+       },
+       {
+        "anno": 2025,
+        "valore": 9.0,
         "stazioni": 2,
         "origine": "EEA"
        }
@@ -991,6 +1063,12 @@
         "valore": 20.9,
         "stazioni": 9,
         "origine": "EEA"
+       },
+       {
+        "anno": 2025,
+        "valore": 22.4,
+        "stazioni": 8,
+        "origine": "EEA"
        }
       ]
      },
@@ -1057,6 +1135,12 @@
         "anno": 2024,
         "valore": 13.8,
         "stazioni": 5,
+        "origine": "EEA"
+       },
+       {
+        "anno": 2025,
+        "valore": 15.3,
+        "stazioni": 4,
         "origine": "EEA"
        }
       ]
@@ -1127,6 +1211,12 @@
         "valore": 12.0,
         "stazioni": 9,
         "origine": "EEA"
+       },
+       {
+        "anno": 2025,
+        "valore": 11.3,
+        "stazioni": 10,
+        "origine": "EEA"
        }
       ]
      },
@@ -1192,6 +1282,12 @@
        {
         "anno": 2024,
         "valore": 10.8,
+        "stazioni": 6,
+        "origine": "EEA"
+       },
+       {
+        "anno": 2025,
+        "valore": 11.0,
         "stazioni": 6,
         "origine": "EEA"
        }
@@ -1353,7 +1449,7 @@
        },
        {
         "anno": 2025,
-        "valore": 17.6,
+        "valore": 17.7,
         "stazioni": 19,
         "origine": "LAQN"
        }
@@ -1587,6 +1683,12 @@
         "valore": 35.3,
         "stazioni": 5,
         "origine": "EEA"
+       },
+       {
+        "anno": 2025,
+        "valore": 33.6,
+        "stazioni": 5,
+        "origine": "EEA"
        }
       ]
      },
@@ -1652,6 +1754,12 @@
        {
         "anno": 2024,
         "valore": 29.6,
+        "stazioni": 2,
+        "origine": "EEA"
+       },
+       {
+        "anno": 2025,
+        "valore": 31.1,
         "stazioni": 2,
         "origine": "EEA"
        }
@@ -1723,6 +1831,12 @@
         "valore": 20.7,
         "stazioni": 3,
         "origine": "EEA"
+       },
+       {
+        "anno": 2025,
+        "valore": 20.4,
+        "stazioni": 3,
+        "origine": "EEA"
        }
       ]
      },
@@ -1788,6 +1902,12 @@
        {
         "anno": 2024,
         "valore": 17.2,
+        "stazioni": 1,
+        "origine": "EEA"
+       },
+       {
+        "anno": 2025,
+        "valore": 17.6,
         "stazioni": 1,
         "origine": "EEA"
        }
